@@ -10,38 +10,22 @@ import com.show.admin.scetc.service.AdminUserService;
 @RequestMapping("")
 public class IndexController {
 
-	@Autowired 
-	private AdminUserService adminUserService;
-	//返回首页  
+	// 返回首页
 	@RequestMapping("/index")
-	public String index()
-	{
+	public String index() {
 		return "thymeleaf/index";
 	}
-	@RequestMapping("/login")
-	public String login()
-	{
-		return "thymeleaf/login";	
+
+	// 返回首页
+	@RequestMapping("/500")
+	public String errorPage() {
+		return "thymeleaf/500";
 	}
-	/**
-	 * 校验用户名密码验证码
-	 * @param username
-	 * @param password
-	 * @param verifyCode
-	 * @return
-	 */
-	@PostMapping("loginSubmit")
-	public String loginSubmit(String username,String password,String verifyCode)
-	{
-		
-       
-		
-		
-		return "thymeleaf/index";
+
+	// 返回首页
+	@RequestMapping("/404")
+	public String notFoundPage() {
+		return "thymeleaf/404";
 	}
-	
-	
-	
-	
 
 }

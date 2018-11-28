@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+G:\±œ“µ\scetc-show-videos-admin\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+784832105.index
+4176559598.index
+4274611508.index
+135670671.index
+1380048218.index
