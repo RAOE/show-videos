@@ -1,6 +1,6 @@
 # 后台管理系统
 # 相关技术 
- <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+H plus</p>
+ <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>
  <p>后端:springboot+ sping+springmvc+mybatis+pagehelper+mysql+redis</p>
  <p>组件:bootsrap-table,webUploader.</p>
  <p>项目部署: docker + linux</p>
@@ -13,4 +13,8 @@
 <img src="./myimg/02.jpg">
 3.
 <img src="./myimg/03.jpg">
+4.
+<img src="./myimg/4.jpg">
+5.
+<img src="./myimg/5.jpg">
 
