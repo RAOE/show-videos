@@ -1,21 +1,19 @@
 # 秀视频--后台管理系统
 #
 <blockquote>
-简介：该后台管理系统作为自己秀视频-微信小程序端-的后台管理系统，主要实现了人员的管理，短视频的管理，背景音乐的管理等等，
-从需求分析，功能设计，前端到后台，再到数据库的设计。一点点的积累，一点点的完善，预计前台+后台开发 周期一个月
+简介：该后台管理系统作为自己专科毕业设计----秀视频-微信小程序端---的后台管理系统，主要实现了人员的管理，短视频的管理，背景音乐的管理，登陆注册，权限验证，单点登陆等等。
+从需求分析，功能设计，前端到后台，再到数据库的设计。一点点的积累，一点点的完善，预计前台+后台开发 周期一个月。
 对一个开发人员来说，如果想单纯的做出这些功能，其实并不难。
 难的是对于这些功能细节的把控，项目整体的友好程度，用户的体验效果；对并发的考虑，对恶意请求，对流畅度这些细节的考虑等等。 
 </blockquote>
 
-
 # 相关技术 
  <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>
- <p>后端:springboot+ sping+springmvc+mybatis+pagehelper+mysql+redis</p>
+ <p>后端:springboot+sping+springmvc+mybatis+pagehelper+mysql+redis+shiro</p>
  <p>组件:bootsrap-table,webUploader.</p>
  <p>项目部署: docker + linux</p>
- 
+ <p>开发风格：restfull api</p>
  <p>技术栈</p>
- 
  <p>后端</p>
  <table>
 <thead>
@@ -167,14 +165,7 @@
 </tr>
 </tbody>
 </table>
-
-
-
-
-
-
  <p>页面展现:</p>
-
 1.
 <img src="./myimg/01.jpg">
 2.
@@ -185,4 +176,5 @@
 <img src="./myimg/4.jpg">
 5.
 <img src="./myimg/5.jpg">
-
+<p>前台</p>
+<img src="./video/GIF.gif">
