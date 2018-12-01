@@ -10,7 +10,7 @@
  
  <p>技术栈</p>
  
- 
+ <p>后端</p>
  <table>
 <thead>
 <tr>
@@ -69,7 +69,7 @@
 </table>
 
 
-
+<p>前端</p>
 <table>
 <thead>
 <tr>
