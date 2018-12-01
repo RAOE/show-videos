@@ -6,7 +6,6 @@ import com.show.admin.scetc.pojo.AdminUser;
 
 public interface AdminUserService {
 
-	public AdminUser findByUserName(String username);
     public List<AdminUser> queryAll();//查询全部的管理员用户
 	public AdminUser login(String username, String password);
 	

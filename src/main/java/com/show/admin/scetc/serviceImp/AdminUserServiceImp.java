@@ -22,10 +22,7 @@ public class AdminUserServiceImp implements AdminUserService {
 	@Autowired
 	private AdminUserMapper adminUserMapper;
 
-	public AdminUser findByUserName(String username) {
-		System.out.println("找到了");
-		return null;
-	}
+
 
 	public List<AdminUser> queryAll() {
 		return adminUserMapper.queryAll();
@@ -46,7 +43,7 @@ public class AdminUserServiceImp implements AdminUserService {
 		return null;
 	}
 
-	// 从数据库中一条数据
+	// 从数据库中返回一条数据
 	private AdminUser selectOne(AdminUser adminUser) {
 		return adminUserMapper.selectOne(adminUser);
 	}

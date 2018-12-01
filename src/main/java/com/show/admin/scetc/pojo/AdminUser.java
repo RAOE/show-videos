@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * 
  * @author Ray
  */
-@Table(name = "t_adminuser")
+@Table(name = "adminusers")
 public class AdminUser {
 
 	@Id

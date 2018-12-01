@@ -24,7 +24,6 @@ public class EmailUtils {
 
 	private EmailUtils() {
 	}
-
 	/**
 	 * @param session
 	 * @param requestCode
@@ -68,7 +67,6 @@ public class EmailUtils {
 				return CHECK_RESULT_FLASE;
 			}
 		}
-
 		// 验证码匹配
 		session.removeAttribute(SESSION_KEY_EMAIL_CODE);
 		session.removeAttribute(SESSION_KEY_EMAIL_REMAIN_CHECK_COUNT);

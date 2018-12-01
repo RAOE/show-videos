@@ -26,6 +26,8 @@
 	</properties>
 
 	<dependencies>
+
+		
 		<!-- spring aop支持 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

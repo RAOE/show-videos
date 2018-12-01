@@ -22,7 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
-
+//http://localhost:1010/swagger-ui.html 测试地址
     //开启swagger接口
     @Value(value = "true")
 	Boolean swaggerEnabled;	
