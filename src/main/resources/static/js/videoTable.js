@@ -180,7 +180,6 @@ var selectVideo = function() {
 			return "无符合条件的记录";
 		},
 		responseHandler : function(res) {
-			console.log(res);
 			return {
 				"total" : res.data.page, // 总页数
 				"rows" : res.data.rows // 数据
