@@ -5,4 +5,12 @@
 # 组件:bootsrap-table,webUploader.
 # 项目部署: docker + linux
 # 项目相关:前后分离的开发模式，作为自己秀视频的平台的后台管理系统，同时作为自己的毕业设计! 冲鸭 ！！！
+# 页面展现:
+
+1.
+<img src="./myimg/01.jpg">
+2.
+<img src="./myimg/02.jpg">
+3.
+<img src="./myimg/03.jpg">
 
