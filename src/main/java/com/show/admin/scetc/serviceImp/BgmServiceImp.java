@@ -75,7 +75,7 @@ public class BgmServiceImp implements BgmService {
 	}
 	@Transactional(propagation = Propagation.REQUIRED) // 事务
 	@Override
-	public synchronized void insert(Bgm bgm) {
+	public  void insert(Bgm bgm) {
 		Bgm example = bgmMapper.selectOne(bgm);
 		if (example == null) { // 先判断数据库中是否存在这个字段如果不存在则 插入
 			bgmMapper.insertSelective(bgm);
