@@ -7,6 +7,9 @@
  <p>后端:springboot+ sping+springmvc+mybatis+pagehelper+mysql+redis</p>
  <p>组件:bootsrap-table,webUploader.</p>
  <p>技术栈</p>
+ <p>项目部署: docker + linux</p>
+ 
+ 
  <table>
 <thead>
 <tr>
@@ -163,7 +166,6 @@
 
 
 
- <p>项目部署: docker + linux</p>
  <p>页面展现:</p>
 
 1.
