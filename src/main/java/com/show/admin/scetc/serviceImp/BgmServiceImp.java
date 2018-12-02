@@ -71,6 +71,7 @@ public class BgmServiceImp implements BgmService {
 		bgm = bgmMapper.selectOne(bgm);
 		String path = bgm.getPath();
 		path = filePath + path;
+		System.out.println(path);
 		File file = new File(path);
 		if (file.exists()) {
 			file.delete();

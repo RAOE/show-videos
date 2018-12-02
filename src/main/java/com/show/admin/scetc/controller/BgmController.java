@@ -2,14 +2,12 @@ package com.show.admin.scetc.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.net.URLEncoder;
 import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,7 +23,6 @@ import org.springframework.web.util.HtmlUtils;
 import com.show.admin.scetc.pojo.Bgm;
 import com.show.admin.scetc.pojo.PageResult;
 import com.show.admin.scetc.service.BgmService;
-import com.show.admin.scetc.utils.CommonUtils;
 import com.show.admin.scetc.utils.XyfJsonResult;
 
 /**
@@ -70,10 +67,12 @@ public class BgmController extends BasicController {
 
 		if (status.equals(DELETE)) {
 			bgmService.deleteBgm(id, status);
-			return new XyfJsonResult().ok();
+			new XyfJsonResult();
+			return XyfJsonResult.ok();
 		} else if (status.equals(UPDATE)) {
 			bgmService.updateBgm(id, status);
-			return new XyfJsonResult().ok();
+			new XyfJsonResult();
+			return XyfJsonResult.ok();
 		}
 		return null;
 
@@ -110,8 +109,8 @@ public class BgmController extends BasicController {
 				}
 			}
 		}
-		return new XyfJsonResult().ok();
-
+		new XyfJsonResult();
+		return XyfJsonResult.ok();
 	}
 
 }

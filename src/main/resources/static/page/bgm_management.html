@@ -65,19 +65,19 @@
 							<!-- <input class=" btn btn-outline btn-primary myuploader"
 								type="file" id="picker" /> -->
 							<button class="type btn btn-outline btn-primary" type="button"
-								id="add"  >上传</button>
+								id="add">上传</button>
 							<button class=" btn btn-danger" type="button"
 								onclick="getSelectRows(1)">
 								<i class="fa fa-remove"></i> 删除
-							</button>	
+							</button>
 							<div id="uploader" class="wu-example">
 								<!--用来存放文件信息-->
 								<div id="thelist" class="uploader-list"></div>
 								<div class="btns">
-							 	<div id="picker">选择文件</div> 
+									<div id="picker">选择文件</div>
 								</div>
 							</div>
-						
+
 						</div>
 					</div>
 				</div>
@@ -134,7 +134,14 @@
 				chunkSize : 1024 * 1024 * 4, //每一片的大小
 				chunkRetry : 100, // 如果遇到网络错误,重新上传次数
 				threads : 3, //上传并发数。允许同时最大上传进程数。
-				fileSingleSizeLimit : 5 * 1024 * 1024 * 1024
+				fileSingleSizeLimit : 5 * 1024 * 1024 * 1024,
+				// 只允许选择图片文件。
+                accept: {
+                    title: 'HTML5组态文件',
+                    extensions: 'mp3',
+                    mimeTypes: 'audio/*'
+                }
+
 			// 单个文件大小限制 5 G
 
 			});
@@ -142,20 +149,17 @@
 				$list.append('<div id="' + file.id + '" class="item">'
 						+ '<h4 class="info">' + file.name + '</h4>'
 						+ '<p class="state">等待上传...</p>' + '</div>');
-				console.info(file.ext);
 				if(file.ext=='mp3'||file.ext=='wma'||file.ext=='wav') //如果音频的格式错误就不允许上传
 				{
 				    uploader.upload();
+				    
                 }
 				else
 				{
-					$('#' + file.id).find('p.state').text('上传失败,格式错误');
+					$('#' + file.id).find('p.state').text('文件格式错误');
 				}
                 });
-      			uploader
-					.on(
-							'uploadProgress',
-							function(file, percentage) {
+      			uploader.on('uploadProgress',function(file, percentage) {
 								var $li = $('#' + file.id), $percent = $li
 										.find('.progress .progress-bar');
 
@@ -185,87 +189,14 @@
 			uploader.on('uploadComplete', function(file) {
 				$('#' + file.id).find('.progress').fadeOut();
 				$('#' + file.id).find('p.state').fadeOut();
+                				
 				
 			});
-			
-
 		});
 	</script>
-
 	<script type="text/javascript" src="../js/webuploader.js"></script>
-	<script type="text/javascript">
-		$(function() {
-			var $list = $("#thelist");
-			var $btn = $("#ctlBtn");
-			var state = 'pending'; // 上传文件初始化
-			var uploader = WebUploader.create({
-				swf : 'webuploader/Uploader.swf',
-				server : '../../bgm/addSubmit.do',
-				pick : '#picker',
-				resize : false,
-				chunked : true, //开启分片上传
-				chunkSize : 1024 * 1024 * 4, //每一片的大小
-				chunkRetry : 100, // 如果遇到网络错误,重新上传次数
-				threads : 3, //上传并发数。允许同时最大上传进程数。
-				fileSingleSizeLimit : 5 * 1024 * 1024 * 1024
-			// 单个文件大小限制 5 G
-
-			});
-			uploader.on('fileQueued', function(file) {
-				$list.append('<div id="' + file.id + '" class="item">'
-						+ '<h4 class="info">' + file.name + '</h4>'
-						+ '<p class="state">等待上传...</p>' + '</div>');
-			});
-			uploader
-					.on(
-							'uploadProgress',
-							function(file, percentage) {
-								var $li = $('#' + file.id), $percent = $li
-										.find('.progress .progress-bar');
-
-								// 避免重复创建
-								if (!$percent.length) {
-									$percent = $(
-											'<div class="progress progress-striped active">'
-													+ '<div class="progress-bar" role="progressbar" style="width: 0%">'
-													+ '</div>' + '</div>')
-											.appendTo($li)
-											.find('.progress-bar');
-								}
-								$li.find('p.state').text('上传中');
-
-								$percent.css('width', percentage * 100 + '%');
-							});
-
-			uploader.on('uploadSuccess', function(file) {
-				$('#' + file.id).find('p.state').text('已上传');
-			});
-
-			uploader.on('uploadError', function(file) {
-				$('#' + file.id).find('p.state').text('上传出错');
-			});
-
-			uploader.on('uploadComplete', function(file) {
-				$('#' + file.id).find('.progress').fadeOut();
-			});
-			$btn.on('click', function() {
-				if (state === 'uploading') {
-					uploader.stop();
-				} else {
-					uploader.upload();
-				}
-			});
-
-		});
-	</script>
-
-
-
-
-
 	<!-- 全局js -->
 	<script src="../js/jquery.min.js"></script>
-
 	<script src="../js/highlight.pack.js"></script>
 	<script>
 		hljs.initHighlightingOnLoad();
@@ -282,11 +213,8 @@
 		src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
 	<script
 		src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-	<script src="../js/bgm/bgmTable.js"></script>
-	<script type="text/javascript">
-		function addBgm() {
-			window.location.href = "../page/webUploaderDemo.html";
-		}
-	</script>
+    <script src="../js/bgm/bgmTable.js"></script>
+		
+	
 </body>
 </html>

@@ -12,7 +12,7 @@ setTimeout(function() {
 }, 100);
 
 $(document).ready(function() {
-	selectBlog();
+	selectBgm();
 });
 
 var returnAllCount = function() {
@@ -50,11 +50,11 @@ $("#toolbar .type").click(function() {
 
 // 实现点击类别传参数到后台
 $("#toolbar .btn-group .btn").click(function() {
-	selectBlogType();
+	selectBgmType();
 });
 
 // 初始化类别信息
-var selectBlogType = function() {
+var selectBgmType = function() {
 	var params = {
 		"data" : "all"
 	};
@@ -94,7 +94,7 @@ var sendType = function(type_id) {
 }
 
 // 初始化表格数据
-var selectBlog = function() {
+var selectBgm = function() {
 	$('#allBlog').bootstrapTable({
 		method : 'post',
 		url : "../../bgm/selectBgmList",
@@ -417,7 +417,7 @@ function Format(datetime, fmt) {
 }
 
 // 查看博客内容
-function selectBlogById(blogId) {
+function selectBgmById(blogId) {
 	var param = {
 		id : blogId
 	}
