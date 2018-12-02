@@ -3,6 +3,7 @@ package com.show.admin.scetc.aop;
 import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
@@ -12,6 +13,8 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
+
+import com.show.admin.scetc.pojo.AdminUser;
 
 @Aspect
 @Component
@@ -28,6 +31,9 @@ public class AopLogger {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
         // 记录下请求内容
+        AdminUser adminUser =(AdminUser) request.getSession().getAttribute("adminUser");
+        System.out.println(adminUser);
+        
         logger.info(" 记录下请求内容");
         logger.info("URL : " + request.getRequestURL().toString());
         logger.info("HTTP_METHOD : " + request.getMethod());
@@ -35,8 +41,8 @@ public class AopLogger {
         logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
         logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
     }
-	
-	
+    
+  
 	
 	
 	

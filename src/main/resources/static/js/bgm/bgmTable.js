@@ -159,10 +159,20 @@ var selectBgm = function() {
 						return '<button class="btn-xs btn-danger">垃圾</button>';
 					}
 				}
+			},{
+				title : '操作',
+				field : 'status',
+				align : 'center',
+				width : '5%',
+				formatter : function(value, row, index) {
+					
+					var a = '<a  class="  btn-sm btn-info" href='+row.videoPath+'  data-target="#myModal" ">编辑</a> ';
+                    return a;
+				}
 			},
 			
 			{
-				title : '操作',
+				title : '播放',
 				field : 'id',
 				align : 'center',
 				width : '16%',

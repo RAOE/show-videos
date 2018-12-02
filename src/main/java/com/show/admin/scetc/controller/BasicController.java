@@ -1,7 +1,11 @@
 package com.show.admin.scetc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.show.admin.scetc.utils.RedisOperator;
+
 /**
  * 
  * @author 2016wlw2 徐塬峰
@@ -15,7 +19,11 @@ public class BasicController {
 	 @Value("${bgm.upload.path}")
      public  String bgm_filePath;
 	 
+	 @Autowired
+	 public RedisOperator redis;
 	 
+	 //默认的用户的键
+	 public static final String  User_REDIS_SESSION="user-redis-session";
 	 public final String DELETE="2";//根据前端的status来判定执行什么操作
 	 public final String UPDATE="1";
 

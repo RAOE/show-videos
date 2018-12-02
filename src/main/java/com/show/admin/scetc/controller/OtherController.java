@@ -19,14 +19,6 @@ public class OtherController {
 	public void sendImageCode(HttpServletResponse response, HttpServletRequest request) {
 		ImageCodeUtils.sendImageCode(request.getSession(), response);
 	}
-	public static void main(String []args)
-	{
-		System.out.println("");
-		
-		
-	}
-	
-	
-	
+
 
 }
