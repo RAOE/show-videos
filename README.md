@@ -10,10 +10,10 @@
 
 # 相关技术 
  <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>
- <p>后端:springboot+sping+springmvc+mybatis+pagehelper+mysql+redis+shiro</p>
- <p>组件:bootsrap-table,webUploader.</p>
+ <p>后端:springboot+sping+springmvc+mybatis+mysql+redis+shiro</p>
+ <p>组件:bootsrap-table,webUploader,pagehelper</p>
  <p>项目部署: docker + linux</p>
- <p>开发风格：restfull api</p>
+ <p>开发风格：前后分离开发风格，restfull api</p>
  <p>技术栈</p>
  <p>后端</p>
  <table>
