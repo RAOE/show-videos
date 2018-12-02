@@ -53,45 +53,6 @@ $("#toolbar .btn-group .btn").click(function() {
 	selectBgmType();
 });
 
-// 初始化类别信息
-var selectBgmType = function() {
-	var params = {
-		"data" : "all"
-	};
-	$.ajax({
-		url : '../../bgm/selectBgmList',
-		type : 'post',
-		data : params,
-		dataType : 'json',
-		success : function(data) {
-			var typeName = '';
-			$(".btn-group").find(".dropdown-menu").html('');
-			for (var i = 0; i < data.length; i++) {
-				typeName += '<li><a href="javascript:void(0);" style="font-weight: bold;font-size: 13px;color: black;" onclick="sendType(' + data[i].id + ')">' + data[i].typename + '</a></li>';
-			}
-			// 初始化数据
-			$(".btn-group").find(".dropdown-menu").append(typeName);
-		},
-		error : function() {
-			swal("初始化类别错误", "请重新操作", "error");
-		}
-	});
-}
-
-// 传参数类别ID
-var sendType = function(type_id) {
-	var params = $('#allBlog').bootstrapTable('getOptions')
-	params.queryParams = function(params) {
-		return {
-			pageSize : params.limit,
-			page : (params.offset) / params.limit + 1,
-			title : $(".form-control").val(),
-			keyword : $(".form-control").val(),
-			'type.id' : type_id,
-		}
-	}
-	$('#allBlog').bootstrapTable('refresh', params)
-}
 
 // 初始化表格数据
 var selectBgm = function() {
@@ -254,13 +215,7 @@ var getSelectRows = function(status) {
 	if (status == 1) {
 		title = '确定要删除这' + date.length + '条信息吗';
 		text = '删除后前台将无法显示，请谨慎操作！';
-	} else if (status == 2) {
-		title = '确定要将这' + date.length + '条博客置顶吗';
-		text = '置顶后,将显示在前台置顶栏目';
-	} else if (status == 3) {
-		title = '确定要将这' + date.length + '条博客推荐吗';
-		text = '推荐后,将显示在前台推荐栏目';
-	}
+	} 
 	swal({
 		title : title,
 		text : text,
@@ -273,61 +228,14 @@ var getSelectRows = function(status) {
 		if (status == 1) {
 			for (var i = 0; i < date.length; i++) {
 				idArray[i] = date[i].id;
-				operationBlog(idArray[i], 2, null, null); // 参数2表示 放入回收站
-			}
-		} else if (status == 2) {
-			for (var i = 0; i < date.length; i++) {
-				idArray[i] = date[i].id;
-				operationBlog(idArray[i], null, null, 1); // 设置为置顶
-			}
-		} else if (status == 3) {
-			for (var i = 0; i < date.length; i++) {
-				idArray[i] = date[i].id;
-				operationBlog(idArray[i], null, 1, null); // 设置为推荐
+				operationBgm(idArray[i], 2, null, null); // 参数2表示 放入回收站
 			}
 		}
 	});
 };
 
-var operation = function(id, op) {
-	var title = "";
-	var text = "";
-	if (op == "还原") {
-		title = '确定要移出回收站吗';
-		text = '移出后,将显示在前台页面';
-	} else if (op == "取推荐") {
-		title = '确定要取消推荐吗';
-		text = '取消推荐后,将不会显示在前台推荐栏目';
-	} else if (op == "发表") {
-		title = '确定要发表吗';
-		text = '发表后,将显示在前台页面';
-	} else if (op == "取置顶") {
-		title = '确定要取消置顶吗';
-		text = '取消置顶后,将不会显示在前台置顶栏目';
-	}
-	swal({
-		title : title,
-		text : text,
-		type : "warning",
-		showCancelButton : true,
-		confirmButtonColor : "#DD6B55",
-		confirmButtonText : "确定",
-		closeOnConfirm : false
-	}, function() {
-		if (op == "还原") {
-			operationBlog(id, 1, null, null)
-		} else if (op == "取推荐") {
-			operationBlog(id, null, 0, null)
-		} else if (op == "发表") {
-			operationBlog(id, 1, null, null)
-		} else if (op == "取置顶") {
-			operationBlog(id, null, null, 0)
-		}
-	});
-};
-
-// 博客的操作
-var operationBlog = function(idArray, status, isrecommend, isTop) {
+// 背景音乐的操作
+var operationBgm = function(idArray, status, isrecommend, isTop) {
 	var param = '';
 	var prarm = '';
 	if (status != null) {
@@ -414,49 +322,4 @@ function Format(datetime, fmt) {
 		if (new RegExp("(" + k + ")").test(fmt))
 			fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
 	return fmt;
-}
-
-// 查看博客内容
-function selectBgmById(blogId) {
-	var param = {
-		id : blogId
-	}
-	$.ajax({
-		url : '../selectBlogById',
-		type : 'post',
-		data : param,
-		dataType : 'json',
-		success : function(data) {
-			// 查询成功
-			if (data.status == 200) {
-				$(".newsview").find(".news_title").html(data.blog.title);
-				$(".newsview").find(".au02").html(Format(data.blog.addtime, "yyyy-MM-dd hh:mm:ss"));
-				$(".au03").find('b').html(data.blog.clicknum);
-				$(".news_about").find(".news_intr").html(data.blog.introduction);
-				var keyword = '';
-				$(".newsview").find(".tags").html("");
-				if (data.blog.keyword != '' && data.blog.keyword != null) {
-					if (data.blog.keyword.search(';') != -1) {
-						var strs = new Array();
-						strs = data.blog.keyword.split(";");
-						for (var i = 0; i < strs.length && strs[i] != ''; i++) {
-							keyword += '<a href="#">' + strs[i] + '</a>';
-						}
-					} else {
-						keyword = '<a href="#">' + data.blog.keyword + '</a>';
-					}
-				}
-				$(".newsview").find(".tags").append(keyword);
-				$(".newsview").find(".news_infos").html(data.blog.content);
-				var update = '<a  class="J_menuItem btn btn-white" href="../blog/updateBlog.jsp?id=' + data.blog.id + '">编辑</a>';
-				$(".modal-footer").find(".update").html(update);
-			}
-			$('pre').each(function(i, block) {
-				hljs.highlightBlock(block);
-			});
-		},
-		error : function() {
-			swal("查询错误", "请重新操作", "error");
-		}
-	});
 }

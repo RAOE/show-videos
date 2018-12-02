@@ -64,7 +64,7 @@
 
 					</a></li>
 
-					<li><a class="J_menuItem" href="graph_morris.html"> <i
+					<li><a class="J_menuItem" th:href="@{/static/page/graph_morris.html}"> <i
 							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">统计图表</span>
 					</a> <span class="fa arrow"></span></li>
 
@@ -72,15 +72,25 @@
 							<span class="nav-label">信箱 </span><span
 							class="label label-warning pull-right">16</span></a>
 						<ul class="nav nav-second-level">
-							<li><a class="J_menuItem" href="mailbox.html">收件箱</a></li>
+							<li><a class="J_menuItem" th:href="@{/static/page/mailbox.html}">收件箱</a></li>
 							<li><a class="J_menuItem" href="mail_detail.html">查看邮件</a></li>
 							<li><a class="J_menuItem" href="mail_compose.html">写信</a></li>
 						</ul></li>
+						
+					<li><a class="J_menuItem" th:href="@{/static/page/bgm_management.html}"> <i
+							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">专栏管理</span>
+					</a> <span class="fa arrow"></span></li>	
 					<li><a class="J_menuItem" th:href="@{/static/page/bgm_management.html}"> <i
 							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">背景音乐管理</span>
 					</a> <span class="fa arrow"></span></li>
 					<li><a class="J_menuItem" th:href="@{/static/page/video_management.html}"> <i
 							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">短视频管理</span>
+					</a> <span class="fa arrow"></span></li>
+						<li><a class="J_menuItem" th:href="@{/static/page/video_management.html}"> <i
+							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">举报模块</span>
+					</a> <span class="fa arrow"></span></li>
+					<li><a class="J_menuItem" th:href="@{../adminUser/logout.do}"> <i
+							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">退出</span>
 					</a> <span class="fa arrow"></span></li>
 				</ul>
 			</div>
@@ -161,9 +171,7 @@
 									</div>
 								</li>
 							</ul></li>
-						<li class="hidden-xs"><a
-							th:href="@{/static/page/index_main.html}" class="J_menuItem"
-							data-index="0"><i class="fa fa-cart-arrow-down"></i> 购买</a></li>
+						
 						<li class="dropdown hidden-xs"><a
 							class="right-sidebar-toggle" aria-expanded="false"> <i
 								class="fa fa-tasks"></i> 主题

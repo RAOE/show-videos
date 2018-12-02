@@ -64,7 +64,8 @@ public class AdminUserController {
 			return "thymeleaf/login";
 		}
 		// 检查账号是否被禁用了
-		// 登陆成功
+		// 登陆成功,登陆成功之后更新用户的登陆时间
+		
 		request.getSession().setAttribute("adminUser", adminUser);// 将账号密码添加到session 中
 		return "thymeleaf/index";
 	}
