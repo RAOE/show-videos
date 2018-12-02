@@ -15,7 +15,7 @@
  <p>项目部署: docker + linux</p>
  <p>开发风格：前后分离开发风格，restfull api</p>
  <p>技术栈</p>
- <p>后端</p>
+ <h2>后端</h2>
  <table>
 <thead>
 <tr>
@@ -74,7 +74,7 @@
 </table>
 
 
-<p>前端</p>
+<h2>前端</h2>
 <table>
 <thead>
 <tr>
@@ -134,21 +134,8 @@
 <td>进度条</td>
 <td><a href="https://github.hubspot.com/pace/" rel="nofollow">https://github.hubspot.com/pace/</a></td>
 </tr>
-<tr>
-<td>datapicker</td>
-<td>时间选择器</td>
-<td><a href="https://jqueryui.com/datepicker/" rel="nofollow">https://jqueryui.com/datepicker/</a></td>
-</tr>
-<tr>
-<td>Font-awesome</td>
-<td>字体图标</td>
-<td><a href="http://fontawesome.io/" rel="nofollow">http://fontawesome.io/</a></td>
-</tr>
-<tr>
-<td>fancybox</td>
-<td>图片展示</td>
-<td><a href="http://fancybox.net/" rel="nofollow">http://fancybox.net/</a></td>
-</tr>
+
+
 <tr>
 <td>fakeLoader</td>
 <td>页面预加载</td>
