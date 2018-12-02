@@ -141,15 +141,6 @@
 <td>页面预加载</td>
 <td><a href="https://www.awesomes.cn/repo/joaopereirawd/fakeloader-js" rel="nofollow">https://www.awesomes.cn/repo/joaopereirawd/fakeloader-js</a></td>
 </tr>
-<tr>
-<td>content</td>
-<td>菜单栏</td>
-<td></td>
-</tr>
-<tr>
-<td>contabs</td>
-<td>选项卡</td>
-<td></td>
 </tr>
 </tbody>
 </table>
