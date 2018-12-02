@@ -62,6 +62,7 @@ public class BgmServiceImp implements BgmService {
 	public void updateBgm(Long id, String status) {
 
 	}
+
 	@Transactional(propagation = Propagation.REQUIRED) // 事务
 	@Override
 	public void deleteBgm(Long id, String status) {
@@ -76,15 +77,24 @@ public class BgmServiceImp implements BgmService {
 		}
 		bgmMapper.delete(bgm);
 	}
+
 	@Transactional(propagation = Propagation.REQUIRED) // 事务
 	@Override
-	public  void insert(Bgm bgm) {
-		Bgm example = bgmMapper.selectOne(bgm);
-		if (example == null) { // 先判断数据库中是否存在这个字段如果不存在则 插入
-			bgmMapper.insertSelective(bgm);
-		} else {
-			//存在就不执行 避免重复插入
+	public void insert(Bgm bgm) {
+		// 根据名称去查询是否存在相同的歌曲
+		List<Bgm> list = bgmMapper.selectBgmByName(bgm.getName());
+		if (list != null && list.size() > 0) {
+			Bgm example = list.get(0);
+			if (example == null) { // 先判断数据库中是否存在这个字段如果不存在则 插入
+				bgmMapper.insertSelective(bgm);
+			} else {
+			}
 		}
+		else
+		{
+			bgmMapper.insertSelective(bgm);
+		}
+
 	}
 
 }

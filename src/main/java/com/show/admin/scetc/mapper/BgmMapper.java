@@ -8,5 +8,7 @@ public interface BgmMapper extends MyMapper<Bgm> {
 
 	List<Bgm> queryAll(String keyword);
 
+	List<Bgm> selectBgmByName(String name);
+
 
 }

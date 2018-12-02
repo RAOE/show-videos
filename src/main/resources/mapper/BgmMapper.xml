@@ -3,13 +3,16 @@
 <mapper namespace="com.show.admin.scetc.mapper.BgmMapper">
 
 	<select id="queryAll" resultType="Bgm" parameterType="String">
-		select * from  bgm
+		select * from bgm
 		<if test="_parameter != null and _parameter !=''">
 			where name like '%${_parameter}%'
-		</if> 
-		order by id 
+		</if>
+		order by id
 
 	</select>
-
+	<select id="selectBgmByName" resultType="Bgm"
+		parameterType="String">
+		select * from bgm where name = #{name}
+	</select>
 
 </mapper>

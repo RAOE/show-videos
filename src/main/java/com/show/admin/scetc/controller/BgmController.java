@@ -35,7 +35,7 @@ import com.show.admin.scetc.utils.XyfJsonResult;
  */
 @RestController
 @RequestMapping("/bgm")
-public class BgmController extends BasicController{
+public class BgmController extends BasicController {
 
 	@Autowired
 	private BgmService bgmService;
@@ -66,15 +66,12 @@ public class BgmController extends BasicController{
 	}
 
 	@RequestMapping("/updateBgm")
-	public XyfJsonResult updateBgm(Long id,String status) {
+	public XyfJsonResult updateBgm(Long id, String status) {
 
-		if(status.equals(DELETE))
-		{
-			bgmService.deleteBgm(id,status);
+		if (status.equals(DELETE)) {
+			bgmService.deleteBgm(id, status);
 			return new XyfJsonResult().ok();
-		}
-		else if(status.equals(UPDATE))
-		{
+		} else if (status.equals(UPDATE)) {
 			bgmService.updateBgm(id, status);
 			return new XyfJsonResult().ok();
 		}
@@ -91,9 +88,9 @@ public class BgmController extends BasicController{
 			List<MultipartFile> MultipartFiles = multiFileMap.get(key);
 			for (MultipartFile files : MultipartFiles) {
 				String fileName = files.getOriginalFilename();
-				String fosName=UUID.randomUUID().toString()+".mp3";
-				String finalPath=bgm_filePath+fosName;
-				File saveFile = new File(finalPath);//定义背景音乐的上传路径
+				String fosName = UUID.randomUUID().toString() + ".mp3";
+				String finalPath = bgm_filePath + fosName;
+				File saveFile = new File(finalPath);// 定义背景音乐的上传路径
 				File parentFile = saveFile.getParentFile();
 				if (saveFile.exists()) {
 					saveFile.delete();
@@ -101,13 +98,13 @@ public class BgmController extends BasicController{
 					parentFile.mkdirs();
 				} else if (files.getSize() != 0 && files.getSize() > 0) {
 					FileOutputStream fos = new FileOutputStream(saveFile);
-					Bgm bgm=new Bgm();
-					fileName=HtmlUtils.htmlEscape(fileName);
+					Bgm bgm = new Bgm();
+					fileName = HtmlUtils.htmlEscape(fileName);
 					bgm.setAuthor(fileName);
 					bgm.setName(fileName);
 					bgm.setPath("\\bgm\\" + fosName);
-				    bgmService.insert(bgm);
-					IOUtils.copy(files.getInputStream(), fos);//复制流
+					bgmService.insert(bgm);
+					IOUtils.copy(files.getInputStream(), fos);// 复制流
 				} else {
 					continue;
 				}
