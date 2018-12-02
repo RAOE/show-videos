@@ -14,7 +14,7 @@
 <blockquote>
 Introduction: The background management system as its own specialized graduation project - Show Video - Wechat Small Program (Short Video Social Program), users can publish their own short videos on the small program and produce their own short videos through our filter background music, and realize the functions of praise, comment, sharing, forwarding and so on. The background management system mainly realizes personnel management, short video management, background music management, login registration, authority verification, single-point login and so on. From requirement analysis, function design, front-end to back-end, and then to database design. A little accumulation, a little improvement, the expected small program side + background management system development cycle for a month (updated daily). For a developer, it is not difficult to do these functions simply. It is difficult to control the details of these functions, the overall friendliness of the project, the user experience effect, the consideration of concurrency, malicious requests, the consideration of fluency and so on.
 </blockquote>
-# 相关技术 
+# <h2>相关技术 </h2>
  <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>
  <p>后端:springboot+sping+springmvc+mybatis+mysql+redis+shiro</p>
  <p>组件:bootsrap-table,webUploader,pagehelper</p>
@@ -154,7 +154,7 @@ Introduction: The background management system as its own specialized graduation
 </table>
 <h2>前台-小程序端(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
 <img src="./video/GIF.gif">
-<p>后台管理系统页面展现:</p>
+<h2>后台管理系统页面展现:</h2>
 1.
 <img src="./myimg/01.jpg">
 2.
