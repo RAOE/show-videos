@@ -166,7 +166,9 @@
 </tr>
 </tbody>
 </table>
- <p>页面展现:</p>
+<p>前台-小程序端(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</p>
+<img src="./video/GIF.gif">
+<p>后台管理系统页面展现:</p>
 1.
 <img src="./myimg/01.jpg">
 2.
@@ -177,5 +179,4 @@
 <img src="./myimg/4.jpg">
 5.
 <img src="./myimg/5.jpg">
-<p>前台-小程序端</p>
-<img src="./video/GIF.gif">
+
