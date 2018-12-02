@@ -1,13 +1,14 @@
 var globalCount = 0;
 $("#fakeloader").fakeLoader({
-	timeToHide : 10000, //Time in milliseconds for fakeLoader disappear
+	timeToHide : 10000, // Time in milliseconds for fakeLoader disappear
 	zIndex : 999, // Default zIndex
-	spinner : "spinner6", //Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7' 
-	bgColor : "#fff", //Hex, RGB or RGBA colors
+	spinner : "spinner6", // Options: 'spinner1', 'spinner2', 'spinner3',
+							// 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+	bgColor : "#fff", // Hex, RGB or RGBA colors
 });
 setTimeout(function() {
 	$('body').css('opacity', '1');
-	$('body').attr("class", "gray-bg") //添加样式
+	$('body').attr("class", "gray-bg") // 添加样式
 }, 100);
 
 $(document).ready(function() {
@@ -21,7 +22,7 @@ var returnAllCount = function() {
 		}, 500);
 	}
 }
-//草稿/发布...按钮绑定查询事件  
+// 草稿/发布...按钮绑定查询事件
 $("#toolbar .type").click(function() {
 	var statu;
 	var isrecommend;
@@ -47,12 +48,12 @@ $("#toolbar .type").click(function() {
 	$('#allBlog').bootstrapTable('refresh', params)
 });
 
-//实现点击类别传参数到后台
+// 实现点击类别传参数到后台
 $("#toolbar .btn-group .btn").click(function() {
 	selectBlogType();
 });
 
-//初始化类别信息
+// 初始化类别信息
 var selectBlogType = function() {
 	var params = {
 		"data" : "all"
@@ -77,7 +78,7 @@ var selectBlogType = function() {
 	});
 }
 
-//传参数类别ID
+// 传参数类别ID
 var sendType = function(type_id) {
 	var params = $('#allBlog').bootstrapTable('getOptions')
 	params.queryParams = function(params) {
@@ -92,44 +93,44 @@ var sendType = function(type_id) {
 	$('#allBlog').bootstrapTable('refresh', params)
 }
 
-//初始化表格数据
+// 初始化表格数据
 var selectBlog = function() {
 	$('#allBlog').bootstrapTable({
 		method : 'post',
 		url : "../../bgm/selectBgmList",
 		dataType : "json",
-		striped : false, //使表格带有条纹  
-		pagination : true, //在表格底部显示分页工具栏  
+		striped : false, // 使表格带有条纹
+		pagination : true, // 在表格底部显示分页工具栏
 		pageSize : 10,
 		pageNumber : 1,
 		sortStable : true,
 		sortable : true,
 		pageList : [ 10, 20, 50 ],
-		idField : "id", //标识哪个字段为id主键  
-		showToggle : false, //名片格式  
-		cardView : false, //设置为True时显示名片（card）布局  
-		showColumns : true, //显示隐藏列    
-		showRefresh : true, //显示刷新按钮  
-		//singleSelect: true,//复选框只能选择一条记录  
-		search : true, //是否显示搜索框
-		searchOnEnterKey : true, //设置为 true时，按回车触发搜索方法，否则自动触发搜索方法
-		//clickToSelect: true,//点击行即可选中单选/复选框  
-		queryParams : queryParams, //参数  
-		//showFullscreen:true,  //全屏按钮
-		//queryParamsType: "limit", //查询参数组织方式
-		sidePagination : "server", //服务端处理分页
-		silent : true, //刷新事件必须设置  
-		searchTimeOut : 500, //设置搜索超时时间
-		toolbarAlign : 'left', //工具栏对齐方式
-		buttonsAlign : 'right', //按钮对齐方式
-		toolbar : '#toolbar', //指定工作栏
+		idField : "id", // 标识哪个字段为id主键
+		showToggle : false, // 名片格式
+		cardView : false, // 设置为True时显示名片（card）布局
+		showColumns : true, // 显示隐藏列
+		showRefresh : true, // 显示刷新按钮
+		// singleSelect: true,//复选框只能选择一条记录
+		search : true, // 是否显示搜索框
+		searchOnEnterKey : true, // 设置为 true时，按回车触发搜索方法，否则自动触发搜索方法
+		// clickToSelect: true,//点击行即可选中单选/复选框
+		queryParams : queryParams, // 参数
+		// showFullscreen:true, //全屏按钮
+		// queryParamsType: "limit", //查询参数组织方式
+		sidePagination : "server", // 服务端处理分页
+		silent : true, // 刷新事件必须设置
+		searchTimeOut : 500, // 设置搜索超时时间
+		toolbarAlign : 'left', // 工具栏对齐方式
+		buttonsAlign : 'right', // 按钮对齐方式
+		toolbar : '#toolbar', // 指定工作栏
 		searchAlign : 'right',
 		// singleSelect : true,
 		contentType : "application/x-www-form-urlencoded",
 		formatLoadingMessage : function() {
 			return "请稍等，正在加载中...";
 		},
-		formatNoMatches : function() { //没有匹配的结果  
+		formatNoMatches : function() { // 没有匹配的结果
 			return "无符合条件的记录";
 		},
 		responseHandler : function(res) {
@@ -205,10 +206,12 @@ var selectBlog = function() {
 				align : 'center',
 				width : '16%',
 				formatter : function(value, row, index) {
-					//查看	
-					var a = '<audio src='+row.path+' controls  id='+row.id+'></audio> ';
+					
+					var path=row.path;
+					// 查看
+					var a = '<audio src='+path+' controls  id='+row.id+'></audio> ';
 
-					//编辑
+					// 编辑
 				    return a;
 				}
 			}
@@ -218,17 +221,17 @@ var selectBlog = function() {
 	returnAllCount();
 }
 
-//传参数到后台
+
+// 传参数到后台
 function queryParams(params) {
 	return {
 		pageSize : params.limit,
 		page : (params.offset) / params.limit + 1,
 		title : $(".form-control").val(),
 		keyword : $(".form-control").val(),
-		status : 1 //1 表示正文
+		status : 1 // 1 表示正文
 	}
 }
-
 
 
 var formatTableUnit = function(value, row, index) {
@@ -242,7 +245,7 @@ var formatTableUnit = function(value, row, index) {
 };
 
 
-//获取行号  
+// 获取行号
 var getSelectRows = function(status) {
 	var date = $("#allBlog").bootstrapTable('getSelections');
 	var idArray = new Array();
@@ -270,7 +273,7 @@ var getSelectRows = function(status) {
 		if (status == 1) {
 			for (var i = 0; i < date.length; i++) {
 				idArray[i] = date[i].id;
-				operationBlog(idArray[i], 2, null, null); //参数2表示  放入回收站
+				operationBlog(idArray[i], 2, null, null); // 参数2表示 放入回收站
 			}
 		} else if (status == 2) {
 			for (var i = 0; i < date.length; i++) {
@@ -280,7 +283,7 @@ var getSelectRows = function(status) {
 		} else if (status == 3) {
 			for (var i = 0; i < date.length; i++) {
 				idArray[i] = date[i].id;
-				operationBlog(idArray[i], null, 1, null); //设置为推荐
+				operationBlog(idArray[i], null, 1, null); // 设置为推荐
 			}
 		}
 	});
@@ -323,7 +326,7 @@ var operation = function(id, op) {
 	});
 };
 
-//博客的操作
+// 博客的操作
 var operationBlog = function(idArray, status, isrecommend, isTop) {
 	var param = '';
 	var prarm = '';
@@ -371,7 +374,7 @@ var operationBlog = function(idArray, status, isrecommend, isTop) {
 		data : param,
 		dataType : 'json',
 		success : function(data) {
-			//查询成功
+			// 查询成功
 			if (data.status == 200) {
 				$("#allBlog").bootstrapTable('refresh');
 				swal("更新成功", "", "success");
@@ -386,7 +389,7 @@ var operationBlog = function(idArray, status, isrecommend, isTop) {
 }
 
 
-//格式化时间
+// 格式化时间
 function Format(datetime, fmt) {
 	if (parseInt(datetime) == datetime) {
 		if (datetime.length == 10) {
@@ -397,13 +400,13 @@ function Format(datetime, fmt) {
 	}
 	datetime = new Date(datetime);
 	var o = {
-		"M+" : datetime.getMonth() + 1, //月份   
-		"d+" : datetime.getDate(), //日   
-		"h+" : datetime.getHours(), //小时   
-		"m+" : datetime.getMinutes(), //分   
-		"s+" : datetime.getSeconds(), //秒   
-		"q+" : Math.floor((datetime.getMonth() + 3) / 3), //季度   
-		"S" : datetime.getMilliseconds() //毫秒   
+		"M+" : datetime.getMonth() + 1, // 月份
+		"d+" : datetime.getDate(), // 日
+		"h+" : datetime.getHours(), // 小时
+		"m+" : datetime.getMinutes(), // 分
+		"s+" : datetime.getSeconds(), // 秒
+		"q+" : Math.floor((datetime.getMonth() + 3) / 3), // 季度
+		"S" : datetime.getMilliseconds() // 毫秒
 	};
 	if (/(y+)/.test(fmt))
 		fmt = fmt.replace(RegExp.$1, (datetime.getFullYear() + "").substr(4 - RegExp.$1.length));
@@ -413,7 +416,7 @@ function Format(datetime, fmt) {
 	return fmt;
 }
 
-//查看博客内容
+// 查看博客内容
 function selectBlogById(blogId) {
 	var param = {
 		id : blogId
@@ -424,7 +427,7 @@ function selectBlogById(blogId) {
 		data : param,
 		dataType : 'json',
 		success : function(data) {
-			//查询成功
+			// 查询成功
 			if (data.status == 200) {
 				$(".newsview").find(".news_title").html(data.blog.title);
 				$(".newsview").find(".au02").html(Format(data.blog.addtime, "yyyy-MM-dd hh:mm:ss"));

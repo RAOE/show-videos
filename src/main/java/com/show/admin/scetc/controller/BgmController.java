@@ -2,11 +2,14 @@ package com.show.admin.scetc.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.net.URLEncoder;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,10 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.util.HtmlUtils;
 
 import com.show.admin.scetc.pojo.Bgm;
 import com.show.admin.scetc.pojo.PageResult;
 import com.show.admin.scetc.service.BgmService;
+import com.show.admin.scetc.utils.CommonUtils;
 import com.show.admin.scetc.utils.XyfJsonResult;
 
 /**
@@ -79,14 +84,16 @@ public class BgmController extends BasicController{
 
 	// 上传提交bgm音乐
 	@PostMapping("/addSubmit.do")
-	public @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {
+	public synchronized @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		MultiValueMap<String, MultipartFile> multiFileMap = multipartRequest.getMultiFileMap();
 		for (String key : multiFileMap.keySet()) {
 			List<MultipartFile> MultipartFiles = multiFileMap.get(key);
 			for (MultipartFile files : MultipartFiles) {
 				String fileName = files.getOriginalFilename();
-				File saveFile = new File(filePath + fileName);
+				String fosName=UUID.randomUUID().toString()+".mp3";
+				String finalPath=bgm_filePath+fosName;
+				File saveFile = new File(finalPath);//定义背景音乐的上传路径
 				File parentFile = saveFile.getParentFile();
 				if (saveFile.exists()) {
 					saveFile.delete();
@@ -95,9 +102,10 @@ public class BgmController extends BasicController{
 				} else if (files.getSize() != 0 && files.getSize() > 0) {
 					FileOutputStream fos = new FileOutputStream(saveFile);
 					Bgm bgm=new Bgm();
+					fileName=HtmlUtils.htmlEscape(fileName);
 					bgm.setAuthor(fileName);
 					bgm.setName(fileName);
-					bgm.setPath("\\bgm\\" + fileName);
+					bgm.setPath("\\bgm\\" + fosName);
 				    bgmService.insert(bgm);
 					IOUtils.copy(files.getInputStream(), fos);//复制流
 				} else {
