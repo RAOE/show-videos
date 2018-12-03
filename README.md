@@ -23,6 +23,7 @@ Introduction: The background management system as its own specialized graduation
  <P>测试:swagger2</p>
  <p>开发风格：前后分离开发风格，restfull api</p>
  <p>技术栈</p>
+ </br>
  <h2>后端</h2>
  <table>
 <thead>
@@ -81,7 +82,7 @@ Introduction: The background management system as its own specialized graduation
 </tbody>
 </table>
 
-
+</br>
 <h2>前端</h2>
 <table>
 <thead>
@@ -152,8 +153,10 @@ Introduction: The background management system as its own specialized graduation
 </tr>
 </tbody>
 </table>
+</br>
 <h2>前台-小程序端(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
 <img src="./video/GIF.gif">
+</br>
 <h2>后台管理系统页面展现:</h2>
 1.
 <img src="./myimg/01.jpg">
@@ -164,5 +167,5 @@ Introduction: The background management system as its own specialized graduation
 4.
 <img src="./myimg/4.jpg">
 5.
-<img src="./myimg/5.jpg">
-
+<img src="./myimg/5.jpg"></br>
+<p>开发交流群:673926093</p>
