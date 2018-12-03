@@ -1,10 +1,7 @@
 package com.show.admin.scetc.aop;
 
 import java.util.Arrays;
-
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -33,7 +30,6 @@ public class AopLogger {
         // 记录下请求内容
         AdminUser adminUser =(AdminUser) request.getSession().getAttribute("adminUser");
         System.out.println(adminUser);
-        
         logger.info(" 记录下请求内容");
         logger.info("URL : " + request.getRequestURL().toString());
         logger.info("HTTP_METHOD : " + request.getMethod());

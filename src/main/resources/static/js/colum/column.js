@@ -3,7 +3,6 @@ $("#fakeloader").fakeLoader({
 	timeToHide : 10000, // Time in milliseconds for fakeLoader disappear
 	zIndex : 999, // Default zIndex
 	spinner : "spinner6", // Options: 'spinner1', 'spinner2', 'spinner3',
-							// 'spinner4', 'spinner5', 'spinner6', 'spinner7'
 	bgColor : "#fff", // Hex, RGB or RGBA colors
 });
 setTimeout(function() {
@@ -12,7 +11,7 @@ setTimeout(function() {
 }, 100);
 
 $(document).ready(function() {
-	selectBgm();
+	selectCategory();
 });
 
 var returnAllCount = function() {
@@ -22,43 +21,11 @@ var returnAllCount = function() {
 		}, 500);
 	}
 }
-// 草稿/发布...按钮绑定查询事件
-$("#toolbar .type").click(function() {
-	var statu;
-	var isrecommend;
-	var istop;
-	if ($(this).val() < 3)
-		statu = $(this).val();
-	if ($(this).val() == 3)
-		isrecommend = 1;
-	if ($(this).val() == 4)
-		istop = 1;
-	var params = $('#allBlog').bootstrapTable('getOptions')
-	params.queryParams = function(params) {
-		return {
-			pageSize : params.limit,
-			page : (params.offset) / params.limit + 1,
-			title : $(".form-control").val(),
-			keyword : $(".form-control").val(),
-			status : statu,
-			isrecommend : isrecommend,
-			istop : istop,
-		}
-	}
-	$('#allBlog').bootstrapTable('refresh', params)
-});
-
-// 实现点击类别传参数到后台
-$("#toolbar .btn-group .btn").click(function() {
-	selectBgmType();
-});
-
-
 // 初始化表格数据
-var selectBgm = function() {
+var selectCategory = function() {
 	$('#allBlog').bootstrapTable({
 		method : 'post',
-		url : "../../bgm/selectBgmList",
+		url : "../../category/queryAll",
 		dataType : "json",
 		striped : false, // 使表格带有条纹
 		pagination : true, // 在表格底部显示分页工具栏
@@ -95,9 +62,11 @@ var selectBgm = function() {
 			return "无符合条件的记录";
 		},
 		responseHandler : function(res) {
+		
+			console.log(res.data);
 			return {
-				"total" : res.data.page, // 总页数
-				"rows" : res.data.rows // 数据
+				"total" : res.data.length, // 总页数
+				"rows" : res.data // 数据
 			};
 		},
 		columns : [
@@ -127,7 +96,7 @@ var selectBgm = function() {
 				cellStyle : formatTableUnit,
 				formatter : function(value, row, index) {
 					var index1 = index + 1;
-					var id = '<img src="http://www.luotf.com/upload/background/2018-06-19695167.JPG" style="width:320px;height:200px">';
+					var id = '<img src='+row.path+' style="width:280px;height:180px">';
 					return id;
 				}
 			},
@@ -140,7 +109,7 @@ var selectBgm = function() {
 				cellStyle : formatTableUnit,
 				formatter : function(value, row, index) {
 					var index1 = index + 1;
-					var id = '<span title="ID:' + row.id + '">' +"美食分类"+ '</span>';
+					var id = '<span title="ID:' + row.id + '">' +row.name+ '</span>';
 					return id;
 				}
 			},
@@ -151,13 +120,9 @@ var selectBgm = function() {
 				align : 'center',
 				width : '12%',
 				formatter : function(value, row, index) {
-					if (row.status == -1) {
-						return '<button class="btn-xs btn-primary">草稿</button>';
-					} else if (row.status == 1) {
-						return '<button class="btn-xs btn-info">发布</button>';
-					} else if (row.status == 2) {
-						return '<button class="btn-xs btn-danger">垃圾</button>';
-					}
+					var index1 = index + 1;
+					var id = '<span title="ID:' + row.id + '">' +row.content+ '</span>';
+					return id;
 				}
 			},{
 				title : '操作',

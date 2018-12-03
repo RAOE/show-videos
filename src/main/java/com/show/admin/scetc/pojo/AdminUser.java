@@ -1,7 +1,6 @@
 package com.show.admin.scetc.pojo;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -135,7 +134,7 @@ public class AdminUser {
 	}
 
 	public void setLongitude(Double longitude) {
-		longitude = longitude;
+		this.longitude = longitude;
 	}
 
 	public Date getRegisterDate() {

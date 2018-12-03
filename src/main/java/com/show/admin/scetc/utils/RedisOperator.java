@@ -36,7 +36,7 @@ public class RedisOperator {
 	 * @param key
 	 * @return
 	 */
-	public List range(String key)
+	public List<String> range(String key)
 	{
 		return redisTemplate.opsForList().range(key, 0, -1);
 	}

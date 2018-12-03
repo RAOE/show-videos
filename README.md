@@ -27,21 +27,19 @@ Introduction: The background management system as its own specialized graduation
  <p>毕业设计选题环节中，系统管理员的需求为：用户管理（新增用户、删除用户及用户登录系统数据的初始化操作）、视频管理（视频分类、新增视频、对违违法视频进行删除操作）、背景音乐管理（对音乐库中音乐的增删改查）、滤镜管理（滤镜的增改）、用户管理（新增各权限级的管理员、删除管理员、对子集权限组管理员系统登录数据的初始化操作）以及消息通知（发布不同对象的系统消息、对所有消息进行查看及删除操作）</p> 
  
  <h2>项目设计</h2>
- <blockquote>
- 2.1 微信小程序端
-前台的设计、后台的管理、安全性
-前端：基于微信小程序的开发文档
-后端：基于springboot微服务架构   +   mysql数据库  +  redis缓存数据库  +  ffmpeg
-组件：wxsearch微信小程序搜索组件
-音视频工程工具+mybatis 数据持久层框架+redis数据库
-2.2 后台管理系统端
-后台管理系统的开发、安全性
-mybatis 数据持久层框架+redis数据库
-网站前端：bootstrap前端框架 + javascript + css +html +jquery +ajax+themeleaf模板引擎 
-短视频：审核、删除
-背景音乐：添加和修改
-管理员管理：用户管理、视频访问量、点击率的记载分析
-</blockquote>
+ <h2>2.1 微信小程序端</h2>
+<p>前台的设计、后台的管理、安全性</p>
+<p>前端：基于微信小程序的开发文档</p>
+<p>后端：基于springboot微服务架构   +   mysql数据库  +  redis缓存数据库  +  ffmpeg</p>
+<p>组件：wxsearch微信小程序搜索组件</p>
+<p>音视频工程工具+mybatis 数据持久层框架+redis数据库</p>
+<h2>2.2 后台管理系统端</h2>
+<p>后台管理系统的开发、安全性</p>
+<p>mybatis 数据持久层框架+redis数据库</p>
+<p>网站前端：bootstrap前端框架 + javascript + css +html +jquery +ajax+themeleaf模板引擎 </p>
+<p>短视频：审核、删除</p>
+<p>背景音乐：添加和修改</p>
+<p>管理员管理：用户管理、视频访问量、点击率的记载分析</p>
  
 <h2>3.模块设计</h2>
 <p>3.1.1 用户端模块</p>

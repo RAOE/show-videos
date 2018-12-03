@@ -2,24 +2,17 @@ package com.show.admin.scetc.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.UUID;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.show.admin.scetc.pojo.AdminUser;
 import com.show.admin.scetc.service.AdminUserService;
 import com.show.admin.scetc.utils.ImageCodeUtils;
-
-import springfox.documentation.swagger.readers.operation.OperationAuthReader;
-
 @RestController
 @RequestMapping("/adminUser")
 public class AdminUserController extends BasicController{
