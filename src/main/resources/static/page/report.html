@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:21 GMT -->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H+ 后台主题UI框架 - 收件箱</title>
+<meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+<meta name="description"
+	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+<link rel="shortcut icon" href="favicon.ico">
+<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="../css/font-awesome.min93e3.css" rel="stylesheet">
+<link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="../css/animate.min.css" rel="stylesheet">
+<link href="../css/style.min862f.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content mailbox-content">
+						<div class="file-manager">
+							<a class="btn btn-block btn-primary compose-mail"
+								href="mail_compose.html">举报模块</a>
+							<div class="space-25"></div>
+							<h5>用户类别</h5>
+							<ul class="folder-list m-b-md" style="padding: 0">
+								<li><a href="mailbox.html"> <i class="fa fa-inbox "></i>
+										收件箱 <span class="label label-warning pull-right">16</span>
+								</a></li>
+								<li><a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
+										发信
+								</a></li>
+								<li><a href="mailbox.html"> <i
+										class="fa fa-certificate"></i> 重要
+								</a></li>
+								<li><a href="mailbox.html"> <i
+										class="fa fa-file-text-o"></i> 草稿 <span
+										class="label label-danger pull-right">2</span>
+								</a></li>
+								<li><a href="mailbox.html"> <i class="fa fa-trash-o"></i>
+										垃圾箱
+								</a></li>
+							</ul>
+							<h5>快捷键</h5>
+							<ul class="category-list" style="padding: 0">
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-navy"></i> 工作
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 文档
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-primary"></i> 社交
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-info"></i> 广告
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-warning"></i> 客户端
+								</a></li>
+							</ul>
+
+							<h5 class="tag-title">标签</h5>
+							<ul class="tag-list" style="padding: 0">
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										朋友</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										工作</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										家庭</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										孩子</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										假期</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										音乐</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										照片</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										电影</a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9 animated fadeInRight">
+				<div class="mail-box-header">
+
+					<form method="get"
+						action="http://www.zi-han.net/theme/hplus/index.html"
+						class="pull-right mail-search">
+						<div class="input-group">
+							<input type="text" class="form-control input-sm" name="search"
+								placeholder="搜索邮件标题，正文等">
+							<div class="input-group-btn">
+								<button type="submit" class="btn btn-sm btn-primary">
+									搜索</button>
+							</div>
+						</div>
+					</form>
+					<h2>举报模块</h2>
+					<div class="mail-tools tooltip-demo m-t-md">
+						<div class="btn-group pull-right">
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-left"></i>
+							</button>
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-right"></i>
+							</button>
+
+						</div>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="left" title="刷新邮件列表">
+							<i class="fa fa-refresh"></i> 刷新
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为已读">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为重要">
+							<i class="fa fa-exclamation"></i>
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为垃圾邮件">
+							<i class="fa fa-trash-o"></i>
+						</button>
+
+					</div>
+				</div>
+				<div class="mail-box">
+
+					<table id="allResource" data-mobile-responsive="true"
+						class="table table-hover">
+
+						<thead>
+							<tr>
+								<th
+									style="text-align: center; vertical-align: middle; width: 5%;"
+									data-field="0" tabindex="0"><div class="th-inner ">序号</div>
+									<div class="fht-cell"></div></th>
+								<th style="text-align: center; width: 10%;" data-field="title"
+									tabindex="0"><div class="th-inner ">名称</div>
+									<div class="fht-cell"></div></th>
+								<th style="text-align: center; width: 15%;" data-field="content"
+									tabindex="0"><div class="th-inner ">内容</div>
+									<div class="fht-cell"></div></th>
+								<th style="text-align: center; width: 5%;" data-field="status"
+									tabindex="0"><div class="th-inner ">状态</div>
+									<div class="fht-cell"></div></th>
+								<th style="text-align: center; width: 15%;" data-field="addtime"
+									tabindex="0"><div class="th-inner ">发表时间</div>
+									<div class="fht-cell"></div></th>
+								<th style="text-align: center; width: 15%;" data-field="id"
+									tabindex="0"><div class="th-inner ">操作</div>
+									<div class="fht-cell"></div></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-index="0">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:41">1</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1scBXSLdiTs9SBixdkykflw"><span
+										title="密码:ck51"><span>P</span><span>y</span><span>t</span><span>h</span><span>o</span><span>n</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="Python"><span>P</span><span>y</span><span>t</span><span>h</span><span>o</span><span>n</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:15:17</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(41)"><i
+										class="fa fa-edit"></i> 查看</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(41,'Python',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="1">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:40">2</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1kWE0qZP"><span
+										title="密码:xc4q"><span>P</span><span>H</span><span>P</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="PHP视频教程"><span>P</span><span>H</span><span>P</span><span>视</span><span>频</span><span>教</span><span>程</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:14:54</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(40)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(40,'PHP',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="2">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:39">3</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1kVTdjcr"><span
+										title="密码:e37d"><span>M</span><span>y</span><span>s</span><span>q</span><span>l</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="Mysql视频教程"><span>M</span><span>y</span><span>s</span><span>q</span><span>l</span><span>视</span><span>频</span><span>教</span><span>程</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:14:10</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(39)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(39,'Mysql',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="3">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:38">4</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1nxccLg1"><span
+										title="密码:x2q8"><span>n</span><span>g</span><span>i</span><span>n</span><span>x</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="nginx视频教程"><span>n</span><span>g</span><span>i</span><span>n</span><span>x</span><span>视</span><span>频</span><span>教</span><span>程</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:13:52</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(38)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(38,'nginx',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="4">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:37">5</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1i6jwpal"><span
+										title="密码:hk6p"><span>o</span><span>r</span><span>a</span><span>c</span><span>l</span><span>e</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="oracle视频教程"><span>o</span><span>r</span><span>a</span><span>c</span><span>l</span><span>e</span><span>视</span><span>频</span><span>教</span><span>程</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:13:39</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(37)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(37,'oracle',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="5">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:36">6</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1c3EE7U4"><span
+										title="密码:7v8b"><span>m</span><span>o</span><span>n</span><span>g</span><span>o</span><span>d</span><span>b</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="mongodb数据库"><span>m</span><span>o</span><span>n</span><span>g</span><span>o</span><span>d</span><span>b</span><span>数</span><span>据</span><span>库</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:13:21</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(36)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(36,'mongodb',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="6">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:35">7</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1nwnrQxb"><span
+										title="密码:942g"><span>R</span><span>e</span><span>a</span><span>c</span><span>t</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="React"><span>R</span><span>e</span><span>a</span><span>c</span><span>t</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:13:04</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(35)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(35,'React',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="7">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:34">8</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1eTSNB5C"><span
+										title="密码:5rx7"><span>案</span><span>例</span><span>和</span><span>总</span><span>结</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="案例和总结"><span>案</span><span>例</span><span>和</span><span>总</span><span>结</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:12:47</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(34)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(34,'案例和总结',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="8">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:33">9</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/15tYBZ2yVz9aPO57LKqt7Mg"><span
+										title="密码:jrwb"><span>n</span><span>o</span><span>d</span><span>e</span><span>j</span><span>s</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="nodejs微信开发"><span>n</span><span>o</span><span>d</span><span>e</span><span>j</span><span>s</span><span>微</span><span>信</span><span>开</span><span>发</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:12:31</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(33)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(33,'nodejs',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+							<tr data-index="9">
+								<td
+									style="text-align: center; vertical-align: middle; width: 5%;"><span
+									title="ID:32">10</span></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 10%;"><a
+									href="https://pan.baidu.com/s/1scBXSLdiTs9SBixdkykflw"><span
+										title="密码:ck51"><span>P</span><span>y</span><span>t</span><span>h</span><span>o</span><span>n</span></span></a></td>
+								<td
+									style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: center; width: 15%;"><span
+									title="Python"><span>P</span><span>y</span><span>t</span><span>h</span><span>o</span><span>n</span></span></td>
+								<td style="text-align: center; width: 5%;"><button
+										class="btn-xs btn-info">上架</button></td>
+								<td style="text-align: center; width: 15%;">2018-06-23
+									12:12:17</td>
+								<td style="text-align: center; width: 15%;"><a
+									class=" btn-sm btn-info" data-toggle="modal"
+									data-target="#modal-form" onclick="selectResourceById(32)"><i
+										class="fa fa-edit"></i> 编辑</a> <a class=" btn-sm btn-danger"
+									title="下架后前台将无法展示" onclick="updateResource(32,'Python',-1)"><i
+										class="fa fa-hand-o-down"></i> 下架</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/content.min.js"></script>
+	<script src="../js/plugins/iCheck/icheck.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".i-checks").iCheck({
+				checkboxClass : "icheckbox_square-green",
+				radioClass : "iradio_square-green",
+			})
+		});
+	</script>
+	<script type="text/javascript"
+		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:22 GMT -->
+</html>

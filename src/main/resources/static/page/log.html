@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:21 GMT -->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H+ 后台主题UI框架 - 收件箱</title>
+<meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+<meta name="description"
+	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+
+<link rel="shortcut icon" href="favicon.ico">
+<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="../css/font-awesome.min93e3.css" rel="stylesheet">
+<link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="../css/animate.min.css" rel="stylesheet">
+<link href="../css/style.min862f.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content mailbox-content">
+						<div class="file-manager">
+							<a class="btn btn-block btn-primary compose-mail"
+								href="mail_compose.html">操作日志</a>
+							<div class="space-25"></div>
+							<h5>用户类别</h5>
+							<ul class="folder-list m-b-md" style="padding: 0">
+								<li><a href="mailbox.html"> <i class="fa fa-inbox "></i>
+										收件箱 <span class="label label-warning pull-right">16</span>
+								</a></li>
+								<li><a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
+										发信
+								</a></li>
+								<li><a href="mailbox.html"> <i
+										class="fa fa-certificate"></i> 重要
+								</a></li>
+								<li><a href="mailbox.html"> <i
+										class="fa fa-file-text-o"></i> 草稿 <span
+										class="label label-danger pull-right">2</span>
+								</a></li>
+								<li><a href="mailbox.html"> <i class="fa fa-trash-o"></i>
+										垃圾箱
+								</a></li>
+							</ul>
+							<h5>快捷键</h5>
+							<ul class="category-list" style="padding: 0">
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-navy"></i> 工作
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 文档
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-primary"></i> 社交
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-info"></i> 广告
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-warning"></i> 客户端
+								</a></li>
+							</ul>
+
+							<h5 class="tag-title">标签</h5>
+							<ul class="tag-list" style="padding: 0">
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										朋友</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										工作</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										家庭</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										孩子</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										假期</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										音乐</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										照片</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										电影</a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9 animated fadeInRight">
+				<div class="mail-box-header">
+
+					<form method="get"
+						action="http://www.zi-han.net/theme/hplus/index.html"
+						class="pull-right mail-search">
+						<div class="input-group">
+							<input type="text" class="form-control input-sm" name="search"
+								placeholder="搜索邮件标题，正文等">
+							<div class="input-group-btn">
+								<button type="submit" class="btn btn-sm btn-primary">
+									搜索</button>
+							</div>
+						</div>
+					</form>
+					<h2>操作日志</h2>
+					<div class="mail-tools tooltip-demo m-t-md">
+						<div class="btn-group pull-right">
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-left"></i>
+							</button>
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-right"></i>
+							</button>
+
+						</div>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="left" title="刷新邮件列表">
+							<i class="fa fa-refresh"></i> 刷新
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为已读">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为重要">
+							<i class="fa fa-exclamation"></i>
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为垃圾邮件">
+							<i class="fa fa-trash-o"></i>
+						</button>
+
+					</div>
+				</div>
+				<div class="mail-box">
+
+					<table class="table table-hover table-mail">
+						<tbody>
+							<ul>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+								<li style="animation-delay: 0s"
+									class="list-group-item  animated fadeInDown"><p
+										style="margin: 4px 0px;">
+										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
+											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
+										</strong><a class="text-info" href="#"
+											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
+										&nbsp;<strong><small class="text-muted"><i
+												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
+											title="2018/12/03 08:47:04" class="pull-right"><i
+											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
+									</p></li>
+
+							</ul>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/content.min.js"></script>
+	<script src="../js/plugins/iCheck/icheck.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".i-checks").iCheck({
+				checkboxClass : "icheckbox_square-green",
+				radioClass : "iradio_square-green",
+			})
+		});
+	</script>
+	<script type="text/javascript"
+		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:22 GMT -->
+</html>

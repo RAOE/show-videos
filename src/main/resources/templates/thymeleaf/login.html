@@ -52,11 +52,13 @@
 						placeholder="用户名" /> <input type="password" name="password"
 						class="form-control pword m-b" placeholder="密码" />
 					<div>
-						<input style="width: 100px; color: black" type="text"
-							id="user_input_verifyCode" placeholder="验证码" name="verifyCode" />
-						<img width="100" height="40" th:src="@{/other/imageCode.do}"
-							id="verifyCodeImage" onclick="changeCode()" /> <span>
-							<a id="changeVerifImageRegister" onclick="changeCode()"><br />换一张</a>
+						<input
+							style="width: 100px; height: 30px; color: black; font-size: 14px"
+							type="text" id="user_input_verifyCode" placeholder="验证码"
+							name="verifyCode" /> <img width="100" height="40"
+							th:src="@{/other/imageCode.do}" id="verifyCodeImage"
+							onclick="changeCode()" /> <span> <a
+							id="changeVerifImageRegister" onclick="changeCode()"><br />换一张</a>
 						</span>
 					</div>
 					<a href="#">忘记密码了？</a>
