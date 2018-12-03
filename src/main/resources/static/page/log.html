@@ -96,18 +96,6 @@
 			<div class="col-sm-9 animated fadeInRight">
 				<div class="mail-box-header">
 
-					<form method="get"
-						action="http://www.zi-han.net/theme/hplus/index.html"
-						class="pull-right mail-search">
-						<div class="input-group">
-							<input type="text" class="form-control input-sm" name="search"
-								placeholder="搜索邮件标题，正文等">
-							<div class="input-group-btn">
-								<button type="submit" class="btn btn-sm btn-primary">
-									搜索</button>
-							</div>
-						</div>
-					</form>
 					<h2>操作日志</h2>
 					<div class="mail-tools tooltip-demo m-t-md">
 						<div class="btn-group pull-right">
@@ -119,126 +107,18 @@
 							</button>
 
 						</div>
-						<button class="btn btn-white btn-sm" data-toggle="tooltip"
-							data-placement="left" title="刷新邮件列表">
+						<button class="btn btn-white btn-sm" data-toggle="tooltip" id="btn"
+							data-placement="left" title="刷新日志列表">
 							<i class="fa fa-refresh"></i> 刷新
 						</button>
-						<button class="btn btn-white btn-sm" data-toggle="tooltip"
-							data-placement="top" title="标为已读">
-							<i class="fa fa-eye"></i>
-						</button>
-						<button class="btn btn-white btn-sm" data-toggle="tooltip"
-							data-placement="top" title="标为重要">
-							<i class="fa fa-exclamation"></i>
-						</button>
-						<button class="btn btn-white btn-sm" data-toggle="tooltip"
-							data-placement="top" title="标为垃圾邮件">
-							<i class="fa fa-trash-o"></i>
-						</button>
+						
 
 					</div>
 				</div>
 				<div class="mail-box">
-
 					<table class="table table-hover table-mail">
 						<tbody>
-							<ul>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
-								<li style="animation-delay: 0s"
-									class="list-group-item  animated fadeInDown"><p
-										style="margin: 4px 0px;">
-										<span class="label label-info">4分钟前</span><strong>&nbsp;&nbsp;<i
-											class="fa fa-user"> 管理员&nbsp;&nbsp;&nbsp;&nbsp;</i>&nbsp;
-										</strong><a class="text-info" href="#"
-											onclick="fastToSearch('110.189.223.70')">@110.189.223.70</a>
-										&nbsp;<strong><small class="text-muted"><i
-												class="fa fa-tag"> </i> </small>登录了系统</strong><span title="admin">：admin</span><span
-											title="2018/12/03 08:47:04" class="pull-right"><i
-											class="fa fa-clock-o"> 12/03 08:47:04</i></span>
-									</p></li>
+							<ul id="parentIndustryUL">
 
 							</ul>
 
@@ -260,8 +140,34 @@
 			})
 		});
 	</script>
-	<script type="text/javascript"
-		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			queryAllLog();
+		});
+		
+		function queryAllLog() {
+			$.ajax({
+				url : '../../log/queryAll',
+				type : 'post',
+				dataType : 'json',
+				success : function(data) {
+					if (data.status == 200) {
+						$("#parentIndustryUL").html("");
+						for(var i=0;i<data.data.length;i++)
+					    {
+						$("#parentIndustryUL").append("<li style='animation-delay: 0s'class='list-group-item  animated fadeInDown'><p"+
+					    "style='margin: 4px 0px;'><span style='font-size:16px' class='label label-info'><i class='fa fa-user'>&nbsp;&nbsp;&nbsp;&nbsp;"+data.data[i]+"</span><strong>");
+					    }
+					}
+				}
+			})
+		}
+		$("#btn").click(function() {
+			queryAllLog();
+		});
+	</script>
+
+
 </body>
 
 

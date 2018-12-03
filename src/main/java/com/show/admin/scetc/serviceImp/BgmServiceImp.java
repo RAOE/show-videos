@@ -1,9 +1,6 @@
 package com.show.admin.scetc.serviceImp;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,13 +56,7 @@ public class BgmServiceImp implements BgmService {
 
 	@Transactional(propagation = Propagation.REQUIRED) // 事务
 	@Override
-	public void updateBgm(Long id, String status) {
-
-	}
-
-	@Transactional(propagation = Propagation.REQUIRED) // 事务
-	@Override
-	public void deleteBgm(Long id, String status) {
+	public void deleteBgm(Long id) {
 		Bgm bgm = new Bgm();
 		bgm.setId(id);
 		bgm = bgmMapper.selectOne(bgm);
@@ -90,11 +81,29 @@ public class BgmServiceImp implements BgmService {
 				bgmMapper.insertSelective(bgm);
 			} else {
 			}
-		}
-		else
-		{
+		} else {
 			bgmMapper.insertSelective(bgm);
 		}
+
+	}
+
+	@Override
+	public Bgm selectOne(Long id) {
+		Bgm bgm = new Bgm();
+		bgm.setId(id);
+		bgm = bgmMapper.selectOne(bgm);
+		return bgm;
+	}
+
+	@Transactional(propagation = Propagation.REQUIRED) // 事务
+	@Override
+	public void updateBgm(Long id, String author, String name) {
+		Bgm bgm = new Bgm();
+		bgm.setId(id);
+		Bgm example = bgmMapper.selectOne(bgm);
+		example.setName(name);
+		example.setAuthor(author);
+		bgmMapper.updateByPrimaryKeySelective(example);
 
 	}
 

@@ -33,7 +33,7 @@ public interface BgmService {
 	 * @param id
 	 * @param status
 	 */
-	void updateBgm(Long id, String status);
+	void updateBgm(Long id,String author,String name);
 
 	/**
 	 * 删除背景音乐
@@ -41,7 +41,7 @@ public interface BgmService {
 	 * @param id
 	 * @param status
 	 */
-	void deleteBgm(Long id, String status);
+	void deleteBgm(Long id);
 
 	/**
 	 * 插入一条bgm 到数据库
@@ -49,5 +49,11 @@ public interface BgmService {
 	 * @param bgm
 	 */
 	void insert(Bgm bgm);
+    /**
+             * 返回一条bgm信息
+     * @param id
+     * @return
+     */
+	Bgm selectOne(Long id);
 
 }

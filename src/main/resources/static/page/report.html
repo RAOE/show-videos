@@ -7,7 +7,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>H+ 后台主题UI框架 - 收件箱</title>
+<title>秀视频管理平台-投诉模块</title>
 <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
 <meta name="description"
 	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
@@ -33,60 +33,61 @@
 							<div class="space-25"></div>
 							<h5>用户类别</h5>
 							<ul class="folder-list m-b-md" style="padding: 0">
-								<li><a href="mailbox.html"> <i class="fa fa-inbox "></i>
-										收件箱 <span class="label label-warning pull-right">16</span>
+								<li><a href="mailbox.html"> 
+									<i class="fa fa-user"></i>
+										超级管理员 <span class="label label-warning pull-right"></span>
 								</a></li>
-								<li><a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
-										发信
-								</a></li>
-								<li><a href="mailbox.html"> <i
-										class="fa fa-certificate"></i> 重要
-								</a></li>
-								<li><a href="mailbox.html"> <i
-										class="fa fa-file-text-o"></i> 草稿 <span
-										class="label label-danger pull-right">2</span>
-								</a></li>
-								<li><a href="mailbox.html"> <i class="fa fa-trash-o"></i>
-										垃圾箱
+								<li><a href="mailbox.html"> 
+									<i class="fa fa-user"></i>
+										普通管理员
 								</a></li>
 							</ul>
-							<h5>快捷键</h5>
+							<h5>举报分类-快捷键</h5>
 							<ul class="category-list" style="padding: 0">
 								<li><a href="mail_compose.html#"> <i
-										class="fa fa-circle text-navy"></i> 工作
+										class="fa fa-circle text-danger"></i> 违法犯罪
 								</a></li>
 								<li><a href="mail_compose.html#"> <i
-										class="fa fa-circle text-danger"></i> 文档
+										class="fa fa-circle text-danger"></i> 引人不适
 								</a></li>
 								<li><a href="mail_compose.html#"> <i
-										class="fa fa-circle text-primary"></i> 社交
+										class="fa fa-circle text-danger"></i> 侵犯隐私 
 								</a></li>
 								<li><a href="mail_compose.html#"> <i
-										class="fa fa-circle text-info"></i> 广告
+										class="fa fa-circle text-danger"></i> 淫秽色情 
 								</a></li>
 								<li><a href="mail_compose.html#"> <i
-										class="fa fa-circle text-warning"></i> 客户端
+										class="fa fa-circle text-danger"></i> 盗用TA人作品
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 疑是自我伤害
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 恶意引导未成年人
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 垃圾广告、售卖低劣产品等
 								</a></li>
 							</ul>
 
 							<h5 class="tag-title">标签</h5>
 							<ul class="tag-list" style="padding: 0">
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										朋友</a></li>
+										违法犯罪</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										工作</a></li>
+										引人不适</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										家庭</a></li>
+										侵犯隐私</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										孩子</a></li>
+										淫秽色情</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										假期</a></li>
+										盗用TA人作品</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										音乐</a></li>
+										疑是自我伤害</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										照片</a></li>
+										恶意引导未成年人</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
-										电影</a></li>
+										垃圾广告、售卖低劣产品等</a></li>
 							</ul>
 							<div class="clearfix"></div>
 						</div>
@@ -147,22 +148,22 @@
 							<tr>
 								<th
 									style="text-align: center; vertical-align: middle; width: 5%;"
-									data-field="0" tabindex="0"><div class="th-inner ">序号</div>
+									data-field="0" tabindex="0"><div class="th-inner ">用户名称</div>
 									<div class="fht-cell"></div></th>
 								<th style="text-align: center; width: 10%;" data-field="title"
-									tabindex="0"><div class="th-inner ">名称</div>
+									tabindex="0"><div class="th-inner ">视频名称</div>
 									<div class="fht-cell"></div></th>
 								<th style="text-align: center; width: 15%;" data-field="content"
-									tabindex="0"><div class="th-inner ">内容</div>
+									tabindex="0"><div class="th-inner ">标题</div>
 									<div class="fht-cell"></div></th>
 								<th style="text-align: center; width: 5%;" data-field="status"
-									tabindex="0"><div class="th-inner ">状态</div>
+									tabindex="0"><div class="th-inner ">内容</div>
 									<div class="fht-cell"></div></th>
 								<th style="text-align: center; width: 15%;" data-field="addtime"
-									tabindex="0"><div class="th-inner ">发表时间</div>
+									tabindex="0"><div class="th-inner ">视频所属用户名称</div>
 									<div class="fht-cell"></div></th>
 								<th style="text-align: center; width: 15%;" data-field="id"
-									tabindex="0"><div class="th-inner ">操作</div>
+									tabindex="0"><div class="th-inner ">创建时间</div>
 									<div class="fht-cell"></div></th>
 							</tr>
 						</thead>

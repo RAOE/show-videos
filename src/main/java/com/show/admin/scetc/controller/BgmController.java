@@ -63,21 +63,29 @@ public class BgmController extends BasicController {
 	}
 
 	@RequestMapping("/updateBgm")
-	public XyfJsonResult updateBgm(Long id, String status) {
+	public XyfJsonResult updateBgm(Long id, String status,String author,String name) {
 
 		if (status.equals(DELETE)) {
-			bgmService.deleteBgm(id, status);
+			bgmService.deleteBgm(id);
 			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		} else if (status.equals(UPDATE)) {
-			bgmService.updateBgm(id, status);
+			bgmService.updateBgm(id,author,name);
 			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		}
 		return null;
 
 	}
-
+	@PostMapping("/selectResourceById")
+	public XyfJsonResult selectResourceById(Long id) {
+		System.out.println("当前的id"+id);
+		//根据id查询出一个背景音乐的全部信息
+	    Bgm bgm =bgmService.selectOne(id);
+		new XyfJsonResult();
+		return XyfJsonResult.ok(bgm);
+               
+	}
 	// 上传提交bgm音乐
 	@PostMapping("/addSubmit.do")
 	public synchronized @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {

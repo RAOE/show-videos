@@ -48,4 +48,11 @@ public class Bgm {
 		this.path = path;
 	}
 
+	@Override
+	public String toString() {
+		return "Bgm [id=" + id + ", author=" + author + ", name=" + name + ", path=" + path + "]";
+	}
+
+	
+	
 }

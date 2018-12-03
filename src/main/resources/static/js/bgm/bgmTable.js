@@ -22,31 +22,6 @@ var returnAllCount = function() {
 		}, 500);
 	}
 }
-// 草稿/发布...按钮绑定查询事件
-$("#toolbar .type").click(function() {
-	var statu;
-	var isrecommend;
-	var istop;
-	if ($(this).val() < 3)
-		statu = $(this).val();
-	if ($(this).val() == 3)
-		isrecommend = 1;
-	if ($(this).val() == 4)
-		istop = 1;
-	var params = $('#allBlog').bootstrapTable('getOptions')
-	params.queryParams = function(params) {
-		return {
-			pageSize : params.limit,
-			page : (params.offset) / params.limit + 1,
-			title : $(".form-control").val(),
-			keyword : $(".form-control").val(),
-			status : statu,
-			isrecommend : isrecommend,
-			istop : istop,
-		}
-	}
-	$('#allBlog').bootstrapTable('refresh', params)
-});
 
 // 实现点击类别传参数到后台
 $("#toolbar .btn-group .btn").click(function() {
@@ -166,7 +141,8 @@ var selectBgm = function() {
 				width : '5%',
 				formatter : function(value, row, index) {
 					
-					var a = '<a  class="  btn-sm btn-info" href='+row.videoPath+'  data-target="#myModal" ">编辑</a> ';
+					var a = '<button class="btn-sm btn-info" onclick="selectResourceById('+row.id+')"  data-target="#myModal" ">编辑</button> ';
+					//var b='<button id="test2" class="layui-btn">运行上述例子</button>';
                     return a;
 				}
 			},
@@ -181,7 +157,6 @@ var selectBgm = function() {
 					var path=row.path;
 					// 查看
 					var a = '<audio src='+path+' controls  id='+row.id+'></audio> ';
-
 					// 编辑
 				    return a;
 				}
@@ -192,7 +167,45 @@ var selectBgm = function() {
 	returnAllCount();
 }
 
+//弹出一个页面层
+$('#test2').on('click', function(){
+  console.log("asdsd");
+  layer.open({
+    type: 1,
+    area: ['600px', '360px'],
+    shadeClose: true, //点击遮罩关闭
+    content: '\<\div style="padding:20px;">自定义内容\<\/div>'
+  });
+});
 
+var selectResourceById = function(id) {
+	var params = {
+		id : id
+	};
+	$.ajax({
+		url : '../../bgm/selectResourceById',
+		type : 'post',
+		data : params,
+		dataType : 'json',
+		success : function(data) {
+			if (data.status == 200) {
+				var param=data.data;
+			    $("#newTitle").val(param.author);
+				$("#newContent").val(param.name);
+				$("#newLink").val(param.id);
+				var updateButton = ' <button class="btn btn-sm btn-primary pull-right m-t-n-xs" onclick="updateResource(' + param.id + ',\'' + param.name + '\',null)" type="button"><strong>提交</strong></button>'
+				$("#update").html(updateButton);
+				
+			} else if (data.status == 0) {
+				swal("查询失败", "不存在该类别信息", "error");
+			}
+		},
+		error : function() {
+			swal("查询错误", "请重新操作", "error");
+		}
+	});
+
+};
 // 传参数到后台
 function queryParams(params) {
 	return {

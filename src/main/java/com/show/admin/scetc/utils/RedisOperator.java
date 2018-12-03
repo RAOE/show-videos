@@ -1,5 +1,6 @@
 package com.show.admin.scetc.utils;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +22,6 @@ public class RedisOperator {
 	private StringRedisTemplate redisTemplate;
 	
 	// Key（键），简单的key-value操作
-
 	/**
 	 * 实现命令：TTL key，以秒为单位，返回给定 key的剩余生存时间(TTL, time to live)。
 	 * 
@@ -31,7 +31,15 @@ public class RedisOperator {
 	public long ttl(String key) {
 		return redisTemplate.getExpire(key);
 	}
-	
+	/**
+	 * 返回list数组
+	 * @param key
+	 * @return
+	 */
+	public List range(String key)
+	{
+		return redisTemplate.opsForList().range(key, 0, -1);
+	}
 	/**
 	 * 实现命令：expire 设置过期时间，单位秒
 	 * 

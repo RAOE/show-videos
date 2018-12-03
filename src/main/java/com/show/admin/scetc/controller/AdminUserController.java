@@ -1,5 +1,9 @@
 package com.show.admin.scetc.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.show.admin.scetc.pojo.AdminUser;
 import com.show.admin.scetc.service.AdminUserService;
 import com.show.admin.scetc.utils.ImageCodeUtils;
+
+import springfox.documentation.swagger.readers.operation.OperationAuthReader;
 
 @RestController
 @RequestMapping("/adminUser")
@@ -72,8 +78,13 @@ public class AdminUserController extends BasicController{
 		// 检查账号是否被禁用了
 		// 登陆成功,登陆成功之后更新用户的登陆时间
 		redis.set(User_REDIS_SESSION+adminUser.getId(), adminUser.toString());//保存账号信息到redis 缓存中
+		SimpleDateFormat formate=new SimpleDateFormat();
+		String date=formate.format(new Date());
+		redis.lpush(Operate_REDIS_SESSION,date+"&nbsp;&nbsp;&nbsp;"+adminUser.getRealName()+":登陆了系统");//存放到redis 集合中
 		request.getSession().setAttribute("adminUser", adminUser);// 将账号密码添加到session 中
 		return new ModelAndView("thymeleaf/index");
 	}
+	
+	
 
 }
