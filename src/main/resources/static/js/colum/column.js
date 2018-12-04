@@ -62,8 +62,6 @@ var selectCategory = function() {
 			return "无符合条件的记录";
 		},
 		responseHandler : function(res) {
-		
-			console.log(res.data);
 			return {
 				"total" : res.data.length, // 总页数
 				"rows" : res.data // 数据

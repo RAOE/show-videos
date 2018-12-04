@@ -37,8 +37,8 @@
 							<span><img alt="image" class="img-circle" style="width:100px;height:100px"
 								th:src="@{/static/img/face.jpg}" /></span> <a
 								data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
-								class="clear"> <span class="block m-t-xs"><strong
-										class="font-bold">徐塬峰</strong></span> <span
+								class="clear"> <span class="block m-t-xs" th:text="${adminUser.realName}"><strong
+										class="font-bold" ></strong></span> <span
 									class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
 							</span>
 							</a>
@@ -63,7 +63,6 @@
 							class="fa arrow"></span>
 
 					</a></li>
-
 					<li><a class="J_menuItem" th:href="@{/static/page/graph_morris.html}"> <i
 							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">统计图表</span>
 					</a> <span class="fa arrow"></span></li>
@@ -71,8 +70,6 @@
 					<li><a class="J_menuItem"  th:href="@{/static/page/log.html}"><i class="fa fa-envelope"></i>
 							<span class="nav-label">操作日志 </span></a>
 						</li>
-						
-					
 					<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}"> <i
 							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">专栏管理</span>
 					</a> <span class="fa arrow"></span></li>	

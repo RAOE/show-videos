@@ -13,9 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.show.admin.scetc.pojo.AdminUser;
 import com.show.admin.scetc.service.AdminUserService;
 import com.show.admin.scetc.utils.ImageCodeUtils;
+
 @RestController
 @RequestMapping("/adminUser")
-public class AdminUserController extends BasicController{
+public class AdminUserController extends BasicController {
 
 	// 返回首页
 	@Autowired
@@ -24,14 +25,14 @@ public class AdminUserController extends BasicController{
 	// 注销操作
 	@RequestMapping("/logout.do")
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
-		
-		AdminUser adminUser =(AdminUser) request.getSession().getAttribute("adminUser");
-		if(adminUser!=null) //如果存在 就从redis缓存数据库中删掉它
+
+		AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
+		if (adminUser != null) // 如果存在 就从redis缓存数据库中删掉它
 		{
-		   redis.del(User_REDIS_SESSION+adminUser.getId());
+			redis.del(User_REDIS_SESSION + adminUser.getId());
 		}
 		request.getSession().invalidate();// 销毁session 中的数据
-		return new ModelAndView( "thymeleaf/login");
+		return new ModelAndView("thymeleaf/login");
 	}
 
 	// 注销操作
@@ -70,14 +71,14 @@ public class AdminUserController extends BasicController{
 		}
 		// 检查账号是否被禁用了
 		// 登陆成功,登陆成功之后更新用户的登陆时间
-		redis.set(User_REDIS_SESSION+adminUser.getId(), adminUser.toString());//保存账号信息到redis 缓存中
-		SimpleDateFormat formate=new SimpleDateFormat();
-		String date=formate.format(new Date());
-		redis.lpush(Operate_REDIS_SESSION,date+"&nbsp;&nbsp;&nbsp;"+adminUser.getRealName()+":登陆了系统");//存放到redis 集合中
+		ModelAndView modelAndView = new ModelAndView("thymeleaf/index");
+		modelAndView.addObject("adminUser", adminUser);
+		redis.set(User_REDIS_SESSION + adminUser.getId(), adminUser.toString());// 保存账号信息到redis 缓存中
+		SimpleDateFormat formate = new SimpleDateFormat();
+		String date = formate.format(new Date());
+		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUser.getRealName() + ":登陆了系统");// 存放到redis
 		request.getSession().setAttribute("adminUser", adminUser);// 将账号密码添加到session 中
-		return new ModelAndView("thymeleaf/index");
+		return modelAndView;
 	}
-	
-	
 
 }

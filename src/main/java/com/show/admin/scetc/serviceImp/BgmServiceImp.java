@@ -43,15 +43,21 @@ public class BgmServiceImp implements BgmService {
 	@Override
 	public PageResult queryAll(Integer page, Integer pageSize, String keyword) {
 
+		System.out.println("test");
 		PageHelper.startPage(page, pageSize);
-		List<Bgm> list = bgmMapper.queryAll(keyword);
-		PageInfo<Bgm> pageList = new PageInfo<>(list);
-		PageResult pageResult = new PageResult();
-		pageResult.setPage(page);
-		pageResult.setTotal(pageList.getPages());
-		pageResult.setRows(list);
-		pageResult.setRecords(pageList.getTotal());
-		return pageResult;
+		List<Bgm> list = bgmMapper.selectAll();
+		// 3、获取分页查询后的数据
+		PageInfo<Bgm> pageInfo = new PageInfo<>(list);
+		System.out.println(pageInfo.toString());
+		// 4、封装需要返回的分页实体
+		PageResult result = new PageResult();
+		// 设置获取到的总记录数total：
+		result.setTotal(pageInfo.getPages());
+		// 设置数据集合rows：
+		result.setRows(list);
+		result.setRecords(pageInfo.getTotal());
+		result.setPage(page);
+		return result;
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED) // 事务
@@ -84,9 +90,7 @@ public class BgmServiceImp implements BgmService {
 		} else {
 			bgmMapper.insertSelective(bgm);
 		}
-
 	}
-
 	@Override
 	public Bgm selectOne(Long id) {
 		Bgm bgm = new Bgm();
@@ -94,7 +98,6 @@ public class BgmServiceImp implements BgmService {
 		bgm = bgmMapper.selectOne(bgm);
 		return bgm;
 	}
-
 	@Transactional(propagation = Propagation.REQUIRED) // 事务
 	@Override
 	public void updateBgm(Long id, String author, String name) {
@@ -104,7 +107,7 @@ public class BgmServiceImp implements BgmService {
 		example.setName(name);
 		example.setAuthor(author);
 		bgmMapper.updateByPrimaryKeySelective(example);
-
+		
 	}
 
 }

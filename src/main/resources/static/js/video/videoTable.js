@@ -181,7 +181,7 @@ var selectVideo = function() {
 		},
 		responseHandler : function(res) {
 			return {
-				"total" : res.data.page, // 总页数
+				"total" : res.data.records, // 总页数
 				"rows" : res.data.rows // 数据
 			};
 		},

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 import java.util.UUID;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
@@ -45,17 +44,18 @@ public class BgmController extends BasicController {
 	@RequestMapping("/selectBgmList")
 	public XyfJsonResult selectBgmList(String keyword,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
-			@RequestParam(value = "pageSize", required = true, defaultValue = "10") Integer pageSize) {
-		PageResult pageResult = bgmService.queryAll(page, pageSize, keyword);
-		return XyfJsonResult.ok(pageResult);
-	}
-
-	// 查询所有bgm音乐
-	@PostMapping("/queryAll")
-	public XyfJsonResult queryAll() {
-		List<Bgm> list = bgmService.queryAll();
+			@RequestParam(value = "pageSize", required = true, defaultValue = "10") Integer pageSize) 
+	{
+		PageResult list = bgmService.queryAll(page, pageSize, keyword);
 		return XyfJsonResult.ok(list);
 	}
+
+//	// 查询所有bgm音乐
+//	@PostMapping("/queryAll")
+//	public XyfJsonResult queryAll() {
+//		List<Bgm> list = bgmService.queryAll();
+//		return XyfJsonResult.ok(list);
+//	}
 
 	@RequestMapping("/add")
 	public ModelAndView add() {
