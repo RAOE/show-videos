@@ -24,8 +24,9 @@ public class Category {
 	private Date createTime;
 	@Column(name = "isDeleted")
 	private Boolean isDeleted;
-	@Column(name = "path")
-	private String path;
+	@Column(name = "imageUrl")
+	private String imageUrl;
+
 
 	public Long getId() {
 		return id;
@@ -67,18 +68,20 @@ public class Category {
 		this.isDeleted = isDeleted;
 	}
 
-	public String getPath() {
-		return path;
+	public String getImageUrl() {
+		return imageUrl;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "Category [id=" + id + ", name=" + name + ", content=" + content + ", createTime=" + createTime
-				+ ", isDeleted=" + isDeleted + ", path=" + path + "]";
+				+ ", isDeleted=" + isDeleted + ", imageUrl=" + imageUrl;
 	}
 
 }

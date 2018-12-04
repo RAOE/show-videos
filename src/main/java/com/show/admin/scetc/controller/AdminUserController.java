@@ -25,7 +25,6 @@ public class AdminUserController extends BasicController {
 	// 注销操作
 	@RequestMapping("/logout.do")
 	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
-
 		AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
 		if (adminUser != null) // 如果存在 就从redis缓存数据库中删掉它
 		{

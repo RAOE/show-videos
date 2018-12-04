@@ -94,7 +94,7 @@ var selectCategory = function() {
 				cellStyle : formatTableUnit,
 				formatter : function(value, row, index) {
 					var index1 = index + 1;
-					var id = '<img src='+row.path+' style="width:280px;height:180px">';
+					var id = '<img src='+row.imageUrl+' style="width:280px;height:180px">';
 					return id;
 				}
 			},
@@ -128,10 +128,9 @@ var selectCategory = function() {
 				align : 'center',
 				width : '5%',
 				formatter : function(value, row, index) {
-					
 					var a = '<button class="  btn-sm btn-info"   onclick="selectResourceById('+row.id+')" data-target="#myModal" ">编辑</button> ';
                     return a;
-				}
+				}s
 			},
 			
 			

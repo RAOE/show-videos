@@ -151,7 +151,7 @@ var selectVideo = function() {
 		pageNumber : 1,
 		sortStable : true,
 		sortable : true,
-		pageList : [ 10, 20, 50 ],
+		pageList : [ 10, 20, 50 ,100],
 		idField : "id", // 标识哪个字段为id主键
 		showToggle : false, // 名片格式
 		cardView : false, // 设置为True时显示名片（card）布局
