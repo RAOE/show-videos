@@ -8,7 +8,12 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.show.admin.scetc.interceptor.DemoInterceptor;
-
+import com.show.admin.scetc.interceptor.LoginInterceptor;
+/**
+ *  全局配置类webmvcconfigurerAdapter
+ * @author Ray
+ *
+ */
 
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter{
@@ -18,7 +23,9 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 	
 	@Value("${url_mapping}")
 	private String url_mapping;
-	
+	/**
+	 *  定义虚拟映射
+	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		//重写方法
@@ -28,14 +35,26 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 		addResourceLocations(url_mapping);//定义相对路径 很重要
 		//发布到
 	}
+	//用于测试用户请求的时间
 	@Bean
 	public DemoInterceptor demoInterceptor()
 	{
 		return new DemoInterceptor();
-	}
+	} 
+	//用于登陆的权限验证
+	@Bean
+	public LoginInterceptor loginInterceptor()
+	{
+		return new LoginInterceptor();
+	} 
+	//添加拦截器到项目中去
 	public void addInterceptors(InterceptorRegistry registry)
 	{
-		registry.addInterceptor(demoInterceptor());
+		registry.addInterceptor(demoInterceptor());//记录请求的时间
+		//需要配置白名单 对部分页面不进行拦截  excludePathPatterns不进行拦截的名单
+        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/adminUser/login","/other/*",
+        		"/adminUser/loginSubmit");
+
 	}
  
 	
