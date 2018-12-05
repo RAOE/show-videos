@@ -30,6 +30,7 @@ public class AopLogger {
         // 记录下请求内容
         AdminUser adminUser =(AdminUser) request.getSession().getAttribute("adminUser");
         System.out.println(adminUser);
+        logger.debug("记录下请求内容");
         logger.info(" 记录下请求内容");
         logger.info("URL : " + request.getRequestURL().toString());
         logger.info("HTTP_METHOD : " + request.getMethod());

@@ -3,7 +3,11 @@ package com.show.admin.scetc.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/**
+ * 定义背景音乐
+ * @author Ray
+ *
+ */
 @Table(name = "bgm")
 public class Bgm {
 	@Id

@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
+//扫描mapper相关的包
 @MapperScan(basePackages="com.show.admin.scetc.mapper")
 public class ScetcShowVideosAdminApplication {
 

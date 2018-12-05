@@ -25,6 +25,7 @@ public class XuYuanFengExceptionHandler {
 	@ResponseStatus(HttpStatus.OK)
 	public ModelAndView processException(RuntimeException exception) {
 		logger.info("自定义异常处理-RuntimeException");
+		logger.error(exception.getMessage());
 		ModelAndView m = new ModelAndView();
 		m.addObject("roncooException", exception.getMessage());
 		m.setViewName("error/500");
@@ -40,6 +41,7 @@ public class XuYuanFengExceptionHandler {
 	@ResponseStatus(HttpStatus.OK)
 	public ModelAndView processException(Exception exception) {
 		logger.info("自定义异常处理-Exception");
+		logger.error(exception.getMessage());
 		ModelAndView m = new ModelAndView();
 		m.addObject("roncooException", exception.getMessage());
 		m.setViewName("error/500");
