@@ -8,6 +8,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+import com.show.admin.scetc.pojo.AdminUser;
+
 public class CommonUtils {
 
 	public static boolean isEmpty(String str) {
@@ -86,6 +88,17 @@ public class CommonUtils {
 		Pattern p = Pattern.compile(regEx);
 		Matcher m = p.matcher(str);
 		return m.replaceAll("").trim();
+	}
+/**
+ * 对关键字进行脱敏处理
+ * @param adminUser
+ * @return
+ */
+	public static AdminUser formate(AdminUser adminUser) {
+		adminUser.setPassword("??????");
+		adminUser.setSalt("??????");
+		adminUser.setPhoneNumber("???????");
+		return adminUser;
 	}
 
 

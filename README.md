@@ -16,6 +16,7 @@ Introduction: The background management system as its own specialized graduation
  <p>组件:bootsrap-table,webUploader,pagehelper+layer</p>
  <p>项目部署: docker + linux</p>
  <p>中间件: zookeeper</p>
+ <p>消息队列: rabbitmq</p>
  <P>测试:swagger2</p>
  <p>开发风格：前后分离开发风格，restfull api</p>
  

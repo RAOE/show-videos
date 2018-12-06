@@ -38,7 +38,7 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
 		long startTime = (long) request.getAttribute("startTime");
 		request.removeAttribute("startTime");
 		long endTime = System.currentTimeMillis();
-		System.out.println("请求时间" + new Long(endTime - startTime) + "ms");
+		System.out.println("请求响应时间" + new Long(endTime - startTime) + "ms");
 		super.postHandle(request, response, handler, modelAndView);
 
 	}

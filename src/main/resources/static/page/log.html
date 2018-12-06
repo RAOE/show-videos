@@ -8,9 +8,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>H+ 后台主题UI框架 - 收件箱</title>
-<meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
-<meta name="description"
-	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+<meta name="keywords" content="">
+<meta name="description" content="">
 
 <link rel="shortcut icon" href="favicon.ico">
 <link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
@@ -28,8 +27,7 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-content mailbox-content">
 						<div class="file-manager">
-							<a class="btn btn-block btn-primary compose-mail"
-								href="mail_compose.html">操作日志</a>
+							<a class="btn btn-block btn-primary compose-mail" href="#">操作日志</a>
 							<div class="space-25"></div>
 							<h5>用户类别</h5>
 							<ul class="folder-list m-b-md" style="padding: 0">
@@ -39,7 +37,6 @@
 								<li><a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
 										普通管理员
 								</a></li>
-						
 							</ul>
 							<h5>日志分类</h5>
 							<ul class="category-list" style="padding: 0">
@@ -62,7 +59,7 @@
 										历史足迹</a></li>
 								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
 										操作日志</a></li>
-							
+
 							</ul>
 							<div class="clearfix"></div>
 						</div>
@@ -83,11 +80,11 @@
 							</button>
 
 						</div>
-						<button class="btn btn-white btn-sm" data-toggle="tooltip" id="btn"
-							data-placement="left" title="刷新日志列表">
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							id="btn" data-placement="left" title="刷新日志列表">
 							<i class="fa fa-refresh"></i> 刷新
 						</button>
-						
+
 
 					</div>
 				</div>
@@ -97,7 +94,7 @@
 							<ul id="parentIndustryUL">
 
 							</ul>
-
+							<a class="btn btn-block btn-primary compose-mail" onclick="queryAllCategory()">加载更多</a>
 						</tbody>
 					</table>
 				</div>
@@ -118,28 +115,38 @@
 	</script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			queryAllCategory();
+			queryAllCategory(1, 20);
 		});
-		
-		function queryAllCategory() {
+
+		function queryAllCategory(page, pageSize) {
+
+			param = {
+				page : page,
+				pageSize : pageSize,
+			};
 			$.ajax({
-				url : '../../log/queryAll',
-				type : 'post',
-				dataType : 'json',
-				success : function(data) {
-					if (data.status == 200) {
-						$("#parentIndustryUL").html("");
-						for(var i=0;i<data.data.length;i++)
-					    {
-						$("#parentIndustryUL").append("<li style='animation-delay: 0s'class='list-group-item  animated fadeInDown'><p"+
-					    "style='margin: 4px 0px;'><span style='font-size:16px' class='label label-info'><i class='fa fa-user'>&nbsp;&nbsp;&nbsp;&nbsp;"+data.data[i]+"</span><strong>");
-					    }
-					}
-				}
-			})
+						url : '../../log/queryAll',
+						data : param,
+						type : 'post',
+						dataType : 'json',
+						success : function(data) {
+							if (data.status == 200) {
+								$("#parentIndustryUL").html("");
+								for (var i = 0; i < data.data.length; i++) {
+									$("#parentIndustryUL")
+											.append(
+													"<li style='animation-delay: 0s'class='list-group-item  animated fadeInDown'><p"+
+					    "style='margin: 4px 0px;'><span style='font-size:16px' class='label label-info'><i class='fa fa-user'>&nbsp;&nbsp;&nbsp;&nbsp;"
+															+ data.data[i]
+															+ "</span><strong>");
+								}
+							}
+						}
+					})
 		}
+
 		$("#btn").click(function() {
-			queryAllCategory();
+			queryAllCategory(1, 20);
 		});
 	</script>
 

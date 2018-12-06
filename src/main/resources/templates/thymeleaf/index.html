@@ -8,8 +8,7 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 <title>秀视频后台管理系统 - 主页</title>
 <meta name="keywords" content="秀视频后台管理系统" />
-<meta name="description"
-	content="" />
+<meta name="description" content="" />
 <!--[if lt IE 9]>
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
@@ -34,11 +33,12 @@
 				<ul class="nav" id="side-menu">
 					<li class="nav-header">
 						<div class="dropdown profile-element">
-							<span><img alt="image" class="img-circle" style="width:100px;height:100px"
-								th:src="@{/static/img/face.jpg}" /></span> <a
-								data-toggle="dropdown" class="dropdown-toggle" href="#"> <span
-								class="clear"> <span class="block m-t-xs" th:text="${adminUser.realName}"><strong
-										class="font-bold" ></strong></span> <span
+							<span><img alt="image" class="img-circle"
+								style="width: 100px; height: 100px"
+								th:src="@{/static/img/face.jpg}" /></span> <a data-toggle="dropdown"
+								class="dropdown-toggle" href="#"> <span class="clear">
+									<span class="block m-t-xs" th:text="${adminUser.realName}"><strong
+										class="font-bold"></strong></span> <span
 									class="text-muted text-xs block">超级管理员<b class="caret"></b></span>
 							</span>
 							</a>
@@ -63,26 +63,34 @@
 							class="fa arrow"></span>
 
 					</a></li>
-					<li><a class="J_menuItem" th:href="@{/static/page/graph_morris.html}"> <i
+					<li><a class="J_menuItem"
+						th:href="@{/static/page/graph_morris.html}"> <i
 							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">统计图表</span>
 					</a> <span class="fa arrow"></span></li>
-					<li><a class="J_menuItem"  th:href="@{/static/page/log.html}"><i class="fa fa-envelope"></i>
-							<span class="nav-label">操作日志 </span></a>
-						</li>
-					<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}"> <i class="fa fa-list"></i> 
-					<span class="nav-label">专栏管理</span>
-					</a> <span class="fa arrow"></span></li>	
-					<li><a class="J_menuItem" th:href="@{/static/page/bgm_management.html}"> <i
+					<li><a class="J_menuItem" th:href="@{/static/page/log.html}"><i
+							class="fa fa-calendar-plus-o"></i> <span class="nav-label">操作日志 </span></a>
+					</li>
+					<li><a class="J_menuItem" th:href="@{/static/page/email.html}"><i
+							class="fa fa-envelope"></i> <span class="nav-label">邮件系统 </span></a>
+					</li>
+					<li><a class="J_menuItem"
+						th:href="@{/static/page/column_management.html}"> <i
+							class="fa fa-list"></i> <span class="nav-label">专栏管理</span>
+					</a> <span class="fa arrow"></span></li>
+					<li><a class="J_menuItem"
+						th:href="@{/static/page/bgm_management.html}"> <i
 							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">背景音乐管理</span>
 					</a> <span class="fa arrow"></span></li>
-					<li><a class="J_menuItem" th:href="@{/static/page/video_management.html}">
-					<i class="fa fa-desktop"></i> <span class="nav-label">短视频管理</span>
+					<li><a class="J_menuItem"
+						th:href="@{/static/page/video_management.html}"> <i
+							class="fa fa-desktop"></i> <span class="nav-label">短视频管理</span>
 					</a> <span class="fa arrow"></span></li>
-						<li><a class="J_menuItem" th:href="@{/static/page/report.html}"> <i class="fa fa-exclamation-circle">
-						</i> <span class="nav-label">举报模块</span>
+					<li><a class="J_menuItem"
+						th:href="@{/static/page/report.html}"> <i
+							class="fa fa-exclamation-circle"> </i> <span class="nav-label">举报模块</span>
 					</a> <span class="fa arrow"></span></li>
-					<li><a class="J_menuItem" th:href="@{../adminUser/logout.do}"> <i
-							class="fa fa fa-bar-chart-o"></i> <span class="nav-label">退出</span>
+					<li><a class="J_menuItem" th:href="@{../adminUser/logout.do}">
+							<i class="fa fa fa-bar-chart-o"></i> <span class="nav-label">退出</span>
 					</a> <span class="fa arrow"></span></li>
 				</ul>
 			</div>
@@ -163,7 +171,7 @@
 									</div>
 								</li>
 							</ul></li>
-						
+
 						<li class="dropdown hidden-xs"><a
 							class="right-sidebar-toggle" aria-expanded="false"> <i
 								class="fa fa-tasks"></i> 主题
@@ -206,8 +214,7 @@
 			</div>
 			<div class="footer">
 				<div class="pull-right">
-					&copy; 2014-2015 <a href="#" target="_blank">zihan's
-						blog</a>
+					&copy; 2014-2015 <a href="#" target="_blank">zihan's blog</a>
 				</div>
 			</div>
 		</div>

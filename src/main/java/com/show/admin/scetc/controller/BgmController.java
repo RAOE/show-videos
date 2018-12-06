@@ -2,8 +2,11 @@ package com.show.admin.scetc.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.IOUtils;
@@ -19,6 +22,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.HtmlUtils;
 
+import com.show.admin.scetc.pojo.AdminUser;
 import com.show.admin.scetc.pojo.Bgm;
 import com.show.admin.scetc.pojo.PageResult;
 import com.show.admin.scetc.service.BgmService;
@@ -89,6 +93,9 @@ public class BgmController extends BasicController {
 	// 上传提交bgm音乐
 	@PostMapping("/addSubmit.do")
 	public synchronized @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {
+		AdminUser adminUserVo =(AdminUser) request.getSession().getAttribute("adminUser");
+        
+		
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		MultiValueMap<String, MultipartFile> multiFileMap = multipartRequest.getMultiFileMap();
 		for (String key : multiFileMap.keySet()) {
@@ -112,6 +119,11 @@ public class BgmController extends BasicController {
 					bgm.setPath("\\bgm\\" + fosName);
 					bgmService.insert(bgm);
 					IOUtils.copy(files.getInputStream(), fos);// 复制流
+					//应该异步完成
+					SimpleDateFormat formate = new SimpleDateFormat();
+					String date = formate.format(new Date());
+					redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":添加了背景音乐"+fileName);// 存放到redis
+					
 				} else {
 					continue;
 				}

@@ -170,17 +170,6 @@ var selectBgm = function() {
 	returnAllCount();
 }
 
-//弹出一个页面层
-$('#test2').on('click', function(){
-  console.log("asdsd");
-  layer.open({
-    type: 1,
-    area: ['600px', '360px'],
-    shadeClose: true, //点击遮罩关闭
-    content: '\<\div style="padding:20px;">自定义内容\<\/div>'
-  });
-});
-
 var selectResourceById = function(id) {
 	var params = {
 		id : id

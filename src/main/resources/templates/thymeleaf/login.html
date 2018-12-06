@@ -29,6 +29,26 @@
 		img.src = "../other/imageCode.do?" + new Date().getTime();
 	}
 </script>
+<script type="text/javascript">
+function loginSubmit()
+{
+	$.ajax({
+		url : './adminUser/loginSumbit',
+		data : param,
+		type : 'post',
+		dataType : 'json',
+		success:function(res)
+		   {
+			console.log(res);
+	        	}
+			}
+		}
+	})
+}
+
+
+}
+</script>
 </head>
 <body class="signin">
 	<div class="signinpanel">

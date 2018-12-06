@@ -5,6 +5,10 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 定义管理员账户
  * 
