@@ -19,8 +19,6 @@ Introduction: The background management system as its own specialized graduation
  <p>消息队列: rabbitmq</p>
  <P>测试:swagger2</p>
  <p>开发风格：前后分离开发风格，restfull api</p>
- 
- 
  <h2>需求分析</h2>
  <p>用户需求</p> 
  <p>用户个人信息管理，视频的编辑（加入滤镜或者背景音乐）、上传、浏览、点赞、关注、下载、等功能。</p>
@@ -54,6 +52,9 @@ Introduction: The background management system as its own specialized graduation
 <p>3.3.1 数据库实体关系图</p>
 <p>根据系统的需求分析，毕业论文选题系统数据实体关系图，如图所示：</p>
 <img src="./myimg/er.png">
+
+<img src="./myimg/a3.jpg">
+
 
  <h2>交流</h2>
  <p>开发交流群:673926093</p>
@@ -119,7 +120,6 @@ Introduction: The background management system as its own specialized graduation
 </tr>
 </tbody>
 </table>
-
 </br>
 <h2>前端</h2>
 <table>
