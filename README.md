@@ -50,9 +50,7 @@ Introduction: The background management system as its own specialized graduation
 <p>学生界面设计布局为横向栏导航、面包屑导航及页面内容构成，横向栏导航条鼠标悬浮其背景将变色，选中栏目的背景色异于未选中背景色，面包屑导航当前栏目不可操作，可直接回值</p><p>父级栏目，页面可实现响应式布局，如图所示，为用户成功登录后页面。</p>
 <h2>3.3 数据库设计</h2>
 <p>3.3.1 数据库实体关系图</p>
-<p>根据系统的需求分析，毕业论文选题系统数据实体关系图，如图所示：</p>
-<img src="./myimg/er.png">
-
+<h2>4. 框架设计</h2>
 <img src="./myimg/a3.jpg">
 
 
@@ -194,6 +192,7 @@ Introduction: The background management system as its own specialized graduation
 </br>
 <h2>前台-小程序端效果展示(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
 <img src="./video/GIF.gif">
+
 </br>
 <h2>后台管理系统页面展现:</h2>
 1.
