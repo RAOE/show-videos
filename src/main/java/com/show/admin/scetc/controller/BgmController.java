@@ -48,18 +48,10 @@ public class BgmController extends BasicController {
 	@RequestMapping("/selectBgmList")
 	public XyfJsonResult selectBgmList(String keyword,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
-			@RequestParam(value = "pageSize", required = true, defaultValue = "10") Integer pageSize) 
-	{
+			@RequestParam(value = "pageSize", required = true, defaultValue = "10") Integer pageSize) {
 		PageResult list = bgmService.queryAll(page, pageSize, keyword);
 		return XyfJsonResult.ok(list);
 	}
-
-//	// 查询所有bgm音乐
-//	@PostMapping("/queryAll")
-//	public XyfJsonResult queryAll() {
-//		List<Bgm> list = bgmService.queryAll();
-//		return XyfJsonResult.ok(list);
-//	}
 
 	@RequestMapping("/add")
 	public ModelAndView add() {
@@ -67,14 +59,14 @@ public class BgmController extends BasicController {
 	}
 
 	@RequestMapping("/updateBgm")
-	public XyfJsonResult updateBgm(Long id, String status,String author,String name) {
+	public XyfJsonResult updateBgm(Long id, String status, String author, String name) {
 
 		if (status.equals(DELETE)) {
 			bgmService.deleteBgm(id);
 			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		} else if (status.equals(UPDATE)) {
-			bgmService.updateBgm(id,author,name);
+			bgmService.updateBgm(id, author, name);
 			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		}
@@ -83,19 +75,18 @@ public class BgmController extends BasicController {
 	}
 	@PostMapping("/selectResourceById")
 	public XyfJsonResult selectResourceById(Long id) {
-		System.out.println("当前的id"+id);
-		//根据id查询出一个背景音乐的全部信息
-	    Bgm bgm =bgmService.selectOne(id);
+		// 根据id查询出一个背景音乐的全部信息
+		Bgm bgm = bgmService.selectOne(id);
 		new XyfJsonResult();
 		return XyfJsonResult.ok(bgm);
-               
+
 	}
+
 	// 上传提交bgm音乐
 	@PostMapping("/addSubmit.do")
 	public synchronized @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {
-		AdminUser adminUserVo =(AdminUser) request.getSession().getAttribute("adminUser");
-        
-		
+		AdminUser adminUserVo = (AdminUser) request.getSession().getAttribute("adminUser");
+
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		MultiValueMap<String, MultipartFile> multiFileMap = multipartRequest.getMultiFileMap();
 		for (String key : multiFileMap.keySet()) {
@@ -119,11 +110,12 @@ public class BgmController extends BasicController {
 					bgm.setPath("\\bgm\\" + fosName);
 					bgmService.insert(bgm);
 					IOUtils.copy(files.getInputStream(), fos);// 复制流
-					//应该异步完成
+					// 应该异步完成
 					SimpleDateFormat formate = new SimpleDateFormat();
 					String date = formate.format(new Date());
-					redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":添加了背景音乐"+fileName);// 存放到redis
-					
+					redis.lpush(Operate_REDIS_SESSION,
+							date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":添加了背景音乐" + fileName);// 存放到redis
+
 				} else {
 					continue;
 				}

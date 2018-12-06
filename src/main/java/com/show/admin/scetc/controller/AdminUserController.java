@@ -63,10 +63,10 @@ public class AdminUserController extends BasicController {
 	@PostMapping("loginSubmit")
 	public ModelAndView loginSubmit(HttpServletRequest request, String username, String password, String verifyCode,
 			Model model) {
-		if (!ImageCodeUtils.checkImageCode(request.getSession(), verifyCode)) {
-			model.addAttribute("message", "验证码输入错误");
-			return new ModelAndView("thymeleaf/login");
-		}
+//		if (!ImageCodeUtils.checkImageCode(request.getSession(), verifyCode)) {
+//			model.addAttribute("message", "验证码输入错误");
+//			return new ModelAndView("thymeleaf/login");
+//		}
 		// 尝试登陆操作
 		AdminUser adminUser = adminUserService.login(username, password);
 		if (adminUser == null) {
@@ -85,7 +85,6 @@ public class AdminUserController extends BasicController {
 		redis.set(User_REDIS_SESSION + adminUserVo.getId(), adminUserVo.toString());// 保存账号信息到redis 缓存中
 		//用户操作的记录
 		//这种记录操作日志的操作不应该和登陆操作耦合到一起 ，应该异步记录
-		
 		SimpleDateFormat formate = new SimpleDateFormat();
 		String date = formate.format(new Date());
 		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":登陆了系统");// 存放到redis

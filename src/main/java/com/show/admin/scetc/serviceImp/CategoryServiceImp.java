@@ -30,6 +30,12 @@ public class CategoryServiceImp implements CategoryService {
 		return list;
 	}
 
+	@Override
+    @Transactional(propagation=Propagation.REQUIRED)
+	public void add(Category category) {
+	  categoryMapper.insert(category);
+	}
+
 	
 	
 	

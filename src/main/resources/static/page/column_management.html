@@ -62,14 +62,13 @@
 						<div id="toolbar">
 							<button class="type btn btn-outline btn-primary" type="button"
 								id="typeButton" value="5">全部</button>
-							<a href="./column_create.html"><button class="type btn btn-outline btn-primary" type="button"
-								>创建</button></a>
+
+							<a data-toggle="modal" href="./column_management.html#modal-form"><button
+									class="type btn btn-outline btn-primary" type="button">发布</button></a>
 							<button class=" btn btn-danger" type="button"
 								onclick="getSelectRows(1)">
-								<i class="fa fa-remove"></i> 下架 
+								<i class="fa fa-remove"></i> 下架
 							</button>
-							
-
 						</div>
 					</div>
 				</div>
@@ -107,24 +106,77 @@
 				</div>
 			</div>
 		</div>
-		
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/highlight.pack.js"></script>
-	<script>
-		hljs.initHighlightingOnLoad();
-	</script>
-	<script src="../js/bootstrap.min.js"></script>
-	<!-- 自定义js -->
-	<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
-	<script src="../js/contabs.js"></script>
-	<script src="../js/fakeLoader.min.js"></script>
-	<!-- Bootstrap table -->
-	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-	<script
-		src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-	<script
-		src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-	<script src="../js/colum/column.js"></script>
+
+
+		<div id="modal-form" class="modal fade" aria-hidden="true">
+			<div class="modal-dialog">
+				<!-- 创建专栏 -->
+				<div class="ibox-content"> 
+					<form enctype="multipart/form-data"  id="myform" method="post" class="form-horizontal" action="../../category/add">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">专栏名称</label>
+							<div class="col-sm-10">
+								<input name="name" type="text" class="form-control">
+							</div>
+						</div>
+						<div class="hr-line-dashed"></div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">简介</label>
+							<div class="col-sm-10">
+								<input name="description" type="text" class="form-control">
+							</div>
+						</div>
+						
+						<label for="jobData" class="control-label"
+							style="float: left; padding-left: 15px;">任务数据</label>
+
+						<div class="col-xs-12 col-sm-4 col-md-4">
+							<div class="file-container"
+								style="display: inline-block; position: relative; overflow: hidden; vertical-align: middle">
+								<button class="btn btn-success fileinput-button" type="button">选择图片</button>
+								<input type="file" id="jobData" 
+								 name="file"
+									onchange="loadFile(this.files[0])"
+									style="position: absolute; top: 0; left: 0; font-size: 34px; opacity: 0">
+							</div>
+							<span id="filename" style="vertical-align: middle">未上传文件</span>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-4 col-sm-offset-2">
+								<button class="btn btn-primary" type="submit" id="check">提交内容</button>
+								<button class="btn btn-white" type="submit">取消</button>
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+			</div>
+		</div>
 	
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/highlight.pack.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- 自定义js -->
+		<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+		<script src="../js/contabs.js"></script>
+		<script src="../js/fakeLoader.min.js"></script>
+		<!-- Bootstrap table -->
+		<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script
+			src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script
+			src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="../js/colum/column.js"></script>
+			<script>
+			function loadFile(file) {
+				$("#filename").html(file.name);
+			}		
+		</script>
+		
 </body>
 </html>
