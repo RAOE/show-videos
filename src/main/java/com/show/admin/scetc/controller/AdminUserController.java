@@ -66,12 +66,11 @@ public class AdminUserController extends BasicController {
 //			model.addAttribute("message", "验证码输入错误");
 //			return new ModelAndView("thymeleaf/login");
 //		}
-	    System.out.println("尝试登陆操作");
 		// 尝试登陆操作
 		AdminUser adminUser = adminUserService.login(username, password);
 		if (adminUser == null) {
 			// 登陆失败
-			model.addAttribute("message", "账号密码错误");
+			request.setAttribute("message", "账号密码错误");
 			return new XyfJsonResult().errorMsg("账号密码错误");
 		}
 		// 检查账号是否被禁用了

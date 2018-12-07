@@ -46,7 +46,7 @@
 				</div>
 			</div>
 			<div class="col-sm-5">
-				<form id="myform" method="post" action="#">
+				<form id="myform"  action="#">
 					<h4 class="no-margins">登录：</h4>
 					<p class="m-t-md">登录到秀视频平台</p>
 					<input type="text" name="username" class="form-control uname"
@@ -64,7 +64,7 @@
 					</div>
 					<a href="#">忘记密码了？</a>
 					<button class="btn btn-success btn-block" onclick="loginSubmit()">登录</button>
-					<p style="color: red" th:text="${message}"></p>
+					<p style="color: red" id="message"></p>
 				</form>
 			</div>
 		</div>
@@ -77,7 +77,6 @@
 <script th:src="@{/static/js/jquery-2.1.1.min.js}"></script>
 <script type="text/javascript">
 	//登出
-	
 	function loginSubmit() {
 		$.ajax({
 			url : '../adminUser/loginSubmit',
