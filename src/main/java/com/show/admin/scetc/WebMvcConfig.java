@@ -53,7 +53,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 		registry.addInterceptor(demoInterceptor());//记录请求的时间
 		//需要配置白名单 对部分页面不进行拦截  excludePathPatterns不进行拦截的名单
         registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/adminUser/login","/other/*",
-        		"/adminUser/loginSubmit");
+        		"/adminUser/loginSubmit","/adminUser/logout.do");
 
 	}
  

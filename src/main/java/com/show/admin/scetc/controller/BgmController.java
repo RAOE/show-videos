@@ -70,7 +70,7 @@ public class BgmController extends BasicController {
 			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		}
-		return null;
+		return new XyfJsonResult().errorMsg("参数错误");
 
 	}
 	@PostMapping("/selectResourceById")

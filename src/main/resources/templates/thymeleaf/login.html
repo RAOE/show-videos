@@ -29,26 +29,7 @@
 		img.src = "../other/imageCode.do?" + new Date().getTime();
 	}
 </script>
-<script type="text/javascript">
-function loginSubmit()
-{
-	$.ajax({
-		url : './adminUser/loginSumbit',
-		data : param,
-		type : 'post',
-		dataType : 'json',
-		success:function(res)
-		   {
-			console.log(res);
-	        	}
-			}
-		}
-	})
-}
 
-
-}
-</script>
 </head>
 <body class="signin">
 	<div class="signinpanel">
@@ -65,7 +46,7 @@ function loginSubmit()
 				</div>
 			</div>
 			<div class="col-sm-5">
-				<form method="post" action="./loginSubmit">
+				<form id="myform" method="post" action="#">
 					<h4 class="no-margins">登录：</h4>
 					<p class="m-t-md">登录到秀视频平台</p>
 					<input type="text" name="username" class="form-control uname"
@@ -82,7 +63,7 @@ function loginSubmit()
 						</span>
 					</div>
 					<a href="#">忘记密码了？</a>
-					<button class="btn btn-success btn-block">登录</button>
+					<button class="btn btn-success btn-block" onclick="loginSubmit()">登录</button>
 					<p style="color: red" th:text="${message}"></p>
 				</form>
 			</div>
@@ -92,4 +73,26 @@ function loginSubmit()
 		</div>
 	</div>
 </body>
+
+<script th:src="@{/static/js/jquery-2.1.1.min.js}"></script>
+<script type="text/javascript">
+	//登出
+	
+	function loginSubmit() {
+		$.ajax({
+			url : '../adminUser/loginSubmit',
+			data : $('#myform').serialize(),
+			type : 'post',
+			dataType : 'json',
+			success : function(res) {
+				if (res.status == 200) {
+					window.location.href = "../index";
+				} else {
+					alert("登陆失败");
+				}
+
+			}
+		})
+	}
+</script>
 </html>

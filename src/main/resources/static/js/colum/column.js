@@ -63,8 +63,8 @@ var selectCategory = function() {
 		},
 		responseHandler : function(res) {
 			return {
-				"total" : res.data.length, // 总页数
-				"rows" : res.data // 数据
+				"total" :res.data.records, // 总页数
+				"rows" : res.data.rows // 数据
 			};
 		},
 		columns : [
@@ -145,14 +145,13 @@ var selectResourceById = function(id) {
 		id : id
 	};
 	$.ajax({
-		url : '../../bgm/selectResourceById',
+		url : '../../category/selectResourceById',
 		type : 'post',
 		data : params,
 		dataType : 'json',
 		success : function(data) {
 			if (data.status == 200) {
 				var param=data.data;
-			    console.info(param);
 				$("#newTitle").val(param.author);
 				$("#newContent").val(param.name);
 				$("#newLink").val(param.id);
@@ -198,7 +197,8 @@ var getSelectRows = function(status) {
 	var idArray = new Array();
 	var title = '';
 	var text = '';
-	if (status == 1) {
+	
+	if (status == 2) {
 		title = '确定要删除这' + date.length + '条信息吗';
 		text = '删除后前台将无法显示，请谨慎操作！';
 	} 
@@ -214,13 +214,19 @@ var getSelectRows = function(status) {
 		if (status == 1) {
 			for (var i = 0; i < date.length; i++) {
 				idArray[i] = date[i].id;
-				operationBgm(idArray[i], 2, null, null); // 参数2表示 放入回收站
+				operationBgm(idArray[i], 1, null, null); // 参数1表示 放入回收站
 			}
 		}
+		else if (status == 2) {
+			for (var i = 0; i < date.length; i++) {
+				idArray[i] = date[i].id;
+				operationBgm(idArray[i], 2, null, null); // 参数2表示 删除
+			}
+		}
+		
 	});
 };
 
-// 背景音乐的操作
 var operationBgm = function(idArray, status, isrecommend, isTop) {
 	var param = '';
 	var prarm = '';
@@ -263,7 +269,7 @@ var operationBgm = function(idArray, status, isrecommend, isTop) {
 		};
 	}
 	$.ajax({
-		url : '../../bgm/updateBgm',
+		url : '../../category/updateCategory',
 		type : 'post',
 		data : param,
 		dataType : 'json',

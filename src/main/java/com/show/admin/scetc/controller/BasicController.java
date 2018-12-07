@@ -27,7 +27,8 @@ public class BasicController {
 	 public static final String  Operate_REDIS_SESSION="operate_redis_session";
 
 	 public final String DELETE="2";//根据前端的status来判定执行什么操作
-	 public final String UPDATE="1";
+	 public final String UPDATE="1";//更新操作
+
 
 	
 	

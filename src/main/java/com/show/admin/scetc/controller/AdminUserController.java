@@ -29,19 +29,18 @@ public class AdminUserController extends BasicController {
 	private AdminUserService adminUserService;
 
 	// 注销操作
-	@RequestMapping("/logout.do")
-	public ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
+	@PostMapping("/logout")
+	public XyfJsonResult logout(HttpServletRequest request, HttpServletResponse response) {
 		AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
 		if (adminUser != null) // 如果存在 就从redis缓存数据库中删掉它
 		{
 			redis.del(User_REDIS_SESSION + adminUser.getId());
 		}
 		request.getSession().invalidate();// 销毁session 中的数据
-		return new ModelAndView("thymeleaf/login");
+        return new XyfJsonResult().ok();
 	}
-
-	// 注销操作
-	@RequestMapping("/forgetPassword.do")
+	// 忘记密码操作操作
+	@RequestMapping("/forgetPassword")
 	public String forgetPassword(HttpServletRequest request, HttpServletResponse response) {
 
 		return "thymeleaf/forgetPassword";
@@ -60,26 +59,25 @@ public class AdminUserController extends BasicController {
 	 * @param verifyCode
 	 * @return
 	 */
-	@PostMapping("loginSubmit")
-	public ModelAndView loginSubmit(HttpServletRequest request, String username, String password, String verifyCode,
+	@PostMapping("/loginSubmit")
+	public XyfJsonResult loginSubmit(HttpServletRequest request, String username, String password, String verifyCode,
 			Model model) {
 //		if (!ImageCodeUtils.checkImageCode(request.getSession(), verifyCode)) {
 //			model.addAttribute("message", "验证码输入错误");
 //			return new ModelAndView("thymeleaf/login");
 //		}
+	    System.out.println("尝试登陆操作");
 		// 尝试登陆操作
 		AdminUser adminUser = adminUserService.login(username, password);
 		if (adminUser == null) {
 			// 登陆失败
 			model.addAttribute("message", "账号密码错误");
-			return new ModelAndView("thymeleaf/login");
+			return new XyfJsonResult().errorMsg("账号密码错误");
 		}
 		// 检查账号是否被禁用了
 		// 登陆成功,登陆成功之后更新用户的登陆时间
-		ModelAndView modelAndView = new ModelAndView("thymeleaf/index");
 		//在这里不应该把带有用户账户密码的实体类放到redis 中应该放入需要的信息
 		//封装之后放入redis 缓存数据库中 
-		modelAndView.addObject("adminUser", adminUser);
         AdminUser adminUserVo=CommonUtils.formate(adminUser);		
 		
 		redis.set(User_REDIS_SESSION + adminUserVo.getId(), adminUserVo.toString());// 保存账号信息到redis 缓存中
@@ -89,9 +87,8 @@ public class AdminUserController extends BasicController {
 		String date = formate.format(new Date());
 		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":登陆了系统");// 存放到redis
 		
-		
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
-		return modelAndView;
+		return new XyfJsonResult().ok();
 	}
 	
 

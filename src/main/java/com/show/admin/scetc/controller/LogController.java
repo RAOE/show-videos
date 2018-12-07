@@ -10,7 +10,7 @@ import com.show.admin.scetc.utils.CommonUtils;
 import com.show.admin.scetc.utils.XyfJsonResult;
 
 /**
- * 
+ * 日志
  * @author Ray
  *
  */

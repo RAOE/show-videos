@@ -11,7 +11,7 @@ import com.show.admin.scetc.service.VideoService;
 import com.show.admin.scetc.utils.XyfJsonResult;
 
 /**
- * 
+ * 视频操作
  * @author Ray
  *
  */

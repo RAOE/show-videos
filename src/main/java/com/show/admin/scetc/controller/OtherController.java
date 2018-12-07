@@ -15,6 +15,11 @@ import com.show.admin.scetc.utils.ImageCodeUtils;
 @RequestMapping("other")
 public class OtherController {
 
+	/**
+	 * 图片验证码
+	 * @param response
+	 * @param request
+	 */
 	@RequestMapping("/imageCode.do")
 	public void sendImageCode(HttpServletResponse response, HttpServletRequest request) {
 		ImageCodeUtils.sendImageCode(request.getSession(), response);

@@ -65,9 +65,10 @@
 
 							<a data-toggle="modal" href="./column_management.html#modal-form"><button
 									class="type btn btn-outline btn-primary" type="button">发布</button></a>
+						
 							<button class=" btn btn-danger" type="button"
-								onclick="getSelectRows(1)">
-								<i class="fa fa-remove"></i> 下架
+								onclick="getSelectRows(2)">
+								<i class="fa fa-remove"></i> 删除
 							</button>
 						</div>
 					</div>
@@ -106,13 +107,12 @@
 				</div>
 			</div>
 		</div>
-
-
 		<div id="modal-form" class="modal fade" aria-hidden="true">
 			<div class="modal-dialog">
 				<!-- 创建专栏 -->
-				<div class="ibox-content"> 
-					<form enctype="multipart/form-data"  id="myform" method="post" class="form-horizontal" action="../../category/add">
+				<div class="ibox-content">
+					<form enctype="multipart/form-data" id="myform" method="post"
+						class="form-horizontal" action="../../category/add">
 						<div class="form-group">
 							<label class="col-sm-2 control-label">专栏名称</label>
 							<div class="col-sm-10">
@@ -126,7 +126,7 @@
 								<input name="description" type="text" class="form-control">
 							</div>
 						</div>
-						
+
 						<label for="jobData" class="control-label"
 							style="float: left; padding-left: 15px;">任务数据</label>
 
@@ -134,8 +134,7 @@
 							<div class="file-container"
 								style="display: inline-block; position: relative; overflow: hidden; vertical-align: middle">
 								<button class="btn btn-success fileinput-button" type="button">选择图片</button>
-								<input type="file" id="jobData" 
-								 name="file"
+								<input type="file" id="jobData" name="file"
 									onchange="loadFile(this.files[0])"
 									style="position: absolute; top: 0; left: 0; font-size: 34px; opacity: 0">
 							</div>
@@ -154,7 +153,7 @@
 
 			</div>
 		</div>
-	
+
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/highlight.pack.js"></script>
 		<script>
@@ -172,11 +171,10 @@
 		<script
 			src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 		<script src="../js/colum/column.js"></script>
-			<script>
+		<script>
 			function loadFile(file) {
 				$("#filename").html(file.name);
-			}		
+			}
 		</script>
-		
 </body>
 </html>

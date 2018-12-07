@@ -9,7 +9,7 @@
 <title>秀视频后台管理系统 - 主页</title>
 <meta name="keywords" content="秀视频后台管理系统" />
 <meta name="description" content="" />
-<!--[if lt IE 9]>
+<!--[if lt IE 9]>logout
     <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
 <link rel="shortcut icon" href="favicon.ico"></link>
@@ -52,7 +52,7 @@
 								<li><a class="J_menuItem"
 									th:href="@{/static/page/mailbox.html}">信箱</a></li>
 								<li class="divider"></li>
-								<li><a href="./logout.do">安全退出</a></li>
+								<li><a onclick="logout()">安全退出</a></li>
 							</ul>
 						</div>
 						<div class="logo-element">Show</div>
@@ -90,8 +90,8 @@
 						th:href="@{/static/page/report.html}"> <i
 							class="fa fa-exclamation-circle"> </i> <span class="nav-label">举报模块</span>
 					</a> <span class="fa arrow"></span></li>
-					<li><a class="J_menuItem" th:href="@{../adminUser/logout.do}">
-							<i class="fa fa fa-bar-chart-o"></i> <span class="nav-label">退出</span>
+					<li><a class="J_menuItem" onclick="logout()"> 
+							<i class="fa fa fa-bar-chart-o"></i> <span  >退出</span>
 					</a> <span class="fa arrow"></span></li>
 				</ul>
 			</div>
@@ -205,7 +205,7 @@
 						<li class="J_tabCloseOther"><a>关闭其他选项卡</a></li>
 					</ul>
 				</div>
-				<a href="/adminUser/logout.do" class="roll-nav roll-right J_tabExit"><i
+				<a onclick="logout()" class="roll-nav roll-right J_tabExit"><i
 					class="fa fa fa-sign-out"></i> 退出</a>
 			</div>
 			<div class="row J_mainContent" id="content-main">
@@ -561,7 +561,24 @@
 	<script type="text/javascript" th:src="@{/static/js/contabs.min.js}"></script>
 	<script th:src="@{/static/js/plugins/pace/pace.min.js}"></script>
 </body>
+<script type="text/javascript">
 
+function logout() {
+	$.ajax({
+		url : "../adminUser/logout",
+		type : "post",
+		success : function(res) {
+			if (res.status == 200) {
+				window.location.href = "../adminUser/login";
+			} else {
+				alert("登出失败");
+			}
+
+		}
+	})
+
+}
+</script>
 
 <!-- Mirrored from www.zi-han.net/theme/hplus/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:17:11 GMT -->
 </html>
