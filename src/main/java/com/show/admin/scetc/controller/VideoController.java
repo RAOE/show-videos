@@ -51,7 +51,6 @@ public class VideoController extends BasicController{
 	public XyfJsonResult updateVideo(String status,String id) {
 		
 		videoService.update(id,status);
-        System.out.println("id:"+id+"status"+status);		
 		return XyfJsonResult.ok();
 	}
 

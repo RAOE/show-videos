@@ -15,14 +15,15 @@
 	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
 
 <link rel="shortcut icon" href="favicon.ico">
-<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet"/>
-<link th:href="../fonts/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet"/>
+<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet" />
+<link th:href="../fonts/font-awesome.min93e3.css?v=4.4.0"
+	rel="stylesheet" />
 
 <!-- Morris -->
-<link href="../css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet"/>
+<link href="../css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet" />
 
 <!-- Gritter -->
-<link href="../js/plugins/gritter/jquery.gritter.css" rel="stylesheet"/>
+<link href="../js/plugins/gritter/jquery.gritter.css" rel="stylesheet" />
 
 <link href="../css/animate.min.css" rel="stylesheet">
 <link href="../css/style.min862f.css?v=4.1.0" rel="stylesheet">
@@ -305,7 +306,7 @@
 					<div class="col-sm-6">
 						<div class="ibox float-e-margins">
 							<div class="ibox-title">
-								<h5>任务列表</h5>
+								<h5>操作日志</h5>
 								<div class="ibox-tools">
 									<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 									</a> <a class="close-link"> <i class="fa fa-times"></i>
@@ -313,10 +314,13 @@
 								</div>
 							</div>
 							<div class="ibox-content">
-								<ul class="todo-list m-t small-list ui-sortable">
+								<ul id="log" class="todo-list m-t small-list ui-sortable">
 									<li><a href="widgets.html#" class="check-link"><i
 											class="fa fa-check-square"></i> </a> <span
 										class="m-l-xs todo-completed">开会</span></li>
+
+
+
 									<li><a href="widgets.html#" class="check-link"><i
 											class="fa fa-check-square"></i> </a> <span
 										class="m-l-xs  todo-completed">项目开发</span></li>
@@ -324,22 +328,7 @@
 											class="fa fa-square-o"></i> </a> <span class="m-l-xs">修改bug</span>
 										<small class="label label-primary"><i
 											class="fa fa-clock-o"></i> 1小时</small></li>
-									<li><a href="widgets.html#" class="check-link"><i
-											class="fa fa-square-o"></i> </a> <span class="m-l-xs">修改bug</span>
-										<small class="label label-primary"><i
-											class="fa fa-clock-o"></i> 1小时</small></li>
-									<li><a href="widgets.html#" class="check-link"><i
-											class="fa fa-square-o"></i> </a> <span class="m-l-xs">修改bug</span>
-										<small class="label label-primary"><i
-											class="fa fa-clock-o"></i> 1小时</small></li>
-									<li><a href="widgets.html#" class="check-link"><i
-											class="fa fa-square-o"></i> </a> <span class="m-l-xs">修改bug</span>
-										<small class="label label-primary"><i
-											class="fa fa-clock-o"></i> 1小时</small></li>
-									<li><a href="widgets.html#" class="check-link"><i
-											class="fa fa-square-o"></i> </a> <span class="m-l-xs">修改bug</span>
-										<small class="label label-primary"><i
-											class="fa fa-clock-o"></i> 1小时</small></li>
+
 								</ul>
 							</div>
 						</div>
@@ -453,6 +442,24 @@
 		$(document)
 				.ready(
 						function() {
+							$
+									.ajax({
+										url : "../../init",
+										type : "post",
+										success : function(res) {
+											$("#log").html("");
+											for (var i = 0; i < res.data.length; i++) {
+												$("#log")
+														.append(
+																"<li><a href='#' class='check-link'><i"+
+																"class='fa fa-check-square'></i> </a> <span"+
+																"class='m-l-xs todo-completed'>"
+																		+ res.data[i]
+																		+ "</span></li>");
+											}
+										}
+									})
+
 							$(".chart").easyPieChart({
 								barColor : "#f8ac59",
 								scaleLength : 5,
@@ -640,8 +647,7 @@
 							})
 						});
 	</script>
-	<script type="text/javascript"
-		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+
 </body>
 
 

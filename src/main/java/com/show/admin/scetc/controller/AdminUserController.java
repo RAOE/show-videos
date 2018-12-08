@@ -62,16 +62,17 @@ public class AdminUserController extends BasicController {
 	@PostMapping("/loginSubmit")
 	public XyfJsonResult loginSubmit(HttpServletRequest request, String username, String password, String verifyCode,
 			Model model) {
-//		if (!ImageCodeUtils.checkImageCode(request.getSession(), verifyCode)) {
-//			model.addAttribute("message", "验证码输入错误");
-//			return new ModelAndView("thymeleaf/login");
-//		}
+		if (!ImageCodeUtils.checkImageCode(request.getSession(), verifyCode)) {
+			new XyfJsonResult();
+			return XyfJsonResult.errorMsg("验证码错误");
+
+		}
 		// 尝试登陆操作
 		AdminUser adminUser = adminUserService.login(username, password);
 		if (adminUser == null) {
+			new XyfJsonResult();
 			// 登陆失败
-			request.setAttribute("message", "账号密码错误");
-			return new XyfJsonResult().errorMsg("账号密码错误");
+			return XyfJsonResult.errorMsg("账号密码错误");
 		}
 		// 检查账号是否被禁用了
 		// 登陆成功,登陆成功之后更新用户的登陆时间

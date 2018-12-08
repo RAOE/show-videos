@@ -544,11 +544,7 @@
 			</div>
 
 		</div>
-		<div id="small-chat">
-			<span class="badge badge-warning pull-right">5</span> <a
-				class="open-small-chat"> <i class="fa fa-comments"></i>
-			</a>
-		</div>
+	
 	</div>
 	<script th:src="@{/static/js/jquery-2.1.1.min.js}"></script>
 	<script th:src="@{/static/js/bootstrap.min.js?v=3.3.6}"></script>
@@ -570,7 +566,7 @@ function logout() {
 			if (res.status == 200) {
 				window.location.href = "../adminUser/login";
 			} else {
-				alert("登出失败");
+				console.log("登出失败");
 			}
 
 		}

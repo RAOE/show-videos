@@ -13,11 +13,8 @@ import tk.mybatis.spring.annotation.MapperScan;
 //扫描mapper相关的包
 @MapperScan(basePackages="com.show.admin.scetc.mapper")
 public class ScetcShowVideosAdminApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(ScetcShowVideosAdminApplication.class, args);
 	}
-	//注册bean到容器里
-
-
+	
 }
