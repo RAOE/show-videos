@@ -52,7 +52,8 @@ Introduction: The background management system as its own specialized graduation
 <p>3.3.1 数据库实体关系图</p>
 <h2>4. 框架设计</h2>
 <img src="./myimg/a3.jpg">
-
+</br></br></br>
+<img src="./myimg/bi2.png">
 
  <h2>交流</h2>
  <p>开发交流群:673926093</p>
@@ -194,7 +195,7 @@ Introduction: The background management system as its own specialized graduation
 <img src="./video/GIF.gif">
 
 </br>
-<h2>后台管理系统页面展现:</h2>
+<h2>后台管理系统页面展现(有增改 这里只是初稿)</h2>
 1.
 <img src="./myimg/01.jpg">
 2.

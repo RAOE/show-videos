@@ -61,7 +61,6 @@ var selectBgm = function() {
 		buttonsAlign : 'right', // 按钮对齐方式
 		toolbar : '#toolbar', // 指定工作栏
 		searchAlign : 'right',
-		// singleSelect : true,
 		contentType : "application/x-www-form-urlencoded",
 		formatLoadingMessage : function() {
 			return "请稍等，正在加载中...";
@@ -101,7 +100,7 @@ var selectBgm = function() {
 				field : 'title',
 				align : 'center',
 				valign : 'middle',
-				width : '20%',
+				width : '22%',
 				cellStyle : formatTableUnit,
 				formatter : function(value, row, index) {
 					var index1 = index + 1;
@@ -124,18 +123,14 @@ var selectBgm = function() {
 			},
 
 			{
-				title : '音质',
+				title : '路径',
 				field : 'status',
 				align : 'center',
-				width : '3%',
+				width : '16%',
 				formatter : function(value, row, index) {
-					if (row.status == -1) {
-						return '<button class="btn-xs btn-primary">草稿</button>';
-					} else if (row.status == 1) {
-						return '<button class="btn-xs btn-info">发布</button>';
-					} else if (row.status == 2) {
-						return '<button class="btn-xs btn-danger">垃圾</button>';
-					}
+					var index1 = index + 1;
+					var id = '<span title="ID:' + row.id + '">' + row.path + '</span>';
+					return id;
 				}
 			},{
 				title : '操作',
