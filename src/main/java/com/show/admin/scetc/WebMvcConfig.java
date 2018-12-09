@@ -17,7 +17,7 @@ import com.show.admin.scetc.interceptor.LoginInterceptor;
 
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter{
-
+   
 	@Value("${classpath_mapping}")
 	private String classpath_mapping;
 	
@@ -33,7 +33,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 		registry.addResourceHandler("/**").
 		addResourceLocations(classpath_mapping).//启用动态发布
 		addResourceLocations(url_mapping);//定义相对路径 很重要
-		//发布到
 	}
 	//用于测试用户请求的时间
 	@Bean

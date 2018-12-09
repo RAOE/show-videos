@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.show.admin.scetc.mapper.CategoryMapper;
-import com.show.admin.scetc.pojo.Bgm;
 import com.show.admin.scetc.pojo.Category;
 import com.show.admin.scetc.pojo.PageResult;
 import com.show.admin.scetc.service.CategoryService;
@@ -54,7 +52,6 @@ public class CategoryServiceImp implements CategoryService {
 		
 		PageHelper.startPage(page,pageSize);
 		List<Category> list = categoryMapper.queryAll(keyword);
-		System.out.println("集合"+list.toString());
 //		// 3、获取分页查询后的数据
 		PageInfo<Category> pageInfo = new PageInfo<>(list);
 //		// 4、封装需要返回的分页实体
@@ -65,7 +62,6 @@ public class CategoryServiceImp implements CategoryService {
 		result.setRows(list);
 		result.setRecords(pageInfo.getTotal());
 		result.setPage(page);
-		
 		return result;
 	}
 

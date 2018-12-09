@@ -44,9 +44,11 @@ public class CategoryController extends BasicController {
 	public XyfJsonResult deleteOne(Long id, String status) {
 		if (status.equals(DELETE)) {
 			categoryService.delete(id);
-			return new XyfJsonResult().ok();
+			new XyfJsonResult();
+			return XyfJsonResult.ok();
 		}
-		return new XyfJsonResult().errorMsg("参数错误");
+		new XyfJsonResult();
+		return XyfJsonResult.errorMsg("参数错误");
 
 	}
 

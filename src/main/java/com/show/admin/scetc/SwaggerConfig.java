@@ -17,7 +17,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * 使用swagger2来进行接口测试 
  * 切记 正式环境下需要关闭
  * @author Ray
- *
  */
 @EnableSwagger2
 @Configuration

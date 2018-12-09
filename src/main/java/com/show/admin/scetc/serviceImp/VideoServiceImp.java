@@ -27,21 +27,22 @@ import com.show.admin.scetc.service.VideoService;
 public class VideoServiceImp implements VideoService {
 	@Autowired
 	private VideoMapper videoMapper;
-	@Autowired 
-	private VideoVoMapper  videoVoMapper;
-	
-	private String filePath="D:\\show_videos_dev";
+	@Autowired
+	private VideoVoMapper videoVoMapper;
+
+	private String filePath = "D:\\show_videos_dev";
 
 	@Override
 	public List<Video> queryAll() {
 		List<Video> list = videoMapper.selectAll();
 		return list;
 	}
+
 	@Override
-	public PageResult queryAll(Integer page, Integer pageSize,String keyword,String status) {
-		
+	public PageResult queryAll(Integer page, Integer pageSize, String keyword, String status) {
+
 		PageHelper.startPage(page, pageSize);
-        List<VideosVo> list=videoVoMapper.queryAll(keyword);
+		List<VideosVo> list = videoVoMapper.queryAll(keyword);
 		PageInfo<VideosVo> pageList = new PageInfo<>(list);
 		PageResult pageResult = new PageResult();
 		pageResult.setPage(page);
@@ -50,6 +51,7 @@ public class VideoServiceImp implements VideoService {
 		pageResult.setRecords(pageList.getTotal());
 		return pageResult;
 	}
+
 	@Override
 	public PageResult selectVideoType(Integer page, Integer pageSize, String keyword) {
 		PageHelper.startPage(page, pageSize);
@@ -60,27 +62,29 @@ public class VideoServiceImp implements VideoService {
 		pageResult.setTotal(pageList.getPages());
 		pageResult.setRows(list);
 		pageResult.setRecords(pageList.getTotal());
-		return pageResult;	}
+		return pageResult;
+	}
+
 	@Override
-	@Transactional(propagation = Propagation.REQUIRED) // 创建一个事务
-	public void update(String id, String status) {
-		
-		if(status.equals("2")) //删除
-		{
-			Video video=new Video();
-			video.setId(id);
-			video.setStatus(Integer.parseInt(status));
-            video =videoMapper.selectByPrimaryKey(video);	
-            String path=video.getVideoPath();
-            path=filePath+"//"+path;
-            File file =new File(path);
-            if(file.exists())
-            {
-            	file.delete();
-            }
-            videoMapper.deleteByPrimaryKey(video);
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void delete(String id) {
+
+		Video video = new Video();
+		video.setId(id);
+		video = videoMapper.selectByPrimaryKey(video);
+		String path = video.getVideoPath();
+		path = filePath + "//" + path;
+		File file = new File(path);
+		if (file.exists()) {
+			file.delete();
 		}
-		
+		videoMapper.deleteByPrimaryKey(video);
+	}
+
+	@Override
+	@Transactional(propagation = Propagation.REQUIRED)
+	public void update(String id) {
+
 	}
 
 }
