@@ -3,6 +3,7 @@ package com.show.admin.scetc.service;
 import java.util.List;
 
 import com.show.admin.scetc.pojo.PageResult;
+import com.show.admin.scetc.pojo.UsersReport;
 import com.show.admin.scetc.pojo.Video;
 
 public interface VideoService {
@@ -45,5 +46,6 @@ public interface VideoService {
 	 * @param id
 	 */
 	void delete(String id);
+	
 
 }

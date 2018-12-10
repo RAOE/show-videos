@@ -29,9 +29,9 @@ public class LogController extends BasicController {
 		int p=Integer.parseInt(page);
 		int s=Integer.parseInt(pageSize);
 		newList=list.subList(0,s);
-        return new XyfJsonResult(newList);
+        return  XyfJsonResult.ok(newList);
 		}
-        return new XyfJsonResult(list);
+        return  XyfJsonResult.ok(list);
 	}
 
 }

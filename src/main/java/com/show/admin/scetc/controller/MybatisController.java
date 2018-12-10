@@ -27,14 +27,12 @@ public class MybatisController {
 	@PostMapping("/add")
 	public String add(HttpServletRequest request, Long id, String username, String realName, String password,
 			String phoneNumber, String email, String position, String salt, String qq) {
-//        adminUserService.insert();
 		return "hello springboot~!";
 	}
 
 	// 从数据库中查询一个List集合
 	@RequestMapping("/queryAll")
 	public List<AdminUser> queryAll() {
-		System.out.println(adminUserService.queryAll());
 		return adminUserService.queryAll();
 	}
 

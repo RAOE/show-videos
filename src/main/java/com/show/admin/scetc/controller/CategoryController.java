@@ -37,17 +37,15 @@ public class CategoryController extends BasicController {
 	@PostMapping("/queryAll")
 	public XyfJsonResult queryAll(String keyword, Integer page, Integer pageSize) {
 		PageResult list = categoryService.queryAll(keyword, page, pageSize);
-		return new XyfJsonResult(list);
+		return  XyfJsonResult.ok(list);
 	}
 
 	@PostMapping("/updateCategory")
 	public XyfJsonResult deleteOne(Long id, String status) {
 		if (status.equals(DELETE)) {
 			categoryService.delete(id);
-			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		}
-		new XyfJsonResult();
 		return XyfJsonResult.errorMsg("参数错误");
 
 	}
@@ -94,7 +92,7 @@ public class CategoryController extends BasicController {
 				throw new RuntimeException(e1);// 抛出异常
 			}
 		}
-		return new XyfJsonResult().ok();
+		return  XyfJsonResult.ok();
 	}
 
 }

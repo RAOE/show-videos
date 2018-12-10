@@ -33,7 +33,6 @@ public class AdminUserController extends BasicController {
 			redis.del(User_REDIS_SESSION + adminUser.getId());
 		}
 		request.getSession().invalidate();// 销毁session 中的数据
-		new XyfJsonResult();
 		return XyfJsonResult.ok();
 	}
 
@@ -60,14 +59,12 @@ public class AdminUserController extends BasicController {
 	public XyfJsonResult loginSubmit(HttpServletRequest request, String username, String password, String verifyCode,
 			Model model) {
 		if (!ImageCodeUtils.checkImageCode(request.getSession(), verifyCode)) {
-			new XyfJsonResult();
 			return XyfJsonResult.errorMsg("验证码错误");
 
 		}
 		// 尝试登陆操作
 		AdminUser adminUser = adminUserService.login(username, password);
 		if (adminUser == null) {
-			new XyfJsonResult();
 			// 登陆失败
 			return XyfJsonResult.errorMsg("账号密码错误");
 		}
@@ -84,7 +81,7 @@ public class AdminUserController extends BasicController {
 		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":登陆了系统");// 存放到redis
 
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
-		return new XyfJsonResult().ok();
+		return  XyfJsonResult.ok();
 	}
 
 }
