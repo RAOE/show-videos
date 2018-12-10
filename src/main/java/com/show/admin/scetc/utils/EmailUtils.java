@@ -24,6 +24,7 @@ public class EmailUtils {
 
 	private EmailUtils() {
 	}
+
 	/**
 	 * @param session
 	 * @param requestCode

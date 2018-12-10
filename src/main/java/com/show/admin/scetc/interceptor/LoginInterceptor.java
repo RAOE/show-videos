@@ -18,9 +18,8 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		if (adminUser == null) {
 			// 如果是ajax格式的请求 那么返回需要重新登陆的信息
 			if (CommonUtils.isEmpty(request.getHeader("x-requested-with"))) {
-                 request.getRequestDispatcher("./adminUser/login");
-			} 
-			else {
+				request.getRequestDispatcher("./adminUser/login");
+			} else {
 				response.getWriter().print(JsonUtils.toJson(XyfJsonResult.errorMsg("需要重新登录")));
 			}
 			return false;

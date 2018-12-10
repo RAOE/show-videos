@@ -71,6 +71,7 @@ public class BgmController extends BasicController {
 		return XyfJsonResult.errorMsg("参数错误");
 
 	}
+
 	@PostMapping("/selectResourceById")
 	public XyfJsonResult selectResourceById(Long id) {
 		// 根据id查询出一个背景音乐的全部信息

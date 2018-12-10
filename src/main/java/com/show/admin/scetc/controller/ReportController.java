@@ -11,11 +11,10 @@ import com.show.admin.scetc.service.ReportService;
 import com.show.admin.scetc.utils.XyfJsonResult;
 
 /**
- *     举报模块
- *     select u.username,ur.*,v.video_path,u2.username as publisher from users_report ur
-left join users u on u.id = ur.userid
-left join videos v on v.id = ur.deal_video_id
-left join users u2 on u2.id=ur.deal_user_id
+ * 举报模块 select u.username,ur.*,v.video_path,u2.username as publisher from
+ * users_report ur left join users u on u.id = ur.userid left join videos v on
+ * v.id = ur.deal_video_id left join users u2 on u2.id=ur.deal_user_id
+ * 
  * @author Ray
  */
 @RestController
@@ -24,15 +23,11 @@ public class ReportController {
 
 	@Autowired
 	private ReportService reportService;
-	
+
 	@PostMapping("/queryAll")
-	public XyfJsonResult queryAll(String keyword, Integer page,Integer pageSize)
-	{
-		PageResult list=reportService.queryAll(page, pageSize, keyword);
-        return XyfJsonResult.ok(list);
+	public XyfJsonResult queryAll(String keyword, Integer page, Integer pageSize) {
+		PageResult list = reportService.queryAll(page, pageSize, keyword);
+		return XyfJsonResult.ok(list);
 	}
-	
-	
-	
-	
+
 }

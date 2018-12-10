@@ -247,7 +247,4 @@ public class Video {
 				+ videoFileter + "]";
 	}
 
-	
-	
-	
 }

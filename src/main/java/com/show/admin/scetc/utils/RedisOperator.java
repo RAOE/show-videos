@@ -10,17 +10,17 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
 
 /**
- * @Description: 使用redisTemplate的操作实现类 
+ * @Description: 使用redisTemplate的操作实现类
  */
 @Component
 public class RedisOperator {
-	
+
 //	@Autowired
 //    private RedisTemplate<String, Object> redisTemplate;
-	
+
 	@Autowired
 	private StringRedisTemplate redisTemplate;
-	
+
 	// Key（键），简单的key-value操作
 	/**
 	 * 实现命令：TTL key，以秒为单位，返回给定 key的剩余生存时间(TTL, time to live)。
@@ -31,15 +31,17 @@ public class RedisOperator {
 	public long ttl(String key) {
 		return redisTemplate.getExpire(key);
 	}
+
 	/**
 	 * 返回list数组
+	 * 
 	 * @param key
 	 * @return
 	 */
-	public List<String> range(String key)
-	{
+	public List<String> range(String key) {
 		return redisTemplate.opsForList().range(key, 0, -1);
 	}
+
 	/**
 	 * 实现命令：expire 设置过期时间，单位秒
 	 * 
@@ -49,7 +51,7 @@ public class RedisOperator {
 	public void expire(String key, long timeout) {
 		redisTemplate.expire(key, timeout, TimeUnit.SECONDS);
 	}
-	
+
 	/**
 	 * 实现命令：INCR key，增加key一次
 	 * 
@@ -93,8 +95,7 @@ public class RedisOperator {
 	 * 
 	 * @param key
 	 * @param value
-	 * @param timeout
-	 *            （以秒为单位）
+	 * @param timeout （以秒为单位）
 	 */
 	public void set(String key, String value, long timeout) {
 		redisTemplate.opsForValue().set(key, value, timeout, TimeUnit.SECONDS);
@@ -107,7 +108,7 @@ public class RedisOperator {
 	 * @return value
 	 */
 	public String get(String key) {
-		return (String)redisTemplate.opsForValue().get(key);
+		return (String) redisTemplate.opsForValue().get(key);
 	}
 
 	// Hash（哈希表）
@@ -174,7 +175,7 @@ public class RedisOperator {
 	 * @return 列表key的头元素。
 	 */
 	public String lpop(String key) {
-		return (String)redisTemplate.opsForList().leftPop(key);
+		return (String) redisTemplate.opsForList().leftPop(key);
 	}
 
 	/**

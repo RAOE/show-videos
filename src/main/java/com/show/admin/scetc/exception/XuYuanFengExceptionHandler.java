@@ -31,6 +31,7 @@ public class XuYuanFengExceptionHandler {
 		m.setViewName("error/500");
 		return m;
 	}
+
 	/**
 	 * 统一异常处理
 	 * 

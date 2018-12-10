@@ -22,8 +22,6 @@ public class AdminUserServiceImp implements AdminUserService {
 	@Autowired
 	private AdminUserMapper adminUserMapper;
 
-
-
 	public List<AdminUser> queryAll() {
 		return adminUserMapper.queryAll();
 	}

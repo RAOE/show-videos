@@ -37,7 +37,7 @@ public class CategoryController extends BasicController {
 	@PostMapping("/queryAll")
 	public XyfJsonResult queryAll(String keyword, Integer page, Integer pageSize) {
 		PageResult list = categoryService.queryAll(keyword, page, pageSize);
-		return  XyfJsonResult.ok(list);
+		return XyfJsonResult.ok(list);
 	}
 
 	@PostMapping("/updateCategory")
@@ -92,7 +92,7 @@ public class CategoryController extends BasicController {
 				throw new RuntimeException(e1);// 抛出异常
 			}
 		}
-		return  XyfJsonResult.ok();
+		return XyfJsonResult.ok();
 	}
 
 }

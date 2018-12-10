@@ -49,8 +49,8 @@ public class CategoryServiceImp implements CategoryService {
 
 	@Override
 	public PageResult queryAll(String keyword, Integer page, Integer pageSize) {
-		
-		PageHelper.startPage(page,pageSize);
+
+		PageHelper.startPage(page, pageSize);
 		List<Category> list = categoryMapper.queryAll(keyword);
 //		// 3、获取分页查询后的数据
 		PageInfo<Category> pageInfo = new PageInfo<>(list);
@@ -64,6 +64,5 @@ public class CategoryServiceImp implements CategoryService {
 		result.setPage(page);
 		return result;
 	}
-
 
 }

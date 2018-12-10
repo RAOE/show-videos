@@ -10,12 +10,14 @@ public interface VideoService {
 
 	/**
 	 * 查询短视频
+	 * 
 	 * @return
 	 */
 	List<Video> queryAll();
 
 	/**
 	 * 分页查询全部的短视频
+	 * 
 	 * @param page
 	 * @param pageSize
 	 * @param keyword
@@ -25,7 +27,8 @@ public interface VideoService {
 	PageResult queryAll(Integer page, Integer pageSize, String keyword, String status);
 
 	/**
-	 *   查询视频的类型
+	 * 查询视频的类型
+	 * 
 	 * @param page
 	 * @param pageSize
 	 * @param keyword
@@ -46,6 +49,5 @@ public interface VideoService {
 	 * @param id
 	 */
 	void delete(String id);
-	
 
 }

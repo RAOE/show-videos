@@ -3,8 +3,10 @@ package com.show.admin.scetc.pojo;
 import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 /**
  * 定义背景音乐
+ * 
  * @author Ray
  *
  */
@@ -57,6 +59,4 @@ public class Bgm {
 		return "Bgm [id=" + id + ", author=" + author + ", name=" + name + ", path=" + path + "]";
 	}
 
-	
-	
 }

@@ -81,7 +81,7 @@ public class AdminUserController extends BasicController {
 		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":登陆了系统");// 存放到redis
 
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
-		return  XyfJsonResult.ok();
+		return XyfJsonResult.ok();
 	}
 
 }

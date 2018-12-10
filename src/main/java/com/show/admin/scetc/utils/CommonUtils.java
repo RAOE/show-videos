@@ -89,17 +89,18 @@ public class CommonUtils {
 		Matcher m = p.matcher(str);
 		return m.replaceAll("").trim();
 	}
-/**
- * 对关键字进行脱敏处理
- * @param adminUser
- * @return
- */
+
+	/**
+	 * 对关键字进行脱敏处理
+	 * 
+	 * @param adminUser
+	 * @return
+	 */
 	public static AdminUser formate(AdminUser adminUser) {
 		adminUser.setPassword("??????");
 		adminUser.setSalt("??????");
 		adminUser.setPhoneNumber("???????");
 		return adminUser;
 	}
-
 
 }

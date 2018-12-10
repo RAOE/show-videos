@@ -89,6 +89,7 @@ public class BgmServiceImp implements BgmService {
 			bgmMapper.insertSelective(bgm);
 		}
 	}
+
 	@Override
 	public Bgm selectOne(Long id) {
 		Bgm bgm = new Bgm();
@@ -96,6 +97,7 @@ public class BgmServiceImp implements BgmService {
 		bgm = bgmMapper.selectOne(bgm);
 		return bgm;
 	}
+
 	@Transactional(propagation = Propagation.REQUIRED) // 事务
 	@Override
 	public void updateBgm(Long id, String author, String name) {
@@ -105,7 +107,7 @@ public class BgmServiceImp implements BgmService {
 		example.setName(name);
 		example.setAuthor(author);
 		bgmMapper.updateByPrimaryKeySelective(example);
-		
+
 	}
 
 }

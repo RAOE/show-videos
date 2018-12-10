@@ -17,6 +17,7 @@ public class OtherController {
 
 	/**
 	 * 图片验证码
+	 * 
 	 * @param response
 	 * @param request
 	 */
@@ -24,6 +25,5 @@ public class OtherController {
 	public void sendImageCode(HttpServletResponse response, HttpServletRequest request) {
 		ImageCodeUtils.sendImageCode(request.getSession(), response);
 	}
-
 
 }

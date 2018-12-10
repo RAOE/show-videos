@@ -9,43 +9,45 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.show.admin.scetc.interceptor.DemoInterceptor;
 import com.show.admin.scetc.interceptor.LoginInterceptor;
+
 /**
- *  全局配置类webmvcconfigurerAdapter
+ * 全局配置类webmvcconfigurerAdapter
+ * 
  * @author Ray
  *
  */
 
 @Configuration
-public class WebMvcConfig extends WebMvcConfigurerAdapter{
-   
+public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
 	@Value("${classpath_mapping}")
 	private String classpath_mapping;
-	
+
 	@Value("${url_mapping}")
 	private String url_mapping;
+
 	/**
-	 *  定义虚拟映射
+	 * 定义虚拟映射
 	 */
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-		//重写方法
-		//修改tomcat 虚拟映射
-		registry.addResourceHandler("/**").
-		addResourceLocations(classpath_mapping).//启用动态发布
-		addResourceLocations(url_mapping);//定义相对路径 很重要
+		// 重写方法
+		// 修改tomcat 虚拟映射
+		registry.addResourceHandler("/**").addResourceLocations(classpath_mapping).// 启用动态发布
+				addResourceLocations(url_mapping);// 定义相对路径 很重要
 	}
-	//用于测试用户请求的时间
+
+	// 用于测试用户请求的时间
 	@Bean
-	public DemoInterceptor demoInterceptor()
-	{
+	public DemoInterceptor demoInterceptor() {
 		return new DemoInterceptor();
-	} 
-	//用于登陆的权限验证
+	}
+
+	// 用于登陆的权限验证
 	@Bean
-	public LoginInterceptor loginInterceptor()
-	{
+	public LoginInterceptor loginInterceptor() {
 		return new LoginInterceptor();
-	} 
+	}
 //	//添加拦截器到项目中去开发环境下暂时关闭
 //	public void addInterceptors(InterceptorRegistry registry)
 //	{
@@ -55,8 +57,5 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter{
 //        		"/adminUser/loginSubmit","/adminUser/logout.do");
 //
 //	}
- 
-	
-	
-	
+
 }

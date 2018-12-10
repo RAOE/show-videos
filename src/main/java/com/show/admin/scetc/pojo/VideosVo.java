@@ -1,9 +1,10 @@
 package com.show.admin.scetc.pojo;
 
 import java.util.Date;
+
 /**
- * 关联查询
- * 返回结果
+ * 关联查询 返回结果
+ * 
  * @author Ray
  *
  */
@@ -19,7 +20,7 @@ public class VideosVo {
 	private String videoPath;
 
 	private String videoCategory;
-	
+
 	private Float videoSeconds;
 
 	private Integer videoWidth;
@@ -35,13 +36,10 @@ public class VideosVo {
 	private Date createTime;
 
 	private String nickName;
-	
-	private String face_image;
-	
-	private String videoFilter;
-	
-	
 
+	private String face_image;
+
+	private String videoFilter;
 
 	public String getVideoFilter() {
 		return videoFilter;
@@ -179,7 +177,5 @@ public class VideosVo {
 				+ ", likeCounts=" + likeCounts + ", status=" + status + ", createTime=" + createTime + ", nickName="
 				+ nickName + ", face_image=" + face_image + ", videoFilter=" + videoFilter + "]";
 	}
-
-	
 
 }

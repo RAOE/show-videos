@@ -27,7 +27,6 @@ public class Category {
 	@Column(name = "imageUrl")
 	private String imageUrl;
 
-
 	public Long getId() {
 		return id;
 	}
@@ -75,8 +74,6 @@ public class Category {
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-
-
 
 	@Override
 	public String toString() {

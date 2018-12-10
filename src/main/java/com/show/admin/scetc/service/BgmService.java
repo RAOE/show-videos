@@ -7,8 +7,6 @@ import com.show.admin.scetc.pojo.PageResult;
 
 public interface BgmService {
 
-
-
 	/**
 	 * 查询全部背景音乐
 	 * 
@@ -32,7 +30,7 @@ public interface BgmService {
 	 * @param id
 	 * @param status
 	 */
-	void updateBgm(Long id,String author,String name);
+	void updateBgm(Long id, String author, String name);
 
 	/**
 	 * 删除背景音乐
@@ -48,11 +46,13 @@ public interface BgmService {
 	 * @param bgm
 	 */
 	void insert(Bgm bgm);
-    /**
-             * 返回一条bgm信息
-     * @param id
-     * @return
-     */
+
+	/**
+	 * 返回一条bgm信息
+	 * 
+	 * @param id
+	 * @return
+	 */
 	Bgm selectOne(Long id);
 
 }

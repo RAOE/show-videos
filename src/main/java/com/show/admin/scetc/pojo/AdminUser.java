@@ -16,37 +16,37 @@ public class AdminUser {
 	@Id
 	@Column(name = "Id")
 	private Long id;
-    @Column(name = "UserName")
+	@Column(name = "UserName")
 	private String username;// 账号
-    @Column(name = "RealName")
-    private String realName;// 真实名称
-    @Column(name = "Password")
+	@Column(name = "RealName")
+	private String realName;// 真实名称
+	@Column(name = "Password")
 	private String password;
-    @Column(name = "PhoneNumber")
+	@Column(name = "PhoneNumber")
 	private String phoneNumber;
-    @Column(name = "Email")
+	@Column(name = "Email")
 	private String email;
-    @Column(name = "Position")
+	@Column(name = "Position")
 	private String position;
-    @Column(name = "Salt")
+	@Column(name = "Salt")
 	private String salt;// 随机盐
-    @Column(name = "Qq")
+	@Column(name = "Qq")
 	private String qq;
-    @Column(name = "Latitude")
+	@Column(name = "Latitude")
 	private Double latitude;
-    @Column(name = "Longitude")
+	@Column(name = "Longitude")
 	private Double longitude;// 经度
-    @Column(name = "registerDate")
+	@Column(name = "registerDate")
 	private Date registerDate;
-    @Column(name = "updateDate")
+	@Column(name = "updateDate")
 	private Date updateDate;
-    @Column(name = "loginIp")
+	@Column(name = "loginIp")
 	private String loginIp;// 登陆ip
-    @Column(name = "userAgent")
+	@Column(name = "userAgent")
 	private String userAgent;// 用户代理
-    @Column(name = "GeoHash")
+	@Column(name = "GeoHash")
 	private Long GeoHash;// 用于经纬度
-    @Column(name = "isDeleted")
+	@Column(name = "isDeleted")
 	private Boolean isDeleted;// 软删除
 
 	public Long getId() {
