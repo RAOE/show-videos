@@ -36,7 +36,6 @@ public class VideoController extends BasicController {
 		return XyfJsonResult.ok(pageResult);
 	}
 
-	// 查询所有发布的视频
 	@RequestMapping("/queryAll")
 	public XyfJsonResult queryAll(String keyword,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
@@ -56,7 +55,6 @@ public class VideoController extends BasicController {
 		} else if (status.equals(UPDATE)) {
 			videoService.update(id);
 		}
-
 		return XyfJsonResult.ok();
 	}
 

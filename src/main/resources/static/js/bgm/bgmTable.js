@@ -31,7 +31,7 @@ $("#toolbar .btn-group .btn").click(function() {
 
 // 初始化表格数据
 var selectBgm = function() {
-	$('#allBlog').bootstrapTable({
+	$('#allBgm').bootstrapTable({
 		method : 'post',
 		url : "../../bgm/selectBgmList",
 		dataType : "json",
@@ -100,7 +100,7 @@ var selectBgm = function() {
 				field : 'title',
 				align : 'center',
 				valign : 'middle',
-				width : '22%',
+				width : '20%',
 				cellStyle : formatTableUnit,
 				formatter : function(value, row, index) {
 					var index1 = index + 1;
@@ -218,7 +218,7 @@ var formatTableUnit = function(value, row, index) {
 
 // 获取行号
 var getSelectRows = function(status) {
-	var date = $("#allBlog").bootstrapTable('getSelections');
+	var date = $("#allBgm").bootstrapTable('getSelections');
 	var idArray = new Array();
 	var title = '';
 	var text = '';
@@ -294,7 +294,7 @@ var operationBgm = function(idArray, status, isrecommend, isTop) {
 		success : function(data) {
 			// 查询成功
 			if (data.status == 200) {
-				$("#allBlog").bootstrapTable('refresh');
+				$("#allBgm").bootstrapTable('refresh');
 				swal("更新成功", "", "success");
 			} else {
 				swal("更新失败", "请重新操作", "error");
@@ -305,6 +305,20 @@ var operationBgm = function(idArray, status, isrecommend, isTop) {
 		}
 	});
 }
+
+
+//如果字体太长 对字体进行控制
+var formatTableUnit = function(value, row, index) {
+	return {
+		css : {
+			"overflow" : 'hidden',
+			"text-overflow" : 'ellipsis',
+			"white-space" : 'nowrap'
+		}
+	};
+};
+
+
 
 
 // 格式化时间

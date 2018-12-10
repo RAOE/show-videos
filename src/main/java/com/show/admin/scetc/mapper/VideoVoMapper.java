@@ -23,5 +23,4 @@ public interface VideoVoMapper extends MyMapper<VideosVo> {
 	 * @return
 	 */
 	List<VideosVo> selectVideoType(@Param("keyword") String video_desc);
-
 }

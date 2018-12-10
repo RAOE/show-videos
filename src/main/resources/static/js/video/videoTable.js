@@ -310,7 +310,7 @@ var selectVideo = function() {
 					// 查看
 					var a = '<a  class=" btn-sm btn-primary" href='+row.videoPath+'  data-target="#myModal" ">查看</a> ';
 					// 删除
-					var b  = '<a  class=" btn-sm btn-danger"  onclick="operation(\'' + row.id + '\',\'删除\')"><i class="fa fa-share-square-o" ></i>删除</a> ';;
+					var b  = '<a  class=" btn-sm btn-danger"  onclick="operation(\'' + row.id + '\',\'删除\')"><i class="fa fa-share-square-o" ></i>删除</a> ';
 					// 从回收站还原
 			    return a+b;
 			}

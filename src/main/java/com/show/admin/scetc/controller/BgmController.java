@@ -63,14 +63,11 @@ public class BgmController extends BasicController {
 
 		if (status.equals(DELETE)) {
 			bgmService.deleteBgm(id);
-			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		} else if (status.equals(UPDATE)) {
 			bgmService.updateBgm(id, author, name);
-			new XyfJsonResult();
 			return XyfJsonResult.ok();
 		}
-		new XyfJsonResult();
 		return XyfJsonResult.errorMsg("参数错误");
 
 	}
@@ -78,7 +75,6 @@ public class BgmController extends BasicController {
 	public XyfJsonResult selectResourceById(Long id) {
 		// 根据id查询出一个背景音乐的全部信息
 		Bgm bgm = bgmService.selectOne(id);
-		new XyfJsonResult();
 		return XyfJsonResult.ok(bgm);
 
 	}
@@ -122,7 +118,6 @@ public class BgmController extends BasicController {
 				}
 			}
 		}
-		new XyfJsonResult();
 		return XyfJsonResult.ok();
 	}
 
