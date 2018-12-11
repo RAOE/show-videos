@@ -17,7 +17,12 @@ import com.show.admin.scetc.utils.XyfJsonResult;
 @RequestMapping("")
 public class IndexController extends BasicController {
 
-	// 返回首页
+	/**
+	 * 返回主頁
+	 * 
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/index")
 	public ModelAndView index(HttpServletRequest request) {
 		// 从request中获取用户的基本信息
@@ -28,6 +33,11 @@ public class IndexController extends BasicController {
 		return modelAndView;
 	}
 
+	/**
+	 * 主页初始化代码
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/init")
 	public XyfJsonResult init() {
 
@@ -52,12 +62,6 @@ public class IndexController extends BasicController {
 	@RequestMapping("/404")
 	public String notFoundPage() {
 		return "thymeleaf/404";
-	}
-
-	@PostMapping("/test")
-	public XyfJsonResult test() {
-
-		return XyfJsonResult.ok("请求成功");
 	}
 
 }

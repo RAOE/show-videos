@@ -22,6 +22,7 @@ import com.show.admin.scetc.service.CategoryService;
 import com.show.admin.scetc.utils.XyfJsonResult;
 
 /**
+ * 专栏查询
  * 
  * @author Ray
  *
@@ -33,13 +34,27 @@ public class CategoryController extends BasicController {
 	@Autowired
 	private CategoryService categoryService;
 
-	// 返回首页
+	/**
+	 * 分页查询
+	 * 
+	 * @param keyword
+	 * @param page
+	 * @param pageSize
+	 * @return
+	 */
 	@PostMapping("/queryAll")
 	public XyfJsonResult queryAll(String keyword, Integer page, Integer pageSize) {
 		PageResult list = categoryService.queryAll(keyword, page, pageSize);
 		return XyfJsonResult.ok(list);
 	}
 
+	/**
+	 * 根据状态吗来更新专栏
+	 * 
+	 * @param id
+	 * @param status
+	 * @return
+	 */
 	@PostMapping("/updateCategory")
 	public XyfJsonResult deleteOne(Long id, String status) {
 		if (status.equals(DELETE)) {
@@ -50,12 +65,9 @@ public class CategoryController extends BasicController {
 
 	}
 
-	@PostMapping("/update")
-	public XyfJsonResult update(Long id) {
-		return new XyfJsonResult();
-	}
-
 	/**
+	 * 添加新的专栏
+	 * 
 	 * @param name
 	 * @param description
 	 * @param file

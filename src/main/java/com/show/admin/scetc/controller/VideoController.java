@@ -28,6 +28,14 @@ public class VideoController extends BasicController {
 		return "welcome to my wolrd";
 	}
 
+	/**
+	 * 查詢視頻的分類
+	 * 
+	 * @param keyword
+	 * @param page
+	 * @param pageSize
+	 * @return
+	 */
 	@PostMapping("/selectVideoType")
 	public XyfJsonResult selectVideoType(String keyword,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
@@ -36,6 +44,15 @@ public class VideoController extends BasicController {
 		return XyfJsonResult.ok(pageResult);
 	}
 
+	/**
+	 * 分頁查詢視頻
+	 * 
+	 * @param keyword
+	 * @param page
+	 * @param pageSize
+	 * @param status
+	 * @return
+	 */
 	@RequestMapping("/queryAll")
 	public XyfJsonResult queryAll(String keyword,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
@@ -47,6 +64,13 @@ public class VideoController extends BasicController {
 		return XyfJsonResult.ok(pageResult);
 	}
 
+	/**
+	 * 根據狀態來更新狀態
+	 * 
+	 * @param status
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("/updateVideo")
 	public XyfJsonResult updateVideo(String status, String id) {
 

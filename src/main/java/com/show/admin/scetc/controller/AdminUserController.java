@@ -2,14 +2,18 @@ package com.show.admin.scetc.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.show.admin.scetc.pojo.AdminUser;
 import com.show.admin.scetc.service.AdminUserService;
 import com.show.admin.scetc.utils.CommonUtils;
@@ -41,7 +45,35 @@ public class AdminUserController extends BasicController {
 
 		return "thymeleaf/forgetPassword";
 	}
-
+	//修改密码请求提交
+	@RequestMapping(value="/changePasswordSubmit",method=RequestMethod.POST)
+	public XyfJsonResult changePasswordSubmit(HttpServletRequest request, HttpServletResponse response
+			,String oldPassword,String newPassword,String reNewPassword) {
+		
+		  AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
+		  if(adminUser==null)
+		  {
+			  return XyfJsonResult.errorMsg("修改账号密码失败,请重新登陆");
+		  }
+          adminUser =adminUserService.selectOneById(adminUser.getId());
+		  //开始判断  如果adminUser为空
+          if(adminUserService.check(oldPassword))
+          {
+        	  
+          }
+          else
+          {
+			  return XyfJsonResult.errorMsg("修改密码失败,初始密码错误");
+ 
+          }
+          
+          
+          AdminUser adminUserVo = CommonUtils.formate(adminUser);
+          SimpleDateFormat formate = new SimpleDateFormat();
+  		  String date = formate.format(new Date());
+      	  redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":修改了密码");// 存放到redis
+          return XyfJsonResult.ok();
+	}
 	@RequestMapping("/login")
 	public ModelAndView login() {
 		return new ModelAndView("thymeleaf/login");
@@ -79,7 +111,6 @@ public class AdminUserController extends BasicController {
 		SimpleDateFormat formate = new SimpleDateFormat();
 		String date = formate.format(new Date());
 		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":登陆了系统");// 存放到redis
-
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
 		return XyfJsonResult.ok();
 	}

@@ -15,7 +15,7 @@ $("#toolbar .btn-group .btn").click(function() {
 	selectReport();
 });
 // 初始化表格数据
-//初始化表格数据
+// 初始化表格数据
 var selectReport = function() {
 	$('#allReport').bootstrapTable({
 		method : 'post',
@@ -76,6 +76,19 @@ var selectReport = function() {
 				}
 			},
 			{
+				title : '视频id',
+				field : 'title',
+				align : 'center',
+				valign : 'middle',
+				width : '22%',
+				formatter : function(value, row, index) {
+					var index1 = index + 1;
+					var id = '<span title="ID:' + row.id + '">' + row.dealVideoId + '</span>';
+					return id;
+				}
+			},
+		
+			{
 				title : '标题',
 				field : 'status',
 				align : 'center',
@@ -99,19 +112,7 @@ var selectReport = function() {
 					return id;
 				}
 			},
-			{
-				title : '视频id',
-				field : 'title',
-				align : 'center',
-				valign : 'middle',
-				width : '22%',
-				formatter : function(value, row, index) {
-					var index1 = index + 1;
-					var id = '<span title="ID:' + row.id + '">' + row.dealVideoId + '</span>';
-					return id;
-				}
-			},
-		
+			
 			{
 				title : '发布者',
 				field : 'keyword',
@@ -167,7 +168,7 @@ var selectReport = function() {
 	globalCount++;
 	returnAllCount();
 }
-//传参数到后台
+// 传参数到后台
 function queryParams(params) {
 	return {
 		pageSize : params.limit,

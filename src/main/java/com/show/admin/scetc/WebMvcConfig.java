@@ -12,9 +12,7 @@ import com.show.admin.scetc.interceptor.LoginInterceptor;
 
 /**
  * 全局配置类webmvcconfigurerAdapter
- * 
  * @author Ray
- *
  */
 
 @Configuration
@@ -36,7 +34,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/**").addResourceLocations(classpath_mapping).// 启用动态发布
 				addResourceLocations(url_mapping);// 定义相对路径 很重要
 	}
-
 	// 用于测试用户请求的时间
 	@Bean
 	public DemoInterceptor demoInterceptor() {
@@ -48,6 +45,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	public LoginInterceptor loginInterceptor() {
 		return new LoginInterceptor();
 	}
+	
 //	//添加拦截器到项目中去开发环境下暂时关闭
 //	public void addInterceptors(InterceptorRegistry registry)
 //	{

@@ -9,7 +9,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.show.admin.scetc.mapper.ReportMapper;
 import com.show.admin.scetc.pojo.PageResult;
-import com.show.admin.scetc.pojo.UsersReport;
 import com.show.admin.scetc.pojo.UsersReportVo;
 import com.show.admin.scetc.service.ReportService;
 

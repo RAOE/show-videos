@@ -42,8 +42,20 @@ public class AdminUserServiceImp implements AdminUserService {
 	}
 
 	// 从数据库中返回一条数据
-	private AdminUser selectOne(AdminUser adminUser) {
+	public AdminUser selectOne(AdminUser adminUser) {
 		return adminUserMapper.selectOne(adminUser);
+	}
+
+	@Override
+	public AdminUser selectOneById(Long id) {
+		AdminUser adminUser =new AdminUser();
+		adminUser.setId(id);
+		return adminUserMapper.selectOne(adminUser);
+	}
+
+	@Override
+	public boolean check(String oldPassword) {
+		return false;
 	}
 
 }
