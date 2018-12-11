@@ -39,21 +39,21 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	public DemoInterceptor demoInterceptor() {
 		return new DemoInterceptor();
 	}
-
-	// 用于登陆的权限验证
-	@Bean
-	public LoginInterceptor loginInterceptor() {
-		return new LoginInterceptor();
-	}
-	
-//	//添加拦截器到项目中去开发环境下暂时关闭
-//	public void addInterceptors(InterceptorRegistry registry)
-//	{
-//		registry.addInterceptor(demoInterceptor());//记录请求的时间
-//		//需要配置白名单 对部分页面不进行拦截  excludePathPatterns不进行拦截的名单
-//        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/adminUser/login","/other/*",
-//        		"/adminUser/loginSubmit","/adminUser/logout.do");
-//
+//开发环境暂时关闭
+//	// 用于登陆的权限验证
+//	@Bean
+//	public LoginInterceptor loginInterceptor() {
+//		return new LoginInterceptor();
 //	}
+//	
+	//添加拦截器到项目中去开发环境下暂时关闭
+	public void addInterceptors(InterceptorRegistry registry)
+	{
+		registry.addInterceptor(demoInterceptor());//记录请求的时间
+		//需要配置白名单 对部分页面不进行拦截  excludePathPatterns不进行拦截的名单
+//        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/adminUser/login","/other/*",
+//       		"/adminUser/loginSubmit","/adminUser/logout.do");
+
+	}
 
 }

@@ -41,21 +41,29 @@ public class AdminUserServiceImp implements AdminUserService {
 		return null;
 	}
 
-	// 从数据库中返回一条数据
 	public AdminUser selectOne(AdminUser adminUser) {
 		return adminUserMapper.selectOne(adminUser);
 	}
 
 	@Override
 	public AdminUser selectOneById(Long id) {
-		AdminUser adminUser =new AdminUser();
+		AdminUser adminUser = new AdminUser();
 		adminUser.setId(id);
 		return adminUserMapper.selectOne(adminUser);
 	}
 
 	@Override
-	public boolean check(String oldPassword) {
-		return false;
+	public boolean check(String oldPassword, AdminUser adminUser) {
+		if (CommonUtils.calculateMD5(adminUser.getSalt() + oldPassword).equalsIgnoreCase(adminUser.getPassword())) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public void update(AdminUser adminUser) {
+		adminUserMapper.updateByExample(adminUser, AdminUser.class);
 	}
 
 }

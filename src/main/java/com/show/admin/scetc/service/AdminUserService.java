@@ -14,6 +14,8 @@ public interface AdminUserService {
 	
 	public AdminUser selectOneById(Long id);//查询一条信息根据id
 
-	public boolean check(String oldPassword);//检查初始密码是否正确,如果正确则返回true
+	public boolean check(String oldPassword,AdminUser adminUser);//检查初始密码是否正确,如果正确则返回true
+
+	public void update(AdminUser adminUser);  //更新一条管理员用户的信息
 
 }

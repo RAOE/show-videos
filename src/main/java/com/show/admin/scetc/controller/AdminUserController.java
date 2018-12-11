@@ -45,35 +45,33 @@ public class AdminUserController extends BasicController {
 
 		return "thymeleaf/forgetPassword";
 	}
-	//修改密码请求提交
-	@RequestMapping(value="/changePasswordSubmit",method=RequestMethod.POST)
-	public XyfJsonResult changePasswordSubmit(HttpServletRequest request, HttpServletResponse response
-			,String oldPassword,String newPassword,String reNewPassword) {
+
+	// 修改密码请求提交
+	@RequestMapping(value = "/changePasswordSubmit", method = RequestMethod.POST)
+	public XyfJsonResult changePasswordSubmit(HttpServletRequest request, HttpServletResponse response,
+			String oldPassword, String newPassword, String reNewPassword) {
+
+		AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
+		if (adminUser == null) {
+			return XyfJsonResult.errorMsg("修改账号密码失败,请重新登陆");
+		}
+		adminUser = adminUserService.selectOneById(adminUser.getId());
+		// 开始判断 如果adminUser为空
+		if (!adminUserService.check(oldPassword,adminUser)) {
+			return XyfJsonResult.errorMsg("修改密码失败,初始密码错误");
+		}
+		//执行修改密码的操作
+		adminUser.setPassword(CommonUtils.calculateMD5(adminUser.getSalt()+newPassword));
+        adminUserService.update(adminUser);		
+	 	
 		
-		  AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
-		  if(adminUser==null)
-		  {
-			  return XyfJsonResult.errorMsg("修改账号密码失败,请重新登陆");
-		  }
-          adminUser =adminUserService.selectOneById(adminUser.getId());
-		  //开始判断  如果adminUser为空
-          if(adminUserService.check(oldPassword))
-          {
-        	  
-          }
-          else
-          {
-			  return XyfJsonResult.errorMsg("修改密码失败,初始密码错误");
- 
-          }
-          
-          
-          AdminUser adminUserVo = CommonUtils.formate(adminUser);
-          SimpleDateFormat formate = new SimpleDateFormat();
-  		  String date = formate.format(new Date());
-      	  redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":修改了密码");// 存放到redis
-          return XyfJsonResult.ok();
+		AdminUser adminUserVo = CommonUtils.formate(adminUser);
+		SimpleDateFormat formate = new SimpleDateFormat();
+		String date = formate.format(new Date());
+		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":修改了密码");// 存放到redis
+		return XyfJsonResult.ok();
 	}
+
 	@RequestMapping("/login")
 	public ModelAndView login() {
 		return new ModelAndView("thymeleaf/login");
