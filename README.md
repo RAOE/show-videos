@@ -26,13 +26,6 @@ Introduction: The background management system as its own specialized graduation
  <p>毕业设计选题环节中，系统管理员的需求为：用户管理（新增用户、删除用户及用户登录系统数据的初始化操作）、视频管理（视频分类、新增视频、对违违法视频进行删除操作）、背景音乐管理（对音乐库中音乐的增删改查）、滤镜管理（滤镜的增改）、用户管理（新增各权限级的管理员、删除管理员、对子集权限组管理员系统登录数据的初始化操作）以及消息通知（发布不同对象的系统消息、对所有消息进行查看及删除操作）</p> 
  
  
-<h2>前台-小程序端效果展示(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
-<img src="./video/show02.gif">
-<img src="./video/show01.gif">
-</br>
-<h2>后台管理系统页面展现(有增改 这里只是初稿)</h2>
-
-
   
 <h2>项目设计</h2>
 <h2>2.1 微信小程序端</h2>
@@ -64,6 +57,11 @@ Introduction: The background management system as its own specialized graduation
 <img src="./myimg/a3.jpg">
 </br></br></br>
 
+<h2>前台-小程序端效果展示(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
+<img src="./gif/show02.gif">
+<img src="./gif/show01.gif">
+</br>
+<h2>后台管理系统页面展现(有增改 这里只是初稿)</h2>
 
  <h2>交流</h2>
  <p>开发交流群:673926093</p>
