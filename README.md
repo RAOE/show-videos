@@ -58,8 +58,10 @@ Introduction: The background management system as its own specialized graduation
 </br></br></br>
 
 <h2>前台-小程序端效果展示(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
+<p>
 <img src="./gif/show02.gif">
 <img src="./gif/show01.gif">
+</p>
 </br>
 <h2>后台管理系统页面展现(有增改 这里只是初稿)</h2>
 
