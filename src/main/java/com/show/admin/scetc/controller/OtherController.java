@@ -46,7 +46,7 @@ public class OtherController {
 	@RequestMapping("/sendEmail.do")
 	public void sendEmail(String email,String title,String content)
 	{
-		
+		 settingService.getValueByName(email_smtp_host);
 		
 		 Map<String,String> emailList=new HashMap<String,String>();
         
