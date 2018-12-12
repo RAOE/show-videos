@@ -25,8 +25,17 @@ Introduction: The background management system as its own specialized graduation
  <p>管理员需求</p>
  <p>毕业设计选题环节中，系统管理员的需求为：用户管理（新增用户、删除用户及用户登录系统数据的初始化操作）、视频管理（视频分类、新增视频、对违违法视频进行删除操作）、背景音乐管理（对音乐库中音乐的增删改查）、滤镜管理（滤镜的增改）、用户管理（新增各权限级的管理员、删除管理员、对子集权限组管理员系统登录数据的初始化操作）以及消息通知（发布不同对象的系统消息、对所有消息进行查看及删除操作）</p> 
  
- <h2>项目设计</h2>
- <h2>2.1 微信小程序端</h2>
+ 
+<h2>前台-小程序端效果展示(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
+<img src="./video/show02.gif">
+<img src="./video/show01.gif">
+</br>
+<h2>后台管理系统页面展现(有增改 这里只是初稿)</h2>
+
+
+  
+<h2>项目设计</h2>
+<h2>2.1 微信小程序端</h2>
 <p>前台的设计、后台的管理、安全性</p>
 <p>前端：基于微信小程序的开发文档</p>
 <p>后端：基于springboot微服务架构   +   mysql数据库  +  redis缓存数据库  +  ffmpeg</p>
@@ -192,18 +201,4 @@ Introduction: The background management system as its own specialized graduation
 </tbody>
 </table>
 </br>
-<h2>前台-小程序端效果展示(注意 源码部分为后台管理系统的代码 在这里只是展现小程序端的功能)</h2>
-<img src="./video/GIF.gif">
 
-</br>
-<h2>后台管理系统页面展现(有增改 这里只是初稿)</h2>
-1.
-<img src="./myimg/01.jpg">
-2.
-<img src="./myimg/02.jpg">
-3.
-<img src="./myimg/03.jpg">
-4.
-<img src="./myimg/4.jpg">
-5.
-<img src="./myimg/5.jpg"></br>
