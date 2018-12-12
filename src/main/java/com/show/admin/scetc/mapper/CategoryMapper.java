@@ -9,6 +9,12 @@ import com.show.admin.scetc.utils.MyMapper;
 
 public interface CategoryMapper extends MyMapper<Category> {
 
+	/**
+	 * 分页查询全部的专栏
+	 * 
+	 * @param keyword
+	 * @return
+	 */
 	List<Category> queryAll(@Param("keyword") String keyword);
 
 }

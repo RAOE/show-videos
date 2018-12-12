@@ -63,7 +63,7 @@ public class AdminUserServiceImp implements AdminUserService {
 
 	@Override
 	public void update(AdminUser adminUser) {
-		adminUserMapper.updateByExample(adminUser, AdminUser.class);
+		adminUserMapper.updateByPrimaryKeySelective(adminUser);
 	}
 
 }

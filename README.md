@@ -64,6 +64,7 @@ Introduction: The background management system as its own specialized graduation
 </p>
 </br>
 <h2>后台管理系统页面展现(有增改 这里只是初稿)</h2>
+<img style="width:50%;height:50%"src="./myimg/backgroud.png">
 
  <h2>交流</h2>
  <p>开发交流群:673926093</p>
