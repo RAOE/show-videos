@@ -1,15 +1,29 @@
 package com.show.admin.scetc.utils;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Random;
 import java.util.regex.Pattern;
 
+import javax.mail.Authenticator;
+import javax.mail.BodyPart;
+import javax.mail.Message;
+import javax.mail.Multipart;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
 import javax.servlet.http.HttpSession;
-
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 import org.apache.log4j.Logger;
+
+import com.show.admin.scetc.pojo.MailInfo;
 
 public class EmailUtils {
 
@@ -112,7 +126,34 @@ public class EmailUtils {
 		email.setMsg(content);
 		email.send();
 	}
-
+/**
+ * 发送html格式的邮件数据	
+ * @param info
+ * @throws Exception
+ */
+	public static void sendHtmlMail(String smtpServer, String username, String password, String from, String to,
+			String subject, String content)throws Exception{
+		
+		MailInfo info=new MailInfo();
+        info.setHost(smtpServer);
+        info.setFormName(username);
+        info.setFormPassword(password);  
+        info.setReplayAddress(from);
+        info.setToAddress(to);
+        info.setSubject(subject);
+        info.setContent(content);
+        Message message = getMessage(info);
+        // MiniMultipart类是一个容器类，包含MimeBodyPart类型的对象
+        Multipart mainPart = new MimeMultipart();
+        // 创建一个包含HTML内容的MimeBodyPart
+        BodyPart html = new MimeBodyPart();
+        // 设置HTML内容
+        html.setContent(info.getContent(), "text/html; charset=utf-8");
+        mainPart.addBodyPart(html);
+        // 将MiniMultipart对象设置为邮件内容
+        message.setContent(mainPart);
+        Transport.send(message);
+    }
 	// 使用sendcloud发送验证码邮件
 	public static void sendEmailCodeWithSendCloud(HttpSession session, String url, String apiUser, String apiKey,
 			String from, String to, String templateInvokeName) {
@@ -154,5 +195,34 @@ public class EmailUtils {
 			throw new RuntimeException("发送邮箱验证码失败", e);
 		}
 	}
+	
+	 private static Message getMessage(MailInfo info) throws Exception{
+	        final Properties p = System.getProperties() ;
+	        p.setProperty("mail.smtp.host", info.getHost());
+	        p.setProperty("mail.smtp.auth", "true");
+	        p.setProperty("mail.smtp.user", info.getFormName());
+	        p.setProperty("mail.smtp.pass", info.getFormPassword());
+	        // 根据邮件会话属性和密码验证器构造一个发送邮件的session
+	        Session session = Session.getInstance(p, new Authenticator(){
+	            protected PasswordAuthentication getPasswordAuthentication() {
+	                return new PasswordAuthentication(p.getProperty("mail.smtp.user"),p.getProperty("mail.smtp.pass"));
+	            }
+	        });
+	        session.setDebug(true);
+	        Message message = new MimeMessage(session);
+	        //消息发送的主题
+	        message.setSubject(info.getSubject());
+	        //接受消息的人
+	        message.setReplyTo(InternetAddress.parse(info.getReplayAddress()));
+	        //消息的发送者
+	        message.setFrom(new InternetAddress(p.getProperty("mail.smtp.user"),"徐塬峰"));
+	        // 创建邮件的接收者地址，并设置到邮件消息中
+	        message.setRecipient(Message.RecipientType.TO,new InternetAddress(info.getToAddress()));
+	        // 消息发送的时间
+	        message.setSentDate(new Date());
+	        return message ;
+	    }
+	
+	
 
 }

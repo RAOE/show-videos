@@ -14,7 +14,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import com.show.admin.scetc.pojo.AdminUser;
 
 /**
-  * 进行日志记录
+ * 进行日志记录
+ * 
  * @author Ray
  *
  */
@@ -23,9 +24,11 @@ import com.show.admin.scetc.pojo.AdminUser;
 public class AopLogger {
 
 	private Logger logger = Logger.getLogger(getClass());
+
 	@Pointcut("execution(public * com.show.admin.scetc.controller..*.*(..))")
 	public void webLog() {
 	}
+
 	@Before("webLog()")
 	public void doBefore(JoinPoint joinPoint) throws Throwable {
 		// 接收到请求，记录请求内容

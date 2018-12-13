@@ -12,6 +12,7 @@ import com.show.admin.scetc.interceptor.LoginInterceptor;
 
 /**
  * 全局配置类webmvcconfigurerAdapter
+ * 
  * @author Ray
  */
 
@@ -34,11 +35,13 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/**").addResourceLocations(classpath_mapping).// 启用动态发布
 				addResourceLocations(url_mapping);// 定义相对路径 很重要
 	}
+
 	// 用于测试用户请求的时间
 	@Bean
 	public DemoInterceptor demoInterceptor() {
 		return new DemoInterceptor();
 	}
+
 //开发环境暂时关闭
 //	// 用于登陆的权限验证
 //	@Bean
@@ -46,11 +49,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 //		return new LoginInterceptor();
 //	}
 //	
-	//添加拦截器到项目中去开发环境下暂时关闭
-	public void addInterceptors(InterceptorRegistry registry)
-	{
-		registry.addInterceptor(demoInterceptor());//记录请求的时间
-		//需要配置白名单 对部分页面不进行拦截  excludePathPatterns不进行拦截的名单
+	// 添加拦截器到项目中去开发环境下暂时关闭
+	public void addInterceptors(InterceptorRegistry registry) {
+		registry.addInterceptor(demoInterceptor());// 记录请求的时间
+		// 需要配置白名单 对部分页面不进行拦截 excludePathPatterns不进行拦截的名单
 //        registry.addInterceptor(loginInterceptor()).addPathPatterns("/**").excludePathPatterns("/adminUser/login","/other/*",
 //       		"/adminUser/loginSubmit","/adminUser/logout.do");
 

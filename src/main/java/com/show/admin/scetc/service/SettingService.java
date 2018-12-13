@@ -11,8 +11,9 @@ public interface SettingService {
 
 	/**
 	 * 根据配置文件中的名称获取键
+	 * 
 	 * @return
 	 */
 	public String getValueByName(String name);
-	
+
 }

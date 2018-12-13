@@ -39,13 +39,15 @@ public class BgmController extends BasicController {
 
 	@Autowired
 	private BgmService bgmService;
-/**
- * 分页查询背景音乐的列表
- * @param keyword
- * @param page
- * @param pageSize
- * @return
- */
+
+	/**
+	 * 分页查询背景音乐的列表
+	 * 
+	 * @param keyword
+	 * @param page
+	 * @param pageSize
+	 * @return
+	 */
 	@RequestMapping("/selectBgmList")
 	public XyfJsonResult selectBgmList(String keyword,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
@@ -53,14 +55,16 @@ public class BgmController extends BasicController {
 		PageResult list = bgmService.queryAll(page, pageSize, keyword);
 		return XyfJsonResult.ok(list);
 	}
- /**
-  *  根据状态码来更新背景音乐
-  * @param id
-  * @param status
-  * @param author
-  * @param name
-  * @return
-  */
+
+	/**
+	 * 根据状态码来更新背景音乐
+	 * 
+	 * @param id
+	 * @param status
+	 * @param author
+	 * @param name
+	 * @return
+	 */
 	@RequestMapping("/updateBgm")
 	public XyfJsonResult updateBgm(Long id, String status, String author, String name) {
 
@@ -91,13 +95,14 @@ public class BgmController extends BasicController {
 
 	/**
 	 * 上传音乐代码
+	 * 
 	 * @param request
 	 * @return
 	 * @throws Exception
 	 */
 	@PostMapping("/addSubmit.do")
 	public synchronized @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {
-		
+
 		AdminUser adminUserVo = (AdminUser) request.getSession().getAttribute("adminUser");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		MultiValueMap<String, MultipartFile> multiFileMap = multipartRequest.getMultiFileMap();

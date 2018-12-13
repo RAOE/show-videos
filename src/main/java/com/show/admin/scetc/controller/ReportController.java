@@ -14,6 +14,7 @@ import com.show.admin.scetc.utils.XyfJsonResult;
  * 举报模块 select u.username,ur.*,v.video_path,u2.username as publisher from
  * users_report ur left join users u on u.id = ur.userid left join videos v on
  * v.id = ur.deal_video_id left join users u2 on u2.id=ur.deal_user_id
+ * 
  * @author Ray
  */
 @RestController

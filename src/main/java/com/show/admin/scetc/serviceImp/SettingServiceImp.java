@@ -22,7 +22,7 @@ public class SettingServiceImp implements SettingService {
 	public String getValueByName(String name) {
 		Setting setting = new Setting();
 		setting.setName(name);
-		setting=settingMapper.selectOne(setting);
+		setting = settingMapper.selectOne(setting);
 		return setting.getValue();
 	}
 
