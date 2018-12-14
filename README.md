@@ -26,7 +26,7 @@ Introduction: The background management system as its own specialized graduation
  <p>后端:springcloud+springboot+sping+springmvc+mybatis+mysql+redis+shiro</p>
  <p>组件:bootsrap-table,webUploader,pagehelper+layer</p>
  <p>项目部署: docker + linux</p>
- <p>中间件: zookeeper/eureka(待定)</p>
+ <p>中间件:eureka(微服务治理)</p>
  <p>消息队列: rabbitmq</p>
  <P>测试:swagger2</p>
  <p>开发风格：分布式系统架构，前后分离开发风格，RESTful api</p>

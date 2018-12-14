@@ -29,7 +29,7 @@ Introduction: The background management system as its own specialized graduation
  <p>中间件: zookeeper/eureka(待定)</p>
  <p>消息队列: rabbitmq</p>
  <P>测试:swagger2</p>
- <p>开发风格：前后分离开发风格，RESTful api</p>
+ <p>开发风格：分布式系统架构，前后分离开发风格，RESTful api</p>
  <h2>需求分析</h2>
  <p>用户需求</p> 
  <p>用户个人信息管理，视频的编辑（加入滤镜或者背景音乐）、上传、浏览、点赞、关注、下载、等功能。</p>
