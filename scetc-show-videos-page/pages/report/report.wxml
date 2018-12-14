@@ -1,0 +1,13 @@
+  <form bindsubmit='doReport'>
+  <view class="section">
+    <input maxlength="10" name="reportTitle"  placeholder="举报类型:" auto-focus/>
+  </view>
+  <view class="section content">
+    <textarea maxlength="100" name="reportContent" placeholder="内容100字内" /> 
+  </view>
+  <text wx:if="{{isContentError}}" class='error-message'>{{errorMessage}}</text>
+  <view class="post">
+    <button bindtap="cancel" >取消</button>
+    <button form-type='submit'>提交</button>
+  </view>
+  </form>

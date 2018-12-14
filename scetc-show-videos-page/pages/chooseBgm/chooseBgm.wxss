@@ -1,0 +1,79 @@
+page {
+  height: 100%;
+}
+
+.container1 {
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: space-around;
+}
+
+.submitBtn {
+  width: 80%;
+  margin-top: 15px;
+}
+
+.gobackBtn {
+  width: 80%;
+  margin-top: 15px;
+}
+
+.filter
+{
+  color: gray;
+  font-size: 16px;
+}
+
+.loginLabel {
+  color: gray;
+  font-size: 15px;
+}
+
+.inputText {
+  float: right;
+  text-align: right;
+  margin-right: 22px;
+  margin-top: 11px;
+  font-size: 15px;
+}
+
+.inputView {
+  padding: 5px;
+  background-color: white;
+  line-height: 45px;
+  border: solid 1px whitesmoke;
+}
+
+/*checkbox 整体大小 */
+
+checkbox {
+  width: 60rpx;
+  height: 100rpx;
+}
+
+/*checkbox 选项框大小 */
+
+checkbox .wx-checkbox-input {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/*checkbox选中后样式 */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #ff525c;
+}
+
+/*checkbox选中后图标样式 */
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 28rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

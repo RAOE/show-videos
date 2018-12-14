@@ -1,0 +1,18 @@
+<view class="VideoPlace">
+  <div class="shade" wx:if="{{isViewShape}}"></div>
+  <video id="myAudio" bindplay="loadDone" duration="{{videoPlayDuration}}" autoplay="{{true}}" src="{{videoUri}}" type="video/mp4"></video>
+</view>
+<!-- skip -->
+<view class="skip" bindtap='jump'>
+  <span>跳过{{viewNum}}</span>
+</view>
+<view class="footer">
+  <view class="logo">
+    <image src='{{imagePath}}'></image>
+  </view>
+  <view>
+    <span>
+      <strong>Show Video</strong>
+    </span>
+  </view>
+</view>

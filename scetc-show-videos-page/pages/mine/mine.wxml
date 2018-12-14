@@ -1,0 +1,49 @@
+<view>
+
+  <view class='container'>
+    <image src="{{faceUrl}}" class="face" bindtap='changeFace'></image>
+    <label class='nickname'>{{nickname}}</label>
+     <view class='container-row'>
+      <text class='info-items'>{{fansCounts}} 粉丝</text>
+      <text class='info-items'>{{followCounts}} 关注</text>
+      <text class='info-items'>{{receiveLikeCounts}} 获赞</text>
+    </view>
+    <block wx:if="{{isMe}}">
+      <button  size="mini" class='btn' bindtap='uploadVideo'> 上传作品</button>
+      <button  size="mini" class='btn' bindtap='browse'>进入首页</button>
+      <button  size="mini" class='btn' open-type="contact">联系客服</button>
+      <button    size="mini"  class='btn' bindtap='logout'>注销</button>
+    </block>
+    <block wx:if="{{!isMe}}">
+      <block wx:if="{{!isFollowed}}">
+        <button  size="mini" class='primary' bindtap='followMe'>关注我</button>
+      </block>
+      <block wx:if="{{isFollowed}}">
+        <button  size="mini" class='primary' bindtap='UnfollowMe'>已关注</button>
+      </block>
+    </block>
+   
+  </view>
+  <view class='video-main'>
+    <view class='video-main-title'>
+      <block wx:if="{{!isMe}}">
+      <button>它的发布</button>
+      <button>它关注的</button>
+      <button>它的动态</button>
+
+      </block>
+    <block wx:if="{{isMe}}">
+      <button>我的发布</button>
+      <button>我的关注</button>   
+      <button>动态</button>
+    </block>
+    </view>
+    <view class='video-main-list'>
+      <view wx:for="{{videoList}}"  >
+        <image src="{{serverUrl}}{{item.coverPath}}"  bindtap='showVideoInfo' 
+        data-arrindex='{{index}}'></image>
+      </view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,51 @@
+<view style='width:100%;height:100%;'>
+
+  <video id="myVideo" src="{{src}}" controls="{{false}}" autoplay="{{true}}" loop="{{false}}" enable-progress-gesture="{{false}}" style='width:100%;height:90%;' objectFit='{{cover}}'>
+
+
+
+    <cover-view class='container'>
+      <cover-image src='../resource/images/camera.png' style='width:50rpx;height:50rpx;' bindtap='upload'></cover-image>
+
+      <cover-image class="face" src='{{imagesrc}}' style='width:50rpx;height:50rpx;' bindtap='showPublisher'></cover-image>
+
+      <block wx:if="{{userLikeVideo}}">
+        <cover-image src='../resource/images/like.png' style='width:50rpx;height:50rpx;' bindtap='likeVideoOrNot'></cover-image>
+      </block>
+      <block wx:else>
+        <cover-image src='../resource/images/unlike.png' style='width:50rpx;height:50rpx;' bindtap='likeVideoOrNot'></cover-image>
+      </block>
+
+
+      <cover-image src='../resource/images/comments.png' style='width:50rpx;height:50rpx;' bindtap='comments'></cover-image>
+      <cover-image src='../resource/images/share.png' style='width:50rpx;height:50rpx;' bindtap='shareMe'></cover-image>
+      <cover-image src='../resource/images/search.png' style='width:50rpx;height:50rpx;' bindtap='showSearch'></cover-image>
+
+      <cover-image src='../resource/images/index.png' style='width:50rpx;height:50rpx;' bindtap='showIndex'></cover-image>
+
+
+
+    </cover-view>
+
+
+  </video>
+  <cover-view class='container-words'>@{{videoInfo.nickName}}</cover-view>
+  <cover-view class='container-words'>{{videoInfo.videoDesc}}</cover-view>
+
+</view>
+
+<view wx:for="{{CommentList}}" class="comment" wx:for-index="idx" wx:for-item="itemName">
+  {{itemName.createTime}} 用户:{{itemName.nickName}} 评论:{{itemName.comment}}
+</view>
+
+
+<view class="saySthView">
+  <input name="commentContent" class="saySth" placeholder="{{placeholder}}" confirm-type="send" bindconfirm="sendComment" focus='{{commentFocus}}' value='{{contentValue}}' data-replyFatherCommentId='{{replyFatherCommentId}}' data-replyToUserId='{{replyToUserId}}'
+  />
+
+
+
+
+
+
+</view>

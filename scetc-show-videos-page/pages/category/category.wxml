@@ -1,0 +1,13 @@
+<view class='list bannerStyle' wx:for="{{categoryInfo}}" wx:key="{{index}}">
+  <view class='list-title'>
+    <view class="text-moreDay">
+      <text class="name">{{item.name}}</text>
+    </view>
+  </view>
+  <view class='imgList' bindtap='jump' data-id="{{item.label}}">
+    <view>
+      <image class="banner_image" mode='scaleToFill' src='{{serverUrl}}{{item.imageUrl}}' data-type="imgUrls" data-img="{{item.imageUrl}}" data-index="0"></image>
+    </view>
+  </view>
+  <view class="jump" data-id="{{item.label}}"  bindtap='jump'>查看详情</view>
+</view>

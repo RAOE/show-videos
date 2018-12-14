@@ -1,0 +1,129 @@
+page {
+  /* font-size: 14px; */
+  /* 微信小程序距离用rpx，包括高，然后字体用rem，这样防止其他手机不一样 */
+  font-size: 0.7rem;
+}
+.btn {
+  width: 60%;
+  margin-top: 30rpx;
+  background-color: white;
+  color: black;
+  height: 80rpx;
+  line-height: 80rpx !important;
+  font-size: 0.8rem;
+}
+.container {
+  background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2019671886,429493863&fm=26&gp=0.jpg');
+  color: black;
+  /* background-image: "../resource/images/camera.png"; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+.info-items { 
+  width: 100rpx;
+  font-size: 0.7rem;
+  color:white; 
+}
+
+.face {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+.nickname {
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.logout {
+  margin-top: 3px;
+  float: right;
+}
+
+.follow {
+  margin-top: 3px;
+}
+
+/* .line {
+  width: 100%;
+  height: 1px;
+  background-color: gainsboro;
+  margin-top: 1px;
+} */
+
+.container-video {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  text-align: center;
+  border: solid 1px;
+  line-height: 30px;
+}
+
+.video-info {
+  width: 100%;
+}
+
+.video-info-selected {
+  background-color: gainsboro;
+}
+
+.container-video-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.videoImage {
+  width: 250rpx;
+  height: 180px;
+}
+
+/*视频*/
+.video-main{
+}
+.video-main-title{
+  overflow: hidden;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.video-main-title button{
+   width: 33%;
+  float: left;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 0;
+}
+.video-main-title button::after{
+  border: 0;
+}
+.video-main-list{
+  display: flex;
+  flex-direction:row; 
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  overflow: hidden;
+}
+.video-main-list view {
+  width: 33%;
+  height: 240px;
+}
+.video-main-list image{
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,2 @@
+/* pages/searchVideos/searchVideos.wxss */
+@import "../../wsSearchView/wxSearchView/wxSearchView.wxss"
