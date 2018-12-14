@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.show.admin.scetc.mapper.BgmMapper">
+
+	<select id="queryAll" resultType="Bgm" parameterType="String">
+		select * from bgm
+		<if test="_parameter != null and _parameter !=''">
+			where name like '%${_parameter}%'
+		</if>
+		order by id
+
+	</select>
+	<select id="selectBgmByName" resultType="Bgm"
+		parameterType="String">
+		select * from bgm where name = #{name}
+	</select>
+
+</mapper>

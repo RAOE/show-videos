@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: scetc-show-videos-mini-api
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Ray
+Implementation-Vendor-Id: com.scetc.show
+Build-Jdk: 1.8.0_181
+Implementation-URL: http://projects.spring.io/spring-boot/scetc-show-v
+ ideos-dev/scetc-show-videos-mini-api/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

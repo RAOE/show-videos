@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.imooc.mapper.UsersReportMapper">
+  <resultMap id="BaseResultMap" type="com.imooc.pojo.UsersReport">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="deal_user_id" jdbcType="VARCHAR" property="dealUserId" />
+    <result column="deal_video_id" jdbcType="VARCHAR" property="dealVideoId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.imooc.pojo.UsersReport">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="deal_user_id" jdbcType="VARCHAR" property="dealUserId" />
+    <result column="deal_video_id" jdbcType="VARCHAR" property="dealVideoId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.imooc.pojo.UsersReport">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="deal_user_id" jdbcType="VARCHAR" property="dealUserId" />
+    <result column="deal_video_id" jdbcType="VARCHAR" property="dealVideoId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.imooc.pojo.UsersReport">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="deal_user_id" jdbcType="VARCHAR" property="dealUserId" />
+    <result column="deal_video_id" jdbcType="VARCHAR" property="dealVideoId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.imooc.pojo.UsersReport">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="deal_user_id" jdbcType="VARCHAR" property="dealUserId" />
+    <result column="deal_video_id" jdbcType="VARCHAR" property="dealVideoId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="userid" jdbcType="VARCHAR" property="userid" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+</mapper>

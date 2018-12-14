@@ -1,0 +1,47 @@
+{"properties": [
+  {
+    "name": "pagehelper.supportMethodsArguments",
+    "type": "java.lang.String",
+    "description": "A description for 'pagehelper.supportMethodsArguments'"
+  },
+  {
+    "name": "pagehelper.helperDialect",
+    "type": "java.lang.String",
+    "description": "A description for 'pagehelper.helperDialect'"
+  },
+  {
+    "name": "pagehelper.reasonable",
+    "type": "java.lang.String",
+    "description": "A description for 'pagehelper.reasonable'"
+  },
+  {
+    "name": "pagehelper.params",
+    "type": "java.lang.String",
+    "description": "A description for 'pagehelper.params'"
+  },
+  {
+    "name": "spring.thymeleaf.servlet.content-type",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.thymeleaf.servlet.content-type'"
+  },
+  {
+    "name": "classpath_mapping",
+    "type": "java.lang.String",
+    "description": "A description for 'classpath_mapping'"
+  },
+  {
+    "name": "url_mapping",
+    "type": "java.lang.String",
+    "description": "A description for 'url_mapping'"
+  },
+  {
+    "name": "web.upload.path",
+    "type": "java.lang.String",
+    "description": "A description for 'web.upload.path'"
+  },
+  {
+    "name": "bgm.upload.path",
+    "type": "java.lang.String",
+    "description": "A description for 'bgm.upload.path'"
+  }
+]}

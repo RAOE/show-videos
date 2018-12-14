@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* 共用css */
+* { margin: 0; padding: 0 }
+body { font: 14px "微软雅黑", Arial, Helvetica, sans-serif; background:#f1f1f1; color: #555 }
+img { border: 0; display: block }
+ul, li { list-style: none; }
+/*默认链接颜色 */
+a { text-decoration: none; color: #555 }
+.clear { clear: both; }
+.blank { height: 8px; overflow: hidden; width: 100%; margin: auto; clear: both }
+.f_l { float: left }
+.f_r { float: right }
+/* nav */
+nav { z-index:999;position:fixed;top:10px;width: 100%; background: #444; color: #999; line-height: 53px; height: 53px;}
+nav ul { width: 1000px; margin: auto;  text-align: right;  }
+nav ul li { display: inline-block; font-size: 15px; padding: 0px 15px;height: 53px;line-height: 53px;}
+
+nav ul li a:hover{ display: inline-block;color:#f8ac59;transition: 0.3s;text-decoration:none;}
+
+nav ul li a { color: #fff }
+.m20 { margin: 20px 0 }
+/*phone  nav */
+#mnav { display: none; width: 100%; position: fixed; top: 0; right: 0; }
+#mnav h2 { text-align: right; color: #fff; font-size: 18px; height: 52px; line-height: 52px; padding-left: 10px; width: 100% }
+#mnav h2.open { text-align: right; background: rgba(1,1,1,0.8); width: 100%; }
+#mnav ul { display: none; background: rgba(1,1,1,0.8); width: 100%; padding-bottom: 40px }
+#mnav li { height: 40px; line-height: 40px; vertical-align: top; font-size: 15px; display: block; overflow: hidden; text-align: center }
+#mnav li a { color: #fff }
+/* 默认菜单栏 */
+#mnav h2 .navicon { margin-right: 15px; }
+.navicon { display: inline-block; position: relative; width: 30px; height: 5px; background-color: #000; }
+.navicon:before, .navicon:after { content: ''; display: block; width: 30px; height: 5px; position: absolute; background: #000; -webkit-transition-property: margin, -webkit-transform; transition-property: margin, -webkit-transform; transition-property: margin, transform; transition-property: margin, transform, -webkit-transform; -webkit-transition-duration: 300ms; transition-duration: 300ms; }
+.navicon:before { margin-top: -10px; }
+.navicon:after { margin-top: 10px; }
+/* 展开后导航栏目 */
+#mnav h2.open .navicon { background: rgba(1,1,1,0.8) }/* 使用背景色隐藏中间的红线 */
+#mnav h2.open .navicon:before { margin-top: 0; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+#mnav h2.open .navicon:after { margin-top: 0; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+#mnav h2.open .navicon:before, #mnav h2.open .navicon:after { content: ''; display: block; width: 30px; height: 5px; position: absolute; background: #FFFFFF; -webkit-transition-property: margin, -webkit-transform; transition-property: margin, -webkit-transform; transition-property: margin, transform; transition-property: margin, transform, -webkit-transform; -webkit-transition-duration: 300ms; transition-duration: 300ms; }
+article { width: 74.2%; margin:70px auto; overflow: hidden }
+footer { width: 100%; background: #333; color: #a5a4a4; text-align: center; padding: 20px 0; }
+footer a { color: #a5a4a4 }
+
+.fixed-menu-list {
+	display: none;
+	padding: 10px;
+	width: 17%;
+	position: fixed;
+	right: 15%;
+	top: 16%;
+	bottom: 200px;
+	border: 1px solid #eee;
+	font-size: 24px;
+	z-index: 500;
+	overflow-y: auto !important;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.sidebar-nav-toc {
+	margin: 0 0 5px;
+	padding: 0 5px;
+	color: #fc6423;
+	border-bottom: 1px solid transparent;
+	font-size: 18px;
+	text-align: center;
+}
+
+.post-toc {
+	overflow: auto;
+}
+
+.post-toc ol {
+	margin: 0;
+	padding: 0 2px 5px 10px;
+	text-align: left;
+	list-style: none;
+	font-size: 14px;
+}
+
+.post-toc .nav-item {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	line-height: 1.8;
+}
+
+.post-toc ol a {
+	transition-property: all;
+	color: #999;
+	border-bottom-color: #555;
+}
+
+.tool-box {
+	position: fixed;
+	top: 26%;
+	left: 3%;
+}
+
+.tool-box ul {
+	width: 43px;
+}
+
+.tool-box ul li {
+	background: #fff;
+	padding: 6px 0px 3px;
+	border-radius: 10px;
+	margin: 10px 0px;
+}
+
+.tool-box ul li a {
+	font-size: 12px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+
+.tool-box ul li a i {
+	font-size: 20px;
+}
+
+.tool-box ul li a:hover {
+	color: #ca0c16;
+	text-decoration: none;
+}
+
+.cd-top.cd-is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+.cd-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: rgba(0, 0, 0, 0.8) url(../images/top.png) no-repeat center;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}

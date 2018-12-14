@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.show.mapper.UsersMapper" >
+  <resultMap id="BaseResultMap" type="com.show.pojo.Users" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="face_image" property="faceImage" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="fans_counts" property="fansCounts" jdbcType="INTEGER" />
+    <result column="follow_counts" property="followCounts" jdbcType="INTEGER" />
+    <result column="receive_like_counts" property="receiveLikeCounts" jdbcType="INTEGER" />
+  </resultMap>
+  <update id="addReceiveLikeCount" parameterType="String"> 
+      update users set receive_like_counts = receive_like_counts+1 where 
+      id =#{userId}
+  </update>
+   <update id="reduceReceiveLikeCount" parameterType="String"> 
+      update users set receive_like_counts = receive_like_counts-1 where 
+      id =#{userId}
+  </update>
+   <update id="addFansCount" parameterType="String">
+       update users set fans_counts = fans_counts +1 where id =#{userId}       
+   </update>
+  <update id="reduceFansCount" parameterType="String">
+       update users set fans_counts = fans_counts -1 where id =#{userId}       
+   </update>
+    <update id="followWithAdd" parameterType="String">
+       update users set follow_counts = follow_counts +1 where id =#{fanId}       
+   </update>
+   <update id="followWithReduce" parameterType="String">
+       update users set follow_counts = follow_counts -1 where id =#{fanId}       
+   </update>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</mapper>

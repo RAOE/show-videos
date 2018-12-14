@@ -1,0 +1,11 @@
+com\show\controller\BasicController.class
+com\show\controller\UserController.class
+com\show\controller\RegistLoginController.class
+com\show\controller\HelloWorldController.class
+com\show\controller\CategoryController.class
+com\show\controller\VideoController.class
+com\show\controller\BgmController.class
+com\show\WarStartApplication.class
+com\show\Application.class
+com\show\Swagger2.class
+com\show\WebMvcConfig.class

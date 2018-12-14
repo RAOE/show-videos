@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.show.admin.scetc.mapper.ReportMapper">
+
+
+	<select id="queryAll" resultType="UsersReportVo">
+		select
+		u.username,ur.*,ur.deal_video_id as dealVideoId,
+		v.video_path,u2.username as publisher from users_report ur
+		left join users u on u.id = ur.userid
+		left join videos v on v.id = ur.deal_video_id
+		left join users u2 on u2.id=ur.deal_user_id
+
+	</select>
+
+</mapper>
