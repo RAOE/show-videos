@@ -152,7 +152,11 @@
 					<div class="mail-body text-right tooltip-demo">
 						<a onclick="sendEmail()" class="btn btn-sm btn-primary"
 							data-toggle="tooltip" data-placement="top" title="Send"><i
-							class="fa fa-reply"></i> 发送</a> <a href="mailbox.html"
+							class="fa fa-reply"></i> 发送</a> 
+							<a onclick="sendEmail()" class="btn btn-sm btn-primary"
+							data-toggle="tooltip" data-placement="top" title="Send"><i
+							class="fa fa-reply"></i> 群发</a> 
+							<a href="mailbox.html"
 							class="btn btn-white btn-sm" data-toggle="tooltip"
 							data-placement="top" title="Discard email"><i
 							class="fa fa-times"></i> 放弃</a> <a href="mailbox.html"
@@ -169,17 +173,25 @@
 		function sendEmail() {
 			var to = document.getElementById("to").value;
 			var subject = document.getElementById("subject").value;
-			var content =  $("#content").html();
-            console.log("内容"+content);
+			var content = $("#content").html();
+			console.log("内容" + content);
 			$.ajax({
-				url : "../../other/sendEmail.do?to="+to+"&subject="+subject+"&content="+content,
+				url : "../../other/sendEmail.do",
 				method : "post",
-				beforeSend:function(e)
-				{
+				dataType : "json",
+				data : {
+					to : to,
+					subject : subject,
+					content : content
+				},
+				beforeSend : function(e) {
 					//显示loading事件
-					
+
 				},
 				success : function(e) {
+					if (e.status == 200) {
+						alert("提交成功");
+					}
 					console.log(e);
 				},
 				error : function(e) {

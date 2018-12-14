@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.show.admin.scetc.pojo.AdminUser;
-import com.show.admin.scetc.pojo.MailInfo;
 import com.show.admin.scetc.service.SettingService;
 import com.show.admin.scetc.utils.EmailUtils;
 import com.show.admin.scetc.utils.ImageCodeUtils;

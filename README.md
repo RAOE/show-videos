@@ -26,7 +26,7 @@ Introduction: The background management system as its own specialized graduation
 
 <h2>相关技术 </h2>
  <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>
- <p>后端:springboot+sping+springmvc+mybatis+mysql+redis+shiro</p>
+ <p>后端:springcloud+springboot+sping+springmvc+mybatis+mysql+redis+shiro</p>
  <p>组件:bootsrap-table,webUploader,pagehelper+layer</p>
  <p>项目部署: docker + linux</p>
  <p>中间件: zookeeper/eureka(待定)</p>
