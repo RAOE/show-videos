@@ -21,15 +21,28 @@ Introduction: The background management system as its own specialized graduation
 <img style="width:50%;height:50%"src="./myimg/backgroud.png">
 
 
+
+
+
 <h2>相关技术 </h2>
  <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>
  <p>后端:springcloud+springboot+sping+springmvc+mybatis+mysql+redis+shiro</p>
  <p>组件:bootsrap-table,webUploader,pagehelper+layer</p>
  <p>项目部署: docker + linux</p>
- <p>中间件: zookeeper/eureka(待定)</p>
+ <p>中间件:eureka(微服务治理)</p>
  <p>消息队列: rabbitmq</p>
  <P>测试:swagger2</p>
  <p>开发风格：分布式系统架构，前后分离开发风格，RESTful api</p>
+
+<h2>代码介绍 </h2>
+<p>scetc-show-videos-admin 后台管理系统</p>
+<p>scetc-show-videos-cloud eureka服务发现与注册</p>
+<p>scetc-show-videos-config 分布式配置中心</p>
+<p>scetc-show-videos-dev 小程序后台</p>
+<p>scetc-show-videos-page 小程序界面</p>
+
+
+
  <h2>需求分析</h2>
  <p>用户需求</p> 
  <p>用户个人信息管理，视频的编辑（加入滤镜或者背景音乐）、上传、浏览、点赞、关注、下载、等功能。</p>

@@ -21,6 +21,9 @@ Introduction: The background management system as its own specialized graduation
 <img style="width:50%;height:50%"src="./myimg/backgroud.png">
 
 
+
+
+
 <h2>相关技术 </h2>
  <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>
  <p>后端:springcloud+springboot+sping+springmvc+mybatis+mysql+redis+shiro</p>
@@ -30,13 +33,22 @@ Introduction: The background management system as its own specialized graduation
  <p>消息队列: rabbitmq</p>
  <P>测试:swagger2</p>
  <p>开发风格：分布式系统架构，前后分离开发风格，RESTful api</p>
+
+<h2>代码介绍 </h2>
+<p>scetc-show-videos-admin 后台管理系统</p>
+<p>scetc-show-videos-cloud eureka服务发现与注册</p>
+<p>scetc-show-videos-config 分布式配置中心</p>
+<p>scetc-show-videos-dev 小程序后台</p>
+<p>scetc-show-videos-page 小程序界面</p>
+
+
  <h2>需求分析</h2>
  <p>用户需求</p> 
  <p>用户个人信息管理，视频的编辑（加入滤镜或者背景音乐）、上传、浏览、点赞、关注、下载、等功能。</p>
  <p>管理员需求</p>
  <p>毕业设计选题环节中，系统管理员的需求为：用户管理（新增用户、删除用户及用户登录系统数据的初始化操作）、视频管理（视频分类、新增视频、对违违法视频进行删除操作）、背景音乐管理（对音乐库中音乐的增删改查）、滤镜管理（滤镜的增改）、用户管理（新增各权限级的管理员、删除管理员、对子集权限组管理员系统登录数据的初始化操作）以及消息通知（发布不同对象的系统消息、对所有消息进行查看及删除操作）</p> 
  
- 
+
   
 <h2>项目设计</h2>
 <h2>2.1 微信小程序端</h2>
