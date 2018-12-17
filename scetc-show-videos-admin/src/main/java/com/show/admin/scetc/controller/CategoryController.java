@@ -5,7 +5,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 import org.apache.commons.io.IOUtils;
@@ -47,6 +46,21 @@ public class CategoryController extends BasicController {
 		PageResult list = categoryService.queryAll(keyword, page, pageSize);
 		return XyfJsonResult.ok(list);
 	}
+	
+
+	/**
+	 * 根据id查询 出专栏的全部信息
+	 * @param id
+	 * @return
+	 */
+	@PostMapping("/selectResourceById")
+	public XyfJsonResult selectResourceById(Long id)
+	{
+		Category category=categoryService.selectOne(id);
+		return XyfJsonResult.ok(category);
+	}
+	
+	
 
 	/**
 	 * 根据状态吗来更新专栏
@@ -56,9 +70,12 @@ public class CategoryController extends BasicController {
 	 * @return
 	 */
 	@PostMapping("/updateCategory")
-	public XyfJsonResult deleteOne(Long id, String status) {
+	public XyfJsonResult deleteOne(Long id, String status, MultipartFile file, String title, String description) {
 		if (status.equals(DELETE)) {
 			categoryService.delete(id);
+			return XyfJsonResult.ok();
+		} else if (status.equals(UPDATE)) {
+			categoryService.update(id, title, description, file);
 			return XyfJsonResult.ok();
 		}
 		return XyfJsonResult.errorMsg("参数错误");

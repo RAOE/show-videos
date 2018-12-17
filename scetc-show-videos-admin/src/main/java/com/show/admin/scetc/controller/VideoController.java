@@ -81,5 +81,19 @@ public class VideoController extends BasicController {
 		}
 		return XyfJsonResult.ok();
 	}
+	
+	/**
+	 * 编辑视频
+	 * @return
+	 */
+	@RequestMapping("/editVideos")
+	public XyfJsonResult editVideosSubmit()
+	{
+        		
+        		
+		
+		return XyfJsonResult.ok();//编辑视频
+	}
+	
 
 }

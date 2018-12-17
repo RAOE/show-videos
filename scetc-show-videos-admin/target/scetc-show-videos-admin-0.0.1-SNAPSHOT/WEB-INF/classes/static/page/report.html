@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:21 GMT -->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秀视频管理平台-投诉模块</title>
+<meta name="keywords" content="秀视频后台管理平台是基于HTML5+css3编写的页面">
+<meta name="description" content="秀视频后台管理平台欢迎您的到来">
+
+<link rel="shortcut icon" href="favicon.ico">
+<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="../css/font-awesome.min93e3.css" rel="stylesheet">
+<link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="../css/animate.min.css" rel="stylesheet">
+<link href="../css/style.min862f.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content mailbox-content">
+						<div class="file-manager">
+							<a class="btn btn-block btn-primary compose-mail"
+								href="mail_compose.html">举报模块</a>
+							<div class="space-25"></div>
+							<h5>用户类别</h5>
+							<ul class="folder-list m-b-md" style="padding: 0">
+								<li><a href="mailbox.html"> 
+									<i class="fa fa-user"></i>
+										超级管理员 <span class="label label-warning pull-right"></span>
+								</a></li>
+								<li><a href="mailbox.html"> 
+									<i class="fa fa-user"></i>
+										普通管理员
+								</a></li>
+							</ul>
+							<h5>举报分类-快捷键</h5>
+							<ul class="category-list" style="padding: 0">
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 违法犯罪
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 引人不适
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 侵犯隐私 
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 淫秽色情 
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 盗用TA人作品
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 疑是自我伤害
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 恶意引导未成年人
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 垃圾广告、售卖低劣产品等
+								</a></li>
+							</ul>
+
+							<h5 class="tag-title">标签</h5>
+							<ul class="tag-list" style="padding: 0">
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										违法犯罪</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										引人不适</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										侵犯隐私</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										淫秽色情</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										盗用TA人作品</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										疑是自我伤害</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										恶意引导未成年人</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										垃圾广告、售卖低劣产品等</a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9 animated fadeInRight">
+				<div class="mail-box-header">
+
+					<form method="get"
+						action="http://www.zi-han.net/theme/hplus/index.html"
+						class="pull-right mail-search">
+						<div class="input-group">
+							<input type="text" class="form-control input-sm" name="search"
+								placeholder="搜索邮件标题，正文等">
+							<div class="input-group-btn">
+								<button type="submit" class="btn btn-sm btn-primary">
+									搜索</button>
+							</div>
+						</div>
+					</form>
+					<h2>举报模块</h2>
+					<div class="mail-tools tooltip-demo m-t-md">
+						<div class="btn-group pull-right">
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-left"></i>
+							</button>
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-right"></i>
+							</button>
+
+						</div>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="left" title="刷新邮件列表">
+							<i class="fa fa-refresh"></i> 刷新
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为已读">
+							<i class="fa fa-eye"></i>
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为重要">
+							<i class="fa fa-exclamation"></i>
+						</button>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							data-placement="top" title="标为垃圾邮件">
+							<i class="fa fa-trash-o"></i>
+						</button>
+
+					</div>
+				</div>
+				<div class="mail-box">
+					<table id="allReport" data-mobile-responsive="true"
+						class="table table-hover">
+						
+						
+						
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+			<script src="../js/jquery.min.js"></script>
+		<script src="../js/highlight.pack.js"></script>
+		<script>
+			hljs.initHighlightingOnLoad();
+		</script>
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- 自定义js -->
+		<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+		<script src="../js/contabs.js"></script>
+		<script src="../js/fakeLoader.min.js"></script>
+		<!-- Bootstrap table -->
+		<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script
+			src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script
+			src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script src="../js/colum/column.js"></script>
+	<script src="../js/plugins/iCheck/icheck.min.js"></script>
+	<script src="../js/report/reportTable.js"></script>
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:22 GMT -->
+</html>

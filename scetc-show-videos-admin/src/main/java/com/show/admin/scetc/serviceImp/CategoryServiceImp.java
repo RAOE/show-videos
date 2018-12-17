@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.show.admin.scetc.mapper.CategoryMapper;
@@ -63,6 +65,27 @@ public class CategoryServiceImp implements CategoryService {
 		result.setRecords(pageInfo.getTotal());
 		result.setPage(page);
 		return result;
+	}
+
+	@Transactional(propagation = Propagation.REQUIRED)
+	@Override
+	public void update(Long id, String name, String content, MultipartFile file) {
+		
+		Category category=new Category();
+		category.setId(id);
+		category=categoryMapper.selectOne(category);
+		category.setContent(content);
+		category.setName(name);
+		//更新操作
+        categoryMapper.updateByExample(category, Category.class);
+	}
+
+	@Override
+	public Category selectOne(Long id) {
+
+		Category category =new Category();
+		category.setId(id);
+		return categoryMapper.selectOne(category);
 	}
 
 }

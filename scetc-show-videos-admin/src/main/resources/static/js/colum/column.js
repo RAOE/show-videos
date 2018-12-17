@@ -151,6 +151,7 @@ var selectResourceById = function(id) {
 		dataType : 'json',
 		success : function(data) {
 			if (data.status == 200) {
+				console.log(data);
 				var param=data.data;
 				$("#newTitle").val(param.author);
 				$("#newContent").val(param.name);

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:21 GMT -->
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秀视频后台管理平台-日志</title>
+<meta name="keywords" content="秀视频后台管理平台是基于HTML5+css3编写的页面">
+<meta name="description" content="秀视频后台管理平台欢迎您的到来">
+<link rel="shortcut icon" href="favicon.ico">
+<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="../css/font-awesome.min93e3.css" rel="stylesheet">
+<link href="../css/plugins/iCheck/custom.css" rel="stylesheet">
+<link href="../css/animate.min.css" rel="stylesheet">
+<link href="../css/style.min862f.css" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="ibox float-e-margins">
+					<div class="ibox-content mailbox-content">
+						<div class="file-manager">
+							<a class="btn btn-block btn-primary compose-mail" href="#">操作日志</a>
+							<div class="space-25"></div>
+							<h5>用户类别</h5>
+							<ul class="folder-list m-b-md" style="padding: 0">
+								<li><a href="mailbox.html"> <i class="fa fa-inbox "></i>
+										超级管理员 <span class="label label-warning pull-right">16</span>
+								</a></li>
+								<li><a href="mailbox.html"> <i class="fa fa-envelope-o"></i>
+										普通管理员
+								</a></li>
+							</ul>
+							<h5>日志分类</h5>
+							<ul class="category-list" style="padding: 0">
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-navy"></i> 登陆记录
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-danger"></i> 历史足迹
+								</a></li>
+								<li><a href="mail_compose.html#"> <i
+										class="fa fa-circle text-primary"></i> 操作日志
+								</a></li>
+							</ul>
+
+							<h5 class="tag-title">标签</h5>
+							<ul class="tag-list" style="padding: 0">
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										登陆记录</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										历史足迹</a></li>
+								<li><a href="mail_compose.html"><i class="fa fa-tag"></i>
+										操作日志</a></li>
+
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9 animated fadeInRight">
+				<div class="mail-box-header">
+
+					<h2>操作日志</h2>
+					<div class="mail-tools tooltip-demo m-t-md">
+						<div class="btn-group pull-right">
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-left"></i>
+							</button>
+							<button class="btn btn-white btn-sm">
+								<i class="fa fa-arrow-right"></i>
+							</button>
+
+						</div>
+						<button class="btn btn-white btn-sm" data-toggle="tooltip"
+							id="btn" data-placement="left" title="刷新日志列表">
+							<i class="fa fa-refresh"></i> 刷新
+						</button>
+
+
+					</div>
+				</div>
+				<div class="mail-box">
+					<table class="table table-hover table-mail">
+						<tbody>
+							<ul id="parentIndustryUL">
+
+							</ul>
+							<a class="btn btn-block btn-primary compose-mail" onclick="queryAllCategory()">加载更多</a>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/content.min.js"></script>
+	<script src="../js/plugins/iCheck/icheck.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(".i-checks").iCheck({
+				checkboxClass : "icheckbox_square-green",
+				radioClass : "iradio_square-green",
+			})
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			queryAllCategory(1, 20);
+		});
+
+		function queryAllCategory(page, pageSize) {
+
+			param = {
+				page : page,
+				pageSize : pageSize,
+			};
+			$.ajax({
+						url : '../../log/queryAll',
+						data : param,
+						type : 'post',
+						dataType : 'json',
+						success : function(data) {
+							if (data.status == 200) {
+								$("#parentIndustryUL").html("");
+								for (var i = 0; i < data.data.length; i++) {
+									$("#parentIndustryUL")
+											.append(
+													"<li style='animation-delay: 0s'class='list-group-item  animated fadeInDown'><p"+
+					    "style='margin: 4px 0px;'><span style='font-size:16px' class='label label-info'><i class='fa fa-user'>&nbsp;&nbsp;&nbsp;&nbsp;"
+															+ data.data[i]
+															+ "</span><strong>");
+								}
+							}
+						}
+					})
+		}
+
+		$("#btn").click(function() {
+			queryAllCategory(1, 20);
+		});
+	</script>
+
+
+</body>
+
+
+<!-- Mirrored from www.zi-han.net/theme/hplus/mailbox.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Jan 2016 14:18:22 GMT -->
+</html>
