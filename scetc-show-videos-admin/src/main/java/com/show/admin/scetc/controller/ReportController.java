@@ -29,5 +29,6 @@ public class ReportController {
 		PageResult list = reportService.queryAll(page, pageSize, keyword);
 		return XyfJsonResult.ok(list);
 	}
+	
 
 }

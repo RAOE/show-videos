@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.show.admin.scetc.pojo.Category;
 import com.show.admin.scetc.pojo.PageResult;
@@ -46,21 +47,31 @@ public class CategoryController extends BasicController {
 		PageResult list = categoryService.queryAll(keyword, page, pageSize);
 		return XyfJsonResult.ok(list);
 	}
-	
 
 	/**
 	 * 根据id查询 出专栏的全部信息
+	 * 
 	 * @param id
 	 * @return
 	 */
 	@PostMapping("/selectResourceById")
-	public XyfJsonResult selectResourceById(Long id)
-	{
-		Category category=categoryService.selectOne(id);
+	public XyfJsonResult selectResourceById(Long id) {
+		Category category = categoryService.selectOne(id);
 		return XyfJsonResult.ok(category);
 	}
-	
-	
+
+	/**
+	 * 编辑根据id
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/editById")
+	public ModelAndView edit(Long id) {
+		
+		Category category = categoryService.selectOne(id);
+		return new ModelAndView("thymeleaf/column/column_edit").addObject("category", category);
+	}
 
 	/**
 	 * 根据状态吗来更新专栏

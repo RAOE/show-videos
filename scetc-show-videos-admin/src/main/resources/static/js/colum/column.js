@@ -128,7 +128,7 @@ var selectCategory = function() {
 				align : 'center',
 				width : '5%',
 				formatter : function(value, row, index) {
-					var a = '<button class="  btn-sm btn-info"   onclick="selectResourceById('+row.id+')" data-target="#myModal" ">编辑</button> ';
+					var a = '<button class="  btn-sm btn-info"   onclick="editById('+row.id+')" data-target="#myModal" ">编辑</button> ';
                     return a;
 				}
 			},
@@ -138,8 +138,13 @@ var selectCategory = function() {
 	});
 	globalCount++;
 	returnAllCount();
-}
+};
 
+var editById =function(id)
+{
+	window.location.href="../../category/editById?id="+id;
+		
+}
 var selectResourceById = function(id) {
 	var params = {
 		id : id
@@ -152,12 +157,6 @@ var selectResourceById = function(id) {
 		success : function(data) {
 			if (data.status == 200) {
 				console.log(data);
-				var param=data.data;
-				$("#newTitle").val(param.author);
-				$("#newContent").val(param.name);
-				$("#newLink").val(param.id);
-				var updateButton = ' <button class="btn btn-sm btn-primary pull-right m-t-n-xs" onclick="updateResource('+',\'' +  '\',null)" type="button"><strong>提交</strong></button>'
-				$("#update").html(updateButton);
 				
 			} else if (data.status == 0) {
 				swal("查询失败", "不存在该类别信息", "error");

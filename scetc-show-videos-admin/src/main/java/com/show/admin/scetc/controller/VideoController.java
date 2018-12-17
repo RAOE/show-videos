@@ -89,9 +89,6 @@ public class VideoController extends BasicController {
 	@RequestMapping("/editVideos")
 	public XyfJsonResult editVideosSubmit()
 	{
-        		
-        		
-		
 		return XyfJsonResult.ok();//编辑视频
 	}
 	
