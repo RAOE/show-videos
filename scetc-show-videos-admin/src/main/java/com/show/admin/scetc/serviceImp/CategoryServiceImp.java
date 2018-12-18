@@ -73,11 +73,9 @@ public class CategoryServiceImp implements CategoryService {
 		
 		Category category=new Category();
 		category.setId(id);
-		category=categoryMapper.selectOne(category);
-		category.setContent(content);
-		category.setName(name);
-		//更新操作
-        categoryMapper.updateByExample(category, Category.class);
+		System.out.println(id);
+		
+		
 	}
 
 	@Override

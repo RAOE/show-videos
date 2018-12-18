@@ -11,6 +11,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -68,7 +69,7 @@ public class CategoryController extends BasicController {
 	 */
 	@RequestMapping("/editById")
 	public ModelAndView edit(Long id) {
-		
+
 		Category category = categoryService.selectOne(id);
 		return new ModelAndView("thymeleaf/column/column_edit").addObject("category", category);
 	}
@@ -81,7 +82,8 @@ public class CategoryController extends BasicController {
 	 * @return
 	 */
 	@PostMapping("/updateCategory")
-	public XyfJsonResult deleteOne(Long id, String status, MultipartFile file, String title, String description) {
+	public XyfJsonResult updateOne(Long id, String status, MultipartFile file, String title, String description) {
+		System.out.println(id + status + file + title);
 		if (status.equals(DELETE)) {
 			categoryService.delete(id);
 			return XyfJsonResult.ok();
@@ -90,7 +92,6 @@ public class CategoryController extends BasicController {
 			return XyfJsonResult.ok();
 		}
 		return XyfJsonResult.errorMsg("参数错误");
-
 	}
 
 	/**

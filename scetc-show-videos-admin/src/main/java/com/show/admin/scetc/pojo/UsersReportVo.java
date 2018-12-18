@@ -26,6 +26,18 @@ public class UsersReportVo {
 	private String userName;// 举报人的账户
 	private String publisher;// 视频的发布者
 	private String video_path;// 视频的路径
+	private String status;
+	
+	
+	
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	public String getUserName() {
 		return userName;

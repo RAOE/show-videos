@@ -11,4 +11,6 @@ public interface ReportService {
 	 */
 	PageResult queryAll(Integer page, Integer pageSize, String keyword);
 
+	void undercarriageById(String id, String status);
+
 }

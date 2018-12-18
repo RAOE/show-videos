@@ -137,7 +137,7 @@ var selectReport = function() {
 				}
 			},
 			{
-				title : '操作A',
+				title : '查看',
 				field : 'id',
 				align : 'center',
 				width : '5%',
@@ -149,15 +149,23 @@ var selectReport = function() {
 				},
 			},
 			{
-				title : '操作B',
+				title : '執行',
 				field : 'id',
 				align : 'center',
 				width : '5%',
 				formatter : function(value, row, index) {
+					
+                    if(row.status==2)
+                    {
+    					var a  = '<a  class=" btn-sm btn-primary"  onclick="operation(\'' + row.dealVideoId + '\',\'上架\')"><i class="fa fa-share-square-o" ></i>上架</a> ';
+                        return a;
+                    }
 					// 下架
-					var b  = '<a  class=" btn-sm btn-danger"  onclick="operation(\'' + row.id + '\',\'下架\')"><i class="fa fa-share-square-o" ></i>下架</a> ';
+                    else if(row.status==1)
+                    {
+					var b  = '<a  class=" btn-sm btn-danger"  onclick="operation(\'' + row.dealVideoId + '\',\'下架\')"><i class="fa fa-share-square-o" ></i>下架</a> ';
 				    return b;
-				    
+                    }
 				},
 				
 			}
@@ -167,6 +175,36 @@ var selectReport = function() {
 	});
 	globalCount++;
 	returnAllCount();
+}
+function operation(id,op)
+{
+	
+	  var status=0;
+      if(op=='下架')// 发送ajax请求下架程序
+      {
+    	 status=2;
+      }
+      else if(op=="上架")
+      {
+    	  status=1;
+      }
+      $.ajax(
+    	    	 {
+    	    		 url:"../../report/undercarriage?id="+id+"&status="+status,
+    	    		 method : 'post',
+    	    		 dataType : "json",// 预期服务器返回的数据类型發
+    	    		 success:function(res)
+    	    		 {
+    	    			 if(res.status==200)
+    	    			 {
+    	    				 alert("操作成功");
+    	    				 $("#allReport").bootstrapTable('refresh');
+    	    			 }
+    	    		 },
+    	    		 error : function(e) {
+    	 				alert("异常！" + e);
+    	 			}
+    	    	 })
 }
 // 传参数到后台
 function queryParams(params) {
