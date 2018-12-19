@@ -188,8 +188,7 @@ function operation(id,op)
       {
     	  status=1;
       }
-      $.ajax(
-    	    	 {
+      $.ajax({
     	    		 url:"../../report/undercarriage?id="+id+"&status="+status,
     	    		 method : 'post',
     	    		 dataType : "json",// 预期服务器返回的数据类型發

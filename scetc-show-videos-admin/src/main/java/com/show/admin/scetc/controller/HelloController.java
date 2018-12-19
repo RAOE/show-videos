@@ -13,12 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("")
 public class HelloController {
-	@Value("${message}")
-	private String message;
+	
 	
 	@RequestMapping("/hello")
 	public String hello() {
-		return "hello springboot~!"+message;
+		return "hello springboot~!";
 	}
 
 	@RequestMapping("welcome")

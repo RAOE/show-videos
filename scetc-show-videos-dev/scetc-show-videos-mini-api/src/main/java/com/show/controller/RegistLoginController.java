@@ -5,12 +5,9 @@ import java.util.UUID;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.fasterxml.jackson.databind.util.BeanUtil;
 import com.show.pojo.Users;
 import com.show.service.UserService;
 import com.show.utils.MD5Utils;
@@ -38,7 +35,7 @@ public class RegistLoginController extends BasicController {
 	@PostMapping("/login")
 	public XyfJsonResult login(@RequestBody Users user) throws Exception {
 		// 假设登陆的人特别多
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		// 1.先判断传入的用户的账号密码是否为空
 		if (StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword())) {
 			return XyfJsonResult.errorMsg("小主,账号密码不能为空哦");

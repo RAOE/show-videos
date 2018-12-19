@@ -11,8 +11,6 @@ import tk.mybatis.spring.annotation.MapperScan;
 @SpringBootApplication
 @MapperScan(basePackages = "com.show.admin.scetc.mapper")
 public class ScetcShowVideosAdminApplication {
-	@Value("${message}")
-	private String message;
 	
 	
 	public static void main(String[] args) {

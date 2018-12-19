@@ -78,14 +78,15 @@
 </body>
 <script type="text/javascript">
 	function back() {
-		window.location.href=document.referrer;
-		}
+		window.location.href = document.referrer;
+	}
 	function updateSubmit() {
 
 		var title = document.getElementById("title").text;
 		var description = document.getElementById("description");
 		var files = document.querySelector('input[type=file]').files;
 		var formData = new FormData();
+		console.log(title);
 
 		$.ajax({
 			//几个参数需要注意一下

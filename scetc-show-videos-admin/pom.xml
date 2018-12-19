@@ -7,7 +7,7 @@
 	<groupId>com.show.admin</groupId>
 	<artifactId>scetc-show-videos-admin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>scetc-show-videos-admin</name>
 	<description>Demo project for Spring Boot</description>
@@ -26,6 +26,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<version>2.1.1.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.servlet</groupId>
