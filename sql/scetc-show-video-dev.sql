@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2018-12-03 10:22:49
+Date: 2018-12-20 10:27:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -38,12 +38,14 @@ CREATE TABLE `adminusers` (
   `geohash` bigint(22) DEFAULT NULL,
   `isDeleted` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of adminusers
 -- ----------------------------
 INSERT INTO `adminusers` VALUES ('1', 'admin', '徐塬峰', 'da4799f536c020929a55f2631039118f', '15008121886', '986771570@qq.com', '四川成都', '111111', '986771570', '39.91488908', '116.40387397116', '2018-11-27 10:30:34', '2018-11-28 10:30:37', '10.127.11.22', 'Mozilla/5.0 (Windows N', '282904150014060920', '0');
+INSERT INTO `adminusers` VALUES ('2', 'username', '刘翰骏', '34F673DE50D97DD69F401B07EDD23739', '17726512285', 'lium0515@qq.com', '四川成都', '111111', '445729490', null, null, '2018-12-03 17:48:21', '2018-12-03 17:48:25', '10.127.11.22', 'Mozilla/5.0 (Windows N', '282904150014060920', '0');
+INSERT INTO `adminusers` VALUES ('3', 'dh34', '邓慧', 'da4799f536c020929a55f2631039118f', '18081311157', '1714260544@qq.com', '四川成都', '111111', '1714260544', null, null, '2018-12-07 11:26:57', '2018-12-07 11:27:01', '10.127.11.22', null, null, '0');
 
 -- ----------------------------
 -- Table structure for `bgm`
@@ -55,36 +57,66 @@ CREATE TABLE `bgm` (
   `name` varchar(255) DEFAULT NULL,
   `path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=233 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bgm
 -- ----------------------------
-INSERT INTO `bgm` VALUES ('226', 'bgm04.mp3', 'bgm04.mp3', '\\bgm\\3f7c327b-1029-4468-8c5f-a448310b54fc.mp3');
-INSERT INTO `bgm` VALUES ('227', 'bgm03.mp3', 'bgm03.mp3', '\\bgm\\cf81f9e1-991c-4d5e-b4c9-42e676779c63.mp3');
-INSERT INTO `bgm` VALUES ('228', 'Superstar-Beatrich.mp3', 'Superstar-Beatrich.mp3', '\\bgm\\5f49ba83-18b2-46b7-9000-8adeda410ee1.mp3');
-INSERT INTO `bgm` VALUES ('230', 'test1.mp3', 'test1.mp3', '\\bgm\\48b1a613-dd01-47d0-964c-995e5c2e29d1.mp3');
-INSERT INTO `bgm` VALUES ('231', 'test2.mp3', 'test2.mp3', '\\bgm\\3cc7949d-e4b1-4243-96c8-014a85261fe8.mp3');
-INSERT INTO `bgm` VALUES ('232', 'test3.mp3', 'test3.mp3', '\\bgm\\1c517942-bfa5-4883-8c2e-342f82c5f376.mp3');
+INSERT INTO `bgm` VALUES ('247', 'bgm01.mp3', 'bgm01.mp3', '\\bgm\\ca4c56d0-c09e-4c8a-a78e-78aedcbc3e3f.mp3');
+INSERT INTO `bgm` VALUES ('250', 'bgm04.mp3', 'bgm04.mp3', '\\bgm\\05b18faa-e0b5-486e-aa39-ed5e78e03c3b.mp3');
+INSERT INTO `bgm` VALUES ('251', 'bgm05.mp3', 'bgm05.mp3', '\\bgm\\237cde03-e007-4390-94c8-fc70e01f7053.mp3');
+INSERT INTO `bgm` VALUES ('253', 'Superstar-Beatrich.mp3', 'Superstar-Beatrich.mp3', '\\bgm\\c4a7c849-09b9-4cc6-858c-aeb4f38f150f.mp3');
+INSERT INTO `bgm` VALUES ('254', 'test1.mp3', 'test1.mp3', '\\bgm\\dc01f259-047b-4b65-a256-3529cbc4683f.mp3');
+INSERT INTO `bgm` VALUES ('255', 'Six60+-+Special.mp3', 'Six60+-+Special.mp3', '\\bgm\\db64f2d1-f5c9-4332-b8e3-8839b25249e6.mp3');
+INSERT INTO `bgm` VALUES ('257', 'test3.mp3', 'test3.mp3', '\\bgm\\f03c9830-1fa5-4db7-8993-6e8faadf6b46.mp3');
+INSERT INTO `bgm` VALUES ('258', 'TheFatRat - Unity.mp3', 'TheFatRat - Unity.mp3', '\\bgm\\599b0ff2-2fcf-4e27-958d-590f04ec246b.mp3');
+INSERT INTO `bgm` VALUES ('260', 'Бамбинтон+-+Зая.mp3', 'Бамбинтон+-+Зая.mp3', '\\bgm\\20cb6501-3335-484f-a6c7-d7af70ad24af.mp3');
+INSERT INTO `bgm` VALUES ('261', 'ラムジ - Planet.mp3', 'ラムジ - Planet.mp3', '\\bgm\\19ea1a99-aac9-4034-96e4-248ef1554a29.mp3');
+INSERT INTO `bgm` VALUES ('262', '李袁杰_曾惜 - 讲真的.mp3', '李袁杰_曾惜 - 讲真的.mp3', '\\bgm\\c588f795-a367-410f-ba80-b9a3b15eb516.mp3');
+INSERT INTO `bgm` VALUES ('263', 'bgm10.mp3', 'bgm10.mp3', '\\bgm\\31d15033-65a1-438f-94cc-e22f65d62c92.mp3');
+INSERT INTO `bgm` VALUES ('264', '3Bangz _ 未来星 - 别管我要存在感 (clip) (clip).mp3', '3Bangz _ 未来星 - 别管我要存在感 (clip) (clip).mp3', '\\bgm\\361e93fa-c3b2-4288-bed4-e782a39f0808.mp3');
+INSERT INTO `bgm` VALUES ('266', '3Bangz _ 未来星 - 习惯你 (clip) (clip).mp3', '3Bangz _ 未来星 - 习惯你 (clip) (clip).mp3', '\\bgm\\d6f23a2f-3402-4cb8-9f69-41b6b198be2b.mp3');
+INSERT INTO `bgm` VALUES ('267', 'amazarashi (アマザラシ) - 古いSF映画 (科幻老电影) (clip).mp3', 'amazarashi (アマザラシ) - 古いSF映画 (科幻老电影) (clip).mp3', '\\bgm\\cfe7fb1a-2dee-4983-ac34-662cca9fd264.mp3');
+INSERT INTO `bgm` VALUES ('268', 'Gifty - 戒烟 (clip) (clip).mp3', 'Gifty - 戒烟 (clip) (clip).mp3', '\\bgm\\d0e68f4e-65f5-46fd-834d-dcdf7f42a10b.mp3');
+INSERT INTO `bgm` VALUES ('269', 'bbno$ _ Slight - Yoyo Toyko (clip) (clip).mp3', 'bbno$ _ Slight - Yoyo Toyko (clip) (clip).mp3', '\\bgm\\7d325d7c-4f31-441f-8544-f3b29eaf77ed.mp3');
+INSERT INTO `bgm` VALUES ('270', 'Mocca - Happy! (clip).mp3', 'Mocca - Happy! (clip).mp3', '\\bgm\\276b02e9-81a6-4cb2-bcba-a691ea50953b.mp3');
+INSERT INTO `bgm` VALUES ('271', 'Laoz G - 开车开去L.A. (clip) (clip).mp3', 'Laoz G - 开车开去L.A. (clip) (clip).mp3', '\\bgm\\4231b183-ed52-48da-9869-38bff5e5d5a2.mp3');
+INSERT INTO `bgm` VALUES ('272', 'Ti&euml;sto _ Sevenn - Boom (clip).mp3', 'Ti&euml;sto _ Sevenn - Boom (clip).mp3', '\\bgm\\fb6929df-5028-4967-be62-9e254166355a.mp3');
+INSERT INTO `bgm` VALUES ('273', 'ƱZ - Trap Sh_t V22 (clip).mp3', 'ƱZ - Trap Sh_t V22 (clip).mp3', '\\bgm\\52936f37-53f6-4cd3-a318-4d53bc7a6577.mp3');
+INSERT INTO `bgm` VALUES ('274', '程嘉敏 - 一点点喜欢 (clip) (clip).mp3', '程嘉敏 - 一点点喜欢 (clip) (clip).mp3', '\\bgm\\724ac1ad-93d2-46b4-bc9e-a8214773a90a.mp3');
+INSERT INTO `bgm` VALUES ('275', '冯提莫 - 再见前任 (clip) (clip).mp3', '冯提莫 - 再见前任 (clip) (clip).mp3', '\\bgm\\b77557f3-837c-4dc4-8f76-5d81fb1c89f7.mp3');
+INSERT INTO `bgm` VALUES ('276', '华晨宇 - Here We Are.mp3', '华晨宇 - Here We Are.mp3', '\\bgm\\b8954351-3b5d-43f4-af92-ef6c89d1db2c.mp3');
+INSERT INTO `bgm` VALUES ('277', '劲乐团 - 菠菜进行曲 (clip).mp3', '劲乐团 - 菠菜进行曲 (clip).mp3', '\\bgm\\45f723f6-1bab-4987-8ee5-4864cdfd68df.mp3');
+INSERT INTO `bgm` VALUES ('278', '李少白 - 山楂树之恋.mp3', '李少白 - 山楂树之恋.mp3', '\\bgm\\427cb37f-3496-4cfe-b6ad-0819a76971d5.mp3');
+INSERT INTO `bgm` VALUES ('279', '罗百吉 - 机车女孩 (clip).mp3', '罗百吉 - 机车女孩 (clip).mp3', '\\bgm\\d450a39d-d49e-4fb0-a98b-0e2562fd2913.mp3');
+INSERT INTO `bgm` VALUES ('282', 'backsound.mp3', 'backsound.mp3', '\\bgm\\aa775051-f820-4bcd-b17a-eb7b81e8ae5a.mp3');
+INSERT INTO `bgm` VALUES ('283', 'bgm02.mp3', 'bgm02.mp3', '\\bgm\\f5575bef-124b-4546-996b-ec967057e7f6.mp3');
+INSERT INTO `bgm` VALUES ('284', 'bgm03.mp3', 'bgm03.mp3', '\\bgm\\a15d7d7b-c4a8-4cc3-a971-084df3bd24ae.mp3');
+INSERT INTO `bgm` VALUES ('285', 'bgm06.mp3', 'bgm06.mp3', '\\bgm\\ea05e911-6168-4828-ac75-fef81ac5a38d.mp3');
+INSERT INTO `bgm` VALUES ('286', 'test2.mp3', 'test2.mp3', '\\bgm\\b65acc2a-b718-4f2b-85dd-329e67a9b58b.mp3');
 
 -- ----------------------------
--- Table structure for `blockip`
+-- Table structure for `category`
 -- ----------------------------
-DROP TABLE IF EXISTS `blockip`;
-CREATE TABLE `blockip` (
-  `id` bigint(22) NOT NULL DEFAULT '0',
-  `userId` varchar(50) DEFAULT NULL,
-  `ip` varchar(50) DEFAULT NULL,
-  `city` varchar(22) DEFAULT NULL,
-  `browserType` varchar(22) DEFAULT NULL,
-  `platformType` varchar(22) DEFAULT NULL,
-  `createTime` datetime DEFAULT NULL,
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
+  `id` bigint(22) NOT NULL AUTO_INCREMENT,
+  `name` varchar(22) DEFAULT NULL,
+  `label` varchar(22) DEFAULT NULL,
+  `content` varchar(255) DEFAULT NULL,
+  `imageUrl` varchar(100) DEFAULT NULL,
+  `createtime` datetime DEFAULT NULL,
+  `isDeleted` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of blockip
+-- Records of category
 -- ----------------------------
+INSERT INTO `category` VALUES ('1', '美拍类', 'define', '秀一下自己吧', '/images/dsp.jpg', '2018-12-03 20:31:57', '0');
+INSERT INTO `category` VALUES ('2', '美食类', 'food', '秀一下自己吧', '/images/food.jpg', '2018-12-03 20:32:58', '0');
+INSERT INTO `category` VALUES ('3', '美装类', 'dress', '秀一下自己吧', '/images/dress.jpg', '2018-12-03 20:33:01', '0');
+INSERT INTO `category` VALUES ('4', '更多内容', 'more', '秀一下自己吧', '/images/tm.jpg', '2018-12-04 17:23:31', '0');
 
 -- ----------------------------
 -- Table structure for `comments`
@@ -135,6 +167,8 @@ INSERT INTO `comments` VALUES ('181126CKKS6Y71WH', '1811239WM4XBBDKP', '181027HK
 INSERT INTO `comments` VALUES ('1811279PK1R1YX8H', '181123G8ZZ60D494', '181027HKFNAXK494', 'sad', '2018-11-27 13:38:31');
 INSERT INTO `comments` VALUES ('181127B6S619M6A8', '181123G8TM69XGC0', '181027HKFNAXK494', 'asd', '2018-11-27 15:45:10');
 INSERT INTO `comments` VALUES ('181201H89KZXGNTC', '18113065CRTB1F3C', '181027HKFNAXK494', 'asd', '2018-12-01 22:50:10');
+INSERT INTO `comments` VALUES ('18121266P0B95KP0', '1812047W067DH65P', '181027HKFNAXK494', 'haha', '2018-12-12 08:44:35');
+INSERT INTO `comments` VALUES ('1812206WCT24TAA8', '181202DZY7SC6894', 'undefined', 'sss', '2018-12-20 09:37:51');
 
 -- ----------------------------
 -- Table structure for `search_reports`
@@ -188,6 +222,27 @@ INSERT INTO `search_reports` VALUES ('1811279PNKHWKCDP', '美食');
 INSERT INTO `search_reports` VALUES ('1811279S57606C6W', '美食');
 INSERT INTO `search_reports` VALUES ('181127B6ZY211H28', '美食');
 INSERT INTO `search_reports` VALUES ('181201H8AK7H0940', '美食');
+INSERT INTO `search_reports` VALUES ('18121965S06D8NXP', '测试');
+
+-- ----------------------------
+-- Table structure for `setting`
+-- ----------------------------
+DROP TABLE IF EXISTS `setting`;
+CREATE TABLE `setting` (
+  `id` bigint(22) NOT NULL DEFAULT '0',
+  `name` varchar(255) DEFAULT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  `isDeleted` bit(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of setting
+-- ----------------------------
+INSERT INTO `setting` VALUES ('1', 'email_smtp_host', 'smtp.163.com', '');
+INSERT INTO `setting` VALUES ('2', 'email_smtp_username', 'showvideos@163.com', '');
+INSERT INTO `setting` VALUES ('3', 'email_smtp_password', 'a986771570', '');
+INSERT INTO `setting` VALUES ('4', 'email_from', 'showvideos@163.com', '');
 
 -- ----------------------------
 -- Table structure for `users`
@@ -208,7 +263,7 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES ('181027HKFNAXK494', 'test', '4QrcOUm6Wau+VuBX8g+IPg==', '/181027HKFNAXK494/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.PUBiDUkfJbHXac71c0759a2c8ecd366bebef2a769c5e.png', 'test', '3', '6', '34');
+INSERT INTO `users` VALUES ('181027HKFNAXK494', 'test', '4QrcOUm6Wau+VuBX8g+IPg==', '/181027HKFNAXK494/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.PUBiDUkfJbHXac71c0759a2c8ecd366bebef2a769c5e.png', 'test', '3', '7', '38');
 INSERT INTO `users` VALUES ('181027HRA75GCY3C', '1234', '4QrcOUm6Wau+VuBX8g+IPg==', null, '1234', '0', '1', '0');
 INSERT INTO `users` VALUES ('181027HS0A2W34SW', 'test2', '4QrcOUm6Wau+VuBX8g+IPg==', '/181027HS0A2W34SW/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.p67zIdw2PNBm5fcc1ec08f7ade9dd895003f2d3eead9.jpg', 'test2', '2', '1', '1');
 INSERT INTO `users` VALUES ('181031HD3RAWWKKP', 'test3', '4QrcOUm6Wau+VuBX8g+IPg==', '/181031HD3RAWWKKP/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.Bc6BWxp5jzeW4411156c4ca31538933426ab64ade903.jpg', 'test3', '1', '0', '2');
@@ -216,7 +271,9 @@ INSERT INTO `users` VALUES ('181123FGHRGD4TF8', 'test22', '4QrcOUm6Wau+VuBX8g+IP
 INSERT INTO `users` VALUES ('181126CF1FG3M5P0', 'ttt', '4QrcOUm6Wau+VuBX8g+IPg==', null, 'ttt', '0', '0', '0');
 INSERT INTO `users` VALUES ('181129AC5C8KMCX4', 'tt17', '4QrcOUm6Wau+VuBX8g+IPg==', null, 'tt17', '0', '0', '0');
 INSERT INTO `users` VALUES ('181129DK382N5D40', 't3', '4QrcOUm6Wau+VuBX8g+IPg==', '/181129DK382N5D40/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.d7nQacHqBAPj7ef2498726e6babb42fe4a704302fda0.jpeg', 't3', '0', '0', '0');
-INSERT INTO `users` VALUES ('18113061MX8NKF3C', 'spring', '4QrcOUm6Wau+VuBX8g+IPg==', '/18113061MX8NKF3C/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.Fd5Ya8AvNGpz82d5365a0d74d51947f9a10af0447ee2.png', 'spring', '0', '0', '1');
+INSERT INTO `users` VALUES ('18113061MX8NKF3C', 'spring', '4QrcOUm6Wau+VuBX8g+IPg==', '/18113061MX8NKF3C/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.Fd5Ya8AvNGpz82d5365a0d74d51947f9a10af0447ee2.png', 'spring', '0', '0', '2');
+INSERT INTO `users` VALUES ('1812047T304S8WSW', 'cvcv', '4QrcOUm6Wau+VuBX8g+IPg==', '/1812047T304S8WSW/face/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.dOVVDhN58cnKf57e5ecf05a754f39b4e9f0b0ded22a6.jpg', 'cvcv', '1', '0', '2');
+INSERT INTO `users` VALUES ('181210BZ57SD4BR4', 'r3', '4QrcOUm6Wau+VuBX8g+IPg==', null, 'r3', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for `users_like_videos`
@@ -273,6 +330,14 @@ INSERT INTO `users_like_videos` VALUES ('181129DHF0AW0Y3C', '181027HKFNAXK494', 
 INSERT INTO `users_like_videos` VALUES ('181129FWPWA8N0X4', '181027HKFNAXK494', '181129FWNRZ4D9GC');
 INSERT INTO `users_like_videos` VALUES ('181129FWR719F8M8', '181027HKFNAXK494', '181129FT8NH861S8');
 INSERT INTO `users_like_videos` VALUES ('181201H89598X400', '181027HKFNAXK494', '18113065CRTB1F3C');
+INSERT INTO `users_like_videos` VALUES ('1812038D5DR4W754', '181027HKFNAXK494', '181202DZA793X5KP');
+INSERT INTO `users_like_videos` VALUES ('181204CCBKN922CH', '181027HKFNAXK494', '181202DYXD4597HH');
+INSERT INTO `users_like_videos` VALUES ('181205A50KKB45WH', '181027HKFNAXK494', '18113065BHPSWGMW');
+INSERT INTO `users_like_videos` VALUES ('181205AGXTG4W9S8', '181027HKFNAXK494', '1812047W067DH65P');
+INSERT INTO `users_like_videos` VALUES ('181210C5WKRBFTMW', '181027HKFNAXK494', '181202DR71CR46FW');
+INSERT INTO `users_like_videos` VALUES ('18121265X7ANSCH0', '181027HKFNAXK494', '1812047TAZ7B437C');
+INSERT INTO `users_like_videos` VALUES ('181219FWNZXTZ5S8', '181027HKFNAXK494', '1812196AWB4Y6140');
+INSERT INTO `users_like_videos` VALUES ('1812207AN4MK66NC', '181027HKFNAXK494', 'undefined');
 
 -- ----------------------------
 -- Table structure for `users_report`
@@ -292,6 +357,22 @@ CREATE TABLE `users_report` (
 -- ----------------------------
 -- Records of users_report
 -- ----------------------------
+INSERT INTO `users_report` VALUES ('18121079CWYB4CBC', '181027HKFNAXK494', '181202DYXD4597HH', '11', '222', '181027HKFNAXK494', '2018-12-10 10:16:54');
+INSERT INTO `users_report` VALUES ('181210BZ8S6Y09S8', '181027HKFNAXK494', '181202DZY7SC6894', 'ttt', '', '181210BZ57SD4BR4', '2018-12-10 16:46:47');
+INSERT INTO `users_report` VALUES ('181210BZBRCFY98H', '1812047T304S8WSW', '1812047W067DH65P', 'yyyy', '98989', '181210BZ57SD4BR4', '2018-12-10 16:47:06');
+INSERT INTO `users_report` VALUES ('181210BZD58P1CDP', '181027HKFNAXK494', '181202DR71CR46FW', 'uuu', '', '181210BZ57SD4BR4', '2018-12-10 16:47:15');
+INSERT INTO `users_report` VALUES ('181210BZG9GMGHX4', '181027HKFNAXK494', '181202DZA793X5KP', 'oooo', 'uuuu', '181210BZ57SD4BR4', '2018-12-10 16:47:29');
+INSERT INTO `users_report` VALUES ('181210BZHH22C094', '181027HKFNAXK494', '181202DZA793X5KP', 'yyyy', '', '181210BZ57SD4BR4', '2018-12-10 16:47:37');
+INSERT INTO `users_report` VALUES ('181210BZWTKY70H0', '181027HKFNAXK494', '181202DYXD4597HH', 'QQQ', '', '181210BZ57SD4BR4', '2018-12-10 16:48:30');
+INSERT INTO `users_report` VALUES ('181210BZZ29K22CH', '181027HKFNAXK494', '181202DYXD4597HH', 'QQ', '', '181210BZ57SD4BR4', '2018-12-10 16:48:45');
+INSERT INTO `users_report` VALUES ('181210C3AXNGNY14', '181027HKFNAXK494', '181201H8H5ZRRP94', 'ss', 'aa', '181027HKFNAXK494', '2018-12-10 16:59:01');
+INSERT INTO `users_report` VALUES ('181210C3DR4W15YW', '181027HKFNAXK494', '181202DR71CR46FW', 'test', '123', '181027HKFNAXK494', '2018-12-10 16:59:19');
+INSERT INTO `users_report` VALUES ('181210C3ZAKTR1AW', '181027HKFNAXK494', '181202DR71CR46FW', 'test', '123', '181027HKFNAXK494', '2018-12-10 17:00:47');
+INSERT INTO `users_report` VALUES ('181210C40WRKWMK4', '181027HKFNAXK494', '181202DYXD4597HH', 'xxx', 'aaa', '181027HKFNAXK494', '2018-12-10 17:00:57');
+INSERT INTO `users_report` VALUES ('181217727F177SCH', '1812047T304S8WSW', '1812047TAZ7B437C', '举报类型：色情低俗', 'qwe草草草草', '181027HKFNAXK494', '2018-12-17 09:55:18');
+INSERT INTO `users_report` VALUES ('18121779R70C6RAW', '18113061MX8NKF3C', '18113065CRTB1F3C', 'undefined', 'asdasd', '181027HKFNAXK494', '2018-12-17 10:17:47');
+INSERT INTO `users_report` VALUES ('1812177DX057DHBC', '1812047T304S8WSW', '1812047TAZ7B437C', '色情低俗', '123', '181027HKFNAXK494', '2018-12-17 10:30:12');
+INSERT INTO `users_report` VALUES ('1812177FX126SZ7C', '181027HKFNAXK494', '181202DR71CR46FW', '色情低俗', '123123', '181027HKFNAXK494', '2018-12-17 10:33:13');
 
 -- ----------------------------
 -- Table structure for `user_fans`
@@ -314,6 +395,7 @@ INSERT INTO `user_fans` VALUES ('181105160506922926080', '181031HD3RAWWKKP', '18
 INSERT INTO `user_fans` VALUES ('181123154458738655232', '181027HKFNAXK494', '181123FGHRGD4TF8');
 INSERT INTO `user_fans` VALUES ('181127103521236025344', '181123FGHRGD4TF8', '181027HKFNAXK494');
 INSERT INTO `user_fans` VALUES ('181127119127414931456', '181123FGHRGD4TF8', '181027HKFNAXK494');
+INSERT INTO `user_fans` VALUES ('181205101096060092416', '1812047T304S8WSW', '181027HKFNAXK494');
 
 -- ----------------------------
 -- Table structure for `videos`
@@ -340,10 +422,15 @@ CREATE TABLE `videos` (
 -- ----------------------------
 -- Records of videos
 -- ----------------------------
-INSERT INTO `videos` VALUES ('18113065BHPSWGMW', '18113061MX8NKF3C', '', 'define', 'define', '', '/18113061MX8NKF3C/video/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.ffmIisbBOCPh2bd1bc4ff0d727ed2a6e758e35f31a93.mp4', '14.12', '960', '544', '/18113061MX8NKF3C/video/wx44630c92b1ed1bf0bf5e1ba0-b40b-48c2-b8c3-cc874ea1400a.jpg', '0', '1', '2018-11-30 08:40:41');
+INSERT INTO `videos` VALUES ('18113065BHPSWGMW', '18113061MX8NKF3C', '', 'define', 'define', '', '/18113061MX8NKF3C/video/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.ffmIisbBOCPh2bd1bc4ff0d727ed2a6e758e35f31a93.mp4', '14.12', '960', '544', '/18113061MX8NKF3C/video/wx44630c92b1ed1bf0bf5e1ba0-b40b-48c2-b8c3-cc874ea1400a.jpg', '1', '1', '2018-11-30 08:40:41');
 INSERT INTO `videos` VALUES ('18113065CRTB1F3C', '18113061MX8NKF3C', '', 'define', 'define', '', '/18113061MX8NKF3C/video/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.Z3uY4QsbE7Cd219f2991acef7e1596c29139f87afd02.mp4', '11.97', '960', '544', '/18113061MX8NKF3C/video/wx44630c92b1ed1bf0c1eb4b21-0b18-4370-a9b6-5fa8010a577a.jpg', '1', '1', '2018-11-30 08:40:48');
 INSERT INTO `videos` VALUES ('181201H8H5ZRRP94', '181027HKFNAXK494', '54', 'light', 'define', '', '/181027HKFNAXK494/video/57fb0cb8-1de6-4d0c-841d-18bf4400a879.mp4', '24.80', '544', '960', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0cdc9466f-fff3-42a9-abcb-b733e321070a.jpg', '0', '1', '2018-12-01 22:50:53');
-INSERT INTO `videos` VALUES ('181202DR71CR46FW', '181027HKFNAXK494', '', 'define', 'food', '', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.7CEzZGJCFsvu71cd368ba9270f5b3963531ce3147f3e.mp4', '14.61', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0beeb30b5-dc61-417b-a7df-77c4db485b69.jpg', '0', '1', '2018-12-02 19:16:43');
-INSERT INTO `videos` VALUES ('181202DYXD4597HH', '181027HKFNAXK494', '228', 'define', 'food', '', '/181027HKFNAXK494/video/1b47b574-d192-4cae-9e8e-7234b3689310.mp4', '15.05', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf09d005d0a-e675-4538-8d22-7b0fb57bccba.jpg', '0', '1', '2018-12-02 19:33:42');
-INSERT INTO `videos` VALUES ('181202DZA793X5KP', '181027HKFNAXK494', '227', 'light', 'food', '', '/181027HKFNAXK494/video/e05c8164-1e56-4f91-8c93-a3807c73956c.mp4', '15.05', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0fe8a0dea-e727-4d6c-a5c3-e019295ad83a.jpg', '0', '1', '2018-12-02 19:35:05');
+INSERT INTO `videos` VALUES ('181202DR71CR46FW', '181027HKFNAXK494', '', 'define', 'food', '', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.7CEzZGJCFsvu71cd368ba9270f5b3963531ce3147f3e.mp4', '14.61', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0beeb30b5-dc61-417b-a7df-77c4db485b69.jpg', '1', '1', '2018-12-02 19:16:43');
+INSERT INTO `videos` VALUES ('181202DYXD4597HH', '181027HKFNAXK494', '228', 'define', 'food', '', '/181027HKFNAXK494/video/1b47b574-d192-4cae-9e8e-7234b3689310.mp4', '15.05', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf09d005d0a-e675-4538-8d22-7b0fb57bccba.jpg', '1', '1', '2018-12-02 19:33:42');
+INSERT INTO `videos` VALUES ('181202DZA793X5KP', '181027HKFNAXK494', '227', 'light', 'food', '', '/181027HKFNAXK494/video/e05c8164-1e56-4f91-8c93-a3807c73956c.mp4', '15.05', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0fe8a0dea-e727-4d6c-a5c3-e019295ad83a.jpg', '1', '1', '2018-12-02 19:35:05');
 INSERT INTO `videos` VALUES ('181202DZY7SC6894', '181027HKFNAXK494', '227', 'black', 'food', '不胖', '/181027HKFNAXK494/video/8f0d8a4d-e68f-41f2-b8c4-f04b5ecd23af.mp4', '15.05', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf05cde8a30-3a47-4446-b3dd-dabef6d3cf82.jpg', '0', '1', '2018-12-02 19:36:48');
+INSERT INTO `videos` VALUES ('18120388AHF6XYW0', '181027HKFNAXK494', '232', 'light', 'define', '', '/181027HKFNAXK494/video/e6a8741d-5fad-444e-afbd-16332249264e.mp4', '19.55', '576', '1024', '/181027HKFNAXK494/video/wx44630c92b1ed1bf0191c9b1b-4988-40d5-8be7-771ffeef4462.jpg', '0', '1', '2018-12-03 11:37:43');
+INSERT INTO `videos` VALUES ('1812047TAZ7B437C', '1812047T304S8WSW', '253', 'light', 'define', 'ahaha', '/1812047T304S8WSW/video/24f8ea15-249f-4178-b4b1-cf6f745a3245.mp4', '14.12', '960', '544', '/1812047T304S8WSW/video/wx44630c92b1ed1bf0c7c2b329-47c5-4527-b74f-2cb0af61e4ac.jpg', '1', '1', '2018-12-04 10:58:43');
+INSERT INTO `videos` VALUES ('1812047TWGMX4TF8', '1812047T304S8WSW', '256', 'define', 'define', '', '/1812047T304S8WSW/video/a9f83e32-eeb7-4a52-be05-b1bc3c3ed30a.mp4', '19.55', '576', '1024', '/1812047T304S8WSW/video/wx44630c92b1ed1bf0e3f0addc-e162-4881-be92-416b1dfc5461.jpg', '0', '1', '2018-12-04 11:00:11');
+INSERT INTO `videos` VALUES ('1812047W067DH65P', '1812047T304S8WSW', '255', 'define', 'food', '', '/1812047T304S8WSW/video/15b04006-6877-447e-8411-c90eaf913833.mp4', '14.61', '576', '1024', '/1812047T304S8WSW/video/wx44630c92b1ed1bf0786824f5-65d5-4cb0-8e46-02d5a709a22b.jpg', '1', '1', '2018-12-04 11:00:34');
+INSERT INTO `videos` VALUES ('1812196AWB4Y6140', '181027HKFNAXK494', '', 'define', 'define', '', '/181027HKFNAXK494/video/wxcf9c100b9ccb1914.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.csSHXZTcfu4Mb461abdd560d6c744a34bbd0cbd22904.mp4', '7.46', '480', '624', '/181027HKFNAXK494/video/wxcf9c100b9ccb1914bd7f16c0-ca48-43f8-9fbb-cc5ee65f3395.jpg', '1', '1', '2018-12-19 08:57:04');
