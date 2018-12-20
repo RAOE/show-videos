@@ -25,7 +25,7 @@ Page({
       method:'post',
       success:function(resp)
       {
-        console.log(resp);
+        
       }
     })
 

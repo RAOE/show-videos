@@ -13,7 +13,9 @@ page {
   font-size: 0.8rem;
 }
 .container {
-  background-image: url('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2019671886,429493863&fm=26&gp=0.jpg');
+   background-image: url('https://pic.qqtn.com/up/2018-8/15342315351590070.jpg');
+
+
   color: black;
   /* background-image: "../resource/images/camera.png"; */
   display: flex;

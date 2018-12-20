@@ -28,7 +28,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (params) {
-    console.log(params);
     var me = this;
     me.setData(
       {
@@ -36,7 +35,6 @@ Page({
         isUpload:false
       }
     )
-    console.log("测试" + params);
     var serverUrl = app.serverUrl;
     wx.showToast({
       title: '请等待....',
@@ -47,7 +45,6 @@ Page({
       method: 'post',
 
       success: function (res) {
-        console.log(res.data);
         if (res.data.status == 200) {
           var bgmList = res.data.data;
           me.setData(
@@ -60,7 +57,7 @@ Page({
             url: serverUrl +'/category/queryAll',
             success:function(res)
             {
-              console.log(res);
+              
             }
           })
 
@@ -97,7 +94,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    console.log('chooseBgm页面被卸载了');
+
   },
 
   /**
@@ -125,8 +122,6 @@ Page({
 
     //三个选项卡选中其中一个之后，其他两个会失效
     var me = this;
-    // console.log('checkbox发生change事件，携带value值为：', e.detail.value);
-    // console.log('checkbox发生change事件，携带value值为：', e.detail.value)
 
     var new_items =
       [
@@ -137,7 +132,6 @@ Page({
     //实现思路 拿到数组中最后一个值，并且将该值放到
     var key = e.detail.value;
     var name = key[key.length - 1];
-    // console.log(name);
     //做出选择之后遍历数组 并将该值设置为checked ，其他值设置为null
 
     for (var i = 0; i < new_items.length; i++) {
@@ -174,8 +168,6 @@ Page({
 
     //三个选项卡选中其中一个之后，其他两个会失效
     var me = this;
-    //console.log('checkbox发生change事件，携带value值为：', e.detail.value)
-
     var new_items =
       [
         { name: 'define', value: '默认分类', checked: 'true' },
@@ -185,7 +177,6 @@ Page({
     //实现思路 拿到数组中最后一个值，并且将该值放到
     var key = e.detail.value;
     var name = key[key.length - 1];
-    // console.log(name);
     //做出选择之后遍历数组 并将该值设置为checked ，其他值设置为null
 
     for (var i = 0; i < new_items.length; i++) {
@@ -247,7 +238,6 @@ Page({
       return;
     }
    //判断上传操作是否已经提交 ，如果在当前页面已经被提交就不能上传了
-   // console.log(me.data.isUpload);
     if (me.data.isUpload==true)
     {
        wx.showToast({
@@ -262,7 +252,6 @@ Page({
           isUpload: true
         }
       )
-      console.log("提交上传");
     }
     me.setData(
       {
@@ -329,7 +318,6 @@ Page({
           //   success: function (res) {
           //     var data = JSON.parse(res.data);
           //     if (data.status == 200) {
-          //       console.log("asdasdasd");
           //       //上传成功
           //       wx.showToast({
           //         title: '上传成功',

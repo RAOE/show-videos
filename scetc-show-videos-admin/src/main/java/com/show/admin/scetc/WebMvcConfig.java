@@ -6,9 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
 import com.show.admin.scetc.interceptor.DemoInterceptor;
-import com.show.admin.scetc.interceptor.LoginInterceptor;
 
 /**
  * 全局配置类webmvcconfigurerAdapter

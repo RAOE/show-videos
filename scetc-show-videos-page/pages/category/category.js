@@ -36,7 +36,6 @@ Page({
   // 每条List点击事件
   jump: function (e) {
     let id = e.currentTarget.dataset.id;
-    console.log(id);
     if (id == 'define') {
       wx.navigateTo({
         url: '../index/index?id=' + id,

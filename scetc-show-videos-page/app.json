@@ -1,16 +1,17 @@
 {
   "pages": [ 
-    
-    "pages/userLogin/login",  
+
+    "pages/userLogin/login",
+    "pages/category/category",
+    "pages/userRegist/regist", 
     "pages/mine/mine",
-    "pages/category/category", 
     "pages/chooseBgm/chooseBgm",     
     "pages/index/index", 
     "pages/videoInfo/videoInfo", 
     "pages/searchVideos/searchVideos", 
-    "pages/userRegist/regist",
-    "pages/bootstrap/bootstrap",
-    "pages/report/report"
+    "pages/report/report",
+    "pages/bootstrap/bootstrap"
+    
   ],
   
   "window": {

@@ -1,6 +1,34 @@
 const app = getApp()
 Page({
   data: {
+    array: ['色情低俗', '政治敏感', '违法暴力', '贩卖野生物及制品', '血腥暴恐', '自杀自残'],
+    objectArray: [
+      {
+        id: 0,
+        name: '色情低俗'
+      },
+      {
+        id: 1,
+        name: '政治敏感'
+      },
+      {
+        id: 2,
+        name: '违法暴力'
+      },
+      {
+        id: 3,
+        name: '贩卖野生物及制品'
+      },
+      {
+        id: 4,
+        name: '血腥暴恐'
+      },
+      {
+        id: 5,
+        name: '自杀自残'
+      },
+
+    ],
     focus: false,
     inputValue: '',
     content: "",
@@ -8,21 +36,29 @@ Page({
     errorMessage: "",
     isContentError: false,
     videoId: "",
-    pubulisherId: ""
+    pubulisherId: "",
+    index: 0,
+    
+
+  },
+  bindPickerChange: function (e) {
+    this.setData(
+      {
+        index: e.detail.value,
+      }
+    )
   },
 
-
-  doReport:function(e) 
-  {
+  doReport: function (e) {
+    var index=this.data.index;
     var formObject = e.detail.value;
-    var reportTitle = formObject.reportTitle;
     var reportContent = formObject.reportContent;
     var serverUrl = app.serverUrl; //获取服务器地址
     var user = app.getGlobalUserInfo();
-    var userId=user.id;
+    var userId = user.id;
     var dealVideoId = this.data.videoId;//获取当前视频的id
-    var dealUserId=this.data.pubulisherId;
-    var title = reportTitle;
+    var dealUserId = this.data.pubulisherId;
+    var reportTitle = this.data.array[index];
     var content = reportContent;
 
     let setErrorMessage = msg => {
@@ -33,7 +69,7 @@ Page({
       return true
     }
 
-    (content === "" && setErrorMessage("没有内容输入")) || (title === "" && setErrorMessage("没有类型输入")) ? this.setData({
+    (content === "" && setErrorMessage("没有内容输入")) ? this.setData({
       isContentError: true
     }) :
       wx.showToast({
@@ -41,13 +77,13 @@ Page({
         icon: 'success',
       })
     wx.request({
-      url: serverUrl + '/video/report?userId='+userId+"&dealUserId="+dealUserId+
-        "&dealVideoId=" + dealVideoId + "&title=" + title+"&content="+content,
-        method:"post",
-        success(res){
-           console.log(res);
-        }
-    
+      url: serverUrl + '/video/report?userId=' + userId + "&dealUserId=" + dealUserId +
+        "&dealVideoId=" + dealVideoId + "&title=" + reportTitle + "&content=" + content,
+      method: "post",
+      success(res) {
+
+      }
+
     })
     setTimeout(function () {
       wx.navigateBack({
@@ -85,14 +121,13 @@ Page({
   onLoad(param) {
     var videoId = param.videoId;
     var pubulisherId = param.pubulisherId;
-    console.log(videoId);
-    console.log(pubulisherId);
     this.setData(
       {
         videoId: videoId,
         pubulisherId: pubulisherId
       })
   }
+
 
 
 })

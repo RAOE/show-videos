@@ -32,7 +32,6 @@ Page({
         },
         //回调函数 
         success: function(res) {
-          console.log(res.data);
           var status = res.data.status;
           wx.hideLoading();
 

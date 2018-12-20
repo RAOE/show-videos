@@ -14,7 +14,6 @@ Page({
 
     var me = this;
     var screenWidth = wx.getSystemInfoSync().screenWidth;
-    console.log('参数:' + params.id);
     var category = params.id;
     
     if (category != null && category != '' && category != undefined) {
@@ -50,8 +49,6 @@ Page({
 
     var searchContent = me.data.searchContent;
     var category=me.data.category;
-    
-    console.log(searchContent);
     var url = serverUrl + 'video/showAll?page=' + page + "&isSaveRecord="
       + isSaveRecord + '&category=' + category;
     
@@ -69,11 +66,9 @@ Page({
           videoDesc:searchContent
         },
       success: function (res) {
-        console.log(res.data);
         wx.hideLoading();
         wx.hideNavigationBarLoading();
         wx.stopPullDownRefresh();
-        // console.log(res);
         // 判断当前也page是否是第一页 如果是第一页，
         // 那么就吧videoList 清空一下
         if (page == 1) {
@@ -83,10 +78,8 @@ Page({
             }
           );
         }
-        console.log(res.data.data);
         var videoList = res.data.data.rows;
         var newVideoList = me.data.videoList;
-        console.log(videoList);  //wx44630c92b1ed1bf0.jpg
         me.setData(
           {
             videoList: newVideoList.concat(videoList),
@@ -104,9 +97,6 @@ Page({
     var me = this;
     var currentPage = me.data.page;
     var totalPage = me.data.totalPage;
-
-    console.log(me.data);
-    console.log(totalPage);
 
     if (currentPage == totalPage) {
       wx.showToast({
@@ -129,8 +119,6 @@ Page({
     var me = this;
     var videoList = me.data.videoList;
     var arrindex = e.target.dataset.arrindex;
-    console.log(me.data.videoList);
-
     var videoInfo = JSON.stringify(videoList[arrindex]);//获取视频信息对象
     wx.navigateTo({
       url: '../videoInfo/videoInfo?videoInfo=' + videoInfo,

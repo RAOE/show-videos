@@ -1,5 +1,4 @@
 <view>
-
   <view class='container'>
     <image src="{{faceUrl}}" class="face" bindtap='changeFace'></image>
     <label class='nickname'>{{nickname}}</label>

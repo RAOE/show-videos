@@ -3,12 +3,11 @@ Page({
   data: {
     realUrl: '',
     nickName: '',//用户的名称
-    avatarUrl: '' //用户的头像
-
+    avatarUrl: '', //用户的头像
+    saveUserInfo: { username: "", password: "" }
   },
   doLogin: function (e) {
     var me = this;
-    //console.log(e.detail);
     var formObject = e.detail.value;
     var username = formObject.username;
     var password = formObject.password;
@@ -40,47 +39,35 @@ Page({
         //回调函数 
         //返回
         success: function (res) {
-
           var status = res.data.status;
           if (status == 200) {
-            //console.log(res.data.data);
             wx.hideLoading();
             wx.showToast({
-
               title: '小主,登陆成功啦',
               icon: 'none',
               duration: 3000
             })
-            //获得微信的头像以及微信的账号
-
-            //  app.userInfo = res.data.data;
-            //fix 修改原有的全局对象为本地缓存
-            console.log(res.data.data);
-
-            console.log(me.avatarUrl);
-
-            console.log(me.nickName);
-
+            var saveUserInfo = me.data.saveUserInfo;
+            saveUserInfo.password = password;
+            saveUserInfo.username = username;
+            app.saveUserInfo(saveUserInfo);
             app.setGlobalUserInfo(res.data.data);
+
+
             var realUrl = me.data.realUrl;
-
-
-            // console.log(app.userInfo.id);
+            console.log(realUrl);
             if (realUrl == '') {
               //跳转
-              wx.redirectTo({
+              wx.navigateTo({
                 url: '../mine/mine',
               })
             }
             else {
-              console.log("realUrl:" + realUrl);
-              wx.redirectTo({
+              wx.navigateTo({
                 url: realUrl
               })
             }
           }
-
-
           else if (status == 500) {
             //失败 弹出框
             wx.showToast({
@@ -105,36 +92,32 @@ Page({
     })
   },
   onLoad: function (e) {
-
     var me = this;
     var realUrl = e.realUrl;
+    console.log(realUrl);
     if (realUrl != null && realUrl != '' && realUrl != undefined) {
-
-      realUrl = realUrl.replace('@', '?');
-      realUrl = realUrl.replace('#', '=');
-      console.log("value=" + realUrl);
+      realUrl = realUrl.replace('@', '=');
+      realUrl = realUrl.replace('#', '?');
+      //../videoinfo/videoinfo#videoInfo@[object Object]
+      console.log("真实的路径" + realUrl);
       me.setData(
         {
           realUrl: realUrl
         }
       )
-
     }
-    //  if(e!=null&&e!=undefined&&e!='')
-    //  {
-
-    //    var realUrl=e.realUrl;
-    //    realUlr = realUrl.replace('@', '?');
-    //    realUlr = realUrl.replace('#', '=')
-    //    console.log("真实的上传路径" + realUrl);
-
-    //    me.setData(
-    //      {
-    //        realUrl:e.realUrl
-    //      }
-    //    )
-    //  }
-
+    var user = app.getSaveUserInfo();
+    var username = user.username;
+    var password = user.pasword;
+    if (username != null && username != undefined && username != '' && password != null && password != undefined
+      && password != '') {
+      me.setData(
+        {
+          username: username,
+          password: password
+        }
+      )
+    }
 
   }
 })

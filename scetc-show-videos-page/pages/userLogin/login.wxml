@@ -8,7 +8,7 @@
       <view class="inputView">
         <image class="nameImage" src="../resource/images/username.png"></image>
 
-        <input  name="username" class="inputText" placeholder="请输入账号" />
+        <input name="username" class="inputText" placeholder="请输入账号" value="{{username}}" />
       </view>
 
       <view class="line"></view>
@@ -17,12 +17,12 @@
       <view class="inputView">
         <image class="keyImage" src="../resource/images/password.png"></image>
 
-        <input  name="password" class="inputText" password="true" placeholder="请输入密码" />
+        <input name="password" class="inputText" password="true" placeholder="请输入密码" value="{{password}}" />
       </view>
 
       <!--按钮-->
       <view>
-        <button class="loginBtn"  open-type="getUserInfo" type="primary" form-type='submit'>登陆</button>
+        <button class="loginBtn" open-type="getUserInfo" type="primary" form-type='submit'>登陆</button>
       </view>
 
       <view>

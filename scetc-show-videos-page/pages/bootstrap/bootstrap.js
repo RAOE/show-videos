@@ -38,7 +38,6 @@ Page({
   onLoad: function(options) {
     var me=this;
     var videoCtx = wx.createAudioContext('myAudio')
-    console.log(videoCtx);
     skipControl = setInterval(
       () =>
         currentTime === 0
@@ -55,7 +54,6 @@ Page({
   onUnload: function () {
     var me=this;
     me.videoCtx.pause;
-    console.log('页面被卸载了');
   }
 
 

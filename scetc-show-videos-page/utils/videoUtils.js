@@ -3,7 +3,6 @@ function uploadVideos() {
   wx.chooseVideo({
     sourceType: ['album'],
     success: function (res) {
-      console.log(res);
 
       var duration = res.duration;
       var tmpheight = res.height;
