@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.show.admin.scetcshowvideosadmin.ScetcShowVideosAdminApplicationTests" time="0.032" tests="1" errors="0" skipped="0" failures="0">
+<testsuite name="com.show.admin.scetcshowvideosadmin.ScetcShowVideosAdminApplicationTests" time="0.035" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_131\jre\bin"/>
@@ -26,7 +26,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows 10"/>
-    <property name="classworlds.conf" value="G:\springbootsts\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf55679785715776802.tmp"/>
+    <property name="classworlds.conf" value="G:\springbootsts\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf78240643949356035.tmp"/>
     <property name="sun.jnu.encoding" value="GBK"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_131\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:/Program Files/Java/jre1.8.0_181/bin/server;C:/Program Files/Java/jre1.8.0_181/bin;C:/Program Files/Java/jre1.8.0_181/lib/amd64;D:\app\Ray\product\11.2.0\dbhome_2\bin;D:\app\Ray\product\11.2.0\dbhome_1\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\ARM\ADSv1_2\bin;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;G:\SVN\bin;G:\ElasticSerach\New Folder\;F:\git\Git\cmd;D:\ElasticSerach\elasticsearch-5.5.3\bin\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\Java\jdk1.8.0_131\bin;C:\WINDOWS\System32\OpenSSH\;C:\Users\Ray\AppData\Local\GitHubDesktop\bin;C:\Users\Ray\AppData\Roaming\npm;D:\游戏引擎\Egret Wing 3\bin;C:\Users\Ray\AppData\Local\Microsoft\WindowsApps;;F:\springsts\sts-bundle\sts-3.9.6.RELEASE;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -60,5 +60,5 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="contextLoads" classname="com.show.admin.scetcshowvideosadmin.ScetcShowVideosAdminApplicationTests" time="0.032"/>
+  <testcase name="contextLoads" classname="com.show.admin.scetcshowvideosadmin.ScetcShowVideosAdminApplicationTests" time="0.035"/>
 </testsuite>
