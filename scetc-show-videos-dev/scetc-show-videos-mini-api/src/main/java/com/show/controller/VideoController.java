@@ -49,7 +49,7 @@ public class VideoController extends BasicController {
 	private BgmService bgmService;
 	@Autowired
 	private VideoService videoService;
-	
+
 	/**
 	 * @param userId
 	 * @param bgmId
@@ -89,19 +89,19 @@ public class VideoController extends BasicController {
 		String coverPath = "/" + userId + "/video";
 
 		String finalVideoPath = "";
-		String fileName =null;
+		String fileName = null;
 		if (file != null) {
 
 			FileOutputStream fileOutputStream = null;
 			InputStream inputStream = null;
-		    fileName = file.getOriginalFilename();
+			fileName = file.getOriginalFilename();
 			try {
 				if (StringUtils.isNotBlank(fileName)) {
 					// 文件上传的最终保存路径
 					finalVideoPath = FILe_SPACE + "/" + uploadPathDB + "/" + fileName;
 					// 数据库保存路径
 					uploadPathDB += ("/" + fileName);
-                    File outFile = new File(finalVideoPath);
+					File outFile = new File(finalVideoPath);
 					//
 					if (outFile.getParentFile() != null || !outFile.getParentFile().isDirectory()) {
 						// 创建父亲文件夹
@@ -160,8 +160,8 @@ public class VideoController extends BasicController {
 		}
 		FetchVideo videoInfo = new FetchVideo(FFMPEGEXE);
 		String fileNamePrefix = fileName.split("\\.")[0];
-		coverPath = coverPath + "/" + fileNamePrefix+UUID.randomUUID().toString() + ".jpg";// 相对路径放到数据库里
-		videoInfo.getcover(finalVideoPath, FILe_SPACE + coverPath);//输出转换后的图片
+		coverPath = coverPath + "/" + fileNamePrefix + UUID.randomUUID().toString() + ".jpg";// 相对路径放到数据库里
+		videoInfo.getcover(finalVideoPath, FILe_SPACE + coverPath);// 输出转换后的图片
 		// 保存视频到数据库
 		Videos video = new Videos();
 		video.setVideoCategory(videoCategory);
@@ -181,9 +181,9 @@ public class VideoController extends BasicController {
 		return XyfJsonResult.ok(videoId);// 返回200
 
 	}
-/**
- * 用于上传封面，目前已经整合到·上传视频的接口中
- */
+	/**
+	 * 用于上传封面，目前已经整合到·上传视频的接口中
+	 */
 //	@ApiOperation(value = "上传封面", notes = "上传封面的接口")
 //	@ApiImplicitParams({
 //			@ApiImplicitParam(name = "userId", value = "用户id", required = true, dataType = "String", paramType = "form"),
@@ -267,8 +267,6 @@ public class VideoController extends BasicController {
 		return XyfJsonResult.ok(pageResult);
 	}
 
-
-	
 	@PostMapping(value = "/userLike") // isSaveRecord 是否保存记录
 	public XyfJsonResult userLike(String userId, String videoId, String videoCreaterId) {
 		videoService.userLikeVideo(userId, videoId, videoCreaterId);
@@ -297,26 +295,23 @@ public class VideoController extends BasicController {
 
 	// 查询当前用户的所有的视频
 	@PostMapping(value = "/queryVideosByUser")
-	public XyfJsonResult queryVideosByUser(String userId) 
-	{
+	public XyfJsonResult queryVideosByUser(String userId) {
 		List<VideosVo> listVideos = videoService.queryVideosByUser(userId);
 		return XyfJsonResult.ok(listVideos);
 	}
+
 	/**
-	 * @param userId 举报人的id
+	 * @param userId      举报人的id
 	 * @param dealUserId  被举报用户的id
-	 * @param dealVideoId  被举报视频的id
+	 * @param dealVideoId 被举报视频的id
 	 * @return
 	 */
-	//举报视频
+	// 举报视频
 	@PostMapping("/report")
-	public XyfJsonResult reportVideosByUser(String userId,String dealUserId,String dealVideoId,String title,String content)
-	{
+	public XyfJsonResult reportVideosByUser(String userId, String dealUserId, String dealVideoId, String title,
+			String content) {
 		videoService.reportVideoByUser(dealUserId, dealVideoId, userId, title, content);
 		return XyfJsonResult.ok();
 	}
-	
-	
-	
 
 }

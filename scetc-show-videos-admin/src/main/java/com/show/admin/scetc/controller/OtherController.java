@@ -26,7 +26,7 @@ import com.show.admin.scetc.utils.XyfJsonResult;
  */
 @RestController
 @RequestMapping("other")
-public class OtherController extends BasicController{
+public class OtherController extends BasicController {
 
 	private static final String email_smtp_host = "email_smtp_host";
 	private static final String email_smtp_username = "email_smtp_username";
@@ -35,12 +35,7 @@ public class OtherController extends BasicController{
 
 	@Autowired
 	private SettingService settingService;
-	@Autowired
-	private ExecutorService excutorService;
 
-	
-	
-	
 	/**
 	 * 图片验证码
 	 * 
@@ -64,17 +59,12 @@ public class OtherController extends BasicController{
 		String smtpUsername = settingService.getValueByName(email_smtp_username);
 		String smtpPassword = settingService.getValueByName(email_smtp_password);
 		String smtpFrom = settingService.getValueByName(email_from);
-		excutorService.execute(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					EmailUtils.sendHtmlMail(smtpServer, smtpUsername, smtpPassword, smtpFrom, to, subject, content);
-				} catch (Exception e) {
-					throw new RuntimeException(e);
-				}
-			}
-		});
-		AdminUser adminUserVo=(AdminUser) request.getSession().getAttribute("adminUser");
+		try {
+			EmailUtils.sendHtmlMail(smtpServer, smtpUsername, smtpPassword, smtpFrom, to, subject, content);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		AdminUser adminUserVo = (AdminUser) request.getSession().getAttribute("adminUser");
 		SimpleDateFormat formate = new SimpleDateFormat();
 		String date = formate.format(new Date());
 		redis.set(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":写下了一封邮件");
