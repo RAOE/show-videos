@@ -41,10 +41,10 @@ public class BgmServiceImp implements BgmService {
 	 * 分页查询bgm列表
 	 */
 	@Override
-	public PageResult queryAll(Integer page, Integer pageSize, String keyword) {
+	public PageResult queryAll(Integer page, Integer pageSize, String keyword,String title) {
 
 		PageHelper.startPage(page, pageSize);
-		List<Bgm> list = bgmMapper.selectAll();
+		List<Bgm> list = bgmMapper.queryAll(keyword,title);
 		// 3、获取分页查询后的数据
 		PageInfo<Bgm> pageInfo = new PageInfo<>(list);
 		// 4、封装需要返回的分页实体

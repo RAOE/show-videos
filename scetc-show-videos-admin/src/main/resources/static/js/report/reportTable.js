@@ -14,12 +14,22 @@ var returnAllCount = function() {
 $("#toolbar .btn-group .btn").click(function() {
 	selectReport();
 });
+
+
+
+
+
+
 // 初始化表格数据
 // 初始化表格数据
 var selectReport = function() {
 	$('#allReport').bootstrapTable({
 		method : 'post',
 		url : "../../report/queryAll",
+		dataType : "json",
+		striped : false, // 使表格带有条纹
+		pagination : true, // 在表格底部显示分页工具栏
+		pageSize : 10,
 		dataType : "json",
 		striped : false, // 使表格带有条纹
 		pagination : true, // 在表格底部显示分页工具栏
@@ -34,6 +44,7 @@ var selectReport = function() {
 		showColumns : true, // 显示隐藏列
 		showRefresh : true, // 显示刷新按钮
 		// singleSelect: true,//复选框只能选择一条记录
+		search : true, // 是否显示搜索框
 		searchOnEnterKey : true, // 设置为 true时，按回车触发搜索方法，否则自动触发搜索方法
 		// clickToSelect: true,//点击行即可选中单选/复选框
 		queryParams : queryParams, // 参数
@@ -205,7 +216,7 @@ function operation(id,op)
     	 			}
     	    	 })
 }
-// 传参数到后台
+//传参数到后台
 function queryParams(params) {
 	return {
 		pageSize : params.limit,

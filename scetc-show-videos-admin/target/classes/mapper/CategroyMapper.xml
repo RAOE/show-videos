@@ -10,7 +10,9 @@
 		<if test="keyword != null and keyword !=''">
 			and  name like concat('%',#{keyword},'%')
 		</if>
-		
+			<if test="title != null and title !=''">
+			or  content like concat('%',#{title},'%')
+		</if>
 	</select>
 
 </mapper>

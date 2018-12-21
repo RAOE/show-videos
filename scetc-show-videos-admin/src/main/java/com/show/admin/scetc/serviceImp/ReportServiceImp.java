@@ -31,7 +31,7 @@ public class ReportServiceImp implements ReportService {
 	@Override
 	public PageResult queryAll(Integer page, Integer pageSize, String keyword) {
 		PageHelper.startPage(page, pageSize);
-		List<UsersReportVo> list = reportMapper.queryAll();
+		List<UsersReportVo> list = reportMapper.searchAll(keyword);
 		PageInfo<UsersReportVo> pageList = new PageInfo<>(list);
 		PageResult pageResult = new PageResult();
 		pageResult.setPage(page);

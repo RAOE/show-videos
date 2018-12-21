@@ -140,7 +140,6 @@ var selectBgm = function() {
 				formatter : function(value, row, index) {
 					
 					var a = '<button class="btn-sm btn-info" onclick="selectResourceById('+row.id+')"  data-target="#myModal" ">编辑</button> ';
-					//var b='<button id="test2" class="layui-btn">运行上述例子</button>';
                     return a;
 				}
 			},

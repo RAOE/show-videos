@@ -29,6 +29,11 @@ public class ReportController {
 		PageResult list = reportService.queryAll(page, pageSize, keyword);
 		return XyfJsonResult.ok(list);
 	}
+	
+	
+	
+	
+	
 	@PostMapping("/undercarriage")
 	public XyfJsonResult undercarriage(String id,String status)
 	{

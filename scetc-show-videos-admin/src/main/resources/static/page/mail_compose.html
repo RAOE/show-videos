@@ -4,7 +4,6 @@
 
 
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -138,11 +137,8 @@
 
 						<div class="summernote" id="content">
 							<h2>邮件内容</h2>
-							<p>
-							</p>
-							<p>
-								<b>当前版本：</b>v4.1.0
-							</p>
+							<p></p>
+							<p>在这里写下你的邮件内容</p>
 							<p></p>
 
 						</div>
@@ -151,13 +147,11 @@
 					<div class="mail-body text-right tooltip-demo">
 						<a onclick="sendEmail()" class="btn btn-sm btn-primary"
 							data-toggle="tooltip" data-placement="top" title="Send"><i
-							class="fa fa-reply"></i> 发送</a> 
-							<a onclick="sendEmail()" class="btn btn-sm btn-primary"
-							data-toggle="tooltip" data-placement="top" title="Send"><i
-							class="fa fa-reply"></i> 群发</a> 
-							<a href="mailbox.html"
-							class="btn btn-white btn-sm" data-toggle="tooltip"
-							data-placement="top" title="Discard email"><i
+							class="fa fa-reply"></i> 发送</a> <a onclick="sendEmail()"
+							class="btn btn-sm btn-primary" data-toggle="tooltip"
+							data-placement="top" title="Send"><i class="fa fa-reply"></i>
+							群发</a> <a href="mailbox.html" class="btn btn-white btn-sm"
+							data-toggle="tooltip" data-placement="top" title="Discard email"><i
 							class="fa fa-times"></i> 放弃</a> <a href="mailbox.html"
 							class="btn btn-white btn-sm" data-toggle="tooltip"
 							data-placement="top" title="Move to draft folder"><i
@@ -172,9 +166,7 @@
 		function sendEmail() {
 			var to = document.getElementById("to").value;
 			var subject = document.getElementById("subject").value;
-			var content = $("#content").html();
-			alert("提交成功");
-			
+			var content = $('.summernote').code();
 			$.ajax({
 				url : "../../other/sendEmail.do",
 				method : "post",
@@ -191,6 +183,7 @@
 				success : function(e) {
 					if (e.status == 200) {
 						console.log("发送完毕");
+						alert("发送完毕");
 					}
 					console.log(e);
 				},

@@ -2,14 +2,10 @@ package com.show.admin.scetc.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.mail.EmailException;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -59,11 +55,19 @@ public class OtherController extends BasicController {
 		String smtpUsername = settingService.getValueByName(email_smtp_username);
 		String smtpPassword = settingService.getValueByName(email_smtp_password);
 		String smtpFrom = settingService.getValueByName(email_from);
-		try {
-			EmailUtils.sendHtmlMail(smtpServer, smtpUsername, smtpPassword, smtpFrom, to, subject, content);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				try {
+					EmailUtils.sendHtmlMail(smtpServer, smtpUsername, smtpPassword, smtpFrom, to, subject, content);
+				} catch (Exception e) {
+					e.printStackTrace();
+					throw new RuntimeException();
+				}
+
+			}
+		}).start();
+		;
 		AdminUser adminUserVo = (AdminUser) request.getSession().getAttribute("adminUser");
 		SimpleDateFormat formate = new SimpleDateFormat();
 		String date = formate.format(new Date());

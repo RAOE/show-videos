@@ -23,7 +23,7 @@ public interface VideoService {
 	 * @param status
 	 * @return
 	 */
-	PageResult queryAll(Integer page, Integer pageSize, String keyword, String status);
+	PageResult queryAll(Integer page, Integer pageSize, String keyword, String title);
 
 	/**
 	 * 查询视频的类型

@@ -44,8 +44,8 @@ public class CategoryController extends BasicController {
 	 * @return
 	 */
 	@PostMapping("/queryAll")
-	public XyfJsonResult queryAll(String keyword, Integer page, Integer pageSize) {
-		PageResult list = categoryService.queryAll(keyword, page, pageSize);
+	public XyfJsonResult queryAll(String keyword,String title, Integer page, Integer pageSize) {
+		PageResult list = categoryService.queryAll(title,keyword, page, pageSize);
 		return XyfJsonResult.ok(list);
 	}
 

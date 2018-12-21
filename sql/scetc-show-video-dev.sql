@@ -1,4 +1,4 @@
-/*
+﻿/*
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
@@ -239,10 +239,7 @@ CREATE TABLE `setting` (
 -- ----------------------------
 -- Records of setting
 -- ----------------------------
-INSERT INTO `setting` VALUES ('1', 'email_smtp_host', 'smtp.163.com', '');
-INSERT INTO `setting` VALUES ('2', 'email_smtp_username', 'showvideos@163.com', '');
-INSERT INTO `setting` VALUES ('3', 'email_smtp_password', 'a986771570', '');
-INSERT INTO `setting` VALUES ('4', 'email_from', 'showvideos@163.com', '');
+
 
 -- ----------------------------
 -- Table structure for `users`

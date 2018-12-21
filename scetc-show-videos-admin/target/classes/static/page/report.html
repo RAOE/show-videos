@@ -27,17 +27,14 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-content mailbox-content">
 						<div class="file-manager">
-							<a class="btn btn-block btn-primary compose-mail"
-								href="#">举报模块</a>
+							<a class="btn btn-block btn-primary compose-mail" href="#">举报模块</a>
 							<div class="space-25"></div>
 							<h5>用户类别</h5>
 							<ul class="folder-list m-b-md" style="padding: 0">
-								<li><a href="mailbox.html"> 
-									<i class="fa fa-user"></i>
+								<li><a href="mailbox.html"> <i class="fa fa-user"></i>
 										超级管理员 <span class="label label-warning pull-right"></span>
 								</a></li>
-								<li><a href="mailbox.html"> 
-									<i class="fa fa-user"></i>
+								<li><a href="mailbox.html"> <i class="fa fa-user"></i>
 										普通管理员
 								</a></li>
 							</ul>
@@ -50,10 +47,10 @@
 										class="fa fa-circle text-danger"></i> 引人不适
 								</a></li>
 								<li><a href="mail_compose.html#"> <i
-										class="fa fa-circle text-danger"></i> 侵犯隐私 
+										class="fa fa-circle text-danger"></i> 侵犯隐私
 								</a></li>
 								<li><a href="mail_compose.html#"> <i
-										class="fa fa-circle text-danger"></i> 淫秽色情 
+										class="fa fa-circle text-danger"></i> 淫秽色情
 								</a></li>
 								<li><a href="mail_compose.html#"> <i
 										class="fa fa-circle text-danger"></i> 盗用TA人作品
@@ -96,14 +93,12 @@
 			<div class="col-sm-9 animated fadeInRight">
 				<div class="mail-box-header">
 
-					<form method="get"
-						action="http://www.zi-han.net/theme/hplus/index.html"
-						class="pull-right mail-search">
+					<form class="pull-right mail-search">
 						<div class="input-group">
 							<input type="text" class="form-control input-sm" name="search"
-								placeholder="搜索邮件标题，正文等">
+								placeholder="搜索标题，正文等">
 							<div class="input-group-btn">
-								<button type="submit" class="btn btn-sm btn-primary">
+								<button type="button" onclick="" class="btn btn-sm btn-primary">
 									搜索</button>
 							</div>
 						</div>
@@ -141,31 +136,53 @@
 				<div class="mail-box">
 					<table id="allReport" data-mobile-responsive="true"
 						class="table table-hover">
-						
-						
-						
+
+
+
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-			<script src="../js/jquery.min.js"></script>
-		<script src="../js/highlight.pack.js"></script>
-		<script>
-			hljs.initHighlightingOnLoad();
-		</script>
-		<script src="../js/bootstrap.min.js"></script>
-		<!-- 自定义js -->
-		<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
-		<script src="../js/contabs.js"></script>
-		<script src="../js/fakeLoader.min.js"></script>
-		<!-- Bootstrap table -->
-		<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
-		<script
-			src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-		<script
-			src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-		<script src="../js/colum/column.js"></script>
+
+
+
+	<script type="text/javascript">
+		function searchReport() {
+			$.ajax({
+				url : "../report/queryAll",
+				methot : "post",
+				data : {
+					keyword : keyword
+				},
+				success : function(e) {
+					console.log(e);
+				},
+				error : function() {
+					alert("发生异常");
+				}
+
+			})
+
+		}
+	</script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/highlight.pack.js"></script>
+	<script>
+		hljs.initHighlightingOnLoad();
+	</script>
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- 自定义js -->
+	<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+	<script src="../js/contabs.js"></script>
+	<script src="../js/fakeLoader.min.js"></script>
+	<!-- Bootstrap table -->
+	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script
+		src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+	<script
+		src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<script src="../js/colum/column.js"></script>
 	<script src="../js/plugins/iCheck/icheck.min.js"></script>
 	<script src="../js/report/reportTable.js"></script>
 </body>

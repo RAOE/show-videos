@@ -14,7 +14,7 @@ import com.show.admin.scetc.pojo.PageResult;
  */
 public interface CategoryService {
 	// 根据title 或者根据keyword 查询出相关的额专栏信息
-	PageResult queryAll(String keyword, Integer page, Integer pageSize);
+	PageResult queryAll(String title,String keyword, Integer page, Integer pageSize);
 
 	// 添加一个专栏的信息
 	void add(Category category);

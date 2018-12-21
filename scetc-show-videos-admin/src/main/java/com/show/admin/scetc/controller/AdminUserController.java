@@ -110,11 +110,6 @@ public class AdminUserController extends BasicController {
 		// 封装之后放入redis 缓存数据库中
 		AdminUser adminUserVo = CommonUtils.formate(adminUser);
 		redis.set(User_REDIS_SESSION + adminUserVo.getId(), adminUserVo.toString());// 保存账号信息到redis 缓存中
-		// 用户操作的记录
-		// 这种记录操作日志的操作不应该和登陆操作耦合到一起 ，应该异步记录
-		SimpleDateFormat formate = new SimpleDateFormat();
-		String date = formate.format(new Date());
-		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":登陆了系统");// 存放到redis
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
 		return XyfJsonResult.ok();
 	}

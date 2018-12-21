@@ -39,10 +39,10 @@ public class VideoServiceImp implements VideoService {
 	}
 
 	@Override
-	public PageResult queryAll(Integer page, Integer pageSize, String keyword, String status) {
+	public PageResult queryAll(Integer page, Integer pageSize, String keyword, String title) {
 
 		PageHelper.startPage(page, pageSize);
-		List<VideosVo> list = videoVoMapper.queryAll(keyword);
+		List<VideosVo> list = videoVoMapper.queryAll(keyword,title);
 		PageInfo<VideosVo> pageList = new PageInfo<>(list);
 		PageResult pageResult = new PageResult();
 		pageResult.setPage(page);

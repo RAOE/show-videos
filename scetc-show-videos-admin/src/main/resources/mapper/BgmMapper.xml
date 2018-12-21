@@ -4,10 +4,14 @@
 
 	<select id="queryAll" resultType="Bgm" parameterType="String">
 		select * from bgm
-		<if test="_parameter != null and _parameter !=''">
-			where name like '%${_parameter}%'
+		where 1=1
+		<if test="keyword != null and keyword !=''">
+			and name like '%${keyword}%'
 		</if>
-		order by id
+		<if test="title != null and title !=''">
+			or author like '%${title}%'
+		</if>
+		
 
 	</select>
 	<select id="selectBgmByName" resultType="Bgm"

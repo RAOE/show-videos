@@ -42,6 +42,9 @@
 		<if test="keyword!=null and keyword !='' ">
 			and v.video_desc like '%${keyword}%'
 		</if>
+		<if test="title!=null and keyword !='' ">
+			or u.nickname like '%${title}%'
+		</if>
 		order by v.create_time desc
 	</select>
 	<select id="selectVideoType" resultMap="BaseResultMap"

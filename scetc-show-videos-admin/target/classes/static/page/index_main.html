@@ -54,7 +54,7 @@
 						<h5>视频</h5>
 					</div>
 					<div class="ibox-content">
-						<h1 class="no-margins" id="videoNum">0</h1>
+						<h1 class="no-margins" id="videoNum">223</h1>
 						<div class="stat-percent font-bold text-info">
 							20% <i class="fa fa-level-up"></i>
 						</div>
@@ -441,29 +441,7 @@
 		$(document)
 				.ready(
 						function() {
-							$
-									.ajax({
-										url : "../../init",
-										type : "post",
-										success : function(res) {
-											$("#log").html("");
-											//渲染日志
-											for (var i = 0; i < res.data.logList.length; i++) {
-												$("#log").append(
-																"<li><a href='#' class='check-link'><i"+
-																"class='fa fa-check-square'></i> </a> <span"+
-																"class='m-l-xs todo-completed'>"
-																		+ res.data.logList[i]
-																		+ "</span></li>");
-											}
-											//设置视频数量
-											$("#videoNum").text(res.data.videoNum);
-											
-											
-											
-											
-										}
-									})
+							
 
 							$(".chart").easyPieChart({
 								barColor : "#f8ac59",
