@@ -4,7 +4,7 @@
   </view>
   <view class="desc">
     <view class="faceName">
-      <image class='myface' src="{{serverUrl}}{{item.face_image}}"></image>
+      <image class='myface' src="{{item.face_image}}"></image>
       <view class="nickname">{{item.nickName}}</view>
     </view>
   </view>

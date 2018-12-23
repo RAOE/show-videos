@@ -50,6 +50,7 @@ Page({
         if (res.data.status == 200) {
           var userInfo = res.data.data;
           var faceUrl = "../resource/images/noneface.png";
+          
           if (userInfo.faceImage != null && userInfo.faceImage != '' && userInfo.faceImage != undefined) {
             var faceUrl = serverUrl + userInfo.faceImage;
           }

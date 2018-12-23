@@ -559,12 +559,7 @@ function logout() {
 		url : "../adminUser/logout",
 		type : "post",
 		success : function(res) {
-			if (res.status == 200) {
-				window.location.href = "../adminUser/login";
-			} else {
-				console.log("登出失败");
-			}
-
+			window.location.href = "../adminUser/login";
 		}
 	})
 

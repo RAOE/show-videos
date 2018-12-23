@@ -9,6 +9,8 @@ page {
     margin-left: 50rpx;
     margin-right: 600rpx;
  
+
+  
 }
 .container-me {
     margin-top: 360rpx;
@@ -144,6 +146,7 @@ page {
     line-height: 45px;
     border-bottom: solid 1px #232323;
     color: white;
+  
 }
 
 .saySth {

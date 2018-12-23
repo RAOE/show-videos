@@ -21,7 +21,6 @@ public class IndexController extends BasicController {
 
 	@Autowired
 	private VideoService videoService;
-	
 
 	/**
 	 * 返回主頁
@@ -44,13 +43,29 @@ public class IndexController extends BasicController {
 		return modelAndView;
 	}
 
+	@RequestMapping("/")
+	public ModelAndView show(HttpServletRequest request) {
+
+		// 从request中获取用户的基本信息
+		ModelAndView modelAndView = new ModelAndView("thymeleaf/index");
+		AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
+		if (adminUser == null) {
+			return new ModelAndView("thymeleaf/login");
+
+		}
+		// 将数据渲染到页面上
+		modelAndView.addObject("adminUser", adminUser);
+		return modelAndView;
+	}
+
 	/**
 	 * 主页初始化代码
+	 * 
 	 * @return
 	 */
 	@RequestMapping("/init")
 	public XyfJsonResult init() {
-		
+
 		return XyfJsonResult.ok();
 	}
 

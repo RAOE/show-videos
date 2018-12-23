@@ -35,8 +35,8 @@ public class AdminUserController extends BasicController {
 		if (adminUser != null) // 如果存在 就从redis缓存数据库中删掉它
 		{
 			redis.del(User_REDIS_SESSION + adminUser.getId());
+			request.getSession().invalidate();// 销毁session 中的数据
 		}
-		request.getSession().invalidate();// 销毁session 中的数据
 		return XyfJsonResult.ok();
 	}
 
@@ -59,27 +59,27 @@ public class AdminUserController extends BasicController {
 			return XyfJsonResult.errorMap("两次输入密码不一致");
 		}
 		adminUser = adminUserService.selectOneById(adminUser.getId());
-		// 开始判断 如果adminUser为空
 		if (!adminUserService.check(oldPassword, adminUser)) {
 			return XyfJsonResult.errorMsg("修改密码失败,初始密码错误");
 		}
-		// 执行修改密码的操作
-		System.out.println(newPassword);
-		System.out.println(adminUser.getSalt());
-
 		adminUser.setPassword(CommonUtils.calculateMD5(adminUser.getSalt() + newPassword));
 		adminUserService.update(adminUser);
-
 		AdminUser adminUserVo = CommonUtils.formate(adminUser);
-		SimpleDateFormat formate = new SimpleDateFormat();
-		String date = formate.format(new Date());
-		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":修改了密码");// 存放到redis
-
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				SimpleDateFormat formate = new SimpleDateFormat();
+				String date = formate.format(new Date());
+				redis.lpush(Operate_REDIS_SESSION,
+						date + "&nbsp;&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":修改了密码");// 存放到redis
+			}
+		}).start();
 		return XyfJsonResult.ok();
 	}
 
 	@RequestMapping("/login")
-	public ModelAndView login() {
+	public ModelAndView login(HttpServletRequest request) {
+
 		return new ModelAndView("thymeleaf/login");
 	}
 
@@ -106,11 +106,18 @@ public class AdminUserController extends BasicController {
 		}
 		// 检查账号是否被禁用了
 		// 登陆成功,登陆成功之后更新用户的登陆时间
-		// 在这里不应该把带有用户账户密码的实体类放到redis 中应该放入需要的信息
-		// 封装之后放入redis 缓存数据库中
 		AdminUser adminUserVo = CommonUtils.formate(adminUser);
-		redis.set(User_REDIS_SESSION + adminUserVo.getId(), adminUserVo.toString());// 保存账号信息到redis 缓存中
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				SimpleDateFormat formate = new SimpleDateFormat();
+				String date = formate.format(new Date());
+				redis.set(User_REDIS_SESSION + adminUserVo.getId(), adminUserVo.toString());// 保存账号信息到redis 缓存中
+				redis.lpush(Operate_REDIS_SESSION,
+						date + "&nbsp;&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + "登陆了系统");
+			}
+		}).start();
 		return XyfJsonResult.ok();
 	}
 

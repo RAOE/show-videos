@@ -156,7 +156,6 @@ var selectResourceById = function(id) {
 		dataType : 'json',
 		success : function(data) {
 			if (data.status == 200) {
-				console.log(data);
 				
 			} else if (data.status == 0) {
 				swal("查询失败", "不存在该类别信息", "error");

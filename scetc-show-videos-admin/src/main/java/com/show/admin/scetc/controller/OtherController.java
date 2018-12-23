@@ -30,7 +30,7 @@ public class OtherController extends BasicController {
 	private static final String email_from = "email_from";
 
 	@Autowired
-	private SettingService settingService;
+	private SettingService settingService;//配置文件
 
 	/**
 	 * 图片验证码
@@ -61,17 +61,15 @@ public class OtherController extends BasicController {
 				try {
 					EmailUtils.sendHtmlMail(smtpServer, smtpUsername, smtpPassword, smtpFrom, to, subject, content);
 				} catch (Exception e) {
-					e.printStackTrace();
 					throw new RuntimeException();
 				}
-
 			}
 		}).start();
 		;
 		AdminUser adminUserVo = (AdminUser) request.getSession().getAttribute("adminUser");
 		SimpleDateFormat formate = new SimpleDateFormat();
 		String date = formate.format(new Date());
-		redis.set(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":写下了一封邮件");
+		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":写下了一封邮件");
 		return XyfJsonResult.ok();
 	}
 

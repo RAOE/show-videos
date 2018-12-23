@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.show.admin.scetc.utils.RedisOperator;
 
 /**
- * 
  * @author 2016wlw2 徐塬峰
  */
 @RestController
@@ -20,7 +19,7 @@ public class BasicController {
 	public String bgm_filePath;
 
 	@Autowired
-	public RedisOperator redis;
+	public RedisOperator redis;//注入redis客户端
 
 	// 默认的用户的键
 	public static final String User_REDIS_SESSION = "user-redis-session";

@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    actionSheetHidden: true,
     cover: "cover",
     videoId: "",
     src: "",
@@ -17,7 +18,13 @@ Page({
     userLikeVideo: false,
     placeholder: "说点什么吧",
     CommentList: [],
-    contentValue: ""
+    contentValue: "",
+    itemList: [{
+      name: "下载视频"
+    }, {
+      name: '举报用户'
+    }],
+
 
   },
   videoCtx: {},
@@ -25,12 +32,72 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (params) {
+  listenerButton: function() {
+    this.setData({
+      actionSheetHidden: !this.data.actionSheetHidden
+    });
+  },
+  listenerActionSheet: function() {
+
+    this.setData({
+      actionSheetHidden: !this.data.actionSheetHidden,
+    })
+  },
+  operate: function(params) {
+
+    var me = this;
+    //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
+    var user = app.getGlobalUserInfo();
+    var videoInfo = me.data.videoInfo;
+    var videoId = videoInfo.id;
+    console.log(me.data.videoInfo);
+    var videoInfo = JSON.stringify(me.data.videoInfo);
+    var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
+    var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
+    if (user == null || user == '' || user == undefined) {
+      wx.redirectTo({
+        url: '../userLogin/login?realUrl=' + realUrl,
+      })
+    } else {
+      var value = params;
+      var videoInfo = this.data.videoInfo;
+      console.log(params.currentTarget.id);
+      var id = params.currentTarget.id;
+      if (id == 0) //下载视频
+      {
+        // 下载
+        wx.showLoading({
+          title: '下载中...',
+        })
+        wx.downloadFile({
+          url: app.serverUrl + me.data.videoInfo.videoPath,
+          success: function(res) {
+            // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+            if (res.statusCode === 200) {
+
+              wx.saveVideoToPhotosAlbum({
+                filePath: res.tempFilePath,
+                success: function(res) {
+                  wx.hideLoading();
+                }
+              })
+            }
+          }
+        })
+      } else if (id == 1) //举报用户
+      {
+        wx.redirectTo({
+          url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
+        })
+
+      }
+    }
+  },
+  onLoad: function(params) {
     var me = this;
     me.videoCtx = wx.createVideoContext('myVideo', me);
     console.info(params);
     console.log(params);
-
     var videoInfo = JSON.parse(params.videoInfo);
     //解决高和宽的问题
     //横屏和竖屏的问题。
@@ -43,7 +110,7 @@ Page({
     me.setData({
       videoId: videoInfo.id,
       src: app.serverUrl + videoInfo.videoPath,
-      imagesrc: app.serverUrl + videoInfo.face_image,
+      imagesrc: videoInfo.face_image,
       videoInfo: videoInfo,
       cover: cover,
     })
@@ -57,7 +124,7 @@ Page({
       url: serverUrl + '/user/queryPublisher?loginUserId=' + user.id + '&videoId=' + videoInfo.id +
         '&publisherUserId=' + videoInfo.userId,
       method: 'post',
-      success: function (res) {
+      success: function(res) {
         me.setData({
           userLikeVideo: res.data.data.userLikeVideo,
         })
@@ -67,7 +134,7 @@ Page({
     wx.request({
       url: serverUrl + '/video/queryCommentsByVideoId?videoId=' + videoInfo.id,
       method: 'post',
-      success: function (resp) {
+      success: function(resp) {
         var CommentList = resp.data.data;
 
         for (var i = 0; i < CommentList.length; i++) {
@@ -86,18 +153,16 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
-  sendComment: function (e) {
-
-
+  sendComment: function(e) {
     var me = this;
     var comment = e.detail.value;
     var serverUrl = app.serverUrl;
     var user = app.getGlobalUserInfo();
+    var videoInfo = me.data.videoInfo;
     var videoId = videoInfo.id;
-    console.log(me.data.videoInfo);
     var videoInfo = JSON.stringify(me.data.videoInfo);
     var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
     var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
@@ -112,7 +177,7 @@ Page({
       wx.request({
         url: serverUrl + 'video/saveComments?comment=' + comment + "&videoId=" + videoId + "&userId=" + user.id,
         method: 'post',
-        success: function (resp) {
+        success: function(resp) {
           wx.showToast({
             title: '发送成功',
             icon: 'success'
@@ -120,7 +185,7 @@ Page({
           wx.request({
             url: serverUrl + '/video/queryCommentsByVideoId?videoId=' + videoInfo.id,
             method: 'post',
-            success: function (resp) {
+            success: function(resp) {
 
               //进行时间戳的转换
               var CommentList = resp.data.data;
@@ -150,7 +215,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     var me = this;
     me.videoCtx.play();
 
@@ -158,7 +223,7 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
     var me = this;
     me.videoCtx.pause();
   },
@@ -166,40 +231,40 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
-  showSearch: function () {
+  showSearch: function() {
     wx.navigateTo({
       url: '../searchVideos/searchVideos',
-      success: function (res) { },
-      fail: function (res) { },
-      complete: function (res) { },
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
     })
 
   },
-  upload: function () {
+  upload: function() {
     var me = this;
     var videoInfo = JSON.stringify(me.data.videoInfo);
     var realUrl = '../videoInfo/videoInfo@videoInfo#' + videoInfo; //视频的信息
@@ -212,12 +277,12 @@ Page({
       videoUtils.uploadVideos();
     }
   },
-  showIndex: function () {
+  showIndex: function() {
     wx.redirectTo({
       url: '../category/category',
     })
   },
-  showPublisher: function () {
+  showPublisher: function() {
     var user = app.getGlobalUserInfo();
     var videoInfo = this.data.videoInfo;
     var realUrl = '../videoInfo/publisherId@publisherId#' + videoInfo.userId; //视频的信息
@@ -234,7 +299,31 @@ Page({
     //对页面级别进行拦截
 
   },
-  comments: function () {
+  comments: function() {
+    var me = this;
+    //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
+    var user = app.getGlobalUserInfo();
+    var videoInfo = me.data.videoInfo;
+    var videoId = videoInfo.id;
+    var videoInfo = JSON.stringify(me.data.videoInfo);
+    var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
+    var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
+    if (user == null || user == '' || user == undefined) {
+      wx.redirectTo({
+        url: '../userLogin/login?realUrl=' + realUrl,
+      })
+    } else {
+      //滚动页面自动到最底部 评论
+      wx.createSelectorQuery().select('#myVideo').boundingClientRect(function(rect) {
+        // 使页面滚动到底部
+        wx.pageScrollTo({
+          scrollTop: rect.bottom
+        })
+      }).exec()
+    }
+  },
+  shareMe: function() {
+
     var me = this;
     //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
     var user = app.getGlobalUserInfo();
@@ -249,82 +338,83 @@ Page({
         url: '../userLogin/login?realUrl=' + realUrl,
       })
     } else {
-      //滚动页面自动到最底部 评论
-      wx.createSelectorQuery().select('#myVideo').boundingClientRect(function (rect) {
-        // 使页面滚动到底部
-        wx.pageScrollTo({
-          scrollTop: rect.bottom
-        })
-      }).exec()
-    }
-  },
-  shareMe: function () {
+      var videoInfo = this.data.videoInfo;
+      var me = this;
+      var user = app.getGlobalUserInfo();
+      wx.getSystemInfo({
+        success: function(result) {
+          //选项集合
+          let itemList;
+          if (result.platform == 'android') {
+            itemList = ['下载到本地', '举报用户', '分享到微信群', '取消']
+          } else {
+            itemList = ['下载到本地', '举报用户', '分享到微信群', ]
+          }
+          wx.showActionSheet({
+            itemList: itemList,
+            success: function(res) {
 
-    var videoInfo = this.data.videoInfo;
-    var me = this;
-    var user = app.getGlobalUserInfo();
-    wx.showActionSheet({
-      itemList: ['下载到本地', '举报用户', '分享到朋友圈'],
-      success: function (res) {
+              if (res.tapIndex == 0) {
+                // 下载
+                wx.showLoading({
+                  title: '下载中...',
+                })
+                wx.downloadFile({
+                  url: app.serverUrl + me.data.videoInfo.videoPath,
+                  success: function(res) {
+                    // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+                    if (res.statusCode === 200) {
 
-        if (res.tapIndex == 0) {
-          // 下载
-          wx.showLoading({
-            title: '下载中...',
-          })
-          wx.downloadFile({
-            url: app.serverUrl + me.data.videoInfo.videoPath,
-            success: function (res) {
-              // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
-              if (res.statusCode === 200) {
-
-                wx.saveVideoToPhotosAlbum({
-                  filePath: res.tempFilePath,
-                  success: function (res) {
-                    wx.hideLoading();
+                      wx.saveVideoToPhotosAlbum({
+                        filePath: res.tempFilePath,
+                        success: function(res) {
+                          wx.hideLoading();
+                        }
+                      })
+                    }
                   }
                 })
+              } else if (res.tapIndex == 1) {
+                // 举报
+                if (user.id)
+                  wx.redirectTo({
+                    url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
+                  })
+              } else {
+
+
+
               }
-            }
+
+            },
           })
-        } else if (res.tapIndex == 1) {
-          // 举报
-          if (user.id)
-            wx.redirectTo({
-              url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
-            })
-        } else {
-          wx.showToast({
-            title: '官方暂未开放...',
-          })
-          f
-        }
-      }
-    })
+        },
+      })
+    }
   },
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(res) {
 
     var me = this;
     var videoInfo = me.data.videoInfo;
-
-
     return {
       title: '快来看看秀视频吧',
-      path: '/page/videoInfo/videoInfo?videoInfo=' +
+      path: '/pages/videoInfo/videoInfo?videoInfo=' +
         JSON.stringify(videoInfo),
     }
-
   },
-  likeVideoOrNot: function () {
+  likeVideoOrNot: function() {
     var me = this;
-    var videoInfo = JSON.stringify(me.data.videoInfo);
-    var videoId = videoInfo.id;
+    //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
     var user = app.getGlobalUserInfo();
+    var videoInfo = me.data.videoInfo;
+    var videoId = videoInfo.id;
+    console.log(me.data.videoInfo);
+    var videoInfo = JSON.stringify(me.data.videoInfo);
     var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
     var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
     if (user == null || user == '' || user == undefined) {
       wx.redirectTo({
-        url: '../videoInfo/login?realUrl=' + realUrl,
+        url: '../userLogin/login?realUrl=' + realUrl,
       })
     } else {
       var userLikeVideo = me.data.userLikeVideo;
@@ -342,7 +432,7 @@ Page({
         header: {
           'content-type': 'application/json' //默认值
         },
-        success: function (res) {
+        success: function(res) {
           wx.hideLoading();
           userLikeVideo = !userLikeVideo;
           me.setData({

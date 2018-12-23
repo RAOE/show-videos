@@ -34,7 +34,6 @@ public class CategoryController extends BasicController {
 
 	@Autowired
 	private CategoryService categoryService;
-
 	/**
 	 * 分页查询
 	 * 
@@ -69,7 +68,6 @@ public class CategoryController extends BasicController {
 	 */
 	@RequestMapping("/editById")
 	public ModelAndView edit(Long id) {
-
 		Category category = categoryService.selectOne(id);
 		return new ModelAndView("thymeleaf/column/column_edit").addObject("category", category);
 	}
@@ -96,7 +94,6 @@ public class CategoryController extends BasicController {
 
 	/**
 	 * 添加新的专栏
-	 * 
 	 * @param name
 	 * @param description
 	 * @param file

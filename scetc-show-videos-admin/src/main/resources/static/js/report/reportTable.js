@@ -65,8 +65,6 @@ var selectReport = function() {
 			return "无符合条件的记录";
 		},
 		responseHandler : function(res) {
-			console.log(res.data);
-			console.log(res.data.records);
 			
 			return {
 				"total" : res.data.records, // 总页数

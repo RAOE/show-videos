@@ -15,7 +15,7 @@ Page({
     var me = this;
     var screenWidth = wx.getSystemInfoSync().screenWidth;
     var category = params.id;
-    
+
     if (category != null && category != '' && category != undefined) {
       me.setData({
         category: category,
@@ -48,13 +48,13 @@ Page({
     })
 
     var searchContent = me.data.searchContent;
-    var category=me.data.category;
+    var category = me.data.category;
     var url = serverUrl + 'video/showAll?page=' + page + "&isSaveRecord="
       + isSaveRecord + '&category=' + category;
-    
+
     if (category == null || category == undefined) {
-       url = serverUrl + 'video/showAll?page=' + page + "&isSaveRecord="
-         + isSaveRecord + '&category=' + null;
+      url = serverUrl + 'video/showAll?page=' + page + "&isSaveRecord="
+        + isSaveRecord + '&category=' + null;
     }
 
 
@@ -62,9 +62,9 @@ Page({
       url: url,
       method: "post",
       data:
-        {  
-          videoDesc:searchContent
-        },
+      {
+        videoDesc: searchContent
+      },
       success: function (res) {
         wx.hideLoading();
         wx.hideNavigationBarLoading();
@@ -79,6 +79,19 @@ Page({
           );
         }
         var videoList = res.data.data.rows;
+
+        console.log(videoList);
+        //遍历视频信息 将face_image为null的视频头像改为默认头像
+        for (var i = 0; i < videoList.length; i++) {
+          if (videoList[i].face_image == null || videoList[i].face_image == undefined || videoList[i].face_image == '') {
+            videoList[i].face_image = "../resource/images/noneface.png";
+          }
+          else {
+            var serverUrl = app.serverUrl;
+            videoList[i].face_image = serverUrl + videoList[i].face_image;
+          }
+
+        }
         var newVideoList = me.data.videoList;
         me.setData(
           {
@@ -106,7 +119,6 @@ Page({
       })
       return;
     }
-
     var page = currentPage + 1;
     me.getAllVideoList(page, 0);
 
