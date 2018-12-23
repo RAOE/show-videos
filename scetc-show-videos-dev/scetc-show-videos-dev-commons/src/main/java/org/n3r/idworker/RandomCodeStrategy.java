@@ -1,11 +1,11 @@
 package org.n3r.idworker;
 
 public interface RandomCodeStrategy {
-    void init();
+	void init();
 
-    int prefix();
+	int prefix();
 
-    int next();
+	int next();
 
-    void release();
+	void release();
 }

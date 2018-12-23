@@ -4,38 +4,40 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class DayPrefixRandomCodeStrategy extends DefaultRandomCodeStrategy {
-    private final String dayFormat;
-    private String lastDay;
+	private final String dayFormat;
+	private String lastDay;
 
-    public DayPrefixRandomCodeStrategy(String dayFormat) {
-        this.dayFormat = dayFormat;
-    }
+	public DayPrefixRandomCodeStrategy(String dayFormat) {
+		this.dayFormat = dayFormat;
+	}
 
-    @Override
-    public void init() {
-        String day = createDate();
-        if (day.equals(lastDay))
-            throw new RuntimeException("init failed for day unrolled");
+	@Override
+	public void init() {
+		String day = createDate();
+		if (day.equals(lastDay))
+			throw new RuntimeException("init failed for day unrolled");
 
-        lastDay = day;
+		lastDay = day;
 
-        availableCodes.clear();
-        release();
+		availableCodes.clear();
+		release();
 
-        prefixIndex = Integer.parseInt(lastDay);
-        if (tryUsePrefix()) return;
+		prefixIndex = Integer.parseInt(lastDay);
+		if (tryUsePrefix())
+			return;
 
-        throw new RuntimeException("prefix is not available " + prefixIndex);
-    }
+		throw new RuntimeException("prefix is not available " + prefixIndex);
+	}
 
-    private String createDate() {
-        return new SimpleDateFormat(dayFormat).format(new Date());
-    }
+	private String createDate() {
+		return new SimpleDateFormat(dayFormat).format(new Date());
+	}
 
-    @Override
-    public int next() {
-        if (!lastDay.equals(createDate())) init();
+	@Override
+	public int next() {
+		if (!lastDay.equals(createDate()))
+			init();
 
-        return super.next();
-    }
+		return super.next();
+	}
 }

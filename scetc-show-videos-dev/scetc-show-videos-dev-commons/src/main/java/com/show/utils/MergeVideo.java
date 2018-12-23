@@ -22,6 +22,7 @@ public class MergeVideo {
 		super();
 		this.ffmpegEXE = ffmpegEXE;
 	}
+
 	// 滤镜合成
 	public void converFilter(String videoPath, double seconds, String outPath, String filter) throws IOException {
 		// ffmpeg.exe -i test.mp4 spring.avi
@@ -77,6 +78,7 @@ public class MergeVideo {
 		}
 
 	}
+
 	public void convertor(String mp3InputPath, String videoPath, double seconds, String outPath, String filter) {
 		// ffmpeg.exe -i test.mp4 spring.avi
 		// ffmpeg.exe -i bgm.mp3 -i video.mp4 -t 6 -y xu.mp4
@@ -87,11 +89,10 @@ public class MergeVideo {
 		List<String> command = new ArrayList<>();
 
 		command.add(ffmpegEXE);
-        if(mp3InputPath!=null&&mp3InputPath.length()!=0)
-        {
-		command.add("-i");
-		command.add(mp3InputPath);// mp3
-        }
+		if (mp3InputPath != null && mp3InputPath.length() != 0) {
+			command.add("-i");
+			command.add(mp3InputPath);// mp3
+		}
 		command.add("-i");
 		command.add(videoPath);// video
 
@@ -144,8 +145,8 @@ public class MergeVideo {
 				// 什么也不做
 			} else {
 				e.printStackTrace();
+			}
 		}
-	}
 
 	}
 

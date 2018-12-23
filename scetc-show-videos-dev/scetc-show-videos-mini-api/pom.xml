@@ -11,7 +11,15 @@
 	<packaging>war</packaging>
 
 
+
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>com.scetc.show</groupId>
 			<artifactId>scetc-show-videos-dev-service</artifactId>
@@ -31,6 +39,7 @@
 			<artifactId>spring-boot-starter-data-solr</artifactId>
 		</dependency>
 	</dependencies>
+
 
 
 

@@ -13,6 +13,6 @@
        select content from search_reports group by content order by count(content) desc         
   </select>
   
-
+  
   
 </mapper>
