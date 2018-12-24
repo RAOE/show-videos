@@ -13,7 +13,7 @@ Introduction: The background management system as its own specialized graduation
 # 
 
 <h2>线上版</h2>
-<img src="./gif/show01.gif">
+<img src="./myimg/wx.jpg">
 
 <h2>前台-小程序端效果展示</h2>
 <p>

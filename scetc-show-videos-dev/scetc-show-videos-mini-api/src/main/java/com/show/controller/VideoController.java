@@ -102,9 +102,7 @@ public class VideoController extends BasicController {
 					// 数据库保存路径
 					uploadPathDB += ("/" + fileName);
 					File outFile = new File(finalVideoPath);
-					//
 					if (outFile.getParentFile() != null || !outFile.getParentFile().isDirectory()) {
-						// 创建父亲文件夹
 						outFile.getParentFile().mkdirs();
 					}
 
@@ -112,7 +110,6 @@ public class VideoController extends BasicController {
 					inputStream = file.getInputStream();
 
 					IOUtils.copy(inputStream, fileOutputStream);
-					// 调用接口
 
 				} else {// 增加校验防止入侵攻击
 					return XyfJsonResult.errorException("上传失败了");

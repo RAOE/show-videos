@@ -8,16 +8,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.http.HttpMethod;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.web.client.RestTemplate;
-
-import com.mysql.fabric.xmlrpc.base.Member;
 import com.show.admin.scetc.ScetcShowVideosAdminApplication;
 
 /**
@@ -28,16 +22,16 @@ import com.show.admin.scetc.ScetcShowVideosAdminApplication;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ScetcShowVideosAdminApplication.class)
-@WebAppConfiguration
 public class ScetcShowVideosAdminApplicationTests {
 
     private TestRestTemplate template = new TestRestTemplate();
 	/**
-	 * 
+	 * 测试方法执行前执行
 	 */
 	@Before
 	public void init() {
 		System.out.println("-----初始化代码---------");
+		
 
 	}
 
@@ -49,11 +43,8 @@ public class ScetcShowVideosAdminApplicationTests {
 		System.out.println(a.toString());
 	}
 
-	
-
-
 	/**
-	 * 测试代码执行完毕
+	 * 测试方法执行后执行
 	 */
 	@After
 	public void after() {
