@@ -34,32 +34,23 @@ public class RegistLoginController extends BasicController {
 	@ApiOperation(value = "登陆", notes = "用户注册的接口")
 	@PostMapping("/login")
 	public XyfJsonResult login(@RequestBody Users user) throws Exception {
-		// 假设登陆的人特别多
 		Thread.sleep(500);
-		// 1.先判断传入的用户的账号密码是否为空
 		if (StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword())) {
 			return XyfJsonResult.errorMsg("小主,账号密码不能为空哦");
 		}
-		// 判断该账号是否在数据库里 如果存在 则继续校验密码
 		if (userService.queryUsernameIsExist(user.getUsername())) {
 
 			Users userSource = userService.getUser(user.getUsername());
-			// System.out.println(userSource.toString());
-			// 校验数据库的账号密码是否正确
 			if (userSource.getPassword().equalsIgnoreCase(MD5Utils.getMD5Str(user.getPassword()))) {
 				user.setPassword("");
 				UsersVo userVo = setUserRedisSessionToken(userSource);
-				// System.out.println(userVo.toString());
 				return XyfJsonResult.ok(userVo);
 			} else {
 				return XyfJsonResult.errorMsg("小主,你的账号密码错误");
 			}
-
 		} else {
 			return XyfJsonResult.errorMsg("小主,你的账号密码错误");
-
 		}
-
 	}
 
 	/**
