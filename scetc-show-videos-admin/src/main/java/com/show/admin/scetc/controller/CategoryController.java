@@ -34,6 +34,7 @@ public class CategoryController extends BasicController {
 
 	@Autowired
 	private CategoryService categoryService;
+
 	/**
 	 * 分页查询
 	 * 
@@ -43,8 +44,8 @@ public class CategoryController extends BasicController {
 	 * @return
 	 */
 	@PostMapping("/queryAll")
-	public XyfJsonResult queryAll(String keyword,String title, Integer page, Integer pageSize) {
-		PageResult list = categoryService.queryAll(title,keyword, page, pageSize);
+	public XyfJsonResult queryAll(String keyword, String title, Integer page, Integer pageSize) {
+		PageResult list = categoryService.queryAll(title, keyword, page, pageSize);
 		return XyfJsonResult.ok(list);
 	}
 
@@ -94,6 +95,7 @@ public class CategoryController extends BasicController {
 
 	/**
 	 * 添加新的专栏
+	 * 
 	 * @param name
 	 * @param description
 	 * @param file

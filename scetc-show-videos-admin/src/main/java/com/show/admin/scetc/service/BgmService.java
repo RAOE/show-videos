@@ -9,10 +9,11 @@ public interface BgmService {
 
 	/**
 	 * 查询全部背景音乐
-	 * @param title 
-	 * @param keyword 
-	 * @param pageSize 
-	 * @param page 
+	 * 
+	 * @param title
+	 * @param keyword
+	 * @param pageSize
+	 * @param page
 	 * 
 	 * @return
 	 */
@@ -26,7 +27,7 @@ public interface BgmService {
 	 * @param keyword
 	 * @return
 	 */
-	PageResult queryAll(Integer page, Integer pageSize, String keyword,String title);
+	PageResult queryAll(Integer page, Integer pageSize, String keyword, String title);
 
 	/**
 	 * 更新背景音乐
@@ -58,6 +59,5 @@ public interface BgmService {
 	 * @return
 	 */
 	Bgm selectOne(Long id);
-
 
 }

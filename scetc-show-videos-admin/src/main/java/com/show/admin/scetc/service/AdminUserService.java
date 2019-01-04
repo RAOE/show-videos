@@ -18,8 +18,4 @@ public interface AdminUserService {
 
 	public void update(AdminUser adminUser); // 更新一条管理员用户的信息
 
-	
-	
-	
-	
 }

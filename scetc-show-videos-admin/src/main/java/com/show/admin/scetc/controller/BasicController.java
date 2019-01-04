@@ -19,7 +19,7 @@ public class BasicController {
 	public String bgm_filePath;
 
 	@Autowired
-	public RedisOperator redis;//注入redis客户端
+	public RedisOperator redis;// 注入redis客户端
 
 	// 默认的用户的键
 	public static final String User_REDIS_SESSION = "user-redis-session";

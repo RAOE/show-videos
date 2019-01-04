@@ -27,7 +27,7 @@ public class XuYuanFengExceptionHandler {
 		logger.info("自定义异常处理-RuntimeException");
 		logger.error(exception.getMessage());
 		ModelAndView m = new ModelAndView();
-		m.addObject("roncooException", exception.getMessage());
+		m.addObject("message", exception.getMessage());
 		m.setViewName("error/500");
 		return m;
 	}
@@ -44,7 +44,7 @@ public class XuYuanFengExceptionHandler {
 		logger.info("自定义异常处理-Exception");
 		logger.error(exception.getMessage());
 		ModelAndView m = new ModelAndView();
-		m.addObject("roncooException", exception.getMessage());
+		m.addObject("message", exception.getMessage());
 		m.setViewName("error/500");
 		return m;
 	}

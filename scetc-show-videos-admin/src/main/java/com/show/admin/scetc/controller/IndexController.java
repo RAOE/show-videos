@@ -36,8 +36,19 @@ public class IndexController extends BasicController {
 		AdminUser adminUser = (AdminUser) request.getSession().getAttribute("adminUser");
 		if (adminUser == null) {
 			return new ModelAndView("thymeleaf/login");
-
 		}
+		//取出各种数据并渲染到首页上
+		//访问量
+		//视频
+		//用户
+		//活跃用户(一个月之内发布过短视频的用户)
+		
+		
+		
+		
+		
+		
+		
 		// 将数据渲染到页面上
 		modelAndView.addObject("adminUser", adminUser);
 		return modelAndView;

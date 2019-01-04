@@ -5,13 +5,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 测试页面
+ * 
  * @author Ray
  *
  */
 @RestController
 @RequestMapping("")
 public class HelloController {
-	
+
 	@RequestMapping("welcome")
 	public String welcome() {
 		return "welcome to my wolrd";

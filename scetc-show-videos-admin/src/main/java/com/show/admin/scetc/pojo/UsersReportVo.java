@@ -27,9 +27,6 @@ public class UsersReportVo {
 	private String publisher;// 视频的发布者
 	private String video_path;// 视频的路径
 	private String status;
-	
-	
-	
 
 	public String getStatus() {
 		return status;

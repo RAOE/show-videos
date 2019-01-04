@@ -14,7 +14,7 @@ public interface VideoVoMapper extends MyMapper<VideosVo> {
 	 * @param video_desc
 	 * @return
 	 */
-	List<VideosVo> queryAll(@Param("keyword") String video_desc,@Param("title") String publishName);// a
+	List<VideosVo> queryAll(@Param("keyword") String video_desc, @Param("title") String publishName);// a
 
 	/**
 	 * 查询出选中的视频列表

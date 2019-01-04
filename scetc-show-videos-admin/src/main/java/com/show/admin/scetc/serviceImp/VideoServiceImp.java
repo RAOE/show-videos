@@ -42,7 +42,7 @@ public class VideoServiceImp implements VideoService {
 	public PageResult queryAll(Integer page, Integer pageSize, String keyword, String title) {
 
 		PageHelper.startPage(page, pageSize);
-		List<VideosVo> list = videoVoMapper.queryAll(keyword,title);
+		List<VideosVo> list = videoVoMapper.queryAll(keyword, title);
 		PageInfo<VideosVo> pageList = new PageInfo<>(list);
 		PageResult pageResult = new PageResult();
 		pageResult.setPage(page);
@@ -90,8 +90,7 @@ public class VideoServiceImp implements VideoService {
 	@Override
 	public int selectCountAll() {
 
-		
- 		return videoMapper.selectCount(null);
+		return videoMapper.selectCount(null);
 	}
 
 }

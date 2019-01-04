@@ -48,11 +48,10 @@ public interface VideoService {
 	 * @param id
 	 */
 	void delete(String id);
-    
+
 	/**
 	 * 查询系统中视频的总量
 	 */
 	int selectCountAll();
-	
-	
+
 }

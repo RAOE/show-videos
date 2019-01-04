@@ -14,6 +14,6 @@ public interface ReportMapper extends MyMapper<UsersReport> {
 	 * 
 	 * @return
 	 */
-	List<UsersReportVo> searchAll(@Param("keyword")String keyword);
+	List<UsersReportVo> searchAll(@Param("keyword") String keyword);
 
 }

@@ -14,7 +14,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import com.show.admin.scetc.pojo.AdminUser;
 
 /**
- * 进行日志记录
+ * AOP 进行日志记录
  * 
  * @author Ray
  *

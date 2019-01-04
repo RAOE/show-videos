@@ -54,13 +54,13 @@ public class VideoController extends BasicController {
 	 * @return
 	 */
 	@RequestMapping("/queryAll")
-	public XyfJsonResult queryAll(String keyword,String title,
+	public XyfJsonResult queryAll(String keyword, String title,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
 			@RequestParam(value = "pageSize", required = true, defaultValue = "10") Integer pageSize, String status) {
 		if (page == null) {
 			page = 1;
 		}
-		PageResult pageResult = videoService.queryAll(page, pageSize, keyword,title);
+		PageResult pageResult = videoService.queryAll(page, pageSize, keyword, title);
 		return XyfJsonResult.ok(pageResult);
 	}
 
@@ -81,16 +81,15 @@ public class VideoController extends BasicController {
 		}
 		return XyfJsonResult.ok();
 	}
-	
+
 	/**
 	 * 编辑视频
+	 * 
 	 * @return
 	 */
 	@RequestMapping("/editVideos")
-	public XyfJsonResult editVideosSubmit()
-	{
-		return XyfJsonResult.ok();//编辑视频
+	public XyfJsonResult editVideosSubmit() {
+		return XyfJsonResult.ok();// 编辑视频
 	}
-	
 
 }

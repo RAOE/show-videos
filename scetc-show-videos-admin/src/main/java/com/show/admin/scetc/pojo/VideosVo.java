@@ -40,7 +40,6 @@ public class VideosVo {
 	private String face_image;
 
 	private String videoFilter;
-	
 
 	public String getVideoFilter() {
 		return videoFilter;

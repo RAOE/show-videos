@@ -30,7 +30,7 @@ public class OtherController extends BasicController {
 	private static final String email_from = "email_from";
 
 	@Autowired
-	private SettingService settingService;//配置文件
+	private SettingService settingService;// 配置文件
 
 	/**
 	 * 图片验证码

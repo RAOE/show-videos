@@ -23,9 +23,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	@Value("${url_mapping}")
 	private String url_mapping;
 
-	
-	
-	
 	/**
 	 * 定义虚拟映射
 	 */

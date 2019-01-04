@@ -15,6 +15,6 @@ public interface CategoryMapper extends MyMapper<Category> {
 	 * @param keyword
 	 * @return
 	 */
-	List<Category> queryAll(@Param("keyword") String keyword,@Param("title") String title);
+	List<Category> queryAll(@Param("keyword") String keyword, @Param("title") String title);
 
 }

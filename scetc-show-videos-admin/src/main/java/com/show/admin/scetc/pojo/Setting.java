@@ -12,13 +12,13 @@ public class Setting implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@Column(name="id")
+	@Column(name = "id")
 	private Long id;
-	@Column(name="name")
+	@Column(name = "name")
 	private String name;
-	@Column(name="value")
+	@Column(name = "value")
 	private String value;
-	@Column(name="isDeleted")
+	@Column(name = "isDeleted")
 	private Boolean isDeleted;
 
 	public Long getId() {

@@ -50,10 +50,10 @@ public class CategoryServiceImp implements CategoryService {
 	}
 
 	@Override
-	public PageResult queryAll(String title,String keyword, Integer page, Integer pageSize) {
+	public PageResult queryAll(String title, String keyword, Integer page, Integer pageSize) {
 
 		PageHelper.startPage(page, pageSize);
-		List<Category> list = categoryMapper.queryAll(keyword,title);
+		List<Category> list = categoryMapper.queryAll(keyword, title);
 //		// 3、获取分页查询后的数据
 		PageInfo<Category> pageInfo = new PageInfo<>(list);
 //		// 4、封装需要返回的分页实体
@@ -70,18 +70,17 @@ public class CategoryServiceImp implements CategoryService {
 	@Transactional(propagation = Propagation.REQUIRED)
 	@Override
 	public void update(Long id, String name, String content, MultipartFile file) {
-		
-		Category category=new Category();
+
+		Category category = new Category();
 		category.setId(id);
 		System.out.println(id);
-		
-		
+
 	}
 
 	@Override
 	public Category selectOne(Long id) {
 
-		Category category =new Category();
+		Category category = new Category();
 		category.setId(id);
 		return categoryMapper.selectOne(category);
 	}

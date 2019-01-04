@@ -15,7 +15,7 @@ public interface BgmMapper extends MyMapper<Bgm> {
 	 * @param keyword
 	 * @return
 	 */
-	List<Bgm> queryAll(@Param("keyword")String keyword,@Param("title")String title);
+	List<Bgm> queryAll(@Param("keyword") String keyword, @Param("title") String title);
 
 	/**
 	 * 根据名称查询出指定的背景音乐列表
