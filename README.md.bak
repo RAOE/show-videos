@@ -1,19 +1,17 @@
 # 秀视频--小程序社交软件app
 #
+<h2>线上版</h2>
+<img src="./myimg/wx.jpg">
 <blockquote>
 简介：简介：随着微信的普及，小视频的流行，我们设计一款基于微信小程序端的视频社交软件APP + 后台管理系统作为自己专科毕业设计----秀视频-微信小程序端（短视频社交小程序，用户可以在小程序上发布自己的短视频 并且经过我们的平台加入滤镜或者背景音乐制作出独具特色的短视频。并实现了点赞、评论、下载、分享、转发等功能的小程序）---的后台管理系统，主要实现了人员的管理，短视频的管理，背景音乐的管理，登陆注册，权限验证，单点登陆等等。 从需求分析，功能设计，前端到后台，再到数据库的设计。一点点的积累，一点点的完善，预计小程序端+后台管理系统开发周期一个月(每天更新)。 对一个开发人员来说，如果想单纯的做出这些功能，其实并不难。 难的是对于这些功能细节的把控，项目整体的友好程度，用户的体验效果；对并发的考虑，对恶意请求，对流畅度这些细节的考虑等等。
 </blockquote>
-
-
-
 
 <blockquote>
 Introduction: The background management system as its own specialized graduation project - Show Video - Wechat Small Program (Short Video Social Program), users can publish their own short videos on the small program and produce their own short videos through our filter background music, and realize the functions of praise, comment, sharing, forwarding and so on. The background management system mainly realizes personnel management, short video management, background music management, login registration, authority verification, single-point login and so on. From requirement analysis, function design, front-end to back-end, and then to database design. A little accumulation, a little improvement, the expected small program side + background management system development cycle for a month (updated daily). For a developer, it is not difficult to do these functions simply. It is difficult to control the details of these functions, the overall friendliness of the project, the user experience effect, the consideration of concurrency, malicious requests, the consideration of fluency and so on.
 </blockquote>
 # 
 
-<h2>线上版</h2>
-<img src="./myimg/wx.jpg">
+
 
 <h2>前台-小程序端效果展示</h2>
 <p>
