@@ -14,7 +14,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import com.show.admin.scetc.pojo.AdminUser;
 
 /**
- * AOP 进行日志记录
+ * 使用AOP 面向切面编程来 进行日志记录
  * 
  * @author Ray
  *

@@ -44,7 +44,7 @@ public class OtherController extends BasicController {
 	}
 
 	/**
-	 * 发送邮件
+	 * 发送html格式的邮件
 	 * 
 	 * @return
 	 */

@@ -12,19 +12,22 @@ import com.show.admin.scetc.utils.RedisOperator;
 @RestController
 public class BasicController {
 
+	//文件上传路径
 	@Value("${web.upload.path}")
 	public String filePath;
 
+	//背景音乐的上传路径
 	@Value("${bgm.upload.path}")
 	public String bgm_filePath;
 
 	@Autowired
 	public RedisOperator redis;// 注入redis客户端
 
-	// 默认的用户的键
+	// 默认的用户的键以及操作日志的键名称
 	public static final String User_REDIS_SESSION = "user-redis-session";
 	public static final String Operate_REDIS_SESSION = "operate_redis_session";
-	public final String DELETE = "2";// 根据前端的status来判定执行什么操作
-	public final String UPDATE = "1";// 更新操作
+	//根据前端传入的status操作来决定执行什么操作
+	public final String DELETE = "2";//
+	public final String UPDATE = "1";//
 
 }

@@ -25,7 +25,6 @@ public class SwaggerConfig {
 	// 开启swagger接口
 	@Value(value = "true")
 	Boolean swaggerEnabled;
-
 	@Bean
 	public Docket createRestApi() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
@@ -36,11 +35,10 @@ public class SwaggerConfig {
 				// 指定路径处理PathSelectors.any()代表所有的路径
 				.paths(PathSelectors.any()).build().pathMapping("/");
 	}
-
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder().title("SpringBoot-Swagger2集成和使用-徐塬峰").description("springboot | swagger")
 				// 作者信息
-				.contact(new Contact("snows", "https://mp.csdn.net/postlist", "986771570@qq.com")).version("1.0.0")
+				.contact(new Contact("snows", "https://blog.csdn.net/RAVEEE", "986771570@qq.com")).version("1.0.0")
 				.build();
 	}
 

@@ -47,8 +47,6 @@ public class IndexController extends BasicController {
 		
 		
 		
-		
-		
 		// 将数据渲染到页面上
 		modelAndView.addObject("adminUser", adminUser);
 		return modelAndView;

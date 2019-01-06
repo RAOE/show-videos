@@ -82,7 +82,6 @@ public class CategoryController extends BasicController {
 	 */
 	@PostMapping("/updateCategory")
 	public XyfJsonResult updateOne(Long id, String status, MultipartFile file, String title, String description) {
-		System.out.println(id + status + file + title);
 		if (status.equals(DELETE)) {
 			categoryService.delete(id);
 			return XyfJsonResult.ok();
@@ -103,7 +102,6 @@ public class CategoryController extends BasicController {
 	 */
 	@PostMapping("/add")
 	public @ResponseBody XyfJsonResult add(String name, String description, MultipartFile file) {
-		System.out.println(name + description + file);
 		String savePath = filePath + "//" + "images";
 		File saveFile = new File(savePath);
 		if (!saveFile.exists()) {

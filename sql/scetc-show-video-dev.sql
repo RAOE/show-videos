@@ -1,4 +1,4 @@
-﻿/*
+/*
 Navicat MySQL Data Transfer
 
 Source Server         : localhost_3306
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2018-12-20 10:27:03
+Date: 2019-01-06 22:47:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -43,7 +43,7 @@ CREATE TABLE `adminusers` (
 -- ----------------------------
 -- Records of adminusers
 -- ----------------------------
-INSERT INTO `adminusers` VALUES ('1', 'admin', '徐塬峰', 'da4799f536c020929a55f2631039118f', '15008121886', '986771570@qq.com', '四川成都', '111111', '986771570', '39.91488908', '116.40387397116', '2018-11-27 10:30:34', '2018-11-28 10:30:37', '10.127.11.22', 'Mozilla/5.0 (Windows N', '282904150014060920', '0');
+INSERT INTO `adminusers` VALUES ('1', 'admin', '徐塬峰', '34F673DE50D97DD69F401B07EDD23739', '15008121886', '986771570@qq.com', '四川成都', '111111', '986771570', '39.91488908', '116.40387397116', '2018-11-27 10:30:34', '2018-11-28 10:30:37', '10.127.11.22', 'Mozilla/5.0 (Windows N', '282904150014060920', '0');
 INSERT INTO `adminusers` VALUES ('2', 'username', '刘翰骏', '34F673DE50D97DD69F401B07EDD23739', '17726512285', 'lium0515@qq.com', '四川成都', '111111', '445729490', null, null, '2018-12-03 17:48:21', '2018-12-03 17:48:25', '10.127.11.22', 'Mozilla/5.0 (Windows N', '282904150014060920', '0');
 INSERT INTO `adminusers` VALUES ('3', 'dh34', '邓慧', 'da4799f536c020929a55f2631039118f', '18081311157', '1714260544@qq.com', '四川成都', '111111', '1714260544', null, null, '2018-12-07 11:26:57', '2018-12-07 11:27:01', '10.127.11.22', null, null, '0');
 
@@ -171,6 +171,56 @@ INSERT INTO `comments` VALUES ('18121266P0B95KP0', '1812047W067DH65P', '181027HK
 INSERT INTO `comments` VALUES ('1812206WCT24TAA8', '181202DZY7SC6894', 'undefined', 'sss', '2018-12-20 09:37:51');
 
 -- ----------------------------
+-- Table structure for `power`
+-- ----------------------------
+DROP TABLE IF EXISTS `power`;
+CREATE TABLE `power` (
+  `id` bigint(22) NOT NULL DEFAULT '0',
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of power
+-- ----------------------------
+INSERT INTO `power` VALUES ('1', '视频管理权限');
+INSERT INTO `power` VALUES ('2', '背景音乐管理权限');
+INSERT INTO `power` VALUES ('3', '举报模块管理权限');
+
+-- ----------------------------
+-- Table structure for `roles`
+-- ----------------------------
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles` (
+  `id` bigint(22) NOT NULL DEFAULT '0',
+  `name` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of roles
+-- ----------------------------
+INSERT INTO `roles` VALUES ('1', '超级管理员');
+INSERT INTO `roles` VALUES ('2', '普通管理员');
+INSERT INTO `roles` VALUES ('3', '背景音乐编辑者');
+INSERT INTO `roles` VALUES ('4', '短视频编辑者');
+
+-- ----------------------------
+-- Table structure for `role_to_power`
+-- ----------------------------
+DROP TABLE IF EXISTS `role_to_power`;
+CREATE TABLE `role_to_power` (
+  `id` bigint(22) NOT NULL DEFAULT '0',
+  `roleId` bigint(22) DEFAULT NULL,
+  `powerId` bigint(22) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of role_to_power
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `search_reports`
 -- ----------------------------
 DROP TABLE IF EXISTS `search_reports`;
@@ -239,7 +289,10 @@ CREATE TABLE `setting` (
 -- ----------------------------
 -- Records of setting
 -- ----------------------------
-
+INSERT INTO `setting` VALUES ('1', 'email_smtp_host', 'smtp.163.com', '');
+INSERT INTO `setting` VALUES ('2', 'email_smtp_username', 'showvideos@163.com', '');
+INSERT INTO `setting` VALUES ('3', 'email_smtp_password', 'xuyuanfeng1', '');
+INSERT INTO `setting` VALUES ('4', 'email_from', 'showvideos@163.com', '');
 
 -- ----------------------------
 -- Table structure for `users`

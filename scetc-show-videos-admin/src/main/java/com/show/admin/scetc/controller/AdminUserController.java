@@ -47,6 +47,7 @@ public class AdminUserController extends BasicController {
 	}
 
 	// 修改密码请求提交
+	// ------
 	@RequestMapping(value = "/changePasswordSubmit", method = RequestMethod.POST)
 	public XyfJsonResult changePasswordSubmit(HttpServletRequest request, HttpServletResponse response,
 			String oldPassword, String newPassword, String reNewPassword) {
@@ -65,15 +66,9 @@ public class AdminUserController extends BasicController {
 		adminUser.setPassword(CommonUtils.calculateMD5(adminUser.getSalt() + newPassword));
 		adminUserService.update(adminUser);
 		AdminUser adminUserVo = CommonUtils.formate(adminUser);
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				SimpleDateFormat formate = new SimpleDateFormat();
-				String date = formate.format(new Date());
-				redis.lpush(Operate_REDIS_SESSION,
-						date + "&nbsp;&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":修改了密码");// 存放到redis
-			}
-		}).start();
+		SimpleDateFormat formate = new SimpleDateFormat();
+		String date = formate.format(new Date());
+		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + ":修改了密码");// 存放到redis
 		return XyfJsonResult.ok();
 	}
 
@@ -108,16 +103,10 @@ public class AdminUserController extends BasicController {
 		// 登陆成功,登陆成功之后更新用户的登陆时间
 		AdminUser adminUserVo = CommonUtils.formate(adminUser);
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				SimpleDateFormat formate = new SimpleDateFormat();
-				String date = formate.format(new Date());
-				redis.set(User_REDIS_SESSION + adminUserVo.getId(), adminUserVo.toString());// 保存账号信息到redis 缓存中
-				redis.lpush(Operate_REDIS_SESSION,
-						date + "&nbsp;&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + "登陆了系统");
-			}
-		}).start();
+		SimpleDateFormat formate = new SimpleDateFormat();
+		String date = formate.format(new Date());
+		redis.set(User_REDIS_SESSION + adminUserVo.getId(), adminUserVo.toString());// 保存账号信息到redis 缓存中
+		redis.lpush(Operate_REDIS_SESSION, date + "&nbsp;&nbsp;&nbsp;&nbsp;" + adminUserVo.getRealName() + "登陆了系统");
 		return XyfJsonResult.ok();
 	}
 

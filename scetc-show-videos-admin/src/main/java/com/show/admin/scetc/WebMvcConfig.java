@@ -17,12 +17,11 @@ import com.show.admin.scetc.interceptor.DemoInterceptor;
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
+	//从配置文件中拿到相关的配置
 	@Value("${classpath_mapping}")
 	private String classpath_mapping;
-
 	@Value("${url_mapping}")
 	private String url_mapping;
-
 	/**
 	 * 定义虚拟映射
 	 */

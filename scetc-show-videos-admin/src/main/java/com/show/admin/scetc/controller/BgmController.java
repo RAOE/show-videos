@@ -126,7 +126,6 @@ public class BgmController extends BasicController {
 					bgm.setPath("\\bgm\\" + fosName);
 					bgmService.insert(bgm);
 					IOUtils.copy(files.getInputStream(), fos);// 复制流
-					// 应该异步完成
 					SimpleDateFormat formate = new SimpleDateFormat();
 					String date = formate.format(new Date());
 					redis.lpush(Operate_REDIS_SESSION,

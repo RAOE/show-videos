@@ -1,4 +1,4 @@
-package com.show.admin.scetc.serviceImp;
+package com.show.admin.scetc.serviceImpl;
 
 import java.util.List;
 
