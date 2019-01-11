@@ -27,7 +27,6 @@ public class RolesController {
 	@RequestMapping("queryAll")
 	public XyfJsonResult queryAll() {
         
-        List<Roles> list=rolesService.queryAll();
-		return XyfJsonResult.ok(list);
+		return XyfJsonResult.ok(rolesService.queryAll());
 	}
 }
