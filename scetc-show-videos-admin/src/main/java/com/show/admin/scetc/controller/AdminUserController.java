@@ -110,4 +110,10 @@ public class AdminUserController extends BasicController {
 		return XyfJsonResult.ok();
 	}
 
+	// 返回员工信息
+	@RequestMapping("/queryAllAdminUser")
+	public XyfJsonResult queryAllAdminUser() {
+		return XyfJsonResult.ok(adminUserService.queryAll());
+	}
+
 }

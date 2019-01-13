@@ -58,19 +58,8 @@
 							<th>角色名称</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>1</td>
-							<td>超级管理员</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td>普通管理员</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td>背景音乐编辑者</td>
-						</tr>
+					<tbody id="tb">
+						
 					</tbody>
 				</table>
 
@@ -111,10 +100,20 @@
 	<script src="../js/plugins/validate/jquery.validate.min.js"></script>
 	<script src="../js/plugins/validate/messages_zh.min.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function(){
-		//初始化表单
-		
-		  });
+		$(document).ready(function() {
+			//初始化表单
+			$.ajax({
+				url : "../../role/queryAllRole",
+				type : "post",
+				success : function(res) {
+					console.log("result data");
+					console.log(res.data);
+					//遍历输出到表单上
+					for (var i = 0; i < res.data.length; i++) {
+						$("#tb").append("<tr><td>"+res.data[i].id+"</td><td>"+res.data[i].name+"</td></tr>");//追加新的元素到
+					}
+				}
+			})
 		});
 	</script>
 	<!-- Bootstrap table -->

@@ -21,12 +21,25 @@ import com.show.admin.scetc.utils.XyfJsonResult;
 public class RolesController {
 
 	@Autowired
-	private RolesService rolesService;
-
+	private RolesService rolesService;//权限服务类
 	// 查询所有的权限数据
-	@RequestMapping("queryAll")
+	@RequestMapping("queryAllRole")
+	public XyfJsonResult queryAllRole() {
+		return XyfJsonResult.ok(rolesService.queryAllRoles());
+	}
+   //查询所有的能力
+	@RequestMapping("queryAllPower")
+	public XyfJsonResult queryAllPower() {
+		return XyfJsonResult.ok(rolesService.queryAllPowers());
+	}
+  //查詢所有的能力于角色的關係
+	@RequestMapping("queryAllRoleToPower")
 	public XyfJsonResult queryAll() {
-        
-		return XyfJsonResult.ok(rolesService.queryAll());
+		return XyfJsonResult.ok(rolesService.queryAllRolesToPower());
+	}
+	//查询所有管理员与角色的对应关系
+	@RequestMapping("queryAllAdminToRole")
+	public XyfJsonResult queryAllAdminToRole() {
+		return XyfJsonResult.ok(rolesService.queryAllAdminToRole());
 	}
 }

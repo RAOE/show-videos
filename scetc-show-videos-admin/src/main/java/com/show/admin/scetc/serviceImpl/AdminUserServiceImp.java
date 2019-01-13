@@ -23,7 +23,7 @@ public class AdminUserServiceImp implements AdminUserService {
 	private AdminUserMapper adminUserMapper;
 
 	public List<AdminUser> queryAll() {
-		return adminUserMapper.queryAll();
+		return adminUserMapper.selectAll();
 	}
 
 	@Override

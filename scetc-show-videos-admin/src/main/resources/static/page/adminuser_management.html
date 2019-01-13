@@ -34,7 +34,7 @@
 
 	<div class="col-sm-6">
 		<div class="ibox float-e-margins">
-			<div class="ibox-title">
+			<div class="ibox-title"  style="width:1200px">
 				<h5>基本</h5>
 				<div class="ibox-tools">
 					<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
@@ -42,32 +42,34 @@
 						href="table_basic.html#"> <i class="fa fa-wrench"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-user">
-						<li><a href="table_basic.html#">选项1</a></li>
+						<li><a href="table_basic.html#">添加</a></li>
 						<li><a href="table_basic.html#">选项2</a></li>
 					</ul>
 					<a class="close-link"> <i class="fa fa-times"></i>
 					</a>
 				</div>
 			</div>
-			<div class="ibox-content">
+			<div class="ibox-content"  style="width:1200px">
 
 				<table class="table">
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>角色名称</th>
+							<th>账号名称</th>
+							<th>联系方式</th>
+							<th>邮箱</th>
+							<th>qq</th>
+							<th>注册时间</th>
 						</tr>
 					</thead>
 					<tbody id="tb">
-						
+
 					</tbody>
 				</table>
 
 			</div>
 		</div>
 	</div>
-
-
 
 
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
@@ -103,15 +105,19 @@
 		$(document).ready(function() {
 			//初始化表单
 			$.ajax({
-				url : "../../role/queryAllRole",
+				url : "../../adminUser/queryAllAdminUser",
 				type : "post",
 				success : function(res) {
 					console.log("result data");
 					console.log(res.data);
-					//遍历输出到表单上
 					for (var i = 0; i < res.data.length; i++) {
-						$("#tb").append("<tr><td>"+res.data[i].id+"</td><td>"+res.data[i].name+"</td></tr>");//追加新的元素到
+
+						$("#tb").append("<tr><th>"+res.data[i].id+"</th><th>"+res.data[i].username+"</th><th>"+res.data[i].phoneNumber+"</th><th>"+res.data[i].email+"</th><th>"+res.data[i].qq+"</th></th><th>"+res.data[i].registerDate+"</th></tr>");
+					
+
 					}
+
+					//遍历输出到表单上
 				}
 			})
 		});

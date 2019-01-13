@@ -19,8 +19,6 @@ import com.show.admin.scetc.utils.XyfJsonResult;
 @RequestMapping("")
 public class IndexController extends BasicController {
 
-	@Autowired
-	private VideoService videoService;
 
 	/**
 	 * 返回主頁
