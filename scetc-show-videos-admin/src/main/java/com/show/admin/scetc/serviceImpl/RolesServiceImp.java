@@ -63,4 +63,17 @@ public class RolesServiceImp implements RolesService {
 		return adminToRolesMapper.selectAll();
 	}
 
+	@Override
+	public Boolean addAdminUserAndRoles(String adminId,String roleId) {
+		
+		//具体的逻辑 添加之前先查询是否存在如果存在了则更新
+		
+		
+		AdminToRole atr=new AdminToRole();
+		atr.setAdminId(adminId);
+		atr.setRoleId(roleId);
+		adminToRolesMapper.insert(atr);
+		return true;
+	}
+
 }

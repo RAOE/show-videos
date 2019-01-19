@@ -55,7 +55,7 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>账号名称</th>
+							<th>姓名</th>
 							<th>联系方式</th>
 							<th>邮箱</th>
 							<th>qq</th>
@@ -112,11 +112,8 @@
 					console.log(res.data);
 					for (var i = 0; i < res.data.length; i++) {
 
-						$("#tb").append("<tr><th>"+res.data[i].id+"</th><th>"+res.data[i].username+"</th><th>"+res.data[i].phoneNumber+"</th><th>"+res.data[i].email+"</th><th>"+res.data[i].qq+"</th></th><th>"+res.data[i].registerDate+"</th></tr>");
-					
-
+						$("#tb").append("<tr><th>"+res.data[i].id+"</th><th>"+res.data[i].realName+"</th><th>"+res.data[i].phoneNumber+"</th><th>"+res.data[i].email+"</th><th>"+res.data[i].qq+"</th></th><th>"+res.data[i].registerDate+"</th></tr>");
 					}
-
 					//遍历输出到表单上
 				}
 			})

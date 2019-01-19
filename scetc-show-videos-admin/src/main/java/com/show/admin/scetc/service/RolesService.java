@@ -26,5 +26,5 @@ public interface RolesService {
 	public List<Power> queryAllPowers();//查询所角色拥有的能力/
 	public List<RolesToPower> queryAllRolesToPower();//查询所有的角色能力关系表
 	public List<AdminToRole> queryAllAdminToRole();//查询所有的管理员与角色的关系表
-	
+	public Boolean addAdminUserAndRoles(String adminId,String roleId);//添加一个角色与用户关系
 }

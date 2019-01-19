@@ -55,8 +55,10 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>角色名称</th>
-							<th>操作</th>
+							<th>权限名称</th>
+							<th>请求路径</th>
+							<th>操作1</th>
+							<th>操作2</th>
 						</tr>
 					</thead>
 					<tbody id="tb">
@@ -66,10 +68,6 @@
 			</div>
 		</div>
 	</div>
-
-
-
-
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/webuploader.js"></script>
 	<script type="text/javascript" src="../js/webuploader.js"></script>
@@ -88,7 +86,6 @@
 	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script
 		src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-
 	<script
 		src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 	<script src="../js/bgm/bgmTable.js"></script>
@@ -101,20 +98,28 @@
 		$(document).ready(function() {
 			//初始化表单
 			$.ajax({
-				url : "../../role/queryAllRole",
+				url : "../../role/queryAllPower",
 				type : "post",
 				success : function(res) {
 					console.log("result data");
 					console.log(res.data);
 					//遍历输出到表单上
 					for (var i = 0; i < res.data.length; i++) {
-						$("#tb").append("<tr><td>"+res.data[i].id+"</td><td>"+res.data[i].name+"</td><td>"+"<a href='../../static/page/adminToRole_management.html'><button type='button' class='btn btn-default' >分配角色</button></a>"+"</td></tr>");//追加新的元素到
+						$("#tb").append("<tr><td>"+res.data[i].id+"</td><td>"+res.data[i].name+"</td><td>"+res.data[i].path+"</td></tr>");//追加新的元素到
 					}
 				}
 			})
 		});
 	</script>
+	<script>
+	function()
+	{
+		
+		
+		
+	}
 	
+	</script>
 	<!-- Bootstrap table -->
 	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script

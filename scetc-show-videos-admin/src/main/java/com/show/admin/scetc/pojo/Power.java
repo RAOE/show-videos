@@ -20,7 +20,17 @@ public class Power {
 	private Long id;
 	@Column(name="name")
 	private String name;
+	@Column(name="path")
+	private String path;
 	
+	
+	
+	public String getPath() {
+		return path;
+	}
+	public void setPath(String path) {
+		this.path = path;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -33,10 +43,7 @@ public class Power {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Override
-	public String toString() {
-		return "Power [id=" + id + ", name=" + name + "]";
-	}
+	
 	
 	
 	
