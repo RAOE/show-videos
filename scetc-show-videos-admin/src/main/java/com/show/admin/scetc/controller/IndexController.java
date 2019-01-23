@@ -42,9 +42,6 @@ public class IndexController extends BasicController {
 		//活跃用户(一个月之内发布过短视频的用户)
 		
 		
-		
-		
-		
 		// 将数据渲染到页面上
 		modelAndView.addObject("adminUser", adminUser);
 		return modelAndView;

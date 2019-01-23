@@ -108,7 +108,7 @@
 					console.log(res.data);
 					//遍历输出到表单上
 					for (var i = 0; i < res.data.length; i++) {
-						$("#tb").append("<tr><td>"+res.data[i].id+"</td><td>"+res.data[i].name+"</td><td>"+"<a href='../../static/page/adminToRole_management.html'><button type='button' class='btn btn-default' >分配角色</button></a>"+"</td></tr>");//追加新的元素到
+						$("#tb").append("<tr><td>"+res.data[i].id+"</td><td>"+res.data[i].name+"</td><td>"+"<a href='../../static/page/adminToRole_management.html?id="+res.data[i].id+"'><button type='button' class='btn btn-default' >分配角色</button></a>"+"</td></tr>");//追加新的元素到
 					}
 				}
 			})

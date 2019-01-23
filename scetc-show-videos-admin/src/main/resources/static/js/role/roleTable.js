@@ -150,8 +150,11 @@ var selectBgm = function() {
 }
 
 var selectResourceById = function(id) {
+	var roleId=window.location.href.split("=")[1];
 	var params = {
-		adminId : id
+		adminId : id,
+		roleId :roleId
+		
 	};
 	$.ajax({
 		url : '../../role/addAdminUserAndRole',
@@ -160,6 +163,7 @@ var selectResourceById = function(id) {
 		dataType : 'json',
 		success : function(data) {
 			console.log(data);
+			alert("添加成功");
 		},
 		error : function() {
 			swal("查询错误", "请重新操作", "error");

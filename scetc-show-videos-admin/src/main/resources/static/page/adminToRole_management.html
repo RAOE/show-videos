@@ -58,9 +58,9 @@
 						<div id="toolbar">
 							<button class="type btn btn-outline btn-primary" type="button"
 								id="typeButton" value="5">全部</button>
-									<button class="type btn btn-outline btn-primary" type="button"
+							<button class="type btn btn-outline btn-primary" type="button"
 								id="typeButton" value="5">添加</button>
-								
+
 
 						</div>
 					</div>
@@ -101,9 +101,14 @@
 	</div>
 
 
-
-
 	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript">
+	//在页面初始化的时候 读取url请求中的数据 解析到数据 并赋值到全局变量中
+	$(document).ready(function() {
+	var param=window.location.href.split("=")[1];
+	console.log(param);
+	});
+	</script>
 	<script type="text/javascript" src="../js/webuploader.js"></script>
 	<script type="text/javascript" src="../js/webuploader.js"></script>
 	<!-- 全局js -->
@@ -121,19 +126,14 @@
 	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script
 		src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
-
 	<script
 		src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 	<script src="../js/role/roleTable.js"></script>
 	<script src="../js/content.js"></script>
 	<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
-
 	<script src="../js/fakeLoader.min.js"></script>
-
 	<script src="../js/plugins/validate/jquery.validate.min.js"></script>
 	<script src="../js/plugins/validate/messages_zh.min.js"></script>
-
-
 	<!-- Bootstrap table -->
 	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script

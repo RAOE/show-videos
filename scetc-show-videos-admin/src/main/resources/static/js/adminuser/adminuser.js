@@ -139,7 +139,7 @@ var selectBgm = function() {
 				width : '5%',
 				formatter : function(value, row, index) {
 					
-					var a = '<button class="btn-sm btn-info" onclick="selectResourceById('+row.id+')"  data-target="#myModal" ">添加</button> ';
+					var a = '<button class="btn-sm btn-info" onclick="selectResourceById('+row.id+')"  data-target="#myModal" ">编辑</button> ';
                     return a;
 				}
 			},
@@ -150,11 +150,8 @@ var selectBgm = function() {
 }
 
 var selectResourceById = function(id) {
-	var roleId=window.location.href.split("=")[1];
 	var params = {
-		adminId : id,
-		roleId :roleId
-		
+		adminId : id
 	};
 	$.ajax({
 		url : '../../role/addAdminUserAndRole',
@@ -163,7 +160,6 @@ var selectResourceById = function(id) {
 		dataType : 'json',
 		success : function(data) {
 			console.log(data);
-			alert("添加成功");
 		},
 		error : function() {
 			swal("查询错误", "请重新操作", "error");
@@ -295,9 +291,6 @@ var formatTableUnit = function(value, row, index) {
 		}
 	};
 };
-
-
-
 
 // 格式化时间
 function Format(datetime, fmt) {
