@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>秀视频后台管理平台-角色权限分配</title>
+<title>秀视频后台管理平台-背景音乐</title>
 <meta name="keywords" content="秀视频后台管理平台是基于HTML5+css3编写的页面">
 <meta name="description" content="秀视频后台管理平台欢迎您的到来">
 <link rel="shortcut icon" href="favicon.ico">
@@ -31,77 +31,42 @@
 </head>
 
 <body class="white-bg" style="opacity: 0">
-	<div id="fakeloader"></div>
-	<div class="wrapper wrapper-content">
+
+	<div class="col-sm-6">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title">
-				<h5>角色管理</h5>
+				<h5>基本</h5>
 				<div class="ibox-tools">
 					<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
-					</a> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i
-						class="fa fa-wrench"></i>
+					</a> <a class="dropdown-toggle" data-toggle="dropdown"
+						href="table_basic.html#"> <i class="fa fa-wrench"></i>
 					</a>
 					<ul class="dropdown-menu dropdown-user">
-						<li><a href="#">选项1</a></li>
-						<li><a href="#">选项2</a></li>
+						<li><a href="table_basic.html#">选项1</a></li>
+						<li><a href="table_basic.html#">选项2</a></li>
 					</ul>
 					<a class="close-link"> <i class="fa fa-times"></i>
 					</a>
 				</div>
 			</div>
 			<div class="ibox-content">
-				<div class="row row-lg">
-					<div class="example">
-						<table id="allBgm" data-mobile-responsive="true">
 
-						</table>
-						<div id="toolbar">
-							<button class="type btn btn-outline btn-primary" type="button"
-								id="typeButton" value="5">全部</button>
-							<button class="type btn btn-outline btn-primary" type="button"
-								id="typeButton" value="5">添加</button>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>姓名</th>
+							<th>邮箱</th>
+							<th>联系方式</th>
+						</tr>
+					</thead>
+					<tbody id="tb">
+					</tbody>
+				</table>
 
-
-						</div>
-					</div>
-				</div>
-				<div class="modal inmodal" id="myModal" tabindex="-1" role="dialog"
-					aria-hidden="true">
-					<div class="modal-dialog" style="width: 702px">
-						<div class="modal-content animated fadeInUp">
-							<button type="button" class="close" style="margin-right: 7px"
-								data-dismiss="modal">
-								<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
-							</button>
-							<div class="infos" style="margin: 0px;">
-								<div class="newsview" style="padding-top: 0px;">
-									<h3 class="news_title"></h3>
-									<div class="news_author">
-										<span class="au01">徐塬峰</span><span class="au02"></span><span
-											class="au03">共<b></b>人围观
-										</span>
-									</div>
-									<div class="tags"></div>
-									<div class="news_about">
-										<strong>简介</strong><span class="news_intr"> </span>
-									</div>
-									<div class="news_infos"></div>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<span class="update"></span>
-								<button type="button" class="btn btn-primary"
-									data-dismiss="modal">关闭</button>
-							</div>
-						</div>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>
-
-
-	<script type="text/javascript" src="../js/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/webuploader.js"></script>
 	<script type="text/javascript" src="../js/webuploader.js"></script>
 	<!-- 全局js -->
@@ -119,14 +84,43 @@
 	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script
 		src="../js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+
 	<script
 		src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
-	<script src="../js/role/roleTable.js"></script>
+	<script src="../js/bgm/bgmTable.js"></script>
 	<script src="../js/content.js"></script>
 	<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
 	<script src="../js/fakeLoader.min.js"></script>
 	<script src="../js/plugins/validate/jquery.validate.min.js"></script>
 	<script src="../js/plugins/validate/messages_zh.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+							roleId=getParam();
+							//初始化表单
+							$.ajax({url : "../../role/queryAllAdminUsersByRoleId?roleId="+roleId,
+										type : "post",
+										success : function(res) {
+											console.log("result data");
+											console.log(res.data);
+											//遍历输出到表单上
+											for (var i = 0; i < res.data.length; i++) {
+
+											     console.log(res.data[i]);
+											     $("#tb").append("<tr><td>#</td><td>"+res.data[i].realName+"</td><td>"+res.data[i].email+"</td><td>"+res.data[i].phoneNumber+"</td></tr>");
+
+											}
+										}
+									})
+						});
+	</script>
+	<script type="text/javascript">
+	function getParam()
+	{
+		var roleId=window.location.href.split("=")[1];
+		return roleId;
+	}
+	</script>
+
 	<!-- Bootstrap table -->
 	<script src="../js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
 	<script

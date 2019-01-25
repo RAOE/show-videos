@@ -1,4 +1,4 @@
-# 秀视频--小程序社交软件
+﻿# 秀视频--小程序社交软件
 #
 <h2>线上版</h2>
 <img src="./myimg/wx.jpg">
@@ -24,7 +24,7 @@ Introduction: The background management system as its own specialized graduation
 
 
 
-
+<h2>关键字：springboot、分布式、前后分离</h2>
 
 <h2>相关技术 </h2>
  <p>前端:h5+css+javascript+jquery+bootstrap+themeleaf+ H plus</p>

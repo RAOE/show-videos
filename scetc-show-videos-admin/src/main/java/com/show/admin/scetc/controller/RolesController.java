@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.show.admin.scetc.pojo.AdminUser;
 import com.show.admin.scetc.pojo.Roles;
 import com.show.admin.scetc.service.RolesService;
 import com.show.admin.scetc.utils.CommonUtils;
@@ -29,6 +30,19 @@ public class RolesController {
 		return XyfJsonResult.ok(rolesService.queryAllRoles());
 	}
 
+	// 查询角色下所拥有的人物
+	@RequestMapping("/queryAllAdminUsersByRoleId")
+	public XyfJsonResult queryAllAdminUserByRoleId(String roleId) {
+
+		if (CommonUtils.isEmpty(roleId)) {
+			return XyfJsonResult.errorMsg("当前roleId不能为空");
+		}
+		List<AdminUser> list = rolesService.queryAllAdminUserByRoleId(roleId);
+
+//        查询当前roleId下面所拥有的所有管理员账户
+		return XyfJsonResult.ok(list);
+	}
+
 	// 查询所有的能力
 	@RequestMapping("queryAllPower")
 	public XyfJsonResult queryAllPower() {
@@ -50,12 +64,17 @@ public class RolesController {
 	// 将用户添加到指定的角色中
 	@RequestMapping("addAdminUserAndRole")
 	public XyfJsonResult addAdminUserAndRole(String adminId, String roleId) {
-		if(CommonUtils.isEmpty(adminId)||CommonUtils.isEmpty(roleId))
-		{
+		if (CommonUtils.isEmpty(adminId) || CommonUtils.isEmpty(roleId)) {
 			return XyfJsonResult.errorMsg("用户id或者角色id不能为空");
 		}
-		rolesService.addAdminUserAndRoles(adminId, roleId);
-		return XyfJsonResult.ok();
+		// 判断数据库中是否存在这条信息 如果存在就不能添加了
+		boolean isExsit = rolesService.isExsits(adminId, roleId);
+		if (!isExsit) {
+			rolesService.addAdminUserAndRoles(adminId, roleId);
+			return XyfJsonResult.ok();
+		} else {
+			return XyfJsonResult.errorMsg("已经添加进去了，请不要反复添加");
+		}
 	}
 
 }
