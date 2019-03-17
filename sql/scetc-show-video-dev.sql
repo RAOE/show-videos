@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50620
 File Encoding         : 65001
 
-Date: 2019-01-25 12:05:49
+Date: 2019-03-17 11:00:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -56,15 +56,13 @@ CREATE TABLE `admin_to_role` (
   `adminId` bigint(22) DEFAULT NULL,
   `roleId` bigint(22) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_to_role
 -- ----------------------------
-INSERT INTO `admin_to_role` VALUES ('1', '1', '1');
-INSERT INTO `admin_to_role` VALUES ('2', '2', '2');
-INSERT INTO `admin_to_role` VALUES ('3', '1', '1');
-INSERT INTO `admin_to_role` VALUES ('4', '1', '1');
+INSERT INTO `admin_to_role` VALUES ('6', '1', '2');
+INSERT INTO `admin_to_role` VALUES ('7', '3', '1');
 
 -- ----------------------------
 -- Table structure for `bgm`
@@ -76,16 +74,11 @@ CREATE TABLE `bgm` (
   `name` varchar(255) DEFAULT NULL,
   `path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=287 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=289 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bgm
 -- ----------------------------
-INSERT INTO `bgm` VALUES ('247', 'bgm01.mp3', 'bgm01.mp3', '\\bgm\\ca4c56d0-c09e-4c8a-a78e-78aedcbc3e3f.mp3');
-INSERT INTO `bgm` VALUES ('250', 'bgm04.mp3', 'bgm04.mp3', '\\bgm\\05b18faa-e0b5-486e-aa39-ed5e78e03c3b.mp3');
-INSERT INTO `bgm` VALUES ('251', 'bgm05.mp3', 'bgm05.mp3', '\\bgm\\237cde03-e007-4390-94c8-fc70e01f7053.mp3');
-INSERT INTO `bgm` VALUES ('253', 'Superstar-Beatrich.mp3', 'Superstar-Beatrich.mp3', '\\bgm\\c4a7c849-09b9-4cc6-858c-aeb4f38f150f.mp3');
-INSERT INTO `bgm` VALUES ('254', 'test1.mp3', 'test1.mp3', '\\bgm\\dc01f259-047b-4b65-a256-3529cbc4683f.mp3');
 INSERT INTO `bgm` VALUES ('255', 'Six60+-+Special.mp3', 'Six60+-+Special.mp3', '\\bgm\\db64f2d1-f5c9-4332-b8e3-8839b25249e6.mp3');
 INSERT INTO `bgm` VALUES ('257', 'test3.mp3', 'test3.mp3', '\\bgm\\f03c9830-1fa5-4db7-8993-6e8faadf6b46.mp3');
 INSERT INTO `bgm` VALUES ('258', 'TheFatRat - Unity.mp3', 'TheFatRat - Unity.mp3', '\\bgm\\599b0ff2-2fcf-4e27-958d-590f04ec246b.mp3');
@@ -113,6 +106,8 @@ INSERT INTO `bgm` VALUES ('283', 'bgm02.mp3', 'bgm02.mp3', '\\bgm\\f5575bef-124b
 INSERT INTO `bgm` VALUES ('284', 'bgm03.mp3', 'bgm03.mp3', '\\bgm\\a15d7d7b-c4a8-4cc3-a971-084df3bd24ae.mp3');
 INSERT INTO `bgm` VALUES ('285', 'bgm06.mp3', 'bgm06.mp3', '\\bgm\\ea05e911-6168-4828-ac75-fef81ac5a38d.mp3');
 INSERT INTO `bgm` VALUES ('286', 'test2.mp3', 'test2.mp3', '\\bgm\\b65acc2a-b718-4f2b-85dd-329e67a9b58b.mp3');
+INSERT INTO `bgm` VALUES ('287', 'db64f2d1-f5c9-4332-b8e3-8839b25249e6.mp3', 'db64f2d1-f5c9-4332-b8e3-8839b25249e6.mp3', '\\bgm\\e3957199-b1e2-40e7-a2d0-d32cd6f1eee0.mp3');
+INSERT INTO `bgm` VALUES ('288', '599b0ff2-2fcf-4e27-958d-590f04ec246b.mp3', '599b0ff2-2fcf-4e27-958d-590f04ec246b.mp3', '\\bgm\\20444ac4-26d5-4a5c-b963-68cbb457eb0f.mp3');
 
 -- ----------------------------
 -- Table structure for `category`
@@ -503,4 +498,3 @@ INSERT INTO `videos` VALUES ('18120388AHF6XYW0', '181027HKFNAXK494', '232', 'lig
 INSERT INTO `videos` VALUES ('1812047TAZ7B437C', '1812047T304S8WSW', '253', 'light', 'define', 'ahaha', '/1812047T304S8WSW/video/24f8ea15-249f-4178-b4b1-cf6f745a3245.mp4', '14.12', '960', '544', '/1812047T304S8WSW/video/wx44630c92b1ed1bf0c7c2b329-47c5-4527-b74f-2cb0af61e4ac.jpg', '1', '1', '2018-12-04 10:58:43');
 INSERT INTO `videos` VALUES ('1812047TWGMX4TF8', '1812047T304S8WSW', '256', 'define', 'define', '', '/1812047T304S8WSW/video/a9f83e32-eeb7-4a52-be05-b1bc3c3ed30a.mp4', '19.55', '576', '1024', '/1812047T304S8WSW/video/wx44630c92b1ed1bf0e3f0addc-e162-4881-be92-416b1dfc5461.jpg', '0', '1', '2018-12-04 11:00:11');
 INSERT INTO `videos` VALUES ('1812047W067DH65P', '1812047T304S8WSW', '255', 'define', 'food', '', '/1812047T304S8WSW/video/15b04006-6877-447e-8411-c90eaf913833.mp4', '14.61', '576', '1024', '/1812047T304S8WSW/video/wx44630c92b1ed1bf0786824f5-65d5-4cb0-8e46-02d5a709a22b.jpg', '1', '1', '2018-12-04 11:00:34');
-INSERT INTO `videos` VALUES ('1812196AWB4Y6140', '181027HKFNAXK494', '', 'define', 'define', '', '/181027HKFNAXK494/video/wxcf9c100b9ccb1914.o6zAJs5YZVxhvgLOJLiAQ9XKeQ-A.csSHXZTcfu4Mb461abdd560d6c744a34bbd0cbd22904.mp4', '7.46', '480', '624', '/181027HKFNAXK494/video/wxcf9c100b9ccb1914bd7f16c0-ca48-43f8-9fbb-cc5ee65f3395.jpg', '1', '1', '2018-12-19 08:57:04');

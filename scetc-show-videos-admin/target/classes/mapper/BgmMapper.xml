@@ -11,8 +11,6 @@
 		<if test="title != null and title !=''">
 			or author like '%${title}%'
 		</if>
-		
-
 	</select>
 	<select id="selectBgmByName" resultType="Bgm"
 		parameterType="String">
