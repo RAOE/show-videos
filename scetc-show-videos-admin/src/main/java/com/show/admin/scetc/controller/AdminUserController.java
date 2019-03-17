@@ -2,10 +2,11 @@ package com.show.admin.scetc.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.show.admin.scetc.pojo.AdminUser;
 import com.show.admin.scetc.service.AdminUserService;
 import com.show.admin.scetc.utils.CommonUtils;
@@ -101,6 +101,10 @@ public class AdminUserController extends BasicController {
 		}
 		// 检查账号是否被禁用了
 		// 登陆成功,登陆成功之后更新用户的登陆时间
+		UsernamePasswordToken token = new UsernamePasswordToken(adminUser.getUsername(), adminUser.getPassword(), false);
+		Subject currentUser = SecurityUtils.getSubject();
+		currentUser.login(token);
+
 		AdminUser adminUserVo = CommonUtils.formate(adminUser);
 		request.getSession().setAttribute("adminUser", adminUserVo);// 将账号密码添加到session 中
 		SimpleDateFormat formate = new SimpleDateFormat();

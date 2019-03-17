@@ -20,44 +20,44 @@ import com.show.admin.scetc.ScetcShowVideosAdminApplication;
  * @author Ray
  *
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = ScetcShowVideosAdminApplication.class)
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = ScetcShowVideosAdminApplication.class)
 public class ScetcShowVideosAdminApplicationTests {
 	private TestRestTemplate template = new TestRestTemplate();
 
-	@Before
-	public void init() {
-		System.out.println("-----初始化代码---------");
-	}
+//	@Before
+//	public void init() {
+//		System.out.println("-----初始化代码---------");
+//	}
 
-	@Test
-	public void test1() {
-		String url = "http://localhost:8082/welcome";
-		String a = template.patchForObject(url, null, String.class);
-		System.out.println(a.toString());
-	}
-
-	@Test
-	public void test2() {
-		String url = "http://localhost:8082/index";
-		String a = template.patchForObject(url, null, String.class);
-		System.out.println(a.toString());
-	}
-
-	@Test
-	public void test3() {
-		String url = "http://localhost:8082/adminUser/login";
-		String a = template.patchForObject(url, null, String.class);
-		System.out.println(a.toString());
-	}
-
-	/**
-	 * 测试方法执行后执行
-	 */
-	@After
-	public void after() {
-		System.out.println("-----执行测试完毕-----------");
-
-	}
+//	@Test
+//	public void test1() {
+//		String url = "http://localhost:8082/welcome";
+//		String a = template.patchForObject(url, null, String.class);
+//		System.out.println(a.toString());
+//	}
+//
+//	@Test
+//	public void test2() {
+//		String url = "http://localhost:8082/index";
+//		String a = template.patchForObject(url, null, String.class);
+//		System.out.println(a.toString());
+//	}
+//
+//	@Test
+//	public void test3() {
+//		String url = "http://localhost:8082/adminUser/login";
+//		String a = template.patchForObject(url, null, String.class);
+//		System.out.println(a.toString());
+//	}
+//
+//	/**
+//	 * 测试方法执行后执行
+//	 */
+//	@After
+//	public void after() {
+//		System.out.println("-----执行测试完毕-----------");
+//
+//	}
 
 }

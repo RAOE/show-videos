@@ -2,6 +2,7 @@ H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\sce
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\controller\ReportController.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\pojo\Category.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\utils\MyMapper.java
+H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\config\ShiroConfig.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\interceptor\LoginInterceptor.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\interceptor\DemoInterceptor.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\mapper\ReportMapper.java
@@ -28,6 +29,7 @@ H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\sce
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\serviceImpl\VideoServiceImp.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\pojo\UsersReport.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\mapper\AdminToRoleMapper.java
+H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\config\MyShiroRealm.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\controller\BasicController.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\pojo\Power.java
 H:\showlife\show-videos\scetc-show-videos-admin\src\main\java\com\show\admin\scetc\serviceImpl\SettingServiceImp.java
