@@ -23,11 +23,8 @@ public class MyShiroRealm extends AuthorizingRealm{
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection arg0) {
  
 		SimpleAuthorizationInfo simpleAuthorInfo = new SimpleAuthorizationInfo();
- 
         //在这里给用户授权		
 		simpleAuthorInfo.addRole("admin");
-		
-		
 		return simpleAuthorInfo;
 	}
  
