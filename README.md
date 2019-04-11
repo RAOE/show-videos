@@ -228,5 +228,5 @@ Introduction: The background management system as its own specialized graduation
 
 <h2>关于我们的淘宝店？</h2>
 <p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
-<a href="./myimg/team.JPG"></a>
+<img src="./myimg/team.JPG"/>
 </p>
