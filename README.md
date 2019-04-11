@@ -226,4 +226,7 @@ Introduction: The background management system as its own specialized graduation
 欢迎Star或Fork，
 您的star和Fork是对作品的认同与肯定，感谢！
 
-
+<h2>关于我们的淘宝店？</h2>
+<p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
+<a href="./mying/team.JPG"></a>
+</p>
