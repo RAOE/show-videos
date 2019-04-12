@@ -88,6 +88,7 @@ Introduction: The background management system as its own specialized graduation
  <p>开发交流群:673926093</p>
  <h2>作品荣耀</h2>
  <p>学院院计算机比赛一等奖</p>
+ <p>软件著作权</p>
  </br>
  
  <h2>技术栈</h2>
