@@ -40,10 +40,8 @@ Page({
       title: '请等待....',
     })
     wx.request({
-
       url: serverUrl + '/bgm/list',
       method: 'post',
-
       success: function (res) {
         if (res.data.status == 200) {
           var bgmList = res.data.data;

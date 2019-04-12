@@ -1,5 +1,6 @@
 <view>
   <form bindsubmit='upload'>
+    <h2 class="loginLabel">请添加背景音乐</h2>
     <radio-group name="bgmId">
       <scroll-view scroll-y style="height: 350px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
         <block wx:for="{{bgmList}}">
@@ -7,8 +8,6 @@
             <audio name="{{item.name}}" author="{{item.author}}" src="{{serverUrl}}{{item.path}}" id="{{item.id}}" style="width:300px" controls></audio>
             <radio style='margin-top:20px;' value='{{item.id}}'></radio>
           </view>
-
-
         </block>
       </scroll-view>
     </radio-group>
@@ -16,9 +15,6 @@
       <label class="loginLabel">视频描述：</label>
       <input name="desc" class="inputText" placeholder="说点什么吧" />
     </view>
-
-
-
     <checkbox-group bindchange="filterBoxChange">
       <label class="loginLabel">滤镜选择:</label>
       <label class="checkbox" wx:for="{{filter}}">
@@ -26,8 +22,6 @@
         <label name="box" class="loginLabel">{{item.value}}</label>
       </label>
     </checkbox-group>
-
-
     <checkbox-group bindchange="checkboxChange">
       <label class="loginLabel">分类选择:</label>
       <label class="checkbox" wx:for="{{items}}">
@@ -35,10 +29,8 @@
         <label name="box" class="loginLabel">{{item.value}}</label>
       </label>
     </checkbox-group>
-
     <!-- 提交 -->
     <button class="submitBtn" type="primary" form-type='submit'>上传视频</button>
-
     <button class="gobackBtn" type="warn" form-type='reset'>重置</button>
   </form>
 </view>

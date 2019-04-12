@@ -32,72 +32,72 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  listenerButton: function() {
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden
-    });
-  },
-  listenerActionSheet: function() {
+  // listenerButton: function () {
+  //   this.setData({
+  //     actionSheetHidden: !this.data.actionSheetHidden
+  //   });
+  // },
+  // listenerActionSheet: function () {
 
-    this.setData({
-      actionSheetHidden: !this.data.actionSheetHidden,
-    })
-  },
-  operate: function(params) {
+  //   this.setData({
+  //     actionSheetHidden: !this.data.actionSheetHidden,
+  //   })
+  // },
+  // operate: function (params) {
 
-    var me = this;
-    //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
-    var user = app.getGlobalUserInfo();
-    var videoInfo = me.data.videoInfo;
-    var videoId = videoInfo.id;
-    console.log(me.data.videoInfo);
-    var videoInfo = JSON.stringify(me.data.videoInfo);
-    var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
-    var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
-    if (user == null || user == '' || user == undefined) {
-      wx.redirectTo({
-        url: '../userLogin/login?realUrl=' + realUrl,
-      })
-    } else {
-      var value = params;
-      var videoInfo = this.data.videoInfo;
-      console.log(params.currentTarget.id);
-      var id = params.currentTarget.id;
-      if (id == 0) //下载视频
-      {
-        // 下载
-        wx.showLoading({
-          title: '下载中...',
-        })
-        wx.downloadFile({
-          url: app.serverUrl + me.data.videoInfo.videoPath,
-          success: function(res) {
-            // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
-            if (res.statusCode === 200) {
+  //   var me = this;
+  //   //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
+  //   var user = app.getGlobalUserInfo();
+  //   var videoInfo = me.data.videoInfo;
+  //   var videoId = videoInfo.id;
+  //   var videoInfo = JSON.stringify(me.data.videoInfo);
+  //   var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
+  //   var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
+  //   if (user == null || user == '' || user == undefined) {
+  //     wx.redirectTo({
+  //       url: '../userLogin/login?realUrl=' + realUrl,
+  //     })
+  //   } else {
+  //     var value = params;
+  //     var videoInfo = this.data.videoInfo;
+  //     var id = params.currentTarget.id;
+  //      console.log("下载视频");
+  //     if (id == 0) //下载视频
+  //     {  
+  //       // consol.log(videoInfo);
+  //       // console.log('下载视频');
+  //       // console.log(app.serverUrl + me.data.videoInfo.videoPath);
+  //       // wx.showLoading({
+  //       //   title: '下载中...',
+  //       // })
+  //       // wx.downloadFile({
 
-              wx.saveVideoToPhotosAlbum({
-                filePath: res.tempFilePath,
-                success: function(res) {
-                  wx.hideLoading();
-                }
-              })
-            }
-          }
-        })
-      } else if (id == 1) //举报用户
-      {
-        wx.redirectTo({
-          url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
-        })
+  //       //   url: app.serverUrl + me.data.videoInfo.videoPath,
+  //       //   success: function (res) {
+  //       //     // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+  //       //     if (res.statusCode === 200) {
 
-      }
-    }
-  },
+  //       //       wx.saveVideoToPhotosAlbum({
+  //       //         filePath: res.tempFilePath,
+  //       //         success: function (res) {
+  //       //           wx.hideLoading();
+  //       //         }
+  //       //       })
+  //       //     }
+  //       //   }
+  //       // })
+  //     } else if (id == 1) //举报用户
+  //     {
+  //       wx.redirectTo({
+  //         url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
+  //       })
+
+  //     }
+  //   }
+  // },
   onLoad: function(params) {
     var me = this;
     me.videoCtx = wx.createVideoContext('myVideo', me);
-    console.info(params);
-    console.log(params);
     var videoInfo = JSON.parse(params.videoInfo);
     //解决高和宽的问题
     //横屏和竖屏的问题。
@@ -249,12 +249,6 @@ Page({
 
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  },
   showSearch: function() {
     wx.navigateTo({
       url: '../searchVideos/searchVideos',
@@ -322,6 +316,19 @@ Page({
       }).exec()
     }
   },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function(res) {
+
+    var me = this;
+    var videoInfo = me.data.videoInfo;
+    return {
+      title: '快来看看秀视频吧',
+      path: '/pages/videoInfo/videoInfo?videoInfo=' +
+        JSON.stringify(videoInfo),
+    }
+  },
   shareMe: function() {
 
     var me = this;
@@ -329,7 +336,6 @@ Page({
     var user = app.getGlobalUserInfo();
     var videoInfo = me.data.videoInfo;
     var videoId = videoInfo.id;
-    console.log(me.data.videoInfo);
     var videoInfo = JSON.stringify(me.data.videoInfo);
     var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
     var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
@@ -353,18 +359,14 @@ Page({
           wx.showActionSheet({
             itemList: itemList,
             success: function(res) {
-
               if (res.tapIndex == 0) {
-                // 下载
-                wx.showLoading({
-                  title: '下载中...',
-                })
-                wx.downloadFile({
+                const downloadTask = wx.downloadFile({
                   url: app.serverUrl + me.data.videoInfo.videoPath,
+                  header: ' Content-Type ',
                   success: function(res) {
                     // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+                    console.log(res);
                     if (res.statusCode === 200) {
-
                       wx.saveVideoToPhotosAlbum({
                         filePath: res.tempFilePath,
                         success: function(res) {
@@ -373,7 +375,16 @@ Page({
                       })
                     }
                   }
+                }, )
+                downloadTask.onProgressUpdate((res) => {
+                  console.log('下载进度', res.progress)
+                  wx.showLoading({
+                    title: '下载进度:' + res.progress,
+                  })
+                  console.log('已经下载的数据长度', res.totalBytesWritten)
+                  console.log('预期需要下载的数据总长度', res.totalBytesExpectedToWrite)
                 })
+
               } else if (res.tapIndex == 1) {
                 // 举报
                 if (user.id)
@@ -381,8 +392,8 @@ Page({
                     url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
                   })
               } else {
-
-
+                
+            
 
               }
 
@@ -392,35 +403,26 @@ Page({
       })
     }
   },
-  onShareAppMessage: function(res) {
 
-    var me = this;
-    var videoInfo = me.data.videoInfo;
-    return {
-      title: '快来看看秀视频吧',
-      path: '/pages/videoInfo/videoInfo?videoInfo=' +
-        JSON.stringify(videoInfo),
-    }
-  },
   likeVideoOrNot: function() {
     var me = this;
     //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
     var user = app.getGlobalUserInfo();
     var videoInfo = me.data.videoInfo;
     var videoId = videoInfo.id;
-    console.log(me.data.videoInfo);
-    var videoInfo = JSON.stringify(me.data.videoInfo);
-    var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
-    var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
+
     if (user == null || user == '' || user == undefined) {
+      var videoInfo = JSON.stringify(me.data.videoInfo);
+      var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
+      var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
       wx.redirectTo({
         url: '../userLogin/login?realUrl=' + realUrl,
       })
     } else {
       var userLikeVideo = me.data.userLikeVideo;
-      var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoInfo.id + '&videoCreaterId=' + videoInfo.userId;
+      var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
       if (userLikeVideo) {
-        url = '/video/userUnLike?userId=' + user.id + '&videoId=' + videoInfo.id + '&videoCreaterId=' + videoInfo.userId;
+        url = '/video/userUnLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
       }
       var serverUrl = app.serverUrl;
       wx.showLoading({
@@ -433,6 +435,7 @@ Page({
           'content-type': 'application/json' //默认值
         },
         success: function(res) {
+
           wx.hideLoading();
           userLikeVideo = !userLikeVideo;
           me.setData({

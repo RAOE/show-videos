@@ -2,6 +2,7 @@
   <view style='width:{{screenWidth}}px;height:210px;' class='back-img'>
     <image src="{{serverUrl}}{{item.coverPath}}" style='width:{{screenWidth}}px;height:210px;' mode="aspectFit" bindtap='showVideoInfo' data-arrindex='{{index}}'></image>
   </view>
+ 
   <view class="desc">
     <view class="faceName">
       <image class='myface' src="{{item.face_image}}"></image>

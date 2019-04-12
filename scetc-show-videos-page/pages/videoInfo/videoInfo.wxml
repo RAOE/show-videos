@@ -24,7 +24,6 @@
   </video>
   <cover-view class='container-words'>@{{videoInfo.nickName}}</cover-view>
   <cover-view class='container-words'>{{videoInfo.videoDesc}}</cover-view>
-
 </view>
 
 <view wx:for="{{CommentList}}" class="comment" wx:for-index="idx" wx:for-item="itemName">

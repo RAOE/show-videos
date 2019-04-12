@@ -52,8 +52,6 @@ Page({
             saveUserInfo.username = username;
             app.saveUserInfo(saveUserInfo);
             app.setGlobalUserInfo(res.data.data);
-
-
             var realUrl = me.data.realUrl;
             console.log(realUrl);
             if (realUrl == '') {

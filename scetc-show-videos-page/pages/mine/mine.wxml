@@ -21,7 +21,6 @@
         <button  size="mini" class='primary' bindtap='UnfollowMe'>已关注</button>
       </block>
     </block>
-   
   </view>
   <view class='video-main'>
     <view class='video-main-title'>

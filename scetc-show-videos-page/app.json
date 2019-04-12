@@ -1,10 +1,8 @@
 {
   "pages": [ 
-
-
-  
     "pages/category/category",
     "pages/userLogin/login",
+  
     "pages/userRegist/regist", 
     "pages/mine/mine",
     "pages/chooseBgm/chooseBgm",     
@@ -22,7 +20,34 @@
     "navigationBarTitleText": "秀视频",
     "navigationBarTextStyle": "black"
   },
-  
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/category/category",
+        "text": "首页",
+        "iconPath": "pages/resource/images/home.png",
+        "selectedIconPath": "pages/resource/images/home.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "发布",
+        "iconPath": "pages/resource/images/add.png",
+        "selectedIconPath": "pages/resource/images/add.png"
+      },
+      {
+        "pagePath": "pages/searchVideos/searchVideos",
+        "text": "搜索",
+        "iconPath": "pages/resource/images/search2.png",
+        "selectedIconPath": "pages/resource/images/search2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "pages/resource/images/user.png",
+        "selectedIconPath": "pages/resource/images/user.png"
+      }
+    ]
+  },
   "debug": true
 
 }

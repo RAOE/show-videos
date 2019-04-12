@@ -10,9 +10,9 @@ function uploadVideos() {
       var tmpVideoUrl = res.tempFilePath;
       var tmpCoverUrl = res.thumbTempFilePath;
 
-      if (duration > 30) {
+      if (duration > 300) {
         wx.showToast({
-          title: '视频长度不能超过30秒',
+          title: '视频长度不能超过300秒',
           icon: "none",
           duration: 2500
         })
