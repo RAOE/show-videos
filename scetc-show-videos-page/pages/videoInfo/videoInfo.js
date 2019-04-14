@@ -24,8 +24,6 @@ Page({
     }, {
       name: '举报用户'
     }],
-
-
   },
   videoCtx: {},
 
@@ -95,10 +93,17 @@ Page({
   //     }
   //   }
   // },
-  onLoad: function(params) {
+  onLoad: function (params) {
     var me = this;
     me.videoCtx = wx.createVideoContext('myVideo', me);
-    var videoInfo = JSON.parse(params.videoInfo);
+    var realUrlParam = app.globalData.realUrlParam;
+    if (realUrlParam != '' && realUrlParam != null && realUrlParam != undefined) {
+      videoInfo = JSON.parse(realUrlParam);
+      app.globalData.realUrl = null;
+      app.globalData.realUrlParam = null;
+    } else {
+      var videoInfo = JSON.parse(params.videoInfo);
+    }
     //解决高和宽的问题
     //横屏和竖屏的问题。
     var height = videoInfo.videoHeight;
@@ -124,7 +129,7 @@ Page({
       url: serverUrl + '/user/queryPublisher?loginUserId=' + user.id + '&videoId=' + videoInfo.id +
         '&publisherUserId=' + videoInfo.userId,
       method: 'post',
-      success: function(res) {
+      success: function (res) {
         me.setData({
           userLikeVideo: res.data.data.userLikeVideo,
         })
@@ -134,9 +139,8 @@ Page({
     wx.request({
       url: serverUrl + '/video/queryCommentsByVideoId?videoId=' + videoInfo.id,
       method: 'post',
-      success: function(resp) {
+      success: function (resp) {
         var CommentList = resp.data.data;
-
         for (var i = 0; i < CommentList.length; i++) {
           CommentList[i]["createTime"] = util.formatDate(CommentList[i]["createTime"]);
         }
@@ -153,11 +157,11 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
-  sendComment: function(e) {
- 
+  sendComment: function (e) {
+
     var me = this;
     var comment = e.detail.value;
     var serverUrl = app.serverUrl;
@@ -177,7 +181,7 @@ Page({
       wx.request({
         url: serverUrl + 'video/saveComments?comment=' + comment + "&videoId=" + videoId + "&userId=" + user.id,
         method: 'post',
-        success: function(resp) {
+        success: function (resp) {
           wx.showToast({
             title: '发送成功',
             icon: 'success'
@@ -185,15 +189,13 @@ Page({
           wx.request({
             url: serverUrl + '/video/queryCommentsByVideoId?videoId=' + videoInfo.id,
             method: 'post',
-            success: function(resp) {
-
+            success: function (resp) {
               //进行时间戳的转换
               var CommentList = resp.data.data;
               for (var i = 0; i < CommentList.length; i++) {
                 CommentList[i]["createTime"] = util.formatDate(CommentList[i]["createTime"]);
 
               }
-
               var contentValue = ''
               //将获得的评论
               me.setData({
@@ -215,7 +217,7 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
     var me = this;
     me.videoCtx.play();
 
@@ -223,7 +225,7 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
     var me = this;
     me.videoCtx.pause();
   },
@@ -231,37 +233,40 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
-  showSearch: function() {
+  showSearch: function () {
     wx.switchTab({
       url: '../searchVideos/searchVideos',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
 
   },
-  upload: function() {
+  //点击上传自己的短视频
+  upload: function () {
     var me = this;
     var videoInfo = JSON.stringify(me.data.videoInfo);
     var realUrl = '../videoInfo/videoInfo@videoInfo#' + videoInfo; //视频的信息
+    app.globalData.realUrl = '../videoInfo/videoInfo';
+    app.globalData.realUrlParam = videoInfo;
     var user = app.getGlobalUserInfo();
     if (user == null || user == '' || user == undefined) {
       wx.redirectTo({
@@ -271,23 +276,21 @@ Page({
       videoUtils.uploadVideos();
     }
   },
-  showIndex: function() {
+  showIndex: function () {
     wx.switchTab({
       url: '../category/category',
     })
   },
-  showPublisher: function() {
+  showPublisher: function () {
     var user = app.getGlobalUserInfo();
     var videoInfo = this.data.videoInfo;
     var realUrl = '../videoInfo/publisherId@publisherId#' + videoInfo.userId; //视频的信息
-
+    app.globalData.publisherId = videoInfo.userId;
     if (user == null || user == undefined || user == '') {
       wx.redirectTo({
         url: '../userLogin/login?realUrl=' + realUrl,
       })
     } else {
-
-      app.savePublishId(videoInfo.userId);
       wx.switchTab({
         // url: '../mine/mine?publisherId=' + videoInfo.userId,\
         url: '../mine/mine'
@@ -296,8 +299,9 @@ Page({
     //对页面级别进行拦截
 
   },
-  comments: function() {
-   
+  //点击评论
+  comments: function () {
+
     var me = this;
     //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
     var user = app.getGlobalUserInfo();
@@ -305,6 +309,8 @@ Page({
     var videoId = videoInfo.id;
     var videoInfo = JSON.stringify(me.data.videoInfo);
     var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
+    app.globalData.realUrl = '../videoInfo/videoInfo';
+    app.globalData.realUrlParam = videoInfo;
     var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
     if (user == null || user == '' || user == undefined) {
       wx.redirectTo({
@@ -315,7 +321,7 @@ Page({
       wx.showToast({
         title: '请在下方评论',
       })
-      wx.createSelectorQuery().select('#myVideo').boundingClientRect(function(rect) {
+      wx.createSelectorQuery().select('#myVideo').boundingClientRect(function (rect) {
         // 使页面滚动到底部
         wx.pageScrollTo({
           scrollTop: rect.bottom
@@ -326,7 +332,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function(res) {
+  onShareAppMessage: function (res) {
 
     var me = this;
     var videoInfo = me.data.videoInfo;
@@ -336,7 +342,7 @@ Page({
         JSON.stringify(videoInfo),
     }
   },
-  shareMe: function() {
+  shareMe: function () {
 
     var me = this;
     //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
@@ -345,6 +351,8 @@ Page({
     var videoId = videoInfo.id;
     var videoInfo = JSON.stringify(me.data.videoInfo);
     var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
+    app.globalData.realUrl = '../videoInfo/videoInfo';
+    app.globalData.realUrlParam = videoInfo;
     var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
     if (user == null || user == '' || user == undefined) {
       wx.redirectTo({
@@ -355,34 +363,34 @@ Page({
       var me = this;
       var user = app.getGlobalUserInfo();
       wx.getSystemInfo({
-        success: function(result) {
+        success: function (result) {
           //选项集合
           let itemList;
           if (result.platform == 'android') {
             itemList = ['下载到本地', '举报用户', '分享到微信群', '取消']
           } else {
-            itemList = ['下载到本地', '举报用户', '分享到微信群', ]
+            itemList = ['下载到本地', '举报用户', '分享到微信群',]
           }
           wx.showActionSheet({
             itemList: itemList,
-            success: function(res) {
+            success: function (res) {
               if (res.tapIndex == 0) {
                 const downloadTask = wx.downloadFile({
                   url: app.serverUrl + me.data.videoInfo.videoPath,
                   header: ' Content-Type ',
-                  success: function(res) {
+                  success: function (res) {
                     // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
                     console.log(res);
                     if (res.statusCode === 200) {
                       wx.saveVideoToPhotosAlbum({
                         filePath: res.tempFilePath,
-                        success: function(res) {
+                        success: function (res) {
                           wx.hideLoading();
                         }
                       })
                     }
                   }
-                }, )
+                })
                 downloadTask.onProgressUpdate((res) => {
                   console.log('下载进度', res.progress)
                   wx.showLoading({
@@ -398,10 +406,10 @@ Page({
                   wx.redirectTo({
                     url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
                   })
-              } else if(res.tapIndex==2) {
+              } else if (res.tapIndex == 2) {
                 wx.showToast({
                   title: '使用右上角转发',
-                  duration:5000
+                  duration: 5000
                 })
               }
 
@@ -412,15 +420,18 @@ Page({
     }
   },
 
-  likeVideoOrNot: function() {
+  likeVideoOrNot: function () {
     var me = this;
     //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
     var user = app.getGlobalUserInfo();
     var videoInfo = me.data.videoInfo;
     var videoId = videoInfo.id;
+ 
     if (user == null || user == '' || user == undefined) {
       var videoInfo = JSON.stringify(me.data.videoInfo);
       var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;
+      app.globalData.realUrl = '../videoInfo/videoInfo';
+      app.globalData.realUrlParam = videoInfo;
       var url = '/video/userLike?userId=' + user.id + '&videoId=' + videoId + '&videoCreaterId=' + videoInfo.userId;
       wx.redirectTo({
         url: '../userLogin/login?realUrl=' + realUrl,
@@ -441,7 +452,7 @@ Page({
         header: {
           'content-type': 'application/json' //默认值
         },
-        success: function(res) {
+        success: function (res) {
 
           wx.hideLoading();
           userLikeVideo = !userLikeVideo;

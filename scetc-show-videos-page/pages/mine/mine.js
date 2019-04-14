@@ -23,9 +23,14 @@ Page({
     var serverUrl = app.serverUrl;
     var user = app.getGlobalUserInfo();
     var userId = user.id;
-    var publisherId = app.getPublishId();
-    app.clearPublishId();
-    console.log("-----------" + publisherId);
+    var publisherId = app.globalData.publisherId;
+    app.globalData.publisherId = null;
+    if (user==null||user==undefined||user=='')
+    {
+      wx.redirectTo({
+          url: '../userLogin/login',
+        })
+    } 
     me.setData(
       {
         isMe:true
@@ -112,7 +117,6 @@ Page({
           })
         }
       }
-
     })
 
   },
@@ -122,8 +126,15 @@ Page({
     var serverUrl = app.serverUrl;
     var user = app.getGlobalUserInfo();
     var userId = user.id;
-    var publisherId = params.publisherId;
-    publisherId = app.getPublishId();
+    var publisherId = app.globalData.publisherId;
+    app.globalData.publisherId = null;
+    console.log("user" + user);
+    if (user == null || user == undefined || user == '') {
+      wx.redirectTo({
+        url: '../userLogin/login',
+      })
+    } 
+    console.log("----------------------------------");
     if (publisherId != null && publisherId != '' && publisherId != undefined && publisherId != userId) {
       userId = publisherId;
       me.setData(
@@ -319,7 +330,6 @@ Page({
     if (!isMe) {
       return;
     }
-
     var that = this;
     wx.showLoading({
       title: '请等待...',
@@ -342,11 +352,8 @@ Page({
               {
                 'content-type': 'application/json'//默认值
               },
-
             success: function (res) {
-
               var data = JSON.parse(res.data);
-
               wx.hideLoading();
               if (data.status == 200) {
                 wx.showToast({
@@ -380,7 +387,6 @@ Page({
     wx.chooseVideo({
       sourceType: ['album'],
       success: function (res) {
-
         var duration = res.duration;
         var tmpheight = res.height;
         var tmpwidth = res.width;
@@ -401,7 +407,6 @@ Page({
             duration: 2500
           })
         }
-
         else {
           //打开选择bgm页面
           //上传视频选择验证通过之后 跳转到选择bgm页面 
@@ -417,7 +422,6 @@ Page({
     })
 
   },
-
   //注销清空缓存
   logout: function (params) {
     var user = app.getGlobalUserInfo;

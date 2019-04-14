@@ -10,7 +10,6 @@
   </view>
     <view class="weui-search-bar__cancel-btn" bindtap="wxSearchConfirm">
          <text wx:if="{{wxSearchData.value.length>0}}" data-key='search'>搜索</text>
-         <text wx:else data-key='back'>全部</text>
      </view>
 </view>
 

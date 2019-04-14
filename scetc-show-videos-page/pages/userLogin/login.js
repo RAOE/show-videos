@@ -53,15 +53,17 @@ Page({
             app.saveUserInfo(saveUserInfo);
             app.setGlobalUserInfo(res.data.data);
             var realUrl = me.data.realUrl;
-            console.log(realUrl);
-            if (realUrl == '') {
+            console.log("realUrl"+realUrl);
+            realUrl = app.globalData.realUrl;
+            console.log("publisherId" + app.globalData.publisherId);
+            if (realUrl == ''||realUrl==null) {
               //跳转
               wx.switchTab({
                 url: '../mine/mine',
               })
             }
             else {
-              wx.switchTab({
+              wx.redirectTo({
                 url: realUrl
               })
             }
@@ -90,6 +92,7 @@ Page({
     })
   },
   onLoad: function (e) {
+    console.log("result："+app.globalData.realUrl);
     var me = this;
     var realUrl = e.realUrl;
     console.log(realUrl);

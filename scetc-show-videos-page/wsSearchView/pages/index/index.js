@@ -15,7 +15,7 @@ Page({
 
   // 搜索入口  
   wxSearchTab: function () {
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../search/search'
     })
   }

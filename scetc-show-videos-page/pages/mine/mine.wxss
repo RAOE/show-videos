@@ -32,8 +32,8 @@ page {
 }
 
 .info-items { 
-  width: 100rpx;
-  font-size: 0.7rem;
+  width: 130rpx;
+  font-size: 0.8rem;
   color:white; 
 }
 

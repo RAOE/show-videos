@@ -1,7 +1,7 @@
 {
   "pages": [ 
-    "pages/userLogin/login",
     "pages/category/category",
+    "pages/userLogin/login",
     "pages/userRegist/regist", 
     "pages/mine/mine",
     "pages/chooseBgm/chooseBgm",     
@@ -9,10 +9,9 @@
     "pages/videoInfo/videoInfo",
     "pages/searchVideos/searchVideos", 
     "pages/report/report",
-    "pages/bootstrap/bootstrap"
-    
+    "pages/bootstrap/bootstrap",
+    "pages/upload/upload"
   ],
-  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
@@ -28,7 +27,7 @@
         "selectedIconPath": "pages/resource/images/home.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/upload/upload",
         "text": "发布",
         "iconPath": "pages/resource/images/add.png",
         "selectedIconPath": "pages/resource/images/add.png"

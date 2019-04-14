@@ -98,7 +98,6 @@ Page({
     var me = this;
     var currentPage = me.data.page;
     var totalPage = me.data.totalPage;
-
     if (currentPage == totalPage) {
       wx.showToast({
         title: '已经没有视频啦',

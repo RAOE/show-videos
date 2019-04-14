@@ -10,16 +10,13 @@
 
         <input name="username" class="inputText" placeholder="请输入账号" value="{{username}}" />
       </view>
-
       <view class="line"></view>
-
       <!--密码-->
       <view class="inputView">
         <image class="keyImage" src="../resource/images/password.png"></image>
 
         <input name="password" class="inputText" password="true" placeholder="请输入密码" value="{{password}}" />
       </view>
-
       <!--按钮-->
       <view>
         <button class="loginBtn" open-type="getUserInfo" type="primary" form-type='submit'>登陆</button>

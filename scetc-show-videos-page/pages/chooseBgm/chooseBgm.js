@@ -120,7 +120,6 @@ Page({
 
     //三个选项卡选中其中一个之后，其他两个会失效
     var me = this;
-
     var new_items =
       [
         { name: 'define', value: '普通', checked: 'true' },
@@ -131,7 +130,6 @@ Page({
     var key = e.detail.value;
     var name = key[key.length - 1];
     //做出选择之后遍历数组 并将该值设置为checked ，其他值设置为null
-
     for (var i = 0; i < new_items.length; i++) {
       if (name == new_items[i].name) {
         new_items[i].checked = true;
@@ -259,9 +257,6 @@ Page({
     var userInfo = app.getGlobalUserInfo();
     var serverUrl = app.serverUrl;
     var userId = userInfo.id;
-   
-
-  
     // 开始上传
     wx.uploadFile({
       url: serverUrl + "/video/upload",
@@ -291,11 +286,13 @@ Page({
             title: '上传成功',
             icon: "success",
           })
-
           wx.hideLoading();
-          wx.redirectTo({
-            url: '../category/category',
-          })
+          setTimeout(function () {
+            wx.switchTab({
+              url: '../mine/mine',
+            })
+          }, 2000) //延迟时间 这里是2秒
+
           // var videoId = data.data;
           // wx.showLoading({
           //   title: '上传中...',
