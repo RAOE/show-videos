@@ -157,6 +157,7 @@ Page({
 
   },
   sendComment: function(e) {
+ 
     var me = this;
     var comment = e.detail.value;
     var serverUrl = app.serverUrl;
@@ -249,7 +250,7 @@ Page({
   },
 
   showSearch: function() {
-    wx.navigateTo({
+    wx.switchTab({
       url: '../searchVideos/searchVideos',
       success: function(res) {},
       fail: function(res) {},
@@ -271,13 +272,12 @@ Page({
     }
   },
   showIndex: function() {
-    wx.redirectTo({
+    wx.switchTab({
       url: '../category/category',
     })
   },
   showPublisher: function() {
     var user = app.getGlobalUserInfo();
-    
     var videoInfo = this.data.videoInfo;
     var realUrl = '../videoInfo/publisherId@publisherId#' + videoInfo.userId; //视频的信息
 
@@ -297,6 +297,7 @@ Page({
 
   },
   comments: function() {
+   
     var me = this;
     //先判断用户是否 登陆如果没有登陆 则提醒用户进行登陆
     var user = app.getGlobalUserInfo();
@@ -311,6 +312,9 @@ Page({
       })
     } else {
       //滚动页面自动到最底部 评论
+      wx.showToast({
+        title: '请在下方评论',
+      })
       wx.createSelectorQuery().select('#myVideo').boundingClientRect(function(rect) {
         // 使页面滚动到底部
         wx.pageScrollTo({
