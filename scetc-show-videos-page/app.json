@@ -1,8 +1,7 @@
 {
   "pages": [ 
-    "pages/category/category",
     "pages/userLogin/login",
-  
+    "pages/category/category",
     "pages/userRegist/regist", 
     "pages/mine/mine",
     "pages/chooseBgm/chooseBgm",     
@@ -29,7 +28,7 @@
         "selectedIconPath": "pages/resource/images/home.png"
       },
       {
-        "pagePath": "pages/category/category",
+        "pagePath": "pages/mine/mine",
         "text": "发布",
         "iconPath": "pages/resource/images/add.png",
         "selectedIconPath": "pages/resource/images/add.png"

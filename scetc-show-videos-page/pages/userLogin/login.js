@@ -11,7 +11,7 @@ Page({
     var formObject = e.detail.value;
     var username = formObject.username;
     var password = formObject.password;
-
+    app.clearPublishId();
     //简单验证
     if (username.length == 0 || password.length == 0) {   //反馈数据
       wx.showToast({
@@ -56,12 +56,12 @@ Page({
             console.log(realUrl);
             if (realUrl == '') {
               //跳转
-              wx.navigateTo({
+              wx.switchTab({
                 url: '../mine/mine',
               })
             }
             else {
-              wx.navigateTo({
+              wx.switchTab({
                 url: realUrl
               })
             }

@@ -9,7 +9,6 @@
     </view>
     <block wx:if="{{isMe}}">
       <button  size="mini" class='btn' bindtap='uploadVideo'> 上传作品</button>
-      <button  size="mini" class='btn' bindtap='browse'>进入首页</button>
       <button  size="mini" class='btn' open-type="contact">联系客服</button>
       <button    size="mini"  class='btn' bindtap='logout'>注销</button>
     </block>

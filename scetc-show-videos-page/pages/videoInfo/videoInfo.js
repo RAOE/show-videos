@@ -171,7 +171,6 @@ Page({
         url: '../userLogin/login?realUrl=' + realUrl,
       })
     } else {
-
       var videoInfo = this.data.videoInfo;
       var videoId = videoInfo.id;
       wx.request({
@@ -278,6 +277,7 @@ Page({
   },
   showPublisher: function() {
     var user = app.getGlobalUserInfo();
+    
     var videoInfo = this.data.videoInfo;
     var realUrl = '../videoInfo/publisherId@publisherId#' + videoInfo.userId; //视频的信息
 
@@ -286,8 +286,11 @@ Page({
         url: '../userLogin/login?realUrl=' + realUrl,
       })
     } else {
-      wx.redirectTo({
-        url: '../mine/mine?publisherId=' + videoInfo.userId,
+
+      app.savePublishId(videoInfo.userId);
+      wx.switchTab({
+        // url: '../mine/mine?publisherId=' + videoInfo.userId,\
+        url: '../mine/mine'
       })
     }
     //对页面级别进行拦截
@@ -391,10 +394,11 @@ Page({
                   wx.redirectTo({
                     url: '../report/report?videoId=' + videoInfo.id + "&pubulisherId=" + videoInfo.userId,
                   })
-              } else {
-                
-            
-
+              } else if(res.tapIndex==2) {
+                wx.showToast({
+                  title: '使用右上角转发',
+                  duration:5000
+                })
               }
 
             },
@@ -410,7 +414,6 @@ Page({
     var user = app.getGlobalUserInfo();
     var videoInfo = me.data.videoInfo;
     var videoId = videoInfo.id;
-
     if (user == null || user == '' || user == undefined) {
       var videoInfo = JSON.stringify(me.data.videoInfo);
       var realUrl = '../videoInfo/videoInfo#videoInfo@' + videoInfo;

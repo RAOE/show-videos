@@ -17,14 +17,113 @@ Page({
   onGotUserInfo: function (e) {
    
   },
-  onLoad: function (params) {
+  onShow:function()
+  {
+    var me = this;
+    var serverUrl = app.serverUrl;
+    var user = app.getGlobalUserInfo();
+    var userId = user.id;
+    var publisherId = app.getPublishId();
+    app.clearPublishId();
+    console.log("-----------" + publisherId);
+    me.setData(
+      {
+        isMe:true
+      }
+    )
+    if (publisherId != null && publisherId != '' && publisherId != undefined && publisherId != userId) {
+      userId = publisherId;
+      me.setData(
+        {
+          isMe: false,
+          publisherId: publisherId,
+        }
+      )
+    }
+    var that = this;
+    var serverUrl = app.serverUrl;
+    wx.request({
+      url: serverUrl + "/user/query?userId=" + userId,
+      method: "post"
+      ,
+      header:
+      {
+        'content-type': 'application/json'//默认值
+      },
+      success: function (res) {
+        var serverUrl = app.serverUrl;
 
+        if (res.data.status == 200) {
+          var userInfo = res.data.data;
+          var faceUrl = "../resource/images/noneface.png";
+
+          if (userInfo.faceImage != null && userInfo.faceImage != '' && userInfo.faceImage != undefined) {
+            var faceUrl = serverUrl + userInfo.faceImage;
+          }
+
+          that.setData(
+            {
+              faceUrl: faceUrl,
+              fansCounts: userInfo.fansCounts,
+              followCounts: userInfo.followCounts,
+              receiveLikeCounts: userInfo.receiveLikeCounts,
+              nickname: userInfo.nickname,
+            })
+
+          //查询追随者
+          wx.request({
+            url: serverUrl + '/user/queryIsFollowed?userId=' + publisherId + "&fanId=" + user.id,
+            method: 'post',
+            success(res) {
+              that.setData(
+                {
+                  isFollowed: res.data.data
+                })
+              //如果此时用户点击的其他人 则应该查询出他人的视频
+              var userId = user.id;
+              var isMe = me.data.isMe;
+              if (isMe == false) {
+                userId = publisherId;
+              }
+              //继续查询 查询自己发布的视频
+              wx.request({
+                url: serverUrl + '/video/queryVideosByUser?userId=' + userId,
+                method: "post",
+                success(res) {
+                  //根据视频的id去查询
+                  var videoList = res.data.data;
+                  me.setData(
+                    {
+                      videoList: videoList,
+                      serverUrl: app.serverUrl
+                    }
+                  )
+                  //保存videoList对象
+                  //遍历videoList对象并显示到页面上
+                }
+              })
+            }
+          })
+        }
+        else if (res.data.status == 500) {
+          wx.showToast({
+            title: '登陆失败' + data.msg,
+            icon: "error"
+          })
+        }
+      }
+
+    })
+
+  },
+  //
+  onLoad: function (params) {
     var me = this;
     var serverUrl = app.serverUrl;
     var user = app.getGlobalUserInfo();
     var userId = user.id;
     var publisherId = params.publisherId;
-
+    publisherId = app.getPublishId();
     if (publisherId != null && publisherId != '' && publisherId != undefined && publisherId != userId) {
       userId = publisherId;
       me.setData(
@@ -50,11 +149,9 @@ Page({
         if (res.data.status == 200) {
           var userInfo = res.data.data;
           var faceUrl = "../resource/images/noneface.png";
-          
           if (userInfo.faceImage != null && userInfo.faceImage != '' && userInfo.faceImage != undefined) {
             var faceUrl = serverUrl + userInfo.faceImage;
           }
-
           that.setData(
             {
               faceUrl: faceUrl,
@@ -110,11 +207,7 @@ Page({
       }
 
     })
-
-
   },
-
-
   showVideoInfo: function (e) {
     var me = this;
     var videoList = me.data.videoList;
@@ -124,13 +217,7 @@ Page({
       url: '../videoInfo/videoInfo?videoInfo=' + videoInfo,
     })
   },
-  browse: function () {
-    wx.navigateTo({
-      url: '../category/category',
-    })
 
-
-  },
   followMe: function () {
     var user = app.getGlobalUserInfo();
     var publisherId = this.data.publisherId;
@@ -266,9 +353,7 @@ Page({
                   title: '上传成功!~',
                   icon: "success" //图标
                 })
-
                 var imageUrl = data.data.faceImage;
-
                 that.setData(
                   {
                     faceUrl: serverUrl + imageUrl
@@ -276,7 +361,6 @@ Page({
                 );
 
               }
-
               else if (data.status == 500) {
 
                 wx.showToast({
@@ -289,9 +373,6 @@ Page({
 
         }
       })
-
-
-
   },
   //上传短视频js
   uploadVideo: function () {
@@ -379,12 +460,7 @@ Page({
             icon: 'none',
             duration: 3000
           })
-
-
         }
-
-
-
       }
     })
   }
