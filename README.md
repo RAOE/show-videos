@@ -226,6 +226,8 @@ Introduction: The background management system as its own specialized graduation
 借鉴或参考请先联系作者(986771570@qq.com)，
 欢迎Star或Fork，
 您的star和Fork是对作品的认同与肯定，感谢！
+<h2>小程序最终版</h2>
+<p>由于小程序需要办理各种资质，故放弃线上版本，如果需要安装小程序，导入page页面即可</p>
 
 <h2>关于我们的淘宝店？</h2>
 <p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
