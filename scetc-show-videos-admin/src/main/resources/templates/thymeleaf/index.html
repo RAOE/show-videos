@@ -84,7 +84,49 @@
 						class="label label-warning pull-right"></span></a></li>
 				<li><a class="J_menuItem"
 					   th:href="@{/static/page/column_management.html}"> <i
-						class="fa fa-list"></i> <span class="nav-label">专栏管理</span>
+						class="fa fa-list"></i> <span class="nav-label">小程序专栏管理</span>
+				</a> <span class="fa arrow"></span></li>
+				<li><a th:href="@{/static/page/column_management.html}" class="fa fa-paper-plane"> <span
+						class="nav-label">营销推广</span>
+					<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level">
+						<li class="active">
+							<a th:href="@{/static/page/column_management.html}">优惠券 <span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level">
+								<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}">优惠卷制作</a>
+								</li>
+
+								<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}">用户领取记录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav nav-second-level">
+						<li class="active">
+							<a th:href="@{/static/page/column_management.html}">助力分享 <span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level">
+								<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}">发布助力</a>
+								</li>
+								<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}">领取记录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<ul class="nav nav-second-level">
+						<li class="active">
+							<a th:href="@{/static/page/column_management.html}">拼团 <span class="fa arrow"></span></a>
+							<ul class="nav nav-third-level">
+								<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}">拼团列表</a>
+								</li>
+								<li><a class="J_menuItem" th:href="@{/static/page/column_management.html}">拼团产品</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li><a class="J_menuItem"
+					   th:href="@{/static/page/bgm_management.html}"> <i
+						class="fa fa fa-bar-chart-o"></i> <span class="nav-label">商家系统</span>
 				</a> <span class="fa arrow"></span></li>
 				<li><a class="J_menuItem"
 					   th:href="@{/static/page/bgm_management.html}"> <i
@@ -94,8 +136,6 @@
 					   th:href="@{/static/page/video_management.html}"> <i
 						class="fa fa-desktop"></i> <span class="nav-label">短视频管理</span>
 				</a> <span class="fa arrow"></span></li>
-
-
 
 				<li><a class="J_menuItem"
 					   th:href="@{/static/page/report.html}"> <i
