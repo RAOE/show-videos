@@ -112,7 +112,7 @@ Page({
         }
         else if (res.data.status == 500) {
           wx.showToast({
-            title: '登陆失败' + data.msg,
+            title: '登陆失败' + res.data.msg,
             icon: "error"
           })
         }
@@ -211,7 +211,7 @@ Page({
         }
         else if (res.data.status == 500) {
           wx.showToast({
-            title: '登陆失败' + data.msg,
+            title: '登陆失败' + res.data.msg,
             icon: "error"
           })
         }

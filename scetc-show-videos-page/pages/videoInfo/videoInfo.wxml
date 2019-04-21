@@ -1,9 +1,5 @@
-<view style='width:100%;height:100%;z-index:-1;'>
-
-  <video id="myVideo" src="{{src}}" controls="{{false}}" autoplay="{{true}}" loop="{{false}}" enable-progress-gesture="{{false}}" style='width:100%;height:90%;' objectFit='{{cover}}'>
-
-
-
+<view  style='width:100%;height:100%;z-index:-1;'>
+  <video id="myVideo" src="{{src}}" controls="{{false}}" autoplay="{{true}}" loop="{{false}}" enable-progress-gesture="{{false}}" style='width:100%;height:100%;'  objectFit='{{cover}}'>
     <cover-view class='container'>
       <cover-image src='../resource/images/camera.png' style='width:50rpx;height:50rpx;' bindtap='upload'></cover-image>
 

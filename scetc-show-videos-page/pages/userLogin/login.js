@@ -11,7 +11,6 @@ Page({
     var formObject = e.detail.value;
     var username = formObject.username;
     var password = formObject.password;
-    app.clearPublishId();
     //简单验证
     if (username.length == 0 || password.length == 0) {   //反馈数据
       wx.showToast({

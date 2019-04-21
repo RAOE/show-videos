@@ -9,7 +9,7 @@
     </view>
     <block wx:if="{{isMe}}">
       <button  size="mini" class='btn' bindtap='uploadVideo'> 上传作品</button>
-      <button  size="mini" class='btn' open-type="contact">联系客服</button>
+      <button  size="mini" class='btn' open-type="contact">商家入驻</button>
       <button    size="mini"  class='btn' bindtap='logout'>注销</button>
     </block>
     <block wx:if="{{!isMe}}">
@@ -21,13 +21,12 @@
       </block>
     </block>
   </view>
-  <view class='video-main'>
+  <view wx:if="{{videoList.length!=0}}" class='video-main'>
     <view class='video-main-title'>
       <block wx:if="{{!isMe}}">
       <button>它的发布</button>
       <button>它关注的</button>
       <button>它的动态</button>
-
       </block>
     <block wx:if="{{isMe}}">
       <button>我的发布</button>
