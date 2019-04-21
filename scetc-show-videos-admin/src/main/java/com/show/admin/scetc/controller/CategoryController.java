@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.UUID;
 
+import com.show.admin.scetc.annotation.SysLog;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -43,6 +44,7 @@ public class CategoryController extends BasicController {
 	 * @param pageSize
 	 * @return
 	 */
+	@SysLog
 	@PostMapping("/queryAll")
 	public XyfJsonResult queryAll(String keyword, String title, Integer page, Integer pageSize) {
 		PageResult list = categoryService.queryAll(title, keyword, page, pageSize);
@@ -55,6 +57,7 @@ public class CategoryController extends BasicController {
 	 * @param id
 	 * @return
 	 */
+	@SysLog
 	@PostMapping("/selectResourceById")
 	public XyfJsonResult selectResourceById(Long id) {
 		Category category = categoryService.selectOne(id);
@@ -67,6 +70,7 @@ public class CategoryController extends BasicController {
 	 * @param id
 	 * @return
 	 */
+	@SysLog
 	@RequestMapping("/editById")
 	public ModelAndView edit(Long id) {
 		Category category = categoryService.selectOne(id);
@@ -80,6 +84,7 @@ public class CategoryController extends BasicController {
 	 * @param status
 	 * @return
 	 */
+	@SysLog
 	@PostMapping("/updateCategory")
 	public XyfJsonResult updateOne(Long id, String status, MultipartFile file, String title, String description) {
 		if (status.equals(DELETE)) {

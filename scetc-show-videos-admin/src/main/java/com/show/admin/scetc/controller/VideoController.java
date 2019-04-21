@@ -1,5 +1,6 @@
 package com.show.admin.scetc.controller;
 
+import com.show.admin.scetc.annotation.SysLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +38,7 @@ public class VideoController extends BasicController {
 	 * @return
 	 */
 	@PostMapping("/selectVideoType")
+	@SysLog
 	public XyfJsonResult selectVideoType(String keyword,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
 			@RequestParam(value = "pageSize", required = true, defaultValue = "10") Integer pageSize) {
@@ -54,6 +56,7 @@ public class VideoController extends BasicController {
 	 * @return
 	 */
 	@RequestMapping("/queryAll")
+	@SysLog
 	public XyfJsonResult queryAll(String keyword, String title,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
 			@RequestParam(value = "pageSize", required = true, defaultValue = "10") Integer pageSize, String status) {
@@ -72,6 +75,7 @@ public class VideoController extends BasicController {
 	 * @return
 	 */
 	@RequestMapping("/updateVideo")
+	@SysLog
 	public XyfJsonResult updateVideo(String status, String id) {
 
 		if (status.equals(DELETE)) {
@@ -88,6 +92,7 @@ public class VideoController extends BasicController {
 	 * @return
 	 */
 	@RequestMapping("/editVideos")
+	@SysLog
 	public XyfJsonResult editVideosSubmit() {
 		return XyfJsonResult.ok();// 编辑视频
 	}

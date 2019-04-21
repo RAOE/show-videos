@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.show.admin.scetc.annotation.SysLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,7 @@ public class IndexController extends BasicController {
 	 * @param request
 	 * @return
 	 */
+	@SysLog
 	@RequestMapping("/index")
 	public ModelAndView index(HttpServletRequest request) {
 
@@ -39,7 +41,7 @@ public class IndexController extends BasicController {
 		modelAndView.addObject("adminUser", adminUser);
 		return modelAndView;
 	}
-
+	@SysLog
 	@RequestMapping("/")
 	public ModelAndView show(HttpServletRequest request) {
 
@@ -60,6 +62,7 @@ public class IndexController extends BasicController {
 	 * 
 	 * @return
 	 */
+	@SysLog
 	@RequestMapping("/init")
 	public XyfJsonResult init() {
 

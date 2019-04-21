@@ -2,6 +2,7 @@ package com.show.admin.scetc.controller;
 
 import java.util.List;
 
+import com.show.admin.scetc.annotation.SysLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,12 +27,14 @@ public class RolesController {
 	// 查询所有的权限数据
 
 	@RequestMapping("queryAllRole")
+	@SysLog
 	public XyfJsonResult queryAllRole() {
 		return XyfJsonResult.ok(rolesService.queryAllRoles());
 	}
 
 	// 查询角色下所拥有的人物
 	@RequestMapping("/queryAllAdminUsersByRoleId")
+	@SysLog
 	public XyfJsonResult queryAllAdminUserByRoleId(String roleId) {
 
 		if (CommonUtils.isEmpty(roleId)) {
@@ -45,24 +48,28 @@ public class RolesController {
 
 	// 查询所有的能力
 	@RequestMapping("queryAllPower")
+	@SysLog
 	public XyfJsonResult queryAllPower() {
 		return XyfJsonResult.ok(rolesService.queryAllPowers());
 	}
 
 	// 查詢所有的能力于角色的關係
 	@RequestMapping("queryAllRoleToPower")
+	@SysLog
 	public XyfJsonResult queryAll() {
 		return XyfJsonResult.ok(rolesService.queryAllRolesToPower());
 	}
 
 	// 查询所有管理员与角色的对应关系
 	@RequestMapping("queryAllAdminToRole")
+	@SysLog
 	public XyfJsonResult queryAllAdminToRole() {
 		return XyfJsonResult.ok(rolesService.queryAllAdminToRole());
 	}
 
 	// 将用户添加到指定的角色中
 	@RequestMapping("addAdminUserAndRole")
+	@SysLog
 	public XyfJsonResult addAdminUserAndRole(String adminId, String roleId) {
 		if (CommonUtils.isEmpty(adminId) || CommonUtils.isEmpty(roleId)) {
 			return XyfJsonResult.errorMsg("用户id或者角色id不能为空");

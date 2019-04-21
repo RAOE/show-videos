@@ -1,5 +1,6 @@
 package com.show.admin.scetc.controller;
 
+import com.show.admin.scetc.annotation.SysLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,12 +26,14 @@ public class ReportController {
 	private ReportService reportService;
 
 	@PostMapping("/queryAll")
+	@SysLog
 	public XyfJsonResult queryAll(String keyword, Integer page, Integer pageSize) {
 		PageResult list = reportService.queryAll(page, pageSize, keyword);
 		return XyfJsonResult.ok(list);
 	}
 
 	@PostMapping("/undercarriage")
+	@SysLog
 	public XyfJsonResult undercarriage(String id, String status) {
 		reportService.undercarriageById(id, status);
 		return XyfJsonResult.ok();

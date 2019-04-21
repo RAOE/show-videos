@@ -9,6 +9,7 @@ import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.show.admin.scetc.annotation.SysLog;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.MultiValueMap;
@@ -47,6 +48,7 @@ public class BgmController extends BasicController {
 	 * @param pageSize
 	 * @return
 	 */
+	@SysLog
 	@RequestMapping("/selectBgmList")
 	public XyfJsonResult selectBgmList(String keyword, String title,
 			@RequestParam(value = "page", required = true, defaultValue = "1") Integer page,
@@ -64,6 +66,7 @@ public class BgmController extends BasicController {
 	 * @param name
 	 * @return
 	 */
+	@SysLog
 	@RequestMapping("/updateBgm")
 	public XyfJsonResult updateBgm(Long id, String status, String author, String name) {
 
@@ -84,6 +87,7 @@ public class BgmController extends BasicController {
 	 * @param id
 	 * @return
 	 */
+	@SysLog
 	@PostMapping("/selectResourceById")
 	public XyfJsonResult selectResourceById(Long id) {
 		// 根据id查询出一个背景音乐的全部信息
@@ -99,8 +103,9 @@ public class BgmController extends BasicController {
 	 * @return
 	 * @throws Exception
 	 */
+	@SysLog
 	@PostMapping("/addSubmit.do")
-	public synchronized @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {
+	public  @ResponseBody XyfJsonResult uploadMulPic(HttpServletRequest request) throws Exception {
 
 		AdminUser adminUserVo = (AdminUser) request.getSession().getAttribute("adminUser");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
