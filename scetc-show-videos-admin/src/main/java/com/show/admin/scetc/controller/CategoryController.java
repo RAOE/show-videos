@@ -107,7 +107,7 @@ public class CategoryController extends BasicController {
 	 */
 	@PostMapping("/add")
 	public @ResponseBody XyfJsonResult add(String name, String description, MultipartFile file) {
-		String savePath = filePath + "//" + "images";
+		String savePath = filePath + File.separator + "images";
 		File saveFile = new File(savePath);
 		if (!saveFile.exists()) {
 			saveFile.mkdirs();
@@ -120,7 +120,7 @@ public class CategoryController extends BasicController {
 			String saveName = UUID.randomUUID().toString() + houzhui;
 			try {
 				inputStream = file.getInputStream();
-				String finalPath = saveFile + "//" + saveName;
+				String finalPath = saveFile + File.separator + saveName;
 				fos = new FileOutputStream(finalPath);
 				Category category = new Category();
 				category.setContent(description);

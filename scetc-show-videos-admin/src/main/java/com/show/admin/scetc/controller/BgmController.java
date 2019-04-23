@@ -128,7 +128,7 @@ public class BgmController extends BasicController {
 					fileName = HtmlUtils.htmlEscape(fileName);
 					bgm.setAuthor(fileName);
 					bgm.setName(fileName);
-					bgm.setPath("\\bgm\\" + fosName);
+					bgm.setPath(File.separator+"bgm"+File.separator+ fosName);
 					bgmService.insert(bgm);
 					IOUtils.copy(files.getInputStream(), fos);// 复制流
 					SimpleDateFormat formate = new SimpleDateFormat();
