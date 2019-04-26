@@ -26,7 +26,7 @@ public class XssAndSqlFilter  implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
-        logger.info("--------------xss过滤---------------------");
+//        logger.info("--------------xss过滤---------------------");
         chain.doFilter(new XssHttpServletRequestWrapper((HttpServletRequest) request), response);
     }
     @Override

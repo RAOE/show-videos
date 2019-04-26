@@ -130,18 +130,7 @@ var selectBgm = function() {
 					var id = '<span title="ID:' + row.id + '">' + row.path + '</span>';
 					return id;
 				}
-			},{
-				title : '操作',
-				field : 'status',
-				align : 'center',
-				width : '5%',
-				formatter : function(value, row, index) {
-					
-					var a = '<button class="btn-sm btn-info" onclick="selectResourceById('+row.id+')"  data-target="#myModal" ">编辑</button> ';
-                    return a;
-				}
 			},
-			
 			{
 				title : '播放',
 				field : 'id',

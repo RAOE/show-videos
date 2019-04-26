@@ -34,6 +34,11 @@ public class Users {
     @ApiModelProperty(hidden=true)
     @Column(name = "receive_like_counts")
     private Integer receiveLikeCounts;
+    
+    private String phone;
+    @Column(name="realname")
+    private String realName;
+    
 
     /**
      * @return id
@@ -139,8 +144,24 @@ public class Users {
     public Integer getReceiveLikeCounts() {
         return receiveLikeCounts;
     }
+    
+    public String getPhone() {
+		return phone;
+	}
 
-    /**
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getRealName() {
+		return realName;
+	}
+
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
+
+	/**
      * @param receiveLikeCounts
      */
     public void setReceiveLikeCounts(Integer receiveLikeCounts) {

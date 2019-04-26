@@ -87,7 +87,6 @@ Introduction: The background management system as its own specialized graduation
 <p>云服务器地址:https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/</p>
 <p>关于后台管理系统 导入scetc-show-videos-admin项目</p>
 <p>关于分布式环境配置，观看相关的配置文件即可</p>
-
  <h2>开发交流</h2>
  <p>开发交流群:673926093
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=4e8e0b872c41655f261bbdd1add8a4246409548e5dfd89b6434b7247a4098ef0"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="苦力 Coder 大家庭" title="苦力 Coder 大家庭"></a></body>

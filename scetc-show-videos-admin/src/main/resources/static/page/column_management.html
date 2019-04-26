@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>秀视频后台管理平台-专栏模块</title>
-<meta name="keywords" content="秀视频后台管理平台是基于HTML5+css3编写的页面">
+<meta name="keywords" content="秀视频后台管理平台">
 <meta name="description" content="秀视频后台管理平台欢迎您的到来">
 <link rel="shortcut icon" href="favicon.ico">
 <link href="../css/github-gist.css" rel="stylesheet">
@@ -112,35 +112,43 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">专栏名称</label>
 							<div class="col-sm-10">
-								<input name="name" type="text" class="form-control">
+								<input id="name" name="name" type="text" class="form-control">
 							</div>
 						</div>
 						<div class="hr-line-dashed"></div>
 						<div class="form-group">
 							<label class="col-sm-2 control-label">简介</label>
 							<div class="col-sm-10">
-								<input name="description" type="text" class="form-control">
+								<input id="description" name="description" type="text"
+									class="form-control">
 							</div>
 						</div>
-
-						<label for="jobData" class="control-label"
-							style="float: left; padding-left: 15px;">上传图片</label>
-
-						<div class="col-xs-12 col-sm-4 col-md-4">
-							<div class="file-container"
-								style="display: inline-block; position: relative; overflow: hidden; vertical-align: middle">
-								<button class="btn btn-success fileinput-button" type="button">选择图片</button>
-								<input type="file" id="jobData" name="file"
-									onchange="loadFile(this.files[0])"
-									style="position: absolute; top: 0; left: 0; font-size: 34px; opacity: 0">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">预览</label>
+							<div class="col-sm-6">
+								<img src="../img/video.jpg" id="img" style="width: 160px; height: 160px;">
 							</div>
-							<span id="filename" style="vertical-align: middle">未上传文件</span>
+						</div>
+						<div class="form-group">
+							<label for="jobData" class="control-label"
+								style="float: left; padding-left: 15px;">上传图片</label>
+
+							<div class="col-xs-12 col-sm-4 col-md-4">
+								<div class="file-container"
+									style="display: inline-block; position: relative; overflow: hidden; vertical-align: middle">
+									<button class="btn btn-success fileinput-button" type="button">选择图片</button>
+									<input type="file" id="file" name="file"
+										onchange="loadFile(this.files[0])"
+										style="position: absolute; top: 0; left: 0; font-size: 34px; opacity: 0">
+								</div>
+								<span id="filename" style="vertical-align: middle">未上传文件</span>
+							</div>
 						</div>
 
 						<div class="form-group">
 							<div class="col-sm-4 col-sm-offset-2">
-								<button class="btn btn-primary" type="submit" id="check">提交内容</button>
-								<button class="btn btn-white" type="submit">取消</button>
+								<button class="btn btn-primary" type="button" id="tableSumbit">提交内容</button>
+								<button class="btn btn-white" type="button" id="cancel">取消</button>
 							</div>
 						</div>
 					</form>
@@ -166,8 +174,70 @@
 			src="../js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 		<script src="../js/colum/column.js"></script>
 		<script>
+		$("#cancel").click(function()
+		{
+			$('#modal-form').modal('hide');
+			$("#allBlog").bootstrapTable('refresh');
+		})
+		$("#tableSumbit").click(function()
+				{
+			       var form = new FormData();
+			       var name=$("#name").val();
+			       var description=$("#description").val();
+			       var fileObj = document.getElementsByName("file")[0].files[0];     
+			       form.append("name",name);
+			       form.append("description",description);
+			       form.append("file",fileObj);     
+			          　$.ajax({
+			               url:"../../category/add",
+			               type:"post",
+			               data:form,
+			               processData:false,
+			               contentType:false,
+			               success:function(data){
+			               swal("提交成功","","success");
+			        
+			                $('#modal-form').modal('hide');
+							$("#allBlog").bootstrapTable('refresh');
+
+			               }
+			     });
+			
+				})
+		</script>
+
+
+		<script>
 			function loadFile(file) {
 				$("#filename").html(file.name);
+				var fileName = $("#file").val();
+		        var fileObj = document.getElementsByName("file")[0].files[0];
+		        var reader = new FileReader();
+		        reader.readAsDataURL(fileObj);
+		        reader.onload = function (ev) {
+		            $("#img").attr("src", ev.target.result);
+		        }
+		        if (fileName == '' || fileName == undefined) {
+		            swal("文件名称不能为空", "请重新操作", "error");
+		            $("#file").empty();
+		            return;
+		        }
+		        if (fileObj.size >= 10240000)  //10M以上的图片无法上传
+		        {
+		            swal("图片大小超出限制", "请重新操作", "error");
+		            return;
+		        }
+		        var jpg = (fileName.indexOf(".jpg") > -1) || (fileName.toLowerCase().indexOf(".jpg") > -1);
+		        var png = (fileName.indexOf(".png") > -1) || (fileName.toLowerCase().indexOf(".png") > -1);
+		        var jpeg = (fileName.indexOf(".jpeg") > -1) || (fileName.toLowerCase().indexOf(".jpeg") > -1);
+		        //判断文件是否是图片类型
+		        if (jpg || png || jpeg) {
+
+		        } else {
+		            swal("请选择图片类型的图片", "请重新操作", "error");
+		            $("#file").empty();
+		            return;
+		        }
 			}
 		</script>
 </body>

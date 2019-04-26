@@ -1,0 +1,17 @@
+<view class="containor">
+<form bindsubmit="submitClick">
+   <view class="publish_imgs_area">
+    <!-- 视频上传图片按钮 -->
+    <view class="imgs_area" bindtap="uploadVideo">
+      <view class="iamge_item">
+        <image class="iamge_content" src="../resource/images/video.png" mode="aspectFill" />
+      </view>
+    </view>
+     <video name="video" class="video_item" src="{{tmpVideoUrl}}" controls></video>
+  </view>
+  <view class="btn_all_area">
+    <button class="btn_area" type="primary" formType="submit">开始编辑</button>
+    <button class="btn_area" type="warn" formType="button" bindtap='deleteVideo'>取消</button>
+  </view>
+</form>
+</view>

@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.util.Date;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.show.admin.scetc.annotation.SysLog;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.show.admin.scetc.pojo.Category;
 import com.show.admin.scetc.pojo.PageResult;
 import com.show.admin.scetc.service.CategoryService;
+import com.show.admin.scetc.utils.JSONResult;
 import com.show.admin.scetc.utils.XyfJsonResult;
 
 /**
@@ -89,10 +92,10 @@ public class CategoryController extends BasicController {
 	public XyfJsonResult updateOne(Long id, String status, MultipartFile file, String title, String description) {
 		if (status.equals(DELETE)) {
 			categoryService.delete(id);
-			return XyfJsonResult.ok();
+			return XyfJsonResult.ok("delete ok");
 		} else if (status.equals(UPDATE)) {
-			categoryService.update(id, title, description, file);
-			return XyfJsonResult.ok();
+			categoryService.update(id, title, description, file, filePath + File.separator + "images");
+			return XyfJsonResult.ok("update ok");
 		}
 		return XyfJsonResult.errorMsg("参数错误");
 	}
@@ -106,7 +109,8 @@ public class CategoryController extends BasicController {
 	 * @return
 	 */
 	@PostMapping("/add")
-	public @ResponseBody XyfJsonResult add(String name, String description, MultipartFile file) {
+	@ResponseBody
+	public JSONResult add(String name, String description, MultipartFile file) {
 		String savePath = filePath + File.separator + "images";
 		File saveFile = new File(savePath);
 		if (!saveFile.exists()) {
@@ -130,12 +134,11 @@ public class CategoryController extends BasicController {
 				category.setImageUrl("/images/" + saveName);
 				IOUtils.copy(inputStream, fos);
 				categoryService.add(category);
-
 			} catch (IOException e1) {
 				throw new RuntimeException(e1);// 抛出异常
 			}
 		}
-		return XyfJsonResult.ok();
+		return JSONResult.ok();
 	}
 
 }

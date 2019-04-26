@@ -38,7 +38,7 @@
 				<div class="ibox-content">
 					<form class="form-horizontal" name="sub_form"
 						enctype="multipart/form-data">
-						<input type="hidden" name="id" th:value="${category.id}" /> <input
+						<input id="id" type="hidden" name="id" th:value="${category.id}" /> <input
 							type="hidden" name="status" th:value="1" />
 						<div class="form-group">
 							<label class="col-sm-2 control-label">标题</label>
@@ -51,7 +51,7 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">内容</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" name="description"
+								<input type="text" class="form-control" id="description" name="description"
 									th:value="${category?.content}" /> <span
 									class="help-block m-b-none">描述</span>
 							</div>
@@ -59,14 +59,14 @@
 						<div class="form-group">
 							<label class="col-sm-2 control-label">图片</label>
 							<div class="col-sm-10">
-								<img th:src="${category?.imageUrl}"
-									style="width: 200xp; height: 200px" /> <input type="file"
+								<img id="img" th:src="${category?.imageUrl}"
+									style="width: 200xp; height: 200px" /> <input onchange="uploadFile()" id="file" type="file"
 									name="file" />
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-4 col-sm-offset-2">
-								<button class="btn btn-primary" onclick="updateSubmit()">保存修改</button>
+								<button class="btn btn-primary" type="button" onclick="updateSubmit()">保存修改</button>
 								<button class="btn btn-white" onclick="back()">返回</button>
 							</div>
 						</div>
@@ -77,32 +77,70 @@
 	</div>
 </body>
 <script type="text/javascript">
+function uploadFile()
+{
+	$("#filename").html(file.name);
+	var fileName = $("#file").val();
+    var fileObj = document.getElementsByName("file")[0].files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(fileObj);
+    reader.onload = function (ev) {
+        $("#img").attr("src", ev.target.result);
+    }
+    if (fileName == '' || fileName == undefined) {
+        swal("文件名称不能为空", "请重新操作", "error");
+        $("#file").empty();
+        return;
+    }
+    if (fileObj.size >= 10240000)  //10M以上的图片无法上传
+    {
+        swal("图片大小超出限制", "请重新操作", "error");
+        return;
+    }
+    var jpg = (fileName.indexOf(".jpg") > -1) || (fileName.toLowerCase().indexOf(".jpg") > -1);
+    var png = (fileName.indexOf(".png") > -1) || (fileName.toLowerCase().indexOf(".png") > -1);
+    var jpeg = (fileName.indexOf(".jpeg") > -1) || (fileName.toLowerCase().indexOf(".jpeg") > -1);
+    //判断文件是否是图片类型
+    if (jpg || png || jpeg) {
+
+    } else {
+        swal("请选择图片类型的图片", "请重新操作", "error");
+        $("#file").empty();
+        return;
+    }
+	
+	
+}
+</script>
+<script type="text/javascript">
 	function back() {
 		window.location.href = document.referrer;
 	}
 	function updateSubmit() {
+		       var form = new FormData();
+		       var id=$("#id").val();
+		       var name=$("#title").val();
+		       var description=$("#description").val();
+		       var fileObj = document.getElementsByName("file")[0].files[0];     
+		       form.append("name",name);
+		       form.append("description",description);
+		       form.append("file",fileObj);   
+		       form.append("id",id);
+		       form.append("status","1");     
+		          　$.ajax({
+		               url:"../../category/updateCategory",
+		               type:"post",
+		               data:form,
+		               processData:false,
+		               contentType:false,
+		               success:function(data){
+		               swal("提交成功","","success");
+		     
+		                $('#modal-form').modal('hide');
+						$("#allBlog").bootstrapTable('refresh');
 
-		var title = document.getElementById("title").text;
-		var description = document.getElementById("description");
-		var files = document.querySelector('input[type=file]').files;
-		var formData = new FormData();
-
-		$.ajax({
-			//几个参数需要注意一下
-			type : "POST",//方法类型
-			dataType : "json",//预期服务器返回的数据类型
-			url : "../../category/updateCategory",//url
-			success : function(result) {
-				console.log(result);//打印服务端返回的数据(调试用)
-				if (result.resultCode == 200) {
-					alert("SUCCESS");
-				}
-				;
-			},
-			error : function(e) {
-				alert("异常！" + e);
-			}
-		});
+		               }
+		     });
 
 	}
 </script>

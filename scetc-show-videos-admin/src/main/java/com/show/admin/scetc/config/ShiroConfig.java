@@ -11,10 +11,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * Shiro配置类
- * 1.配置ShiroFilterFactory 2.配置SecurityManager
- * @author zhengkai
- *
+ * 
+ * @author 徐塬峰
+ * @date:   2019年4月26日 上午9:31:45
+ * @version V1.0
  */
 @Configuration
 public class ShiroConfig {

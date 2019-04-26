@@ -1,7 +1,14 @@
 package com.show.admin.scetc.serviceImpl;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -69,10 +76,39 @@ public class CategoryServiceImp implements CategoryService {
 
 	@Transactional(propagation = Propagation.REQUIRED)
 	@Override
-	public void update(Long id, String name, String content, MultipartFile file) {
-
-		Category category = new Category();
-		category.setId(id);
+	public void update(Long id, String name, String content, MultipartFile file,String savePath) {
+	
+	
+		File saveFile = new File(savePath);
+		if (!saveFile.exists()) {
+			saveFile.mkdirs();
+		}
+		if (file != null && file.getSize() > 0) {
+			InputStream inputStream = null;
+			FileOutputStream fos = null;
+			String houzhui = file.getOriginalFilename().toString().substring(
+					file.getOriginalFilename().toString().length() - 4, file.getOriginalFilename().toString().length());
+			String saveName = UUID.randomUUID().toString() + houzhui;
+			try {
+				inputStream = file.getInputStream();
+				String finalPath = saveFile + File.separator + saveName;
+				fos = new FileOutputStream(finalPath);
+			    Category category=new Category();
+			    category.setId(id);
+			    category=categoryMapper.selectOne(category);
+				category.setContent(content);
+				category.setCreateTime(new Date());
+				category.setIsDeleted(false);
+				category.setName(name);
+				category.setImageUrl("/images/" + saveName);
+				IOUtils.copy(inputStream, fos);
+				System.out.println(category.toString());
+				categoryMapper.updateByPrimaryKeySelective(category);
+				
+			} catch (IOException e1) {
+				throw new RuntimeException(e1);// 抛出异常
+			}
+		}
 		System.out.println(id);
 
 	}

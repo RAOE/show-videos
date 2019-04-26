@@ -26,7 +26,7 @@ public interface CategoryService {
 	List<Category> queryAll();
 
 	// 根据id 来更新一个专栏的基本信息
-	void update(Long id, String title, String description, MultipartFile file);
+	void update(Long id, String title, String description, MultipartFile file,String savePath);
 
 	// 根据id查询出一条专栏的详细信息
 	Category selectOne(Long id);
