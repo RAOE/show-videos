@@ -83,17 +83,16 @@ Introduction: The background management system as its own specialized graduation
 </br></br></br>
 <h2>如何快速导入项目?</h2>
 <p>将scetc-show-videos-page小程序页面导入到微信开发工具栏中即可</p>
-<p>如需使用本地api需要部署scetc-show-videos-dev项目,并且在app.json文件中修改serverUr服务器地址</p>
+<p>如需使用本地api需要部署scetc-show-videos-dev项目（项目以war包发布，需要额外配置tomcat环境）,并且在app.json文件中修改serverUr服务器地址</p>
 <p>云服务器地址:https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/</p>
 <p>关于后台管理系统 导入scetc-show-videos-admin项目</p>
 <p>关于分布式环境配置，观看相关的配置文件即可</p>
  <h2>开发交流</h2>
  <p>开发交流群:673926093
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=4e8e0b872c41655f261bbdd1add8a4246409548e5dfd89b6434b7247a4098ef0"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="苦力 Coder 大家庭" title="苦力 Coder 大家庭"></a></body>
-
+该项目禁止未经过作者允许用于商业用途，仅作为交流学习为目的。
 项目依然在建设中，如果有相关的意见欢迎提出，项目完成时间估计为2019.6
 </p>
-
 
 
  <h2>作品荣耀</h2>

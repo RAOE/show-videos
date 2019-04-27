@@ -17,6 +17,7 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author 徐塬峰
  * 创建时间：2018年6月11日 下午4:00:56
  */
+//该项目启用war包部署，启动时候需要额外配置tomcat环境
 //http://localhost:8080/swagger-ui.html
 public class Application {
 	public static void main(String[] args) {
