@@ -90,11 +90,10 @@ Introduction: The background management system as its own specialized graduation
  <h2>开发交流</h2>
  <p>开发交流群:673926093
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=4e8e0b872c41655f261bbdd1add8a4246409548e5dfd89b6434b7247a4098ef0"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="苦力 Coder 大家庭" title="苦力 Coder 大家庭"></a></body>
+</p><p>
 该项目禁止未经过作者允许用于商业用途，仅作为交流学习为目的。
 项目依然在建设中，如果有相关的意见欢迎提出，项目完成时间估计为2019.6
 </p>
-
-
  <h2>作品荣耀</h2>
  <p>学院院计算机比赛一等奖</p>
  <p>软件著作权</p>
