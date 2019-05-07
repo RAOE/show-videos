@@ -3,37 +3,35 @@ const app = getApp()
 Page({
   data: {
     faceUrl: "../resource/images/noneface.png",
-    fansCounts:"",
-    followCounts:"",
-    videoList:[], 
-    receiveLikeCounts:"",
-    nickname:"",
+    fansCounts: "",
+    followCounts: "",
+    videoList: [],
+    receiveLikeCounts: "",
+    nickname: "",
     isMe: true,
     isFollowed: false,
-    serverUrl:"",
+    serverUrl: "",
     publisherId: ""
   },
-
   onGotUserInfo: function (e) {
-   
+
   },
-  onShow:function()
-  {
+  onShow: function () {
     var me = this;
     var serverUrl = app.serverUrl;
     var user = app.getGlobalUserInfo();
     var userId = user.id;
     var publisherId = app.globalData.publisherId;
     app.globalData.publisherId = null;
-    if (user==null||user==undefined||user=='')
-    {
+    if (user == null || user == undefined || user == '') {
       wx.redirectTo({
-          url: '../userLogin/login',
-        })
-    } 
+        url: '../userLogin/login',
+      })
+      return ;
+    }
     me.setData(
       {
-        isMe:true
+        isMe: true
       }
     )
     if (publisherId != null && publisherId != '' && publisherId != undefined && publisherId != userId) {
@@ -46,8 +44,7 @@ Page({
       )
     }
     var that = this;
-    var serverUrl = app.serverUrl;
-    wx.request({
+    var serverUrl = app.serverUrl;    wx.request({
       url: serverUrl + "/user/query?userId=" + userId,
       method: "post"
       ,
@@ -128,13 +125,12 @@ Page({
     var userId = user.id;
     var publisherId = app.globalData.publisherId;
     app.globalData.publisherId = null;
-    console.log("user" + user);
     if (user == null || user == undefined || user == '') {
       wx.redirectTo({
         url: '../userLogin/login',
       })
-    } 
-    console.log("----------------------------------");
+      return ;
+    }
     if (publisherId != null && publisherId != '' && publisherId != undefined && publisherId != userId) {
       userId = publisherId;
       me.setData(
@@ -151,11 +147,11 @@ Page({
       method: "post"
       ,
       header:
-        {
-          'content-type': 'application/json'//默认值
-        }, 
+      {
+        'content-type': 'application/json'//默认值
+      },
       success: function (res) {
-            var serverUrl = app.serverUrl;
+        var serverUrl = app.serverUrl;
 
         if (res.data.status == 200) {
           var userInfo = res.data.data;
@@ -181,31 +177,29 @@ Page({
                 {
                   isFollowed: res.data.data
                 })
-               //如果此时用户点击的其他人 则应该查询出他人的视频
-              var userId=user.id;
-              var isMe=me.data.isMe;
-              if (isMe==false)
-              {
-                userId=publisherId;
+              //如果此时用户点击的其他人 则应该查询出他人的视频
+              var userId = user.id;
+              var isMe = me.data.isMe;
+              if (isMe == false) {
+                userId = publisherId;
               }
-               //继续查询 查询自己发布的视频
-               wx.request({
-                 url: serverUrl + '/video/queryVideosByUser?userId=' + userId,
-                 method:"post",
-                 success(res)
-                 {
-                   //根据视频的id去查询
-                    var videoList=res.data.data;
-                    me.setData(
-                      {
-                          videoList: videoList,
-                          serverUrl: app.serverUrl
-                      }
-                    )
-                   //保存videoList对象
-                   //遍历videoList对象并显示到页面上
-                 }
-               })
+              //继续查询 查询自己发布的视频
+              wx.request({
+                url: serverUrl + '/video/queryVideosByUser?userId=' + userId,
+                method: "post",
+                success(res) {
+                  //根据视频的id去查询
+                  var videoList = res.data.data;
+                  me.setData(
+                    {
+                      videoList: videoList,
+                      serverUrl: app.serverUrl
+                    }
+                  )
+                  //保存videoList对象
+                  //遍历videoList对象并显示到页面上
+                }
+              })
             }
           })
         }
@@ -244,7 +238,7 @@ Page({
           {
             isFollowed: true,
           }
-          
+
         )
         var that = me;
         var serverUrl = app.serverUrl;
@@ -253,9 +247,9 @@ Page({
           method: "post"
           ,
           header:
-            {
-              'content-type': 'application/json'//默认值
-            },
+          {
+            'content-type': 'application/json'//默认值
+          },
           success: function (res) {
             if (res.data.status == 200) {
               var userInfo = res.data.data;
@@ -271,8 +265,8 @@ Page({
                   receiveLikeCounts: userInfo.receiveLikeCounts,
                 })
             }
-      }
-    })
+          }
+        })
       }
     })
   },
@@ -300,9 +294,9 @@ Page({
           method: "post"
           ,
           header:
-            {
-              'content-type': 'application/json'//默认值
-            },
+          {
+            'content-type': 'application/json'//默认值
+          },
           success: function (res) {
             if (res.data.status == 200) {
               var userInfo = res.data.data;
@@ -320,7 +314,7 @@ Page({
             }
           }
         })
-            
+
       }
 
     })
@@ -349,9 +343,9 @@ Page({
             filePath: tempFilePaths[0],
             name: 'file',
             header:
-              {
-                'content-type': 'application/json'//默认值
-              },
+            {
+              'content-type': 'application/json'//默认值
+            },
             success: function (res) {
               var data = JSON.parse(res.data);
               wx.hideLoading();
@@ -434,9 +428,9 @@ Page({
       url: serverUrl + '/logout?userId=' + user.id,
       method: "POST",
       header:
-        {
-          'content-type': 'application/json'//默认值
-        },
+      {
+        'content-type': 'application/json'//默认值
+      },
       success: function (res) {
 
 

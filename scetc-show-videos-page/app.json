@@ -1,13 +1,13 @@
 {
-  "pages": [ 
+  "pages": [
     "pages/category/category",
     "pages/userLogin/login",
-    "pages/userRegist/regist", 
+    "pages/userRegist/regist",
     "pages/mine/mine",
-    "pages/chooseBgm/chooseBgm",     
-    "pages/index/index", 
+    "pages/chooseBgm/chooseBgm",
+    "pages/index/index",
     "pages/videoInfo/videoInfo",
-    "pages/searchVideos/searchVideos", 
+    "pages/searchVideos/searchVideos",
     "pages/report/report",
     "pages/bootstrap/bootstrap",
     "pages/upload/upload"
@@ -46,6 +46,6 @@
       }
     ]
   },
-  "debug": true
-
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
 }
