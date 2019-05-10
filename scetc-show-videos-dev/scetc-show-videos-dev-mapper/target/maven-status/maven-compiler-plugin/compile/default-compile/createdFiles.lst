@@ -1,0 +1,10 @@
+com/show/mapper/UsersLikeVideosMapper.class
+com/show/mapper/UserFansMapper.class
+com/show/mapper/BgmMapper.class
+com/show/mapper/UsersMapper.class
+com/show/mapper/UsersReportMapper.class
+com/show/mapper/CategoryMapper.class
+com/show/mapper/VideosVoMapper.class
+com/show/mapper/SearchRecordsMapper.class
+com/show/mapper/VideosMapper.class
+com/show/mapper/CommentsMapper.class

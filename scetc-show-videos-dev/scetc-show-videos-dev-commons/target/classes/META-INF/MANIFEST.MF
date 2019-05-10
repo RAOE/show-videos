@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: scetc-show-videos-dev-commons
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: xuyuanfeng
+Implementation-Vendor-Id: com.scetc.show
+Build-Jdk: 1.8.0_211
+Implementation-URL: http://projects.spring.io/spring-boot/scetc-show-v
+ ideos-dev/scetc-show-videos-dev-commons/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
