@@ -9,17 +9,10 @@ var returnAllCount = function() {
 		}, 500);
 	}
 }
-
 // 实现点击类别传参数到后台
 $("#toolbar .btn-group .btn").click(function() {
 	selectReport();
 });
-
-
-
-
-
-
 // 初始化表格数据
 // 初始化表格数据
 var selectReport = function() {
@@ -144,18 +137,6 @@ var selectReport = function() {
 					var id = '<span title="ID:' + index + '">' + row.userName + '</span>';
 					return id;
 				}
-			},
-			{
-				title : '查看',
-				field : 'id',
-				align : 'center',
-				width : '5%',
-				formatter : function(value, row, index) {
-					// 查看
-					var a = '<a  class=" btn-sm btn-primary" href='+row.video_path+'  data-target="#myModal" ">查看</a> ';
-				    return a;
-				    
-				},
 			},
 			{
 				title : '執行',

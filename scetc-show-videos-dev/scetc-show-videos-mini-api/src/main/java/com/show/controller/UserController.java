@@ -188,15 +188,5 @@ public class UserController extends BasicController {
 		userService.userUnFollow(userId,fanId);
 		return XyfJsonResult.ok();
 	}
-	//保存手机号
-	@PostMapping(value ="/savePhone")
-	public XyfJsonResult savePhone(String realName,String phone,String userId)
-	{
-	    Users userInfo=userService.queryUserInfo(userId);
-        userInfo.setPhone(phone);
-        userInfo.setRealName(realName);
-        userService.updateUserInfo(userInfo);
-        return XyfJsonResult.ok();
-	}
 	
 }

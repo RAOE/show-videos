@@ -17,9 +17,6 @@ public class Users {
     @ApiModelProperty(hidden=true)
     @Column(name = "face_image")
     private String faceImage;
-  /**
-   * 昵称
-   */
     @ApiModelProperty(hidden=true)
     private String nickname;
     
@@ -34,8 +31,6 @@ public class Users {
     @ApiModelProperty(hidden=true)
     @Column(name = "receive_like_counts")
     private Integer receiveLikeCounts;
-    
-    private String phone;
     @Column(name="realname")
     private String realName;
     
@@ -144,15 +139,6 @@ public class Users {
     public Integer getReceiveLikeCounts() {
         return receiveLikeCounts;
     }
-    
-    public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
 	public String getRealName() {
 		return realName;
 	}
