@@ -1,4 +1,4 @@
-﻿# 秀视频--小程序社交软件
+# 秀视频--小程序社交软件
 #
 <h2>线上版</h2>
 <img src="./myimg/wx.jpg">
@@ -95,6 +95,7 @@ Introduction: The background management system as its own specialized graduation
 项目依然在建设中，如果有相关的意见欢迎提出，项目完成时间估计为2019.6
 </p>
  <h2>作品荣耀</h2>
+  <p>省计算机比赛二等奖</p>
  <p>学院院计算机比赛一等奖</p>
  <p>软件著作权</p>
  </br>

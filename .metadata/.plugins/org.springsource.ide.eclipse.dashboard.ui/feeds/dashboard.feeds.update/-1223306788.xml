@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+	<channel>
+		<title>Spring Tool Suites 3 Updates</title>
+		<link>https://spring.io/tools</link>
+		<description>This feeds imforms about important updates relevant to users of STS 3.</description>
+		<generator>Feeder 2.0.7(1195) http://reinventedsoftware.com/feeder/</generator>
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<language>en-us</language>
+		<managingEditor>sts@springsource.com</managingEditor>
+		<pubDate>Wed, 27 Mar 2019 10:38:33 +0100</pubDate>
+		<lastBuildDate>Wed, 27 Mar 2019 10:38:33 +0100</lastBuildDate>
+		<atom:link href="https://dist.springsource.com.s3.amazonaws.com/release/STS/doc/updates.xml" rel="self" type="application/rss+xml"/>
+
+		<item>
+            <title>Thanks for installing STS 3.9.8</title>
+            <link>https://spring.io/tools3</link>
+            <description><![CDATA[<form><p><a href="https://pivotal.io">Pivotal</a> has released an update to Spring Tool Suite 3 (STS3), the best Eclipse-powered development environment for building Spring powered enterprise application.</p>
+		<p>Please review the following documents:</p>
+		<li bindent="3"><a href="https://docs.spring.io/sts/nan/v398/NewAndNoteworthy.html">3.9.8 New &amp; Noteworthy</a></li><p></p></form>]]></description>
+            <pubDate>Wed, 27 Mar 2019 12:13:33 +0100</pubDate>
+			<category>version=[3.9.8.201903260646-RELEASE,4.0.0)</category>
+		<!--            <category>severity=important</category>-->
+	        <guid isPermaLink="false">thanks-for-installing-sts-398</guid>
+		</item>
+		
+		<item>
+			<title>STS 3.9.8 has been released</title>
+			<link>https://spring.io/tools3</link>
+			<description><![CDATA[<form><p><a href="http://pivotal.io">Pivotal</a> has released an update to Spring Tool Suite 3 (STS3), the best Eclipse-powered development environment for building Spring powered enterprise application.</p><p>It is recommend to update as soon as possible.</p>
+		<p>Please review the following documents:</p>
+		<li bindent="3"><a href="https://docs.spring.io/sts/nan/v398/NewAndNoteworthy.html">3.9.8 New &amp; Noteworthy</a></li><p></p></form>]]></description>
+        	<pubDate>Web, 27 Mar 2019 12:12:33 +0100</pubDate>
+			<category>version=[0,3.9.8.201903260646-RELEASE)</category>
+			<category>severity=important</category>
+			<guid isPermaLink="false">sts-398-released</guid>
+		</item>
+
+	</channel>
+</rss>

@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Spring</title>
+  <link rel="alternate" href="https://spring.io/blog" />
+  <link rel="self" href="https://spring.io/blog.atom" />
+  <id>http://spring.io/blog.atom</id>
+  <icon>https://spring.io/favicon.ico</icon>
+  <updated>2019-05-24T09:45:58Z</updated>
+  <entry>
+    <title>A Bootiful Podcast: Twitter's Chris Thalinger on Java, Graal, JVMs, JITs, and more</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/24/a-bootiful-podcast-twitter-s-chris-thalinger-on-java-graal-jvms-jits-and-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-24:3692</id>
+    <updated>2019-05-24T09:45:58Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! In this installment of a Bootiful Podcast &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Twitter&amp;rsquo;s &lt;a href="http://twitter.com/ChrisThalinger"&gt;Chris Thalinger (@christhalinger)&lt;/a&gt; about Graal VM; JITs; Compilers; Hawaii, USA; Sao Paolo, Brazil; and so much more.&lt;/p&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/625772892&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tools 4.2.2 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/24/spring-tools-4-2-2-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2019-05-24:3691</id>
+    <updated>2019-05-24T08:10:31Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 4.2.2 release of the Spring Tools 4 for Eclipse, Visual Studio Code, and Atom.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;(all language servers)&lt;/em&gt; performance: additional improvements to language server startup time&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; new: navigation for bean identifiers, bean classes, and property names for Spring XML config files&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; new: content-assist rolled out for many more Spring XML config elements and attributes&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Spring Boot)&lt;/em&gt; fixed: Detect @RequestMapping with path defined as constant instead of literal string (&lt;a href="https://github.com/spring-projects/sts4/issues/281"&gt;#281&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(CF Manifest)&lt;/em&gt; new: added support for anchors and references&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; new: added project-related XSD schema resolution&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;(Eclipse)&lt;/em&gt; fixed: high CPU and memory spikes when code minings and live hovers are active (&lt;a href="https://github.com/spring-projects/sts4/issues/292"&gt;#292&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To download the distribution for Eclipse and find links to the marketplace entries for Visual Studio Code and Atom, please go visit:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Tools 4: &lt;a href="https://spring.io/tools/"&gt;https://spring.io/tools/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed changes can be found here: &lt;a href="https://github.com/spring-projects/sts4/wiki/Changelog#2019-05-24-422-release"&gt;https://github.com/spring-projects/sts4/wiki/Changelog#2019-05-24-422-release&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Spring Tools 4.3.0 is scheduled to be released in late June 2019 and will be based on Eclipse 2019-06.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: Reactive Transactions</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/22/spring-tips-reactive-transactions" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-21:3689</id>
+    <updated>2019-05-22T00:00:00Z</updated>
+    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/9henAE6VUbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;Hi Spring fans! In this installment &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; looks at the just-announced support for reactive transactions, now supported in both &lt;a href="https://r2dbc.io/"&gt;R2DBC&lt;/a&gt; and Spring Data MongoDB. &lt;/p&gt;
+&lt;p&gt;speaker: Josh Long&lt;br/&gt;twitter: @starbuxman&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Cloud Data Flow 2.1 GA Released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/21/spring-cloud-data-flow-2-1-ga-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Pollack</name>
+    </author>
+    <id>tag:spring.io,2019-05-20:3686</id>
+    <updated>2019-05-21T14:40:59Z</updated>
+    <content type="html">&lt;p&gt;The Spring Cloud Data Flow team is pleased to announce the release of 2.1 of Data Flow.&lt;/p&gt;
+&lt;p&gt;We have a brand new website with great new content, which is where you can find our &lt;a href="https://dataflow.spring.io/getting-started/"&gt;getting started guide&lt;/a&gt; for use on Cloud Foundry and Kubernetes and your Local Machine.&lt;/p&gt;
+&lt;p&gt;Here are the highlights:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;New Dedicated Data Flow Website&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The Data Flow team takes pride is openly communicating with the community in various forums including StackOverflow, Gitter, GitHub, Twitter, and at times in Email and Zoom calls even.&lt;/p&gt;
+&lt;p&gt;However, we realized that we could provide a much better experience to answer common questions and provide an easier on-ramp to using Data Flow if we focused on improving the online documentation. The reference guide was not the ideal format to achieve that goal, so we embarked on creating a new website - &lt;a href="https://dataflow.spring.io"&gt;https://dataflow.spring.io&lt;/a&gt; - that acts as the hub for learning about all things Data Flow related.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://github.com/spring-cloud/spring-cloud-dataflow/raw/master/spring-cloud-dataflow-docs/src/main/asciidoc/images/new-web-site.png" alt="scdf-new-website" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Helm Chart Updates&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;With continued interest from the community, we have now added support to toggle between RabbitMQ and Apache Kafka when using Data Flow&amp;rsquo;s &lt;a href="https://hub.kubeapps.com/charts/stable/spring-cloud-data-flow"&gt;Helm Chart&lt;/a&gt;. The &lt;a href="https://dataflow.spring.io/docs/installation/kubernetes/helm/"&gt;installation instructions for Kubernetes&lt;/a&gt; is the best place to get started using the Chart. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Concurrent Launch Throttling for Tasks&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;With the recent feedback from the community concerning the concurrent task launching algorithm, we have redesigned the approach to decide whether or not Tasks are currently running, and if running, how many are concurrently in running state. A more realistic view of what’s actually happening with Tasks is now possible by querying against the runtime status of the Tasks in the underlying platforms (e.g., Local, Cloud Foundry and Kubernetes). You can read all about the new design and the corner cases from the &lt;a href="http://docs.spring.io/spring-cloud-dataflow/docs/2.1.0.RELEASE/reference/htmlsingle/#spring-cloud-dataflow-task-limit-concurrent-executions"&gt;reference guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Deployer Properties as Dropdown&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A growing number of support cases indicated that it is hard for the developers to discover and then supply the platform-specific deployer properties when deploying streams and tasks. We are fixing that by adding a new dropdown with deployer properties automatically populated based on the platform where Data Flow is configured to run. The same also will apply for scenarios when there are 1 or more target platforms configured, the dropdown updates to reflect the target platform. We have implemented this for Stream deployments and in the next version will include support for Tasks.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/50398/56348316-137ab480-61be-11e9-9f92-6607b7ec6fc6.png" alt="scdf-local-deployment-properties-1" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Switched to ZenHub&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;From a product backlog perspective, we have switched and migrated all the GitHub backlog from Waffle to ZenHub (see: &lt;a href="https://waffle.io/"&gt;reasons&lt;/a&gt;). If you’re interested in following along the product release progress, you could install the ZenHub plugin for the web browser and navigate to ZenHub tab in the Data Flow GitHub repository. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Stay in touch&lt;/strong&gt;​&lt;/p&gt;
+&lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;StackOverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - May 21, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/21/this-week-in-spring-may-21-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-21:3688</id>
+    <updated>2019-05-21T12:39:02Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! It&amp;rsquo;s been quite a crazy week! I was in Spring I/O last week in Barcelona, Spain and there was a deluge of interesting news to come out of the show! I loved the show - a sort of mini SpringOne - and am chomping at the bit to see what comes next. I&amp;rsquo;m now beginning a small tour starting in Zurich, Switzerland; then I&amp;rsquo;m off to the paradise-like Paris, France for the epic SpringOne Tour event there, then I&amp;rsquo;m off to Minsk, Belarus; then off to Barcelona, Spain for JBCN, and then - finally - home for the middle school graduation of my kid at the end of the month. So much exciting stuff culminating in an even more exciting event, I can hardly stand it! &lt;/p&gt;
+&lt;p&gt;Anyway, we&amp;rsquo;ve got tons to get to today, so, let&amp;rsquo;s!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;I love Ben Wilcock&amp;rsquo;s look at the 5th anniversary of PCF, &lt;a href="https://spring.io/blog/2019/05/21/pivotal-cloud-foundry-is-5-years-old-here-s-how-it-changed-my-life"&gt;&lt;em&gt;Pivotal Cloud Foundry is 5 years old, here’s how it changed my life&amp;hellip;&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/17/a-bootiful-podcast-community-member-nicolas-frankel-on-testing-security-and-more"&gt;A Bootiful Podcast: Community Member Nicolas Frankel on Testing, Security, and More&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/16/reactive-transactions-with-spring"&gt;Reactive Transactions with Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/15/reactor-dysprosium-m1-is-available-now"&gt;Reactor Dysprosium-M1 is Available Now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/15/spring-data-r2dbc-1-0-m2-and-spring-boot-starter-released"&gt;Spring Data R2DBC 1.0 M2 and Spring Boot starter released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/15/spring-boot-2-1-5-released"&gt;Spring Boot 2.1.5 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/15/spring-boot-2-2-m3-available-now"&gt;Spring Boot 2.2 M3 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Last week I looked at using Kafka from your Spring Batch ETL flow in this Spring Tips, &lt;a href="https://spring.io/blog/2019/05/15/spring-tips-spring-batch-and-apache-kafka"&gt;&lt;em&gt;Spring Tips: Spring Batch and Apache Kafka&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Integration lead Gary P. Russell has a &lt;a href="https://twitter.com/springcentral/status/1130798541356638208"&gt; wonderful post on Spring for Apache Kafka&lt;/a&gt; over on the Confleunt blog&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/making/status/1130694508935491584?s=12"&gt;twitter.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I love the new &amp;ldquo;Push to Pivotal WS&amp;rdquo; button on the various &lt;a href="http://Spring.io/guides"&gt;Spring guides&lt;/a&gt;. Check out this one - &lt;a href="https://spring.io/guides/gs/rest-service/"&gt;Building a RESTful Web Service&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Have you tried Armeria? It&amp;rsquo;s an interesting project from Netty-creator Trustin Lee. &lt;a href="https://line.github.io/armeria/"&gt;It has integrations for Spring&lt;/a&gt; and it looks kind of interesting.&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/rbrtwnklr/status/1129658828226748417"&gt;Lots of interesting notes by Robert Winkler on the new release of Resilience4J&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/snicoll/status/1128939783512887296"&gt;Did you see that we announced support for Kotlin-based configuration for Gradle?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://speakerdeck.com/meistermeier/what-the-graph?slide=40"&gt;Take a look at the new, reactive Spring Data Neo4j&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Interesting talk from Andreas Evers on using [Spinnaker for cutting-edge continuous delivery(&lt;a href="https://twitter.com/springcloud/status/1129081211710787589"&gt;https://twitter.com/springcloud/status/1129081211710787589&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/wiki/GraalVM-native-image-support"&gt;Have you seen our GraalVM native image page&lt;/a&gt;?&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1129056694686892032"&gt;This is pretty interesting: Spring Cloud Sleuth is used by Netflix&lt;/a&gt;!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/bclozel/status/1128941501218791425"&gt;Want a quick review of the Kotlin related announcements from Spring IO?&lt;/a&gt; Check out this thread.&lt;/li&gt;
+  &lt;li&gt;Exciting news! &lt;a href="https://twitter.com/springcentral/status/1128898643686232064"&gt;Spring Boot Maven downloads have more than doubled&lt;/a&gt; in the past year, and are up 23% in just the past 3 months. Given that we&amp;rsquo;re talking about tens of millions of downlaods heere, those are some impressive numbers!&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://twitter.com/springcentral/status/1128898695859232768"&gt;And of course there&amp;rsquo;s a 138% increase over the last year in Spring Cloud downloads!&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Pivotal Cloud Foundry is 5 years old, here’s how it changed my life...</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/21/pivotal-cloud-foundry-is-5-years-old-here-s-how-it-changed-my-life" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ben Wilcock</name>
+    </author>
+    <id>tag:spring.io,2019-05-21:3687</id>
+    <updated>2019-05-21T10:34:00Z</updated>
+    <content type="html">&lt;p&gt;&lt;a href="https://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt; often says that “production is the best place on the Internet.” But where I used to work, developers needed to negotiate with operations, networks, and security before their code could go anywhere near this promised land. &lt;/p&gt;
+&lt;p&gt;Understandably, each of these disciplines seemed to have the same hidden agenda: change is bad. Experience had taught us that change was difficult and error-prone, so as a company we’d become risk-averse and cautious about our deployments. Releases were infrequent and large. There was plenty that could go wrong.&lt;/p&gt;
+&lt;p&gt;In spite of this, every six months or so developers would bundle up their code changes into a release, write the release notes, create a rollback plan, and wait around until midnight on a Saturday to deploy it. The deployment would be done manually, and not by developers, but by someone in operations. Developers were strictly passengers on this particular release-train (after all, we’re “the people who write all the bugs” as my friend &lt;a href="https://twitter.com/cote"&gt;Coté&lt;/a&gt; would jokingly say). &lt;/p&gt;
+&lt;p&gt;So if production really is “the best place on the Internet”, I could only go there by proxy, at 3:00 AM on a Sunday, and only if I’d charmed my way past the “Change Authorization Board” first.&lt;/p&gt;
+&lt;p&gt;The whole process was unrewarding and depressing. It was so difficult that I almost quit because of it. There were simply too many barriers in the way of progress. Delivering code wasn’t a rewarding experience for anyone. You certainly couldn&amp;rsquo;t ‘experiment’ with exciting new ideas or technologies. The deployments were too big. The feedback loops were too long and the risks were too great.&lt;/p&gt;&lt;h3&gt;&lt;a href="#but-then-something-amazing-happened-hellip" class="anchor" name="but-then-something-amazing-happened-hellip"&gt;&lt;/a&gt;But then something amazing happened&amp;hellip;&lt;/h3&gt;
+&lt;p&gt;In November 2013 Pivotal Cloud Foundry came along and changed everything. By incorporating hundreds of DevOps best practices into an easy to consume package. &lt;a href="https://run.pivotal.io"&gt;Pivotal Web Services (PWS)&lt;/a&gt; could package, deploy, and run our code effortlessly with a few simple command line instructions. We could go from desktop to production with our software in minutes, and as often as we liked. &lt;/p&gt;
+&lt;p&gt;Developers loved it. Operators loved it. Security and Networks loved it. Best of all, our customers loved it! They couldn’t get enough of it in fact, but that’s another story. Just look how &lt;strong&gt;&lt;em&gt;fast&lt;/em&gt;&lt;/strong&gt; it is!!! You can have apps up and running in under 2 minutes:&lt;/p&gt;
+&lt;script id="asciicast-247474" src="https://asciinema.org/a/247474.js" async&gt;&lt;/script&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;What you&amp;rsquo;re observing here is a simple Spring Boot application that is being &amp;lsquo;pushed&amp;rsquo; to Cloud Foundry with &lt;code&gt;cf push&lt;/code&gt;. This process uses the &lt;code&gt;Java Buildpack&lt;/code&gt; - open source code that configures my application (and OpenJDK) for cloud running and then builds and starts a container image containing both. Finally, it configures an internet URL and we&amp;rsquo;re good to go! &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Gone was the need to obtain permission before a deployment rolled out. Everything the Change Authorization Board wanted in order to keep us safe was already baked into the platform. Developers could work directly with the business, add some value daily, and use an automated pipeline to push it to the cloud. Because we now got instant feedback, innovation and experimentation became easy, safe and encouraged. Epic win! &lt;/p&gt;
+&lt;p&gt;It was the same story with backing services. Databases, messaging, monitoring, you name it, could all be created and attached with a few simple command-line instructions. Spring Boot even auto-wired them for you. No more waiting for your “new database request” ticket to shuffle it’s way up to the top of the database administrators todo list. Developers could commission their own services as and when required.&lt;/p&gt;
+&lt;p&gt;In the 5 short years that it’s been around, Pivotal Cloud Foundry has completely changed my life. It’s elevated me from the toil of release-trains and allowed developers like me to release code into the hands of users quicker, safer, and more often than ever before. &lt;/p&gt;
+&lt;p&gt;So if production really is “better than Disneyland, (&lt;a href="https://twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt;, 2018)” thanks to Pivotal Cloud Foundry, I have a first-class season ticket!&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;You can try Pivotal Web Services (a &amp;lsquo;pay-as-you-go&amp;rsquo; version of Pivotal Cloud Foundry) for yourself with this &lt;a href="https://pivotal.io/platform/pcf-tutorials/getting-started-with-pivotal-cloud-foundry/introduction"&gt;simple step by step tutorial&lt;/a&gt;. You don’t need a credit card to sign up for &lt;a href="https://run.pivotal.io"&gt;Pivotal Web Services&lt;/a&gt; and new users get $87 of free credit. It’s super easy to push your code and very, very rewarding! You can have something up and running in a couple of minutes. &lt;/p&gt;
+&lt;p&gt;Pivotal Web Services is based on &lt;a href="https://pivotal.io/pas"&gt;Pivotal Cloud Foundry PAS&lt;/a&gt; which allows enterprises to get the same smooth developer workflow on the cloud of their choice. &lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>A Bootiful Podcast: Community Member Nicolas Frankel on Testing, Security, and More</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/17/a-bootiful-podcast-community-member-nicolas-frankel-on-testing-security-and-more" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-17:3685</id>
+    <updated>2019-05-17T04:57:31Z</updated>
+    <content type="html">&lt;p&gt;HI Spring fans! In this installment Josh Long (@starbuxman) talks to Nicolas Frankel (@nicolas_frankel) about integration testing, blogging, Kotlin, application security, living on the French/Swiss border, blogging consistently, and much more. It&amp;rsquo;s an interview with one of my favorite voices in the community.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://twitter.com/nicolas_frankel"&gt;Nicolas on Twitter (@nicolas_frankel)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://blog.frankel.ch"&gt;Nicolas&amp;rsquo; epic blog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/621942714&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Reactive Transactions with Spring</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/16/reactive-transactions-with-spring" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-05-09:3668</id>
+    <updated>2019-05-16T06:59:00Z</updated>
+    <content type="html">&lt;p&gt;Back in 2016, our reactive journey started with Spring Framework 5 accompanied by a couple of reactive integrations. Throughout our journey, other projects joined the reactive movement. With R2DBC, we now also provide a reactive integration for SQL databases. With the growth of transaction-capable integrations, we constantly got asked:&lt;/p&gt;&lt;h2&gt;&lt;a href="#does-spring-framework-support-reactive-transaction" class="anchor" name="does-spring-framework-support-reactive-transaction"&gt;&lt;/a&gt;Does Spring Framework support Reactive @Transaction?&lt;/h2&gt;
+&lt;p&gt;At the time our journey began, we had no reactive form of transactional integrations, so this question was simple to answer: There’s no need for reactive transaction management. &lt;/p&gt;
+&lt;p&gt;Over time, MongoDB started to support multi-document transactions with MongoDB Server 4.0. R2DBC (the specification for reactive SQL database drivers) started to emerge, and we decided to pick up on R2DBC with Spring Data R2DBC. Both projects wanted to expose transactional behavior, so they eventually provided &lt;code&gt;inTransaction(…)&lt;/code&gt; methods on their Template APIs to perform units of work guarded by native transactions.&lt;/p&gt;
+&lt;p&gt;While it is convenient to use an &lt;code&gt;inTransaction(…)&lt;/code&gt; method for smaller chunks of work, it does not reflect the Spring way of supporting transactions. When working with imperative programming models, Spring Framework allows for two arrangements of transaction management: &lt;code&gt;@Transactional&lt;/code&gt; and &lt;code&gt;TransactionTemplate&lt;/code&gt; (declarative respective programmatic transaction management).&lt;/p&gt;
+&lt;p&gt;Both approaches to transaction management are built on top of &lt;code&gt;PlatformTransactionManager&lt;/code&gt;, which manages transactions for transactional resources. &lt;code&gt;PlatformTransactionManager&lt;/code&gt; can be either a Spring-provided transaction manager implementation or a Java EE one based on JTA.&lt;/p&gt;
+&lt;p&gt;Both approaches have in common that they bind the transactional state to &lt;code&gt;ThreadLocal&lt;/code&gt; storage, which allows for transactional state management without passing a &lt;code&gt;TransactionStatus&lt;/code&gt; object. Transaction management should happen in the background in a non-invasive manner.&lt;br/&gt;&lt;code&gt;ThreadLocal&lt;/code&gt; works in imperative programming arrangements because of the underlying assumption that we do not engage threads to continue work within a transaction.&lt;/p&gt;&lt;h2&gt;&lt;a href="#how-imperative-transaction-management-works" class="anchor" name="how-imperative-transaction-management-works"&gt;&lt;/a&gt;How Imperative Transaction Management Works&lt;/h2&gt;
+&lt;p&gt;Transaction management needs to associate its transactional state with an execution. In imperative programming, this is typically a &lt;code&gt;ThreadLocal&lt;/code&gt; storage – Transactional state is bound to a &lt;code&gt;Thread&lt;/code&gt;. The underlying assumption is that transactional code gets executed on the same thread on which the container has invoked it.&lt;/p&gt;
+&lt;p&gt;Reactive programming models remove this fundamental assumption of imperative (synchronous/blocking) programming models. Taking a closer look at reactive execution, we can observe that code gets executed on different threads. This gets more visible when using inter-process communication. We can no longer safely assume that our code is fully executed on the same thread.&lt;/p&gt;
+&lt;p&gt;This change in assumptions invalidates transaction management implementations that rely on &lt;code&gt;ThreadLocal&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Thread switches happen at arbitrary times, due to integrations and optimizations such as operator fusion. This change breaks all code that relies on &lt;code&gt;ThreadLocal&lt;/code&gt;. The consequence is that we need a different arrangement to reflect transactional state without passing a &lt;code&gt;TransactionStatus&lt;/code&gt; object all the time.&lt;/p&gt;
+&lt;p&gt;Associating out-of-band data is not a new requirement in the reactive space. We faced this requirement in other areas, such as the &lt;code&gt;SecurityContext&lt;/code&gt; with Spring Security for reactive method security (to name one example). Project Reactor, the reactive library on top of which Spring builds its reactive support, has provided support for subscriber contexts since version 3.1.&lt;/p&gt;
+&lt;p&gt;Reactor &lt;code&gt;Context&lt;/code&gt; is to reactive programming what &lt;code&gt;ThreadLocal&lt;/code&gt; is to imperative programming: Contexts allow binding contextual data to a particular execution. For reactive programming, this is a &lt;code&gt;Subscription&lt;/code&gt;. Reactor’s &lt;code&gt;Context&lt;/code&gt; lets Spring bind the transaction state, along with all resources and synchronizations, to a particular &lt;code&gt;Subscription&lt;/code&gt;. All reactive code that uses Project Reactor can now participate in reactive transactions. Code that returns scalar values and that wants to access transactional details must be rewritten to use reactive types to participate in transactions. Otherwise, the &lt;code&gt;Context&lt;/code&gt; is not available.&lt;/p&gt;&lt;h2&gt;&lt;a href="#reactive-transaction-management" class="anchor" name="reactive-transaction-management"&gt;&lt;/a&gt;Reactive Transaction Management&lt;/h2&gt;
+&lt;p&gt;Starting with Spring Framework 5.2 M2, Spring supports reactive transaction management through the &lt;code&gt;ReactiveTransactionManager&lt;/code&gt; SPI.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ReactiveTransactionManager&lt;/code&gt; is a transaction management abstraction for reactive and non-blocking integrations that uses transactional resources. It is a foundation for reactive &lt;code&gt;@Transactional&lt;/code&gt; methods that return &lt;code&gt;Publisher&lt;/code&gt; types and for programmatic transaction management that uses &lt;code&gt;TransactionalOperator&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The first two reactive transaction manager implementations are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;R2DBC through Spring Data R2DBC 1.0 M2&lt;/li&gt;
+  &lt;li&gt;MongoDB through Spring Data MongoDB 2.2 M4&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s take a look at how reactive transactions look like:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;class TransactionalService {&#xD;
+&#xD;
+  final DatabaseClient db&#xD;
+&#xD;
+  TransactionalService(DatabaseClient db) {&#xD;
+    this.db = db;&#xD;
+  }&#xD;
+&#xD;
+  @Transactional&#xD;
+  Mono&amp;lt;Void&amp;gt; insertRows() {&#xD;
+&#xD;
+    return db.execute()&#xD;
+      .sql(&amp;quot;INSERT INTO person (name, age) VALUES(&amp;#39;Joe&amp;#39;, 34)&amp;quot;)&#xD;
+      .fetch().rowsUpdated()&#xD;
+      .then(db.execute().sql(&amp;quot;INSERT INTO contacts (name) VALUES(&amp;#39;Joe&amp;#39;)&amp;quot;)&#xD;
+      .then();&#xD;
+  }&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Reactive transactions look very similar to imperative transactions in annotation-driven arrangements. The main difference though is that we work with &lt;code&gt;DatabaseClient&lt;/code&gt;, which is a reactive resource abstraction. All transaction management happens behind the scenes, leveraging Spring’s transaction interceptors and &lt;code&gt;ReactiveTransactionManager&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;Spring distinguishes (based on method return types) which type of transaction management to apply:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Method returns a &lt;code&gt;Publisher&lt;/code&gt; type: Reactive Transaction Management&lt;/li&gt;
+  &lt;li&gt;All other return types: Imperative Transaction Management&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This distinction is significant, as you could still use imperative components such as a JPA or JDBC query. Wrapping these results into a &lt;code&gt;Publisher&lt;/code&gt; type signals Spring to apply reactive rather than imperative transaction management. That being said, a reactive transaction arrangement does not open a &lt;code&gt;ThreadLocal&lt;/code&gt;-bound transaction, which is required for JPA or JDBC.&lt;/p&gt;&lt;h2&gt;&lt;a href="#transactionaloperator" class="anchor" name="transactionaloperator"&gt;&lt;/a&gt;TransactionalOperator&lt;/h2&gt;
+&lt;p&gt;As a next step, let’s take a look at programmatic transaction management by using &lt;code&gt;TransactionalOperator&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;ConnectionFactory factory = …&#xD;
+ReactiveTransactionManager tm = new R2dbcTransactionManager(factory);&#xD;
+DatabaseClient db = DatabaseClient.create(factory);&#xD;
+&#xD;
+TransactionalOperator rxtx = TransactionalOperator.create(tm);&#xD;
+&#xD;
+Mono&amp;lt;Void&amp;gt; atomicOperation = db.execute()&#xD;
+  .sql(&amp;quot;INSERT INTO person (name, age) VALUES(&amp;#39;joe&amp;#39;, &amp;#39;Joe&amp;#39;)&amp;quot;)&#xD;
+  .fetch().rowsUpdated()&#xD;
+  .then(db.execute()&#xD;
+    .sql(&amp;quot;INSERT INTO contacts (name) VALUES(&amp;#39;Joe&amp;#39;)&amp;quot;)&#xD;
+    .then())&#xD;
+  .as(rxtx::transactional);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The code above contains some notable components:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;R2dbcTransactionManager&lt;/code&gt;: This is the reactive transaction manager for a R2DBC &lt;code&gt;ConnectionFactory&lt;/code&gt; .&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;DatabaseClient&lt;/code&gt;: The client provides access to SQL databases using R2DBC drivers.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;TransactionalOperator&lt;/code&gt;: This operator associates all upstream R2DBC publishers with a transactional context. You can use it either operator style &lt;code&gt;as(…::transactional)&lt;/code&gt; or call-back style with &lt;code&gt;execute(txStatus -&amp;gt; …)&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Reactive transactions are started lazily upon subscription. The operator starts a transaction, sets the appropriate isolation level and associates the database connection with its subscriber context. All participating (upstream) &lt;code&gt;Publisher&lt;/code&gt; instances use a single &lt;code&gt;Context&lt;/code&gt;-bound transactional connection. &lt;/p&gt;
+&lt;p&gt;Reactive-functional operator chains can be either linear (by using a single &lt;code&gt;Publisher&lt;/code&gt;) or non-linear (by merging multiple streams). Reactive transactions affect all upstream &lt;code&gt;Publisher&lt;/code&gt;s when using operator style. To limit the transaction scope to a particular set of &lt;code&gt;Publisher&lt;/code&gt;s, apply callback style, as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;TransactionalOperator rxtx = TransactionalOperator.create(tm);&#xD;
+&#xD;
+Mono&amp;lt;Void&amp;gt; outsideTransaction = db.execute()&#xD;
+  .sql(&amp;quot;INSERT INTO person (name, age) VALUES(&amp;#39;Jack&amp;#39;, 31)&amp;quot;)&#xD;
+  .then();&#xD;
+&#xD;
+Mono&amp;lt;Void&amp;gt; insideTransaction = rxtx.execute(txStatus -&amp;gt; {&#xD;
+  return db.execute()&#xD;
+    .sql(&amp;quot;INSERT INTO person (name, age) VALUES(&amp;#39;Joe&amp;#39;, 34)&amp;quot;)&#xD;
+    .fetch().rowsUpdated()&#xD;
+    .then(db.execute()&#xD;
+      .sql(&amp;quot;INSERT INTO contacts (name) VALUES(&amp;#39;Joe Black&amp;#39;)&amp;quot;)&#xD;
+      .then());&#xD;
+  }).then();&#xD;
+&#xD;
+Mono&amp;lt;Void&amp;gt; completion = outsideTransaction.then(insideTransaction);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the example above, transaction management is limited to &lt;code&gt;Publisher&lt;/code&gt; instances subscribed within &lt;code&gt;execute(…)&lt;/code&gt;. Or, to put it differently, the transaction is scoped. &lt;code&gt;Publisher&lt;/code&gt; instances within &lt;code&gt;execute(…)&lt;/code&gt; participate in the transaction, and the &lt;code&gt;Publisher&lt;/code&gt; named &lt;code&gt;outsideTransaction&lt;/code&gt; performs its work outside the transaction.&lt;/p&gt;
+&lt;p&gt;R2DBC is one of Spring’s integrations with reactive transactions. Another integration is MongoDB through Spring Data MongoDB, which you can use to participate in multi-document transactions by using reactive programming.&lt;/p&gt;
+&lt;p&gt;Spring Data MongoDB ships with &lt;code&gt;ReactiveMongoTransactionManager&lt;/code&gt; as a &lt;code&gt;ReactiveTransactionManager&lt;/code&gt; implementation. It creates a session and manages transactions so that code executed within a managed transaction participates in multi-document transactions.&lt;/p&gt;
+&lt;p&gt;The following example shows programmatic transaction management with MongoDB:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;ReactiveTransactionManager tm &#xD;
+  = new ReactiveMongoTransactionManager(databaseFactory);&#xD;
+ReactiveMongoTemplate template = …&#xD;
+template.setSessionSynchronization(ALWAYS);                                          &#xD;
+&#xD;
+TransactionalOperator rxtx = TransactionalOperator.create(tm);&#xD;
+&#xD;
+Mono&amp;lt;Void&amp;gt; atomic = template.update(Step.class)&#xD;
+  .apply(Update.set(&amp;quot;state&amp;quot;, …))&#xD;
+  .then(template.insert(EventLog.class).one(new EventLog(…))&#xD;
+  .as(rxtx::transactional)&#xD;
+  .then();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The code above sets up a &lt;code&gt;ReactiveTransactionManager&lt;/code&gt; and uses &lt;code&gt;TransactionalOperator&lt;/code&gt; to perform multiple write actions within a single transaction. &lt;code&gt;ReactiveMongoTemplate&lt;/code&gt; gets configured to participate in reactive transactions.&lt;/p&gt;&lt;h2&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;Reactive Transaction Management ships with Spring Framework 5.2 M2, Spring Data MongoDB 2.2 M4, and Spring Data R2DBC 1.0 M2 milestone releases. You can pick up these and start integrating reactive transaction management in your code. We look forward to community feedback so that we can smooth out any sharp edges before shipping release candidates in early June.&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Reactor Dysprosium-M1 is Available Now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/reactor-dysprosium-m1-is-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stephane Maldini</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3683</id>
+    <updated>2019-05-15T23:36:00Z</updated>
+    <content type="html">&lt;p&gt;The 4th Generation of Reactor is arriving. On behalf of the team we want to thank all our community for the tremendous feedback. Over the last year we have grown our reactive line-up significantly including &lt;a href="https://r2dbc.io"&gt;R2DBC&lt;/a&gt; and &lt;a href="https://github.com/reactor/BlockHound"&gt;BlockHound&lt;/a&gt;. Our adoption in the java ecosystem looks phenomenal and we are collaborating with major corps including Microsoft and Google. We have more than doubled our regular &lt;a href="https://gitter.im/reactor/reactor"&gt;Gitter&lt;/a&gt; audience with some awesome -you guessed it- &lt;em&gt;reactive&lt;/em&gt; discussions happening every day. Finally, &lt;a href="https://twitter.com/bsideup"&gt;Sergei Egorov&lt;/a&gt; has joined the core team and we have no plans to stop expanding!&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Dysprosium-M1&lt;/code&gt; is available on &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. It is paving the way for more changes in the work. It&amp;rsquo;s worth noting that 2 features are being deprecated, and evaluated for removal at the end of the milestone phase :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;code&gt;EventLoopProcessor&lt;/code&gt; =&amp;gt; &lt;code&gt;TopicProcessor&lt;/code&gt;, &lt;code&gt;WorkQueueProcessor&lt;/code&gt; and &lt;code&gt;WaitStrategy&lt;/code&gt; : The processors have been moved to &lt;a href="https://github.com/reactor/reactor-addons"&gt;reactor-extra&lt;/a&gt; for optional use. They require the availability of &lt;code&gt;Unsafe&lt;/code&gt;, making them rather niche given modern JVM restrictions. Not only they can be found elsewhere but they can also be replaced by equivalent constructs like &lt;code&gt;EmitterProcessor&lt;/code&gt; with &lt;code&gt;publishOn&lt;/code&gt; and &lt;code&gt;ParallelFlux&lt;/code&gt; with &lt;code&gt;runOn&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+  &lt;p&gt;&lt;code&gt;Kotlin&lt;/code&gt; extensions are being given a &lt;a href="https://github.com/reactor/reactor-kotlin-extensions"&gt;dedicated space&lt;/a&gt; for further experimentation. With the latest developments around &lt;code&gt;coroutines&lt;/code&gt; and &lt;code&gt;inlining&lt;/code&gt;, we are excited to evaluate how we can leverage Kotlin to provide a smoother developer experience. One of the goals we have set to this experiment is to provide a dedicated API that will enable writing custom producers and operators with the conciseness of Kotlin.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Even with these changes we do not anticipate major pains for our community, but we&amp;rsquo;d like to have your opinion.&lt;/p&gt;
+&lt;p&gt;Change logs and release notes:&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-core/releases/tag/v3.3.0.M1"&gt;reactor-core 3.3.0.M1&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-netty/releases/tag/v0.9.0.M1"&gt;reactor-netty 0.9.0.M1&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-addons/releases/tag/v3.3.0.M1"&gt;reactor-addons 3.3.0.M1&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/reactor/BlockHound/releases/tag/1.0.0.M3"&gt;BlockHound 1.0.0.M3&lt;/a&gt;&lt;/p&gt;&lt;h1&gt;&lt;a href="#runtime-performances" class="anchor" name="runtime-performances"&gt;&lt;/a&gt;Runtime performances&lt;/h1&gt;
+&lt;p&gt;We are working hard at improving the overall experience for our users and upgrading our runtime efficiency across the board:&lt;br/&gt;- &lt;code&gt;reactor-netty 0.9.0.M1/0.8.8&lt;/code&gt; has seen a 40% throughput improvement for request/reply (HTTP) scenarios and at least 20% increase for streaming scenarios. More importantly, memory management has been tightened to control some reported memory issues and the number of required &lt;code&gt;flush&lt;/code&gt; operations has been dramatically reduced (3x less) which is a welcome news for CPU use.&lt;br/&gt;- For &lt;code&gt;reactor-core 3.3.0&lt;/code&gt; , we are looking at progressively moving debugging interceptors outside of the critical path using an &lt;a href="https://github.com/reactor/reactor-tools"&gt;agent based approach&lt;/a&gt;. &lt;/p&gt;&lt;h1&gt;&lt;a href="#bismuth-eol" class="anchor" name="bismuth-eol"&gt;&lt;/a&gt;Bismuth EOL&lt;/h1&gt;
+&lt;p&gt;Anticipating the coming &lt;code&gt;Dysprosium-RELEASE&lt;/code&gt;, our &lt;em&gt;reactor-core 3.1.x&lt;/em&gt; and &lt;em&gt;reactor-netty 0.7.x&lt;/em&gt; lines will not receive further patches. We encourage our users to update to &lt;code&gt;Californium&lt;/code&gt; releases trains, which match &lt;em&gt;Spring Boot 2.1.x&lt;/em&gt; and &lt;em&gt;Spring Framework 5.1.x&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;If you already are using &lt;em&gt;Spring Boot 2.2.x&lt;/em&gt; and &lt;em&gt;Spring Framework 5.2.x&lt;/em&gt;, you will be required to use &lt;code&gt;Dysprosium&lt;/code&gt; including &lt;em&gt;reactor-core 3.3.x&lt;/em&gt; and &lt;em&gt;reactor-netty 0.9.x&lt;/em&gt;.&lt;/p&gt;&lt;h1&gt;&lt;a href="#trivia" class="anchor" name="trivia"&gt;&lt;/a&gt;Trivia&lt;/h1&gt;
+&lt;p&gt;What is &lt;code&gt;Dysprosium&lt;/code&gt; ? Well its a chemical element starting with the 4th letter of the latin alphabet. It also means &amp;ldquo;&lt;em&gt;hard to get&lt;/em&gt;&amp;rdquo; because it took quite a few attempts to isolate it. So, mark my words, everything should be ok with &lt;code&gt;Dysprosium&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Again, we appreciate your valuable input, please join us on &lt;a href="https://gitter.im/reactor/reactor"&gt;Gitter&lt;/a&gt; and share your question, story or both! Meanwhile, we are sailing towards a second milestone early June.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://http://projectreactor.io"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/reactor"&gt;GitHub&lt;/a&gt; | &lt;a href="https://projectreactor.io/docs"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/project-reactor"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/reactor/reactor"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Reactor Californium-SR8 is out</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/reactor-californium-sr8-is-out" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stephane Maldini</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3684</id>
+    <updated>2019-05-15T16:48:00Z</updated>
+    <content type="html">&lt;p&gt;The 8th Service Release for Californium is out. Beyond fixing its share of issues, it is shipping with a turbo-charged &lt;code&gt;reactor-netty&lt;/code&gt; -thanks to changes backported- from our new &lt;a href="https://spring.io/blog/2019/05/15/reactor-dysprosium-m1-is-available-now"&gt;Dysprosium-M1 release&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The release is available on your preferred maven central repository.&lt;/p&gt;
+&lt;p&gt;Change logs and release notes:&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-core/releases/tag/v3.2.9.RELEASE"&gt;reactor-core 3.2.9.RELEASE&lt;/a&gt;&lt;br/&gt;- &lt;a href="https://github.com/reactor/reactor-netty/releases/tag/v0.8.8.RELEASE"&gt;reactor-netty 0.8.8.RELEASE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note that the release overrides &lt;code&gt;Californium-SR7&lt;/code&gt; which has shipped with an unwelcome regression in &lt;code&gt;reactor-netty 0.8.7&lt;/code&gt;.&lt;/p&gt;&lt;h1&gt;&lt;a href="#bismuth-eol" class="anchor" name="bismuth-eol"&gt;&lt;/a&gt;Bismuth EOL&lt;/h1&gt;
+&lt;p&gt;Anticipating the coming &lt;code&gt;Dysprosium-RELEASE&lt;/code&gt;, our &lt;em&gt;reactor-core 3.1.x&lt;/em&gt; and &lt;em&gt;reactor-netty 0.7.x&lt;/em&gt; lines will not receive further patches. We encourage our users to update to &lt;code&gt;Californium&lt;/code&gt; releases trains, which match &lt;em&gt;Spring Boot 2.1.x&lt;/em&gt; and &lt;em&gt;Spring Framework 5.1.x&lt;/em&gt;. &lt;/p&gt;
+&lt;p&gt;If you already are using &lt;em&gt;Spring Boot 2.2.x&lt;/em&gt; and &lt;em&gt;Spring Framework 5.2.x&lt;/em&gt;, you will be required to use &lt;code&gt;Dysprosium&lt;/code&gt; including &lt;em&gt;reactor-core 3.3.x&lt;/em&gt; and &lt;em&gt;reactor-netty 0.9.x&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://http://projectreactor.io"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/reactor"&gt;GitHub&lt;/a&gt; | &lt;a href="https://projectreactor.io/docs"&gt;Documentation&lt;/a&gt; | &lt;a href="https://stackoverflow.com/questions/tagged/project-reactor"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/reactor/reactor"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Data R2DBC 1.0 M2 and Spring Boot starter released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-data-r2dbc-1-0-m2-and-spring-boot-starter-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-05-14:3678</id>
+    <updated>2019-05-15T16:10:00Z</updated>
+    <content type="html">&lt;h2&gt;&lt;a href="#spring-data-r2dbc" class="anchor" name="spring-data-r2dbc"&gt;&lt;/a&gt;Spring Data R2DBC&lt;/h2&gt;
+&lt;p&gt;On behalf of the community and everyone who contributed, I&amp;rsquo;m delighted to announce the availability of the second milestone of Spring Data R2DBC 1.0. It is based on the recently released &lt;a href="https://spring.io/blog/2019/05/14/spring-data-moore-m4-lovelace-sr8-and-ingalls-sr22-released"&gt;Moore M4 release&lt;/a&gt; and &lt;a href="https://r2dbc.io/2019/05/13/r2dbc-0-8-milestone-8-released"&gt;R2DBC 0.8.0.M8 release&lt;/a&gt;. Please note that Spring Data R2DBC is released outside of the Moore release train and it will be part of the next release train &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Neumann"&gt;Neumann&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Spring Data R2DBC ships with &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/milestone/2?closed=1"&gt;32 tickets fixed&lt;/a&gt;. The most notable features are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support for MySQL by using &lt;a href="https://github.com/jasync-sql/jasync-sql"&gt;jasync-sql&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Reactive transaction manager.&lt;/li&gt;
+  &lt;li&gt;Fluent API for &lt;code&gt;insert&lt;/code&gt;/&lt;code&gt;update&lt;/code&gt;/&lt;code&gt;delete&lt;/code&gt; operations.&lt;/li&gt;
+  &lt;li&gt;Coroutine extensions.&lt;/li&gt;
+  &lt;li&gt;Support for custom conversions.&lt;/li&gt;
+  &lt;li&gt;Named parameters that are translated to native bind markers by using &lt;code&gt;Dialect&lt;/code&gt; instances.&lt;/li&gt;
+  &lt;li&gt;Support for single-column projections for simple types.&lt;/li&gt;
+  &lt;li&gt;Refactored package structure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you use Maven, include the following lines in your &lt;code&gt;pom.xml&lt;/code&gt; to use Spring Data R2DBC 1.0 M2 in your project:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencies&amp;gt;&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.data&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-data-r2dbc&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;1.0.0.M2&amp;lt;/version&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+&amp;lt;/dependencies&amp;gt;&#xD;
+&#xD;
+&amp;lt;!-- R2DBC 0.8.0.M8 required --&amp;gt;&#xD;
+&amp;lt;dependencyManagement&amp;gt;&#xD;
+  &amp;lt;dependencies&amp;gt;&#xD;
+    &amp;lt;dependency&amp;gt;&#xD;
+      &amp;lt;groupId&amp;gt;io.r2dbc&amp;lt;/groupId&amp;gt;&#xD;
+      &amp;lt;artifactId&amp;gt;r2dbc-bom&amp;lt;/artifactId&amp;gt;&#xD;
+      &amp;lt;version&amp;gt;Arabba-M8&amp;lt;/version&amp;gt;&#xD;
+      &amp;lt;type&amp;gt;pom&amp;lt;/type&amp;gt;&#xD;
+      &amp;lt;scope&amp;gt;import&amp;lt;/scope&amp;gt;&#xD;
+    &amp;lt;/dependency&amp;gt;&#xD;
+  &amp;lt;/dependencies&amp;gt;&#xD;
+&amp;lt;/dependencyManagement&amp;gt;&#xD;
+&#xD;
+&amp;lt;repositories&amp;gt;&#xD;
+  &amp;lt;repository&amp;gt;&#xD;
+    &amp;lt;id&amp;gt;spring-milestone&amp;lt;/id&amp;gt;&#xD;
+    &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+  &amp;lt;/repository&amp;gt;&#xD;
+&amp;lt;/repositories&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#spring-boot-autoconfiguration-and-actuator" class="anchor" name="spring-boot-autoconfiguration-and-actuator"&gt;&lt;/a&gt;Spring Boot Autoconfiguration and Actuator&lt;/h2&gt;
+&lt;p&gt;Together with this release, I&amp;rsquo;d also like to announce a milestone release of Spring Boot support for R2DBC 0.1.0.M1. This is an experimental Spring Boot module that provides auto-configuration and actuator support. It is marked as experimental, as this support is likely to get merged into a future Spring Boot release eventually.&lt;/p&gt;
+&lt;p&gt;Here&amp;rsquo;s what you get from the experimental Spring Boot support for R2DBC:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;URL-based configuration of R2DBC &lt;code&gt;ConnectionFactory&lt;/code&gt; (&lt;code&gt;spring.r2dbc.url=rdbc:postgresql://&amp;lt;server&amp;gt;:&amp;lt;port&amp;gt;/&amp;lt;database&amp;gt;&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Embedded database support for H2. H2 is configured for both R2DBC and JDBC access when &lt;code&gt;r2dbc-h2&lt;/code&gt; and &lt;code&gt;spring-jdbc&lt;/code&gt; are available.&lt;/li&gt;
+  &lt;li&gt;Connection pool support (&lt;code&gt;spring.r2dbc.pool.initial-size&lt;/code&gt;, &lt;code&gt;spring.r2dbc.pool.max-size&lt;/code&gt;, &lt;code&gt;spring.r2dbc.validation-query&lt;/code&gt;).&lt;/li&gt;
+  &lt;li&gt;Actuator support by exposing a reactive &lt;code&gt;ConnectionFactoryHealthIndicator&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Configuration of &lt;code&gt;R2dbcConnectionManager&lt;/code&gt; enabling reactive &lt;code&gt;@Transactional&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Configuration of &lt;code&gt;TransactionalOperator&lt;/code&gt; bean.&lt;/li&gt;
+  &lt;li&gt;Configuration of &lt;code&gt;r2dbc-client&lt;/code&gt; by exposing a &lt;code&gt;R2dbc&lt;/code&gt; bean.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class="prettyprint xml"&gt;&amp;lt;dependencies&amp;gt;&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.boot.experimental&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-boot-starter-data-r2dbc&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.1.0.M1&amp;lt;/version&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;org.springframework.boot.experimental&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;spring-boot-actuator-autoconfigure-r2dbc&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.1.0.M1&amp;lt;/version&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+  &#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;io.r2dbc&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;r2dbc-postgresql&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;version&amp;gt;0.8.0.M8&amp;lt;/version&amp;gt;&#xD;
+    &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+  &#xD;
+  &amp;lt;!-- Enable for connection pooling --&amp;gt;&#xD;
+  &amp;lt;dependency&amp;gt;&#xD;
+    &amp;lt;groupId&amp;gt;io.r2dbc&amp;lt;/groupId&amp;gt;&#xD;
+    &amp;lt;artifactId&amp;gt;r2dbc-pool&amp;lt;/artifactId&amp;gt;&#xD;
+    &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt;&#xD;
+  &amp;lt;/dependency&amp;gt;&#xD;
+&amp;lt;/dependencies&amp;gt;&#xD;
+&#xD;
+&amp;lt;repositories&amp;gt;&#xD;
+  &amp;lt;repository&amp;gt;&#xD;
+    &amp;lt;id&amp;gt;spring-milestone&amp;lt;/id&amp;gt;&#xD;
+    &amp;lt;url&amp;gt;https://repo.spring.io/milestone&amp;lt;/url&amp;gt;&#xD;
+  &amp;lt;/repository&amp;gt;&#xD;
+&amp;lt;/repositories&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The &lt;a href="https://github.com/spring-projects-experimental/spring-boot-r2dbc#spring-boot-r2dbc-starter"&gt;repository readme&lt;/a&gt; and our &lt;a href="https://github.com/spring-projects-experimental/spring-boot-r2dbc/blob/master/documentation.adoc"&gt;documentation&lt;/a&gt; are the best places to get you started. Also, make sure to check out our &lt;a href="https://github.com/spring-projects-experimental/spring-boot-r2dbc/tree/master/spring-boot-example-h2"&gt;Spring WebFlux/R2DBC/H2 example&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#next-steps" class="anchor" name="next-steps"&gt;&lt;/a&gt;Next steps&lt;/h2&gt;
+&lt;p&gt;R2DBC continues to evolve. We expect another series of R2DBC releases in the October timeframe so that we can pick up these in Spring Data R2DBC and eventually ship a release candidate. Our backlog contains a series of refinements around dialect support for an improved extensibility model, and we look forward to allowing for query interception to alter bindings and SQL statements before they are sent to a database.&lt;/p&gt;
+&lt;p&gt;To round things off, here are links to the changelog, GitHub repository, and docs:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Project Repository: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc"&gt;github.com/spring-projects/spring-data-r2dbc&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Issue Tracker: &lt;a href="https://github.com/spring-projects/spring-data-r2dbc/issues"&gt;github.com/spring-projects/spring-data-r2dbc/issues&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-r2dbc/1.0.0.M2/"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.M2/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.M2/reference/html/"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/r2dbc/docs/1.0.0.M2/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.1.5 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-boot-2-1-5-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3681</id>
+    <updated>2019-05-15T12:00:00Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Boot 2.1.5 has been released and is now available from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;This is a maintenance release that includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v2.1.5.RELEASE"&gt;a number of important dependency updates and bug fixes&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;A gentle reminder that Spring Boot 1.5 will be &lt;a href="https://spring.io/blog/2018/07/30/spring-boot-1-x-eol-aug-1st-2019"&gt;end of life in august&lt;/a&gt;, so all users should now be upgrading to Spring Boot 2.1.&lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.1.5.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 2.2 M3 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-boot-2-2-m3-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Phil Webb</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3682</id>
+    <updated>2019-05-15T10:08:57Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone that contributed, I am pleased to announce that the third milestone of Spring Boot 2.2 has been released and is available from &lt;a href="http://repo.spring.io/milestone/"&gt;our milestone repository&lt;/a&gt;. This release closes over &lt;a href="https://github.com/spring-projects/spring-boot/milestone/135?closed=1"&gt;100 issues and pull requests&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For a complete list of changes and upgrade instructions, please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.2-Release-Notes"&gt;Spring Boot 2.2 Release Notes&lt;/a&gt; on the wiki and the &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M3/reference/html/"&gt;updated reference documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you want to get started with 2.2 and try out the new features, you can bootstrap a new project on &lt;a href="https://start.spring.io"&gt;https://start.spring.io&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.2.0.M3/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Tips: Spring Batch and Apache Kafka</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/15/spring-tips-spring-batch-and-apache-kafka" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-15:3680</id>
+    <updated>2019-05-15T00:00:00Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;a href="http://twitter.com/SpringTipsLive"&gt;&lt;em&gt;Spring Tips&lt;/em&gt; (@SpringTipsLive)&lt;/a&gt;! In this installment we look at the &lt;em&gt;just-landed&lt;/em&gt; community contribution in Spring Batch adding support for Apache Kafka. This new support offers some tantalizing opportunities to bridge batch and streaming workloads. Stage large writes to backend warehouses with Kafka and drain the stream with Spring Batch. Load large amounts of data from existing datastores and funnel it into stream processing pipelines. And the possibilities become even more interesting when you consider &lt;a href="https://spring.io/blog/2016/10/13/spring-tips-a-gentle-introduction-to-spring-integration"&gt;Spring Integration&lt;/a&gt;, &lt;a href="https://spring.io/blog/2016/11/09/spring-tips-spring-cloud-stream"&gt;Spring Cloud Stream&lt;/a&gt;, &lt;a href="https://spring.io/blog/2018/04/04/spring-tips-spring-cloud-stream-kafka-streams"&gt;Spring Cloud Stream Kafka Streams&lt;/a&gt;, and &lt;a href="https://spring.io/blog/2016/11/16/spring-tips-spring-cloud-data-flow"&gt;Spring Cloud Data Flow&lt;/a&gt;. If you want a quick primer on Spring Batch-basics you might like this &lt;a href="https://spring.io/blog/2017/02/01/spring-tips-spring-batch"&gt;Spring Tip installment on Spring Batch&lt;/a&gt; from - &lt;em&gt;gasp&lt;/em&gt;! - two years ago!&lt;/p&gt;
+&lt;p&gt;speaker: &lt;a href="http://twitter.com/Starbuxman"&gt;Josh Long (@starbuxman) &lt;/a&gt;&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/UJesCn731G4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - May 14th, 2019</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/14/this-week-in-spring-may-14th-2019" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2019-05-14:3679</id>
+    <updated>2019-05-14T21:47:19Z</updated>
+    <content type="html">&lt;p&gt;Hi Spring fans! Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! I&amp;rsquo;m in beautiful Krakow for the epic Geecon show and then I&amp;rsquo;m off to spectacular Barcelona, Spain for the Spring I/O show. I hope to see you in both locations! It&amp;rsquo;s sure to be fun. Next week it&amp;rsquo;s going to be even more crazy! Next week I&amp;rsquo;m off to Zurich, Switzerland for a visit with some customers, and then it&amp;rsquo;s off to Paris, France for the Spring One Tour event there, and then it&amp;rsquo;s off to Minsk, Belarus, for the VOXXED Days Minsk show (my first time there! I&amp;rsquo;m so excited!), and then right after that, it&amp;rsquo;s off to Barcelona, Spain for JBCN. If you&amp;rsquo;re at any of these events in the next 12 days, I&amp;rsquo;d love to chat! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/14/spring-boot-1-5-21-available-now"&gt;Spring Boot 1.5.21 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/14/spring-data-moore-m4-lovelace-sr8-and-ingalls-sr22-released"&gt;Spring Data Moore M4, Lovelace SR8 and Ingalls SR22 released&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-integration-5-2-milestone-2-available"&gt;Spring Integration 5.2 Milestone 2 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-for-apache-kafka-2-3-milestone-2"&gt;Spring for Apache Kafka 2.3 Milestone 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-amqp-spring-for-rabbitmq-2-2-milestone-2"&gt;Spring AMQP (Spring for RabbitMQ) 2.2 Milestone 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/13/spring-integration-aws-2-2-ga-and-spring-cloud-stream-kinesis-binder-1-2-available"&gt;Spring Integration AWS 2.2 GA and Spring Cloud Stream Kinesis Binder 1.2 Available&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/10/spring-framework-5-2-0-m2-5-1-7-5-0-14-and-4-3-24-available-now"&gt;Spring Framework 5.2.0.M2, 5.1.7, 5.0.14 and 4.3.24 available now&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/09/a-bootiful-podcast-kotlin-team-engineer-roman-elisarov"&gt;A Bootiful Podcast: Kotlin team engineer Roman Elisarov&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/08/spring-tips-reactive-web-views"&gt;Spring Tips: Reactive Web Views&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://spring.io/blog/2019/05/07/spring-boot-for-apache-geode-pivotal-gemfire-1-1-0-m1-released"&gt;Spring Boot for Apache Geode &amp;amp; Pivotal GemFire 1.1.0.M1 Released!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;[Want to learn about Kotlin? Check out this 2-parter talk that Dr. Venkat Subramaniam and I did at Devnexus. It introduces Kotlin and demonstrates the concepts in terms of APIs in Spring. Here&amp;rsquo;s &lt;a href="https://www.recallact.com/presentation/kotlin-jumpstart-venkat-and-josh-part-1"&gt;the first part&lt;/a&gt; and here&amp;rsquo;s &lt;a href="https://www.recallact.com/presentation/kotlin-jumpstart-venkat-and-josh-part-2"&gt;the second part&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;using Spring Cloud and wanting to figure out how to integrate some of these technologies for .NET-based projects? &lt;a href="https://twitter.com/springcloud/status/1126618789272072194"&gt;Check out this talk on Steeltoe&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;Spring Boot contributor &lt;a href="https://twitter.com/snicoll/status/1126151776430903298"&gt;Stéphane Nicoll tweets&lt;/a&gt; that the next Spring Boot 2.2 milestone adds out-of-the-box support for JUnit 5 (whilst keeping compatibility with JUnit 4 via the vintage engine). Good stuff!&lt;/li&gt;
+  &lt;li&gt;The new &lt;em&gt;Java magazine&lt;/em&gt; is out, featuring an article about the work &lt;a href="https://twitter.com/srclbs/status/1126031390527709186?s=21"&gt;Sebastien Deleuze is doing with Spring Fu&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Boot 1.5.21 available now</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/14/spring-boot-1-5-21-available-now" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Stéphane Nicoll</name>
+    </author>
+    <id>tag:spring.io,2019-05-14:3677</id>
+    <updated>2019-05-14T12:43:27Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Boot 1.5.21 has been released and is now available from &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and Maven Central.&lt;/p&gt;
+&lt;p&gt;Spring Boot 1.5.21 is a maintenance release that includes &lt;a href="https://github.com/spring-projects/spring-boot/releases/tag/v1.5.21.RELEASE"&gt;9 dependency updates and selected bug fixes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you haven’t already upgraded to Spring Boot 2, please consider doing so as support for 1.x will &lt;a href="https://spring.io/blog/2018/07/30/spring-boot-1-x-eol-aug-1st-2019"&gt;end on August 1st 2019&lt;/a&gt;. &lt;/p&gt;&lt;h3&gt;&lt;a href="#how-can-you-help" class="anchor" name="how-can-you-help"&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community on &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/1.5.21.RELEASE/reference/htmlsingle"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Data Moore M4, Lovelace SR8 and Ingalls SR22 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/14/spring-data-moore-m4-lovelace-sr8-and-ingalls-sr22-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Mark Paluch</name>
+    </author>
+    <id>tag:spring.io,2019-05-13:3672</id>
+    <updated>2019-05-14T09:42:03Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce the availability of Spring Data releases &lt;code&gt;Moore M4&lt;/code&gt;, &lt;code&gt;Lovelace SR8&lt;/code&gt;, and &lt;code&gt;Ingalls SR22&lt;/code&gt;. Our releases build on the most recent &lt;a href="https://spring.io/blog/2019/05/10/spring-framework-5-2-0-m2-5-1-7-5-0-14-and-4-3-24-available-now"&gt;Spring Framework releases&lt;/a&gt; and are going to be picked up by Spring Boot 2.2 M3, 2.1.5 and 1.5.21 respectively. &lt;/p&gt;
+&lt;p&gt;Moore M4 is also a pre-requisite for Spring Data R2DBC 1.0 M2. It ships with &lt;a href="https://jira.spring.io/issues/?filter=16379"&gt;70 tickets fixed&lt;/a&gt;. There are a few notable new features amongst these:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support for reactive transaction management for MongoDB&lt;/li&gt;
+  &lt;li&gt;Annotation-based Collation support for MongoDB&lt;/li&gt;
+  &lt;li&gt;Reactive Index Operations in Elasticsearch and delete by query&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Please find a high-level overview of what has been added in our &lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-Moore"&gt;release wiki&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Due to a glitch in Lovelace SR7 and Ingalls SR22 released we immediately had to release Lovelace SR8 and Ingalls SR22 respectively. Lovelace SR7 and SR8 &lt;a href="https://jira.spring.io/issues/?filter=16385"&gt;fix 48 tickets&lt;/a&gt; in total. Ingalls SR21 and SR22 ship with fixes for &lt;a href="https://jira.spring.io/issues/?filter=16387"&gt;31 tickets&lt;/a&gt;. Lovelace SR8 and Ingalls SR22 contain a fix for &lt;a href="https://pivotal.io/security/cve-2019-3802"&gt;CVE-2019-3802&lt;/a&gt; and are highly recommended upgrades.&lt;/p&gt;
+&lt;p&gt;As always, we’re looking forward to your feedback. Leave us at Tweet at &lt;a href="https://twitter.com/SpringData"&gt;@SpringData&lt;/a&gt;. Finally, here&amp;rsquo;s the laundry list for our releases:&lt;/p&gt;&lt;h3&gt;&lt;a href="#moore-m4" class="anchor" name="moore-m4"&gt;&lt;/a&gt;Moore M4&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-commons/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JDBC 1.1 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jdbc/1.1.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.1.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-jpa/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-mongodb/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-keyvalue/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-gemfire/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 5.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-neo4j/5.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-cassandra/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 4.1 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-solr/4.1.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.1.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Geode 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-geode/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data LDAP 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-ldap/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-envers/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 3.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-rest-webmvc/3.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 2.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-redis/2.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 3.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-elasticsearch/3.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 3.2 M4 - &lt;a href="https://repo.spring.io/libs-milestone/org/springframework/data/spring-data-couchbase/3.2.0.M4"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.0.M4/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.0.M4/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.2.0.M4/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#lovelace-sr8" class="anchor" name="lovelace-sr8"&gt;&lt;/a&gt;Lovelace SR8&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JDBC 1.0.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jdbc/1.0.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jdbc/docs/1.0.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 5.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/5.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/5.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 4.0.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/4.0.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/4.0.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Geode 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-geode/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/geode/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data LDAP 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 3.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/3.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/3.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 2.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/2.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/2.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 3.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/3.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/3.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 3.1.8 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/3.1.8.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.8.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.8.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/3.1.8.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#ingalls-sr22" class="anchor" name="ingalls-sr22"&gt;&lt;/a&gt;Ingalls SR22&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Data Commons 1.13.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-commons/1.13.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/1.13.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/1.13.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/commons/docs/1.13.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data JPA 1.11.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-jpa/1.11.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/1.11.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/1.11.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/jpa/docs/1.11.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data MongoDB 1.10.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-mongodb/1.10.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/1.10.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/1.10.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/mongodb/docs/1.10.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data KeyValue 1.2.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-keyvalue/1.2.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/1.2.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/1.2.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/keyvalue/docs/1.2.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Gemfire 1.9.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-gemfire/1.9.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/1.9.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/1.9.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/gemfire/docs/1.9.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j 4.2.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-neo4j/4.2.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/4.2.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/4.2.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/neo4j/docs/4.2.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Cassandra 1.5.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-cassandra/1.5.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/1.5.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/1.5.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/cassandra/docs/1.5.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data for Apache Solr 2.1.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-solr/2.1.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/2.1.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/2.1.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/solr/docs/2.1.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data LDAP 1.0.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-ldap/1.0.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/1.0.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/1.0.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/ldap/docs/1.0.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Envers 1.1.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-envers/1.1.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/1.1.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/envers/docs/1.1.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data REST 2.6.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-rest-webmvc/2.6.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/2.6.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/2.6.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/rest/docs/2.6.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Redis 1.8.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-redis/1.8.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/1.8.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/1.8.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/redis/docs/1.8.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Elasticsearch 2.1.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-elasticsearch/2.1.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/2.1.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/2.1.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/elasticsearch/docs/2.1.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Couchbase 2.2.22 - &lt;a href="https://repo.spring.io/libs-release/org/springframework/data/spring-data-couchbase/2.2.22.RELEASE"&gt;Artifacts&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/2.2.22.RELEASE/api"&gt;Javadoc&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/2.2.22.RELEASE/reference/html"&gt;Documentation&lt;/a&gt; - &lt;a href="https://docs.spring.io/spring-data/couchbase/docs/2.2.22.RELEASE/changelog.txt"&gt;Changelog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Integration 5.2 Milestone 2 Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/13/spring-integration-5-2-milestone-2-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2019-05-13:3676</id>
+    <updated>2019-05-13T20:16:49Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of Spring Integration team I am pleased to announce that Spring Integration &lt;code&gt;5.2.0.M2&lt;/code&gt; is available.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;It can be downloaded from our &lt;a href="https://repo.spring.io/milestone"&gt;milestone repository&lt;/a&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-groovy" data-lang="groovy"&gt;compile "org.springframework.integration:spring-integration-core:5.2.0.M2"&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="highlights"&gt;&lt;a class="anchor" href="#highlights"&gt;&lt;/a&gt;Highlights&lt;/h3&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;a href="https://github.com/rsocket/rsocket-java"&gt;RSocket&lt;/a&gt; channel adapters are available now for full reactive network interaction between client and server.
+See &lt;code&gt;spring-integration-rsocket&lt;/code&gt; module and &lt;code&gt;RSocketInboundGateway&lt;/code&gt; &amp;amp; &lt;code&gt;RSocketOutboundGateway&lt;/code&gt; JavaDocs, respectively&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Kotlin Jsr223 scripting support has been added into &lt;code&gt;spring-integration-scripting&lt;/code&gt; module&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;CacheRequestHandlerAdvice&lt;/code&gt; was introduced to perform caching operations on the &lt;code&gt;handleRequestMessage()&lt;/code&gt; method in the &lt;code&gt;AbstractReplyProducingMessageHandler&lt;/code&gt; implementations&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;RateLimiterRequestHandlerAdvice&lt;/code&gt; is also available for limiting access to the &lt;code&gt;handleRequestMessage()&lt;/code&gt; method logic&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;Splitter&lt;/code&gt; component now can be configured with a &lt;code&gt;discardChannel&lt;/code&gt; to send those request messages for which a splitting function returns empty collection&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;MailReceiver&lt;/code&gt; implementations can now be configured with the &lt;code&gt;autoCloseFolder = false&lt;/code&gt; option to not close the mail folder just after fetching, allowing a proper mail message multi-part content processing&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For more information see the &lt;a href="https://docs.spring.io/spring-integration/docs/5.2.0.M2/reference/html/#whats-new-part"&gt;What&amp;#8217;s New chapter in the documentation&lt;/a&gt; and the change logs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration/releases/tag/v5.2.0.M1"&gt;Change log for M1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-integration/releases/tag/v5.2.0.M2"&gt;Change log for M2&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Any feedback, feature ideas, critics, bug reports and questions are welcome via appropriate communication channels:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/issues"&gt;GitHub Issues&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration/blob/master/CONTRIBUTING.adoc"&gt;Contributing&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring for Apache Kafka 2.3 Milestone 2</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/13/spring-for-apache-kafka-2-3-milestone-2" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Gary Russell</name>
+    </author>
+    <id>tag:spring.io,2019-05-13:3674</id>
+    <updated>2019-05-13T19:49:57Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;We are pleased to announce the availability of the second milestone of the Spring for Apache Kafka 2.3 release - 2.3.0.M2.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="highlights"&gt;&lt;a class="anchor" href="#highlights"&gt;&lt;/a&gt;Highlights&lt;/h3&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;SeekToCurrentErrorHandler&lt;/code&gt; can be configured to not retry certain exceptions.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The new &lt;code&gt;RecoveringDeserializationExceptionHandler&lt;/code&gt; can recover from failed deserialization operations in Kafka Streams applications, for example to send the failed message to a dead-letter topic.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The new &lt;code&gt;HeaderEnricher&lt;/code&gt; transformer can be added to a Kafka Streams topology to add headers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The new &lt;code&gt;MessagingTransformer&lt;/code&gt; can be used to invoke a Spring Integration flow within a Kafka Streams topology.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The new &lt;code&gt;AggregatingReplyingKafkaTemplate&lt;/code&gt; can send a record and wait for responses from multiple consumers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For more information see the &lt;a href="https://docs.spring.io/spring-kafka/docs/2.3.0.M2/reference/html/#whats-new-part"&gt;What&amp;#8217;s New chapter in the documentation&lt;/a&gt; and the change logs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-kafka/releases/tag/v2.3.0.M1"&gt;Change log for M1&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-kafka/releases/tag/v2.3.0.M2"&gt;Change log for M2&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;In addition, Spring Integration for Apache Kafka (&lt;code&gt;spring-integration-kafka&lt;/code&gt;) 3.2.0.M2 is available; it is based on Spring for Apache Kafka 2.3 and Spring Integration 5.2.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;KafkaMessageSource&lt;/code&gt; consumer can now be paused/resumed.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The &lt;code&gt;KafkaMessageSource&lt;/code&gt; consumer can now be configured to retrieve multiple records on each poll.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;XML configuration is now available for all components.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See the &lt;a href="https://docs.spring.io/spring-kafka/docs/2.3.0.M2/reference/html/#spring-integration"&gt;Spring Integration Chapter&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-kafka/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-kafka/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-kafka/docs/2.3.0.M2/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-kafka"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-kafka"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring AMQP (Spring for RabbitMQ) 2.2 Milestone 2</title>
+    <link rel="alternate" href="https://spring.io/blog/2019/05/13/spring-amqp-spring-for-rabbitmq-2-2-milestone-2" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Gary Russell</name>
+    </author>
+    <id>tag:spring.io,2019-05-13:3675</id>
+    <updated>2019-05-13T19:49:47Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;We are pleased to announce the availability of the second milestone of the Spring AMQP 2.2 release - 2.2.0.M2.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect2"&gt;
+&lt;h3 id="highlights"&gt;&lt;a class="anchor" href="#highlights"&gt;&lt;/a&gt;Highlights&lt;/h3&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Data "Projection Interfaces" are now supported by the Jackson message converter.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;@RabbitListener&lt;/code&gt; methods can now receive batched messages as a &lt;code&gt;List&amp;lt;?&amp;gt;&lt;/code&gt; instead of one-at-a-time.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can now override the default acknowledge mode and executor directly on the &lt;code&gt;@RabbitListener&lt;/code&gt; annotation.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;For more information, see the &lt;a href="https://docs.spring.io/spring-amqp/docs/2.2.0.M2/reference/html/#whats-new"&gt;What&amp;#8217;s New&lt;/a&gt; chapter and the change logs.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-amqp/releases/tag/v2.2.0.M1"&gt;Change log for M1&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href="https://github.com/spring-projects/spring-amqp/releases/tag/v2.2.0.M2"&gt;Change log for M2&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-amqp/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-amqp"&gt;GitHub&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/AMQP"&gt;JIRA&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-amqp/docs/2.2.0.M2/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-amqp"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-amqp"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
+</feed>
