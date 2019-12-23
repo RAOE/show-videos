@@ -241,6 +241,6 @@ Introduction: The background management system as its own specialized graduation
 <h2>关于我们的淘宝店？</h2>
 <p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
  <pre>
-【JAVA软件定制代写计算机微信小程序设计python代做PHP网页App安卓】https://m.tb.cn/h.eCXKRJj?sm=687da8 點ゞ撃°鏈ㄣ接，再选择瀏覽→噐咑閞ヽ；或復zんíゞ这句话₴VLzwYA8pRqt₴后咑閞👉淘宀┡ē👈
+联系方式：qq 986771570
 </pre>
 </p>
