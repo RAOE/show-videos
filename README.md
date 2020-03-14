@@ -238,7 +238,7 @@ Introduction: The background management system as its own specialized graduation
 <h2>小程序最终版</h2>
 <p>由于小程序需要办理各种资质，故放弃线上版本，如果需要安装小程序，导入page页面即可</p>
 
-<h2>关于我们的淘宝店？</h2>
+<h2>关于我们的软件代做业务？</h2>
 <p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
  <pre>
 联系方式：qq 986771570
