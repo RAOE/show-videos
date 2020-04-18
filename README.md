@@ -242,5 +242,6 @@ Introduction: The background management system as its own specialized graduation
 <p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
  <pre>
 联系方式：qq 986771570
+接口文档swagger2 可以参考的资料 https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/
 </pre>
 </p>
