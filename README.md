@@ -243,5 +243,7 @@ Introduction: The background management system as its own specialized graduation
  <pre>
 联系方式：qq 986771570
 </pre>
-<a href="https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/">接口文档swagger2 第三方接入调用文档</a>
 </p>
+<h2>接口文档</h2>
+<a href="https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/">接口文档swagger2 第三方接入调用文档</a>
+<a href="https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/">https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/</a>
