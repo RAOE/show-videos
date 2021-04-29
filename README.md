@@ -82,6 +82,9 @@ Introduction: The background management system as its own specialized graduation
 <img src="./myimg/a3.jpg">
 </br></br></br>
 <h2>如何快速导入项目?</h2>
+<code>
+git clone https://github.com/RAOE/show-videos.git --depth=1
+</code>
 <p>将scetc-show-videos-page小程序页面导入到微信开发工具栏中即可</p>
 <p>如需使用本地api需要部署scetc-show-videos-dev项目（项目以war包发布，需要额外配置tomcat环境）,并且在app.json文件中修改serverUr服务器地址</p>
 <p>云服务器地址:https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/</p>
@@ -91,7 +94,7 @@ Introduction: The background management system as its own specialized graduation
  <p>开发交流群:673926093
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=4e8e0b872c41655f261bbdd1add8a4246409548e5dfd89b6434b7247a4098ef0"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="苦力 Coder 大家庭" title="苦力 Coder 大家庭"></a></body>
 </p><p>
-该项目禁止未经过作者允许用于商业用途，仅作为交流学习为目的。
+该项目禁止未经过作者允许用于商业用途，仅作为交流学习为目的,有任何改进意见和想法欢迎提issue以及pr。
 </p>
  <h2>作品荣耀</h2>
   <p>省计算机比赛二等奖</p>
@@ -235,8 +238,6 @@ Introduction: The background management system as its own specialized graduation
 借鉴或参考请先联系作者(986771570@qq.com)，
 欢迎Star或Fork，
 您的star和Fork是对作品的认同与肯定，感谢！
-<h2>小程序最终版</h2>
-<p>由于小程序需要办理各种资质，故放弃线上版本，如果需要安装小程序，导入page页面即可</p>
 
 <h2>关于我们的软件代做业务？</h2>
 <p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
@@ -244,7 +245,3 @@ Introduction: The background management system as its own specialized graduation
 联系方式：qq 986771570
 </pre>
 </p>
-<h2>接口文档</h2>
-<a href="https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/">接口文档swagger2 第三方接入调用文档</a>
-<br/>
-<a href="https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/">https://www.lotcloudy.com/scetc-show-videos-mini-api-0.0.1-SNAPSHOT/swagger-ui.html#/</a>
