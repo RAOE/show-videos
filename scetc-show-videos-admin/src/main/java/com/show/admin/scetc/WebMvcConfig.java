@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import com.show.admin.scetc.interceptor.DemoInterceptor;
+import com.show.admin.scetc.interceptor.MethodInterceptor;
 
 /**
  * 全局配置类webmvcconfigurerAdapter
@@ -35,8 +35,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 	// 用于测试用户请求的时间
 	@Bean
-	public DemoInterceptor demoInterceptor() {
-		return new DemoInterceptor();
+	public MethodInterceptor demoInterceptor() {
+		return new MethodInterceptor();
 	}
 
 //开发环境暂时关闭

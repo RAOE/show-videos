@@ -9,7 +9,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 //对每一个请求进行拦截 并计算每一个请求的响应时间，输出到控制台
 @Component
-public class DemoInterceptor extends HandlerInterceptorAdapter {
+public class MethodInterceptor extends HandlerInterceptorAdapter {
 
 //拦截请求
 //	preHandle方法是进行处理器拦截用的，顾名思义，该方法将在Controller处理之前进行调用，SpringMVC中的Interceptor拦截器是链式的，可以同时存在
@@ -20,8 +20,6 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		long startTime = System.currentTimeMillis();
-		request.setAttribute("startTime", startTime);
 		return super.preHandle(request, response, handler);
 	}
 
@@ -34,13 +32,7 @@ public class DemoInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-
-		long startTime = (long) request.getAttribute("startTime");
-		request.removeAttribute("startTime");
-		long endTime = System.currentTimeMillis();
-		System.out.println("请求响应时间" + new Long(endTime - startTime) + "ms");
 		super.postHandle(request, response, handler, modelAndView);
-
 	}
 
 }
