@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.show.admin.scetc.mapper.VideoVoMapper">
-	<resultMap id="BaseResultMap"
-		type="com.show.admin.scetc.pojo.VideosVo">
-		<!-- WARNING - @mbg.generated -->
-		<id column="id" property="id" jdbcType="VARCHAR" />
-		<result column="user_id" property="userId" jdbcType="VARCHAR" />
-		<result column="audio_id" property="audioId" jdbcType="VARCHAR" />
-		<result column="video_desc" property="videoDesc"
-			jdbcType="VARCHAR" />
-		<result column="video_filter" property="videoFilter"
-			jdbcType="VARCHAR" />
-		<result column="video_path" property="videoPath"
-			jdbcType="VARCHAR" />
-		<result column="video_category" property="videoCategory"
-			jdbcType="VARCHAR" />
-		<result column="video_seconds" property="videoSeconds"
-			jdbcType="REAL" />
-		<result column="video_width" property="videoWidth"
-			jdbcType="INTEGER" />
-		<result column="video_height" property="videoHeight"
-			jdbcType="INTEGER" />
-		<result column="cover_path" property="coverPath"
-			jdbcType="VARCHAR" />
-		<result column="like_counts" property="likeCounts"
-			jdbcType="BIGINT" />
-		<result column="status" property="status" jdbcType="INTEGER" />
-		<result column="face_image" property="face_image"
-			jdbcType="VARCHAR" />
-		<result column="nickName" property="nickName"
-			jdbcType="VARCHAR" />
-		<result column="create_time" property="createTime"
-			jdbcType="TIMESTAMP" />
+    <resultMap id="BaseResultMap"
+               type="com.show.admin.scetc.pojo.VideosVo">
+        <!-- WARNING - @mbg.generated -->
+        <id column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="user_id" property="userId" jdbcType="VARCHAR"/>
+        <result column="audio_id" property="audioId" jdbcType="VARCHAR"/>
+        <result column="video_desc" property="videoDesc"
+                jdbcType="VARCHAR"/>
+        <result column="video_filter" property="videoFilter"
+                jdbcType="VARCHAR"/>
+        <result column="video_path" property="videoPath"
+                jdbcType="VARCHAR"/>
+        <result column="video_category" property="videoCategory"
+                jdbcType="VARCHAR"/>
+        <result column="video_seconds" property="videoSeconds"
+                jdbcType="REAL"/>
+        <result column="video_width" property="videoWidth"
+                jdbcType="INTEGER"/>
+        <result column="video_height" property="videoHeight"
+                jdbcType="INTEGER"/>
+        <result column="cover_path" property="coverPath"
+                jdbcType="VARCHAR"/>
+        <result column="like_counts" property="likeCounts"
+                jdbcType="BIGINT"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="face_image" property="face_image"
+                jdbcType="VARCHAR"/>
+        <result column="nickName" property="nickName"
+                jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime"
+                jdbcType="TIMESTAMP"/>
 
-	</resultMap>
-	<select id="queryAll" resultMap="BaseResultMap"
-		parameterType="String">
-		select v.*,u.face_image,u.nickname from videos v
-		left join users u on
-		u.id =v.user_id where 1=1 
-		<if test="keyword!=null and keyword !='' ">
-			and v.video_desc like '%${keyword}%'
-		</if>
-		<if test="title!=null and keyword !='' ">
-			or u.nickname like '%${title}%'
-		</if>
-		order by v.create_time desc
-	</select>
-	<select id="selectVideoType" resultMap="BaseResultMap"
-		parameterType="String">
-		select v.*,u.face_image,u.nickname from videos v
-		left join users u on
-		u.id =v.user_id where 1=1 
-		<if test="keyword!=null and keyword !='' ">
-			and v.video_desc like '%${keyword}%'
-		</if>
-		group by v.video_category
-		order by v.create_time desc
-	</select>
+    </resultMap>
+    <select id="queryAll" resultMap="BaseResultMap"
+            parameterType="String">
+        select v.*,u.face_image,u.nickname from videos v
+        left join users u on
+        u.id =v.user_id
+        <where>
+            <if test="keyword!=null and keyword !='' ">
+                and v.video_desc like concat('%',#{keyword},'%')
+            </if>
+            <if test="title!=null and keyword !='' ">
+                or u.nickname like concat('%',#{title},'%')
+            </if>
+        </where>
+        order by v.create_time desc
+    </select>
+    <select id="selectVideoType" resultMap="BaseResultMap"
+            parameterType="String">
+        select v.*,u.face_image,u.nickname from videos v
+        left join users u on
+        u.id =v.user_id
+        <where>
+            <if test="keyword!=null and keyword !='' ">
+                and v.video_desc like concat('%',#{keyword},'%')
+            </if>
+        </where>
+        group by v.video_category
+        order by v.create_time desc
+    </select>
 
 </mapper>

@@ -3,16 +3,17 @@
 <mapper namespace="com.show.admin.scetc.mapper.CategoryMapper">
 
 
-	<select id="queryAll" parameterType="String"
-		resultType="Category">
-		select * from category
-		where 1=1
-		<if test="keyword != null and keyword !=''">
-			and  name like concat('%',#{keyword},'%')
-		</if>
-			<if test="title != null and title !=''">
-			or  content like concat('%',#{title},'%')
-		</if>
-	</select>
+    <select id="queryAll" parameterType="String"
+            resultType="Category">
+        select * from category
+        <where>
+            <if test="keyword != null and keyword !=''">
+                and name like concat('%',#{keyword},'%')
+            </if>
+            <if test="title != null and title !=''">
+                or content like concat('%',#{title},'%')
+            </if>
+        </where>
+    </select>
 
 </mapper>
