@@ -3,21 +3,19 @@
 <mapper namespace="com.show.admin.scetc.mapper.ReportMapper">
 
 
-	<select id="searchAll" resultType="UsersReportVo" parameterType="String">
-		select
-		u.username,ur.*,ur.deal_video_id as dealVideoId,
-		v.video_path,u2.username as publisher,v.status from users_report ur
-		left join users u on u.id = ur.userid
-		left join videos v on v.id = ur.deal_video_id
-		left join users u2 on u2.id=ur.deal_user_id
-		where 1=1 
-		<if test="keyword != null and keyword !=''">
-			and  ur.content like concat('%',#{keyword},'%')
-		</if>
-
-	</select>
-
-
+    <select id="searchAll" resultType="UsersReportVo" parameterType="String">
+        select
+        u.username,ur.*,ur.deal_video_id as dealVideoId,
+        v.video_path,u2.username as publisher,v.status from users_report ur
+        left join users u on u.id = ur.userid
+        left join videos v on v.id = ur.deal_video_id
+        left join users u2 on u2.id=ur.deal_user_id
+        <where>
+            <if test="keyword != null and keyword !=''">
+                and ur.content like concat('%',#{keyword},'%')
+            </if>
+        </where>
+    </select>
 
 
 </mapper>

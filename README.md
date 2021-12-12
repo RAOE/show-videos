@@ -239,9 +239,3 @@ git clone https://github.com/RAOE/show-videos.git --depth=1
 欢迎Star或Fork，
 您的star和Fork是对作品的认同与肯定，感谢！
 
-<h2>关于我们的软件代做业务？</h2>
-<p>我们团队服务程序代写多年，有许多精英程序员的加盟，如需定制一款自己的软件 欢迎联系我们！
- <pre>
-联系方式：qq 986771570
-</pre>
-</p>
